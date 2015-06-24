@@ -6,13 +6,13 @@ var keystone = require('keystone'),
  * ==========
  */
 
-var Post = new keystone.List('Homebrewers', {
+var Homebrewer = new keystone.List('Homebrewers', {
 	map: { name: 'brewerName' },
 	autokey: { path: 'slug', from: 'brewerName', unique: true },
 	defaultSort: '-brewerName'
 });
 
-Post.add(
+Homebrewer.add(
 	{heading: 'Summary'},
 	{brewerName: { type: Types.Name, required: true, initial: true},
 	city: { type: String },
@@ -31,9 +31,10 @@ Post.add(
 	
 );
 
-Post.schema.virtual('content.full').get(function() {
+
+Homebrewer.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;
 });
 	
-Post.defaultColumns = 'brewerName, brewerEmail, city, state|15%, enteredDate';
-Post.register();
+Homebrewer.defaultColumns = 'brewerName, brewerEmail, city, state|15%, enteredDate';
+Homebrewer.register();
