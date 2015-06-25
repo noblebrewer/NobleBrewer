@@ -7,22 +7,28 @@ var keystone = require('keystone'),
  */
 
 var Beers = new keystone.List('Beers', {
-  map: { name: 'title' },
-  autokey: { path: 'slug', from: 'title', unique: true }
+  map: { name: 'beerName' },
+  autokey: { path: 'slug', from: 'beerName', unique: true }
 });
 
-Beers.add(
-{
-  title: { type: String, required: true },
-  state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-  author: { type: Types.Relationship, ref: 'User', index: true },
-  publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-  image: { type: Types.CloudinaryImage },
-  content: {
-    brief: { type: Types.Html, wysiwyg: true, height: 150 },
-    extended: { type: Types.Html, wysiwyg: true, height: 400 }
-  }
-});
+Beers.add(  
+  {heading: 'Beer'},
+    {
+      beerTitle: { type: String },
+      beerName: { type: String, required: true, initial: true},
+      brewerName: { type: String, required: true, initial: true},
+      beerImage: {type: Types.CloudinaryImage, required: false, initial: false },
+      isFeaturedBeer: { type: Types.Boolean, required: false}
+    },
+  {heading: 'Beer Profile'},
+    {
+      profileTitle: { type: String },
+      profileAuthor: { type: Types.Name },
+      profileBody: { type: Types.Textarea },
+      flavorProfile: { type: Types.Select, options: 'Malty, Earthy, Aromatic, Sweet, Rich, Delicious', default: 'Delicious', index: true },
+      profileDate: { type: Types.Date, default: Date.now }
+    }
+);
 
 Beers.schema.virtual('content.full').get(function() {
   return this.content.extended || this.content.brief;
