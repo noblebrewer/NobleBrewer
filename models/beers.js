@@ -34,5 +34,5 @@ Beers.schema.virtual('content.full').get(function() {
   return this.content.extended || this.content.brief;
 });
 
-Beers.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+Beers.defaultColumns = 'beerName, brewerName|20%, profileAuthor|20%, profileDate|20%';
 Beers.register();
