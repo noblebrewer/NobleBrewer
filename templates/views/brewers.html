@@ -4,7 +4,7 @@
 
 {% block intro %}
 
-	<div class="row" style="border:1px solid black">
+	<div class="row">
 		<h1 align="center">Homebrewers</h1>
 	</div>
 	
@@ -12,13 +12,13 @@
 
 {% block content %}
 	
-	<div class="container-fluid" style="border:3px solid red">
+	<div class="container-fluid">
 
-		<div class="row" style="border:1px solid black">
+		<div class="row">
 			<h2 align="center">Featured Brewers</h2>
 		</div>
 		    
-		<div class="col-md-12" align="center" style="border:3px solid blue">
+		<div class="col-md-12" align="center">
 			{% for featuredBrewer in filters.featuredBrewers %}
 				{% if loop.index0%2 == 0 %}
 					<div class="col-md-12" align="center">
@@ -42,17 +42,17 @@
 			{% endfor %}
 		</div>		
 		    
-		<div class="row" style="border:1px solid black">
+		<div class="row">
 			<h2 align="center">All Brewers</h2>
 		</div>
 
-		<div class="col-md-12" align="center" style="border:3px solid blue">
+		<div class="col-md-12" align="center">
 			{% for brewer in data.allBrewers %}
 				{% if loop.index0%6 == 0 %}
 					<div class="col-md-12" align="center">
 				{% endif %}
 				{% if brewer.profilePicture.url != nil %}
-					<div class="col-md-2" align="center" style="border:1px solid blue">
+					<div class="col-md-2" align="center">
 						<img src={{brewer.profilePicture.url}} class="img-thumbnail">
 						<br>
 						{{brewer.brewerName.first}} {{brewer.brewerName.last}}
