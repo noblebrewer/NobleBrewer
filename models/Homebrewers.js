@@ -27,15 +27,9 @@ Homebrewer.add(
 	beerList: {type: String, required: false }  },
 	{heading: 'Other Data'},
 	{brewerEmail: { type: Types.Email, displayGravatar: true },
-	
 	enteredDate: { type: Types.Date, default: Date.now}}
+)
 	
-);
 
-
-Homebrewer.schema.virtual('content.full').get(function() {
-	return this.content.extended || this.content.brief;
-});
-	
-Homebrewer.defaultColumns = 'brewerName, brewerEmail, city, state|15%, enteredDate';
+Homebrewer.defaultColumns = ('brewerName, brewerEmail, city, state|15%, enteredDate');
 Homebrewer.register();
