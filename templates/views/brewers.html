@@ -5,7 +5,7 @@
 {% block intro %}
 
 	<div class="row" style="border:1px solid black">
-		<h1 align="center">Brewers</h1>
+		<h1 align="center">Homebrewers</h1>
 	</div>
 	
 {% endblock %}
@@ -13,6 +13,10 @@
 {% block content %}
 	
 	<div class="container-fluid" style="border:3px solid red">
+
+		<div class="row" style="border:1px solid black">
+			<h2 align="center">Featured Brewers</h2>
+		</div>
 		    
 		<div class="col-md-12" align="center" style="border:3px solid blue">
 			{% for featuredBrewer in filters.featuredBrewers %}
@@ -38,6 +42,10 @@
 			{% endfor %}
 		</div>		
 		    
+		<div class="row" style="border:1px solid black">
+			<h2 align="center">All Brewers</h2>
+		</div>
+
 		<div class="col-md-12" align="center" style="border:3px solid blue">
 			{% for brewer in data.allBrewers %}
 				{% if loop.index0%6 == 0 %}
