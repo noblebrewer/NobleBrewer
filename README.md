@@ -18,6 +18,9 @@ Create a data directory
 Create a DB directory  
 `sudo mkdir /data/db`  
 
+Change the permissions
+`sudo chmod 777 /data/db`
+
 Create a .env file  
 `touch .env`
 
