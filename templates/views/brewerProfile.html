@@ -1,0 +1,107 @@
+
+{% extends "templates/layouts/default.html" %}
+
+
+{% block intro %}
+
+	<div class="col-md-12" align="center" style="background-color: brown">
+		<h1>Noble<br/>Brewer</h1>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+</script>
+<div class="bodyToLoad">
+	{% for brewer in data.allBrewers %}
+		{% if brewer.brewerName.first == "Caitlin" %}
+			<div class="row">
+				
+				<div class="col-md-4">	
+					<h4>Homebrewers -> {{brewer.brewerName.first}} {{brewer.brewerName.last}}</h4>		
+				</div>
+
+				<div class="col-md-2 col-md-offset-6" style="border:1px solid black">
+					<a href="mailto:{{brewer.brewerEmail}}" align="right">Connect with {{brewer.brewerName.first}}</a>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" align="center">
+					<h1>{{brewer.brewerName.first}} {{brewer.brewerName.last}}</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" align="center">
+					<h4>{{brewer.city}} {{brewer.state}}</h4>
+				</div>					
+			</div>
+
+		<br />
+		<br />
+		<br />
+	
+		<div class="col-md-12">
+			<div class="row">	
+				<div class="col-md-6">
+					<h4>{{brewer.profileHeadline}}</h4>
+					<p>{{brewer.profileBody}}</p>
+				</div>
+
+
+				<div class="col-md-6">
+					{{brewer.profileVideo}}
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="col-md-12">
+					<h4>Connect with the Brewer</h4>
+				</div>
+				<br/>
+				<div class="col-md-12">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="col-md-12">
+					<textarea class="form-control" rows="3"></textarea>
+				</div>
+
+				<div class="col-md-12">
+					<a class="btn btn-warning btn-block" href="mailto:{{brewer.brewerEmail}}" role="button" >Connect with {{brewer.brewerName.first}}</a>
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center col-md-12">
+					<a class="btn btn-warning" href="/brewers" role="button">BACK TO ALL BREWERS</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	{% endif %}
+
+{% endfor %}
+
+{% endblock %}
+
