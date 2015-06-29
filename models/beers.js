@@ -16,7 +16,7 @@ Beers.add(
     {
       beerTitle: { type: String },
       beerName: { type: String, required: true, initial: true},
-      brewerName: { type: String, required: true, initial: true},
+      brewerName: { type: Types.Name, required: true, initial: true},
       beerImage: {type: Types.CloudinaryImage, required: false, initial: false },
       isFeaturedBeer: { type: Types.Boolean, required: false}
     },
