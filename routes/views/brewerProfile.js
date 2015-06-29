@@ -2,40 +2,26 @@ var keystone = require('keystone');
 
 exports = module.exports = function(req,res) {
 
-	// var view = new keystone.View(req,res),
-	// 	locals = res.locals;
+	var view = new keystone.View(req,res),
+		locals = res.locals;
 
-	// locals.section = 'brewerProfile';
-	// locals.filters = {
-	// 	featuredBrewers: []
-	// };
-
-	// locals.data = {
-	// 	allBrewers: []
-	// };
+	locals.section = 'brewerProfile';
+	locals.data = {
+		allBrewers: []
+	};
 
 
-	// view.on('init', function(next) {
-	// 	var q = keystone.list('Homebrewers').model.find().where('isFeaturedBrewer', true)
+	view.on('init', function(next) {
 
-	// 	q.exec(function(err, result) {
-	// 		locals.filters.featuredBrewers = result;
-	// 		next(err);
-	// 	});
+		var q = keystone.list('Homebrewers').model.find().sort('-brewerName')
 
-	// });
+		q.exec(function(err,results) {
 
-	// view.on('init', function(next) {
+			locals.data.allBrewers = results
+			next(err);
 
-	// 	var q = keystone.list('Homebrewers').model.find().sort('-brewerName')
-
-	// 	q.exec(function(err,results) {
-
-	// 		locals.data.allBrewers = results
-	// 		next(err);
-
-	// 	});
-	// });
+		});
+	});
 
 	view.render('brewerProfile');
 
