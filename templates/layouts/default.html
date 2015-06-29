@@ -32,9 +32,8 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body>
-
-		{# HEADER #}
-		<div id="header" class="container">
+        {# HEADER #}
+        <div id="header" class="container">
 
 			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
 			   ... or completely change this header to suit your design. #}
@@ -97,8 +96,13 @@
 
 		{# FOOTER #}
 		<div id="footer" class="container">
-			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
-			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+            <ul class="nav nav-pills">
+            {% for link in footerLinks %}
+                <li class="{{ 'active' if link.key == section else '' }}">
+                    <a href="{{ link.href }}">{{ link.label }}</a>
+                </li>
+            {% endfor %}
+            </ul>
 		</div>
 
 
