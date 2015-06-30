@@ -1,0 +1,75 @@
+{% extends "templates/layouts/default.html" %}
+
+
+{% block intro %}
+
+	<div class="row">
+		<h1 align="center">Homebrewers</h1>
+	</div>
+	
+{% endblock %}
+
+{% block content %}
+	
+	<div class="container-fluid">
+
+		<div class="row">
+			<h2 align="center">Featured Brewers</h2>
+		</div>
+		    
+		<div class="col-md-12" align="center">
+			{% for featuredBrewer in filters.featuredBrewers %}
+				{% if loop.index0%2 == 0 %}
+					<div class="col-md-12" align="center">
+				{% endif %}
+				{% if featuredBrewer.profilePicture.url != nil %}
+					<div class="col-md-6" align="center">
+						<img src={{featuredBrewer.profilePicture.url}} class="img-thumbnail">
+						<br>
+						{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}
+					</div>
+				{% else %}
+					<div class="col-md-6" align="center">
+						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail">
+						<br>
+						{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}
+					</div>
+				{% endif %}
+				{% if loop.index0%2 != 0 %}
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>		
+		    
+		<div class="row">
+			<h2 align="center">All Brewers</h2>
+		</div>
+
+		<div class="col-md-12" align="center">
+			{% for brewer in data.allBrewers %}
+				{% if loop.index0%6 == 0 %}
+					<div class="col-md-12" align="center">
+				{% endif %}
+				{% if brewer.profilePicture.url != nil %}
+					<div class="col-md-2" align="center">
+						<img src={{brewer.profilePicture.url}} class="img-thumbnail">
+						<br>
+						{{brewer.brewerName.first}} {{brewer.brewerName.last}}
+					</div>
+				{% else %}
+					<div class="col-md-2" align="center">
+						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail"> 
+						<br>
+						{{brewer.brewerName.first}} {{brewer.brewerName.last}}
+					</div>
+				{% endif %}
+				{% if (loop.index0+1)%6 == 0 %}
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>	
+
+	</div>	
+
+
+{% endblock %}
