@@ -1,23 +1,81 @@
 {% extends "templates/layouts/default.html" %}
 
+{% block intro %}
+
+<div class="row">
+  <h1 align="center">Beers</h1>
+</div>
+
+{% endblock %}
+
 {% block content %}
-    <div style="background-color:#000;padding:80px 0;">
-        <div class="container">
-            <h1>Beers</h1>
-            <p>which are great</p>
-        </div>
-    </div>
 
-    <div style="background-color:#202020;padding:80px 0;">
-        <div class="container">
-            <p>Featured beers</p>
-            <button class="btn btn-primary">Try these beers</button>
-        </div>
-    </div>
+<div class="container-fluid">
 
-    <div style="background-color:#000;padding:80px 0;">
-        <div class="container">
-            <p>All beers</p>
-        </div>
+  <div class="row">
+    <h2 align="center">Featured Beers</h2>
+</div>
+
+<div class="col-md-12" align="center">
+    {% for featuredBeer in filters.featuredBeers %}
+    {% if loop.index0%2 == 0 %}
+    <div class="col-md-12" align="center">
+      {% endif %}
+      {% if featuredBeer.beerImage.url != nil %}
+      <div class="col-md-6" align="center">
+        <img src={{featuredBeer.beerImage.url}} class="img-thumbnail">
+        <br>
+        {{featuredBeer.beerName}}
     </div>
+    {% else %}
+    <div class="col-md-6" align="center">
+        <img src="http://cdn3.tapcdn.com/images/source/8f/4b/4c/89/bac6aa15e59b62c09a783b79.png" class="img-thumbnail">
+        <br>
+        {{featuredBeer.beerName}}
+    </div>
+    {% endif %}
+    {% if loop.index0%2 != 0 %}
+</div>
+{% endif %}
+{% endfor %}
+</div>       
+
+<div class="row">
+    <h2 align="center">All Beers</h2>
+</div>
+
+<div class="col-md-12" align="center">
+    {% for beer in data.allBeers %}
+    {% if loop.index0%6 == 0 %}
+    <div class="col-md-12" align="center">
+      {% endif %}
+      {% if beer.beerImage.url != nil %}
+      <div class="col-md-2" align="center">
+        <img src={{beer.beerImage.url}} class="img-thumbnail">
+        <br>
+        {{beer.beerName.first}} {{beer.beerName.last}}
+    </div>
+    {% else %}
+    <div class="col-md-2" align="center">
+        <img src="http://cdn3.tapcdn.com/images/source/8f/4b/4c/89/bac6aa15e59b62c09a783b79.png" class="img-thumbnail">
+        <br>
+        {{beer.beerName.first}} {{beer.beerName.last}}
+    </div>
+    {% endif %}
+    {% if (loop.index0+1)%6 == 0 %}
+</div>
+{% endif %}
+{% endfor %}
+</div>   
+
+<div class="col-md-12" align="center">
+    <div class="container">
+      <p>Featured beers</p>
+      <button class="btn btn-primary">Try these beers</button>
+  </div>
+</div>
+
+</div>   
+
+
 {% endblock %}
