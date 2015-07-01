@@ -41,13 +41,8 @@ User.add(
 		//Billing address
 		billingName: { type: Types.Name },
 		billingAddress: { type: Types.Location},
-		phoneNumber: { type: Types.Number},
+		phoneNumber: { type: Types.Number}}
 
-		creditType: { type: Types.Select, options: ['Refund', 'Credit']},
-		creditAmount: { type: Types.Money},
-		creditReason: { type: Types.Textarea, height: 50}}
-		//Not feeling confident that credits requires it's own data model, so commenting this out. But leaving it here if we do decide it should reference another model.
-		//creditType: { type: Types.Relationship, ref: 'Credits'},
 );
 
 User.schema.virtual('canAccessKeystone').get(function() {
@@ -55,6 +50,7 @@ User.schema.virtual('canAccessKeystone').get(function() {
 });
 
 User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' });
+User.relationship({ ref: 'Credit', path: 'credit', refPath: 'user' });
 
 
 User.defaultColumns = 'userName, isAdmin, emailAddress';
