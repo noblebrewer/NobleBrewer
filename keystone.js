@@ -94,10 +94,11 @@ keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
 	'galleries': 'galleries',
 	'enquiries': 'enquiries',
-	'users': 'users',
+	'user': 'User',
 	'Homebrewers': 'Homebrewers',	
 	'Beers': 'Beers',
 	'Releases' : 'Releases'
+
 
 });
 

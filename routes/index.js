@@ -48,7 +48,7 @@ exports = module.exports = function(app) {
     app.get('/faq', routes.views.faq);
     app.get('/press', routes.views.press);
     app.get('/releases', routes.views.releases);
-    app.get('/users', routes.views.users)
+    app.get('/user', routes.views.user);
 	app.all('/contact', routes.views.contact);
 
 	

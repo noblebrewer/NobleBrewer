@@ -6,7 +6,7 @@ var keystone = require('keystone'),
  * ==========
  */
 
-var User = new keystone.List('Users', {
+var User = new keystone.List('User', {
   map: { name: 'userName' },
   autokey: { path: 'slug', from: 'userName', unique: true }
 });
