@@ -30,9 +30,8 @@ Beers.add(
     }
 );
 
-Beers.schema.virtual('content.full').get(function() {
-  return this.content.extended || this.content.brief;
-});
+Beers.relationship({ ref: 'Releases', path: 'Releases', refPath: 'beersOfRelease'});
+Beers.relationship({ ref: 'Order', path: 'order', refPath: 'individualBeers'});
 
 Beers.defaultColumns = 'beerName, brewerName|20%, profileAuthor|20%, profileDate|20%';
 Beers.register();
