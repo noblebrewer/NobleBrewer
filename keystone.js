@@ -96,7 +96,8 @@ keystone.set('nav', {
 	'enquiries': 'enquiries',
 	'users': 'users',
 	'Homebrewers': 'Homebrewers',	
-	'Beers': 'Beers'
+	'Beers': 'Beers',
+	'Releases' : 'Releases'
 
 });
 
