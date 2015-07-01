@@ -21,7 +21,7 @@ Releases.add(
 );
 
 Releases.relationship({ ref: 'User', path: 'User', refPath: 'Releases'});
-
+Releases.relationship({ ref: 'Order', path: 'order', refPath: 'beerRelease'});
 
 Releases.defaultColumns = 'dateOfRelease|15%, statusOfRelease|20%, beersOfRelease';
 Releases.register();
