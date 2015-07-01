@@ -1,0 +1,36 @@
+$primary-tan: #C5A77E;
+$hover-tan : #D4C0AA;
+$visited-tan : #8A7762;
+$link-hover : #FFFFFF;
+
+a {
+	color: $primary-tan;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	&:hover {
+		color: $link-hover;
+	}
+}
+
+.border {
+	padding: 1px;
+  border: 1px solid $primary-tan;
+
+}
+
+.btn-primary {
+	background-color: $primary-tan;
+	border-radius: 0%;
+	border: none;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $hover-tan;
+	}
+
+	&:visited {
+		background-color: $visited-tan;
+	}
+}
+
