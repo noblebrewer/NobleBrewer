@@ -10,13 +10,11 @@
 
 </script>
 <div class="bodyToLoad">
-	{% for beer in data.allBeers %}
 			<div class="row">
 				
 				<div class="col-md-4">	
-					<h4>Beers -> {{beer.beerName}}</h4>		
+					<h4>Beers -> {{data.beerName}}</h4>		
 				</div>
-
 				<div class="col-md-2 col-md-offset-6" style="border:1px solid black">
 					<span>order this beer</span>
 				</div>
@@ -25,14 +23,8 @@
 
 			<div class="row">
 				<div class="col-md-12" align="center">
-					<h1>{{beer.beerName}}</h1>
+					<h1>{{data.beerName}}</h1>
 				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12" align="center">
-					<h4>{{beer.city}} {{beer.state}}</h4>
-				</div>					
 			</div>
 
 		<br />
@@ -42,13 +34,12 @@
 		<div class="col-md-12">
 			<div class="row">	
 				<div class="col-md-6">
-					<h4>{{beer.profileHeadline}}</h4>
-					<p>{{beer.profileBody}}</p>
+					<h4>{{data.beerName}}</h4>
+					<p>{{data.beerType}}</p>
 				</div>
 
-
 				<div class="col-md-6">
-					{{beer.profileVideo}}
+					{{data.brewerName}}
 				</div>
 			</div>
 		</div>
@@ -61,21 +52,21 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="col-md-12">
-					<h4>Connect with the Brewer</h4>
+					<h4>About this beer</h4>
 				</div>
 				<br/>
 				<div class="col-md-12">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
+					<p>					{{data.profileBody}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
 				</div>
 			</div>
 
 			<div class="col-md-6">
 				<div class="col-md-12">
-					<textarea class="form-control" rows="3"></textarea>
 				</div>
 
 				<div class="col-md-12">
-					<a class="btn btn-warning btn-block" href="mailto:{{beer.brewerEmail}}" role="button" >Connect with {{beer.beer}}</a>
+					<a class="btn btn-warning btn-block" href="mailto:{{data.brewerEmail}}" role="button" >Connect with {{data.brewerName}}</a>
 				</div>
 			</div>
 		</div>
@@ -88,7 +79,15 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center col-md-12">
-					<a class="btn btn-warning" href="/brewers" role="button">BACK TO ALL BREWERS</a>
+					Flavor profile: {{data.profileBody}}
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center col-md-12">
+					<a class="btn btn-warning" href="/brewers" role="button">BACK TO ALL beers</a>
 				</div>
 			</div>
 		</div>
@@ -96,7 +95,6 @@
 
 
 
-{% endfor %}
 
 {% endblock %}
 

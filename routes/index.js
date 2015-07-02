@@ -42,7 +42,7 @@ exports = module.exports = function(app) {
 	app.get('/about', routes.views.about);
 	app.get('/brewers', routes.views.brewers);
 	app.get('/beers', routes.views.beers);
-	app.get('/beerProfile', routes.views.beers);
+	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
 	app.get('/brewerProfile', routes.views.brewerProfile);
     app.get('/terms', routes.views.terms);
     app.get('/team', routes.views.team);

@@ -36,6 +36,8 @@ exports = module.exports = function(req, res) {
 
         });
     });
+
+    console.log(locals.data.allBeers);
     // Render the view
     view.render('beers');
     

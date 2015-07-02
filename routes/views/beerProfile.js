@@ -6,21 +6,30 @@ exports = module.exports = function(req, res) {
         locals = res.locals;
 
     locals.section = 'beerProfile';
+    locals.filters = {
+        beerName : req.params.beerName
+    };
     locals.data = {
-        allBeers: []
+        profiledBeers: []
     };
 
     view.on('init', function(next) {
 
-        var q = keystone.list('Beers').model.find().sort('-beerName')
+        var q = keystone.list('Beers').model.findOne({
+            slug: locals.filters.beerName
+        });
 
-        q.exec(function(err,results) {
+        q.exec(function(err,result) {
 
-            locals.data.allBeers = results;
+        console.log('result ' + result);
+
+            locals.data = result;
+
             next(err);
 
         });
     });
+    
     // Render the view
     view.render('beerProfile');
     
