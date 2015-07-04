@@ -2,7 +2,7 @@ $primary-tan: #C5A77E;
 $hover-tan : #D4C0AA;
 $visited-tan : #8A7762;
 $link-hover : #FFFFFF;
-$light-alt-background : #333333;
+$alt-base-background : #333333;
 
 a {
 	color: $primary-tan;
@@ -14,10 +14,9 @@ a {
 	}
 }
 
-.border {
+.tan-border {
 	padding: 1px;
   border: 1px solid $primary-tan;
-
 }
 
 .btn-primary {
@@ -39,8 +38,8 @@ blockquote > p {
 	font-style: italic;
 }
 
-.alt-background {
-	background-color: $light-alt-background;
+.alt-base-section {
+	background-color: $alt-base-background;
 }
 
 .tan-header {
@@ -55,9 +54,9 @@ blockquote > p {
 }
 
 .circle-img {
-	margin-left: auto; 
-	margin-right: auto; 
-	display: block; 
+	width: 150px;
+	height: 150px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
 	border-radius: 100%;
 }
-
