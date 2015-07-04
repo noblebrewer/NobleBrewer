@@ -2,7 +2,11 @@ $primary-tan: #C5A77E;
 $hover-tan : #D4C0AA;
 $visited-tan : #8A7762;
 $link-hover : #FFFFFF;
+
+$header-white : #FFFFFF;
+$subheader-gray : #666666;
 $alt-base-background : #333333;
+
 
 a {
 	color: $primary-tan;
@@ -59,4 +63,23 @@ blockquote > p {
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;
 	border-radius: 100%;
+}
+
+.faq-block {
+	background-color: $alt-base-background;
+	padding: 2em 3em 2em 3em;
+	margin-bottom: 3em;
+
+	dt {
+		font-size: 2em;
+		line-height: 1.2em;
+		color: $header-white;
+	}
+
+	dd {
+		margin-top: 1em;
+		font-size: 1em;
+		line-height: 1.5em;
+		color: $subheader-gray;
+	}
 }
