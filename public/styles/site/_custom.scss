@@ -38,8 +38,26 @@ a {
 	}
 }
 
-blockquote > p {
-	font-style: italic;
+blockquote {
+	border: 0px;
+
+	> p {
+		font-size: 45px;
+		font-style: italic;
+		color: #666666;
+
+		> .quote {
+			color: #FFFFFF;
+		}
+	}
+
+	> footer {
+		text-align: center;
+		font-size: 22px;
+		font-style: none;
+		line-height: 1.2em;
+		color: #FFFFFF;
+	}
 }
 
 .alt-base-section {
