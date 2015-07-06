@@ -1,44 +1,44 @@
 var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
-    
-    var view = new keystone.View(req,res),
-        locals = res.locals;
+  
+  var view = new keystone.View(req,res),
+  locals = res.locals;
 
-    locals.section = 'beers';
-    locals.filters = {
-        featuredBeers: []
-    };
+  locals.section = 'beers';
+  locals.filters = {
+    featuredBeers: []
+  };
 
-    locals.data = {
-        allBeers: []
-    };
+  locals.data = {
+    allBeers: []
+  };
 
 
-    view.on('init', function(next) {
-        var q = keystone.list('Beers').model.find().where('isFeaturedBeer', true)
+  view.on('init', function(next) {
+    var q = keystone.list('Beers').model.find().where('isFeaturedBeer', true)
 
-        q.exec(function(err, result) {
-            locals.filters.featuredBeers = result;
-            next(err);
-        });
-
+    q.exec(function(err, result) {
+      locals.filters.featuredBeers = result;
+      next(err);
     });
 
-    view.on('init', function(next) {
+  });
 
-        var q = keystone.list('Beers').model.find().sort('-beerName')
+  view.on('init', function(next) {
 
-        q.exec(function(err,results) {
+    var q = keystone.list('Beers').model.find().sort('-beerName')
 
-            locals.data.allBeers = results;
-            next(err);
+    q.exec(function(err,results) {
 
-        });
+      locals.data.allBeers = results;
+      next(err);
+
     });
+  });
 
-    console.log(locals.data.allBeers);
+  console.log(locals.data.allBeers);
     // Render the view
     view.render('beers');
     
-};
+  };
