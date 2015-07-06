@@ -16,7 +16,7 @@
   </div>
 
   <div class="col-md-12" align="center">
-    {% for featuredBeer in filters.featuredBeers %}
+    {% for featuredBeer in data.featuredBeers %}
     {% if loop.index0%2 == 0 %}
     <div class="col-md-12" align="center">
       {% endif %}
@@ -52,14 +52,14 @@
     {% if loop.index0%6 == 0 %}
     <div class="col-md-12" align="center">
       {% endif %}
-        <a href="/beerProfile/{{beer.slug}}">
+      <a href="/beerProfile/{{beer.slug}}">
         {% if beer.beerImage.url != nil %}
         <div class="col-md-2" align="center">
           <img src="{{beer.beerImage.url}}" class="img-thumbnail">
           <br>
           {{beer.beerName}}
-        </a>
-      </div>
+        </div>
+      </a>
       {% else %}
       <div class="col-md-2" align="center">
         <a href="/beerProfile/{{beer.slug}}">

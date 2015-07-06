@@ -7,11 +7,10 @@ exports = module.exports = function(req, res) {
 
   locals.section = 'beers';
   locals.filters = {
-    featuredBeers: []
   };
 
   locals.data = {
-    allBeers: []
+    featuredBeers: []
   };
 
 
@@ -19,7 +18,7 @@ exports = module.exports = function(req, res) {
     var q = keystone.list('Beers').model.find().where('isFeaturedBeer', true)
 
     q.exec(function(err, result) {
-      locals.filters.featuredBeers = result;
+      locals.data.featuredBeers = result;
       next(err);
     });
 
