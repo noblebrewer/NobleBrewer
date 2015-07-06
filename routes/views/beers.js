@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
 
   locals.data = {
     featuredBeers: [],
-    allBeers: [];
+    allBeers: []
   };
 
 
