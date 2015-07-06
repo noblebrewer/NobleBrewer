@@ -32,7 +32,6 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body>
-
 		{# HEADER #}
 		<div id="header" class="container">
 
@@ -97,7 +96,7 @@
 
 		{# FOOTER #}
 
-		<div id="footer" class="container">
+		<div id="footer" style="padding-bottom: 10em" class="container">
 	    <div class="row">
 	      <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
 	        <h1>STAY IN TOUCH</h1>
@@ -105,7 +104,7 @@
 	        <br>
 	        <form class="form-inline">
 	          <div class="form-group">
-	            <input type="text" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+	            <input type="text" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
 	          </div>
 	          <button type="button" class="btn btn-default">SUBMIT</button>
 	        </form>
@@ -113,8 +112,31 @@
 	    </div>
 	    <br>
 	    <br>
-		</div>
-
+	    <div align="center">
+	    	<a href="#">UP TOP</a>
+	    </div>
+	    <br>
+	    <br>
+	    <br>
+	    <div class="row">
+		    <div class="col-md-8">
+						<ul class="footer-list" style="
+	    list-style-type: none;
+	    display: table;
+	    width:100%;">
+								{% for link in footerLinks %}
+									<li class="list" style="display: table-cell; padding:5px; text-align: center">
+										<a href= {{link.href}} class="footer-links">{{link.label}}</a>
+									</li>
+								{% endfor %}
+						</ul>
+		    </div>
+	    	<div class="col-md-3 col-md-offset-1">
+	    		<a><img src="http://uxrepo.com/static/icon-sets/windows/png32/36/000000/pokeball-36-000000.png"></a>
+	    		<a><img src="http://uxrepo.com/static/icon-sets/windows/png32/36/000000/pokeball-36-000000.png"></a>
+	    		<a><img src="http://uxrepo.com/static/icon-sets/windows/png32/36/000000/pokeball-36-000000.png"></a>
+	    	</div>
+   	 </div>
 
 		{# JAVASCRIPT #}
 
