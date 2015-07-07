@@ -10,8 +10,13 @@
 		<title>{{ title|default("Noble Brewer") }}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+		<!-- Gotham fonts -->
+		<!-- <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6256932/670608/css/fonts.css" /> -->
+
 		{# Customise the stylesheet for your site by editing /public/styles/site.sass #}
 		<link href="/styles/site.css" rel="stylesheet">
+
+
 
 		{# This file provides the default styling for the KeystoneJS Content Editor #}
 		{% if user and user.canAccessKeystone %}
@@ -96,9 +101,9 @@
 
 		{# FOOTER #}
 
-		<div id="footer" style="padding-bottom: 10em" class="container">
+		<div id="footer" class="container">
 	    <div class="row">
-	      <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
+	      <div class="col-sm-8 col-sm-offset-2 text-center">
 	        <h1>STAY IN TOUCH</h1>
 	        <h4>ENTER YOUR EMAIL TO GET ALL THE BEST UPDATES</h4>
 	        <br>
@@ -120,13 +125,10 @@
 	    <br>
 	    <div class="row">
 		    <div class="col-md-8">
-						<ul class="footer-list" style="
-	    list-style-type: none;
-	    display: table;
-	    width:100%;">
+						<ul>
 								{% for link in footerLinks %}
-									<li class="list" style="display: table-cell; padding:5px; text-align: center">
-										<a href= {{link.href}} class="footer-links">{{link.label}}</a>
+									<li>
+										<a href= {{link.href}}>{{link.label}}</a>
 									</li>
 								{% endfor %}
 						</ul>
