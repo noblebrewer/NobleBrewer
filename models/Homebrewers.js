@@ -8,7 +8,7 @@ var keystone = require('keystone'),
 
 var Homebrewer = new keystone.List('Homebrewers', {
 	map: { name: 'brewerName' },
-	autokey: { path: 'slug', from: 'brewerName', unique: true },
+	autokey: { path: 'slug', from: 'brewerName.full', unique: true },
 	defaultSort: '-brewerName'
 });
 

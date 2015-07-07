@@ -31,6 +31,7 @@ Beers.add(
 );
 
 Beers.relationship({ ref: 'Releases', path: 'Releases', refPath: 'beersOfRelease'});
+Beers.relationship({ ref: 'Order', path: 'orders', refPath: 'individualBeers'});
 
 Beers.defaultColumns = 'beerName, brewerName|20%, profileAuthor|20%, profileDate|20%';
 Beers.register();
