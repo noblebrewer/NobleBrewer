@@ -8,23 +8,26 @@ var keystone = require('keystone'),
 
 var Order = new keystone.List('Order', {
   map: { name: 'user' },
-  autokey: { path: 'slug', from: 'user', unique: true }
+  autokey: { path: 'slug', from: ['user', 'beerRelease'], unique: true }
 });
 
 Order.add(  
  
     {
-      	user: { type: Types.Relationship, ref: 'User', inital: true },
-      	dateToShip: { type: Types.Date },
-		dateOrderCreated: { type: Types.Date, default: Date.now },
-		orderPriceTotal: { type: Types.Money },
-		beerRelease: { type: Types.Relationship, ref: 'Releases' },
-		orderStatus: { type: Types.Select, options: ['Prepaid', 'Refunded', 'Cancelled', 'Shipped', 'Processing', 'Unreleased', 'New'], default: 'New' },
-		otherProducts: { type: Types.Select, options: ['T-shirt', 'Beer Mugs'] },
-		OtherProductsPriceTotal: { type: Types.Money },
-		individualBeers: {type: Types.Relationship, ref: 'beers' },
-		individualBeersPriceTotal: { type: Types.Money },
-		isGift: {type: Types.Boolean }
+        user: { type: Types.Relationship, ref: 'User', initial: true },
+        dateToShip: { type: Types.Date },
+        dateOrderCreated: { type: Types.Date, default: Date.now },
+        orderPriceTotal: { type: Types.Money },
+        beerRelease: { type: Types.Relationship, ref: 'Releases' },
+        orderStatus: { type: Types.Select, options: ['Prepaid', 'Refunded', 'Cancelled', 'Shipped', 'Processing', 'Unreleased', 'New'], default: 'New' },
+        otherProducts: { type: Types.Select, options: ['T-shirt', 'Beer Mugs'] },
+        OtherProductsPriceTotal: { type: Types.Money },
+        individualBeers: {type: Types.Relationship, ref: 'beers' },
+        individualBeersPriceTotal: { type: Types.Money },
+        isGift: {type: Types.Boolean },
+        orderNotes: { type: Types.Textarea },
+        deliveryNotes: { type: Types.Textarea },
+        giftMessage: { type: Types.Textarea }
 
     }
 );

@@ -13,7 +13,9 @@ exports = module.exports = function(req,res) {
 
 	view.on('init', function(next) {
 
-		var q = keystone.list('Homebrewers').model.find().sort('-brewerName')
+		var q = keystone.list('Homebrewers').model.find().sort('-brewerName');
+
+		q.populate('tagName');
 
 		q.exec(function(err,results) {
 

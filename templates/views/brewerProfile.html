@@ -11,11 +11,11 @@
 </script>
 <div class="bodyToLoad">
 	{% for brewer in data.allBrewers %}
-		{% if brewer.brewerName.first == "Caitlin" %}
+		{% if brewer.brewerName.slug == "Caitlin" %}
 			<div class="row">
 				
 				<div class="col-md-4">	
-					<h4>Homebrewers -> {{brewer.brewerName.first}} {{brewer.brewerName.last}}</h4>		
+					<h4>Homebrewers -> {{brewer.brewerName.first}} {{brewer.brewerName.last}} </h4>		
 				</div>
 
 				<div class="col-md-2 col-md-offset-6" style="border:1px solid black">
