@@ -24,15 +24,15 @@
 				{% endif %}
 				{% if featuredBrewer.profilePicture.url != nil %}
 					<div class="col-md-6" align="center">
-						<img src={{featuredBrewer.profilePicture.url}} class="img-thumbnail">
+						<img src="{{featuredBrewer.profilePicture.url}}" class="img-thumbnail">
 						<br>
-						{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}
+						<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
 					</div>
 				{% else %}
 					<div class="col-md-6" align="center">
 						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail">
 						<br>
-						{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}
+						<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
 					</div>
 				{% endif %}
 				{% if loop.index0%2 != 0 %}
@@ -54,13 +54,13 @@
 					<div class="col-md-2" align="center">
 						<img src={{brewer.profilePicture.url}} class="img-thumbnail">
 						<br>
-						{{brewer.brewerName.first}} {{brewer.brewerName.last}}
+						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
 					</div>
 				{% else %}
 					<div class="col-md-2" align="center">
 						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail"> 
 						<br>
-						{{brewer.brewerName.first}} {{brewer.brewerName.last}}
+						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
 					</div>
 				{% endif %}
 				{% if (loop.index0+1)%6 == 0 %}
