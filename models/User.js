@@ -50,8 +50,8 @@ User.schema.virtual('canAccessKeystone').get(function() {
 });
 
 User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' });
-User.relationship({ ref: 'Credit', path: 'credit', refPath: 'user' });
-User.relationship({ ref: 'Order', path: 'order', refPath: 'user' });
+User.relationship({ ref: 'Credit', path: 'credits', refPath: 'user' });
+User.relationship({ ref: 'Order', path: 'orders', refPath: 'user' });
 
 
 User.defaultColumns = 'userName, isAdmin, emailAddress';

@@ -8,7 +8,7 @@ var keystone = require('keystone'),
 
 var Order = new keystone.List('Order', {
   map: { name: 'user' },
-  autokey: { path: 'slug', from: ['user', 'beerRelease'], unique: true }
+  autokey: { path: 'slug', from: 'user' , unique: true }
 });
 
 Order.add(  
@@ -22,7 +22,7 @@ Order.add(
         orderStatus: { type: Types.Select, options: ['Prepaid', 'Refunded', 'Cancelled', 'Shipped', 'Processing', 'Unreleased', 'New'], default: 'New' },
         otherProducts: { type: Types.Select, options: ['T-shirt', 'Beer Mugs'] },
         OtherProductsPriceTotal: { type: Types.Money },
-        individualBeers: {type: Types.Relationship, ref: 'beers' },
+        individualBeers: {type: Types.Relationship, ref: 'beers', many: true },
         individualBeersPriceTotal: { type: Types.Money },
         isGift: {type: Types.Boolean },
         orderNotes: { type: Types.Textarea },
