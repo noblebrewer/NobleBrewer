@@ -7,8 +7,8 @@ var keystone = require('keystone'),
  */
 
 var User = new keystone.List('User', {
-  map: { name: 'emailAddress' },
-  autokey: { path: 'slug', from: 'emailAddress', unique: true }
+  map: { name: 'userName' },
+  autokey: { path: 'slug', from: 'userName', unique: true }
 });
 
 User.add(  
