@@ -7,8 +7,8 @@ var keystone = require('keystone'),
  */
 
 var Order = new keystone.List('Order', {
-  map: { name: 'user' },
-  autokey: { path: 'slug', from: 'user' , unique: true }
+  map: { name: '_id' },
+  autokey: { path: 'slug', from: 'user beerRelease' , unique: true }
 });
 
 Order.add(  
