@@ -20,8 +20,8 @@ Releases.add(
     }
 );
 
-Releases.relationship({ ref: 'User', path: 'User', refPath: 'Releases'});
-Releases.relationship({ ref: 'Order', path: 'order', refPath: 'beerRelease'});
+Releases.relationship({ ref: 'User', path: 'users', refPath: 'releases'});
+Releases.relationship({ ref: 'Order', path: 'orders', refPath: 'beerRelease'});
 
 Releases.defaultColumns = 'dateOfRelease|15%, statusOfRelease|20%, beersOfRelease';
 Releases.register();
