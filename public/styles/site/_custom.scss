@@ -7,7 +7,8 @@ $header-white : #FFFFFF;
 $subheader-gray : #666666;
 
 $alt-base-background : #232121;
-$diamond-background : '/images/diagmonds.png';
+$diamond-background : '/images/generic/diagmonds.png';
+$diamond-divider: '/images/generic/diamond-divide.png';
 $divider-color: #777777;
 
 a {
@@ -44,7 +45,7 @@ blockquote {
 
 section {
 	border-bottom: $divider-color solid 1px;
-	padding: 30px;
+	padding: 60px;
 }
 
 h1 {
@@ -151,4 +152,14 @@ small {
 		line-height: 1.5em;
 		color: $subheader-gray;
 	}
+}
+
+.diamond-separator {
+	background: url($diamond-divider);
+	background-repeat: no-repeat;
+	background-position: center; 
+  margin: auto;
+  height: 15px;
+  width: 100%;
+  padding: 60px;
 }
