@@ -2,19 +2,25 @@
 
 
 {% block intro %}
-
-	<div class="row">
-		<h1 align="center">Homebrewers</h1>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h1 class="tan-header">NOBLE BREWERS</h1>
+				<p>Home brewers are the backbone of Noble Brewer. Theirs are the stories that sell our fucking beer. So fucking click on their fucking pages you evil bastards.
+				</p>
+			</div>
+		</div>
 	</div>
-	
+</section>
 {% endblock %}
 
 {% block content %}
-	
-	<div class="container-fluid">
+<section class="alt-base-section">
+	<div class="container">
 
 		<div class="row">
-			<h2 align="center">Featured Brewers</h2>
+			<h2 class="tan-header" align="center">Featured Brewers</h2>
 		</div>
 		    
 		<div class="col-md-12" align="center">
@@ -39,10 +45,13 @@
 					</div>
 				{% endif %}
 			{% endfor %}
-		</div>		
-		    
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
 		<div class="row">
-			<h2 align="center">All Brewers</h2>
+			<h2 class="tan-header" align="center">All Brewers</h2>
 		</div>
 
 		<div class="col-md-12" align="center">
@@ -51,14 +60,14 @@
 					<div class="col-md-12" align="center">
 				{% endif %}
 				{% if brewer.profilePicture.url != nil %}
-					<div class="col-md-2" align="center">
-						<img src={{brewer.profilePicture.url}} class="img-thumbnail">
+					<div class="col-md-3" align="center">
+						<img src={{brewer.profilePicture.url}} class="img-thumbnail circle-img">
 						<br>
 						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
 					</div>
 				{% else %}
-					<div class="col-md-2" align="center">
-						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail"> 
+					<div class="col-md-3" align="center">
+						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"> 
 						<br>
 						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
 					</div>
@@ -67,9 +76,9 @@
 					</div>
 				{% endif %}
 			{% endfor %}
-		</div>	
-
-	</div>	
+		</div>
+	</div>
+</section>
 
 
 {% endblock %}
