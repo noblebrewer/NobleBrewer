@@ -1,23 +1,33 @@
 {% extends "templates/layouts/default.html" %}
 
 {% block content %}
-    <div style="background-color:#000;padding:80px 0;">
-        <div class="container">
-            <h1>Beers</h1>
-            <p>which are great</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="tan-header">NOBLE BEERS</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
+                </p>
+            </div>
         </div>
     </div>
-
-    <div style="background-color:#202020;padding:80px 0;">
-        <div class="container">
-            <p>Featured beers</p>
-            <button class="btn btn-primary">Try these beers</button>
+</section>
+<hr>
+<section class="alt-base-section">
+    <div class="container">
+        <div class="row">
+            <h2 class="tan-header" align="center">Featured Beers</h2>
+        </div>
+        <div class="centered-block">
+            <button class="btn btn-primary">Try them!</button>
         </div>
     </div>
-
-    <div style="background-color:#000;padding:80px 0;">
-        <div class="container">
-            <p>All beers</p>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 class="tan-header" align="center">All Beers</h2>
         </div>
     </div>
+</section>
 {% endblock %}
