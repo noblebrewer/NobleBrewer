@@ -5,8 +5,11 @@ $link-hover : #FFFFFF;
 
 $header-white : #FFFFFF;
 $subheader-gray : #666666;
-$alt-base-background : #333333;
 
+$alt-base-background : #232121;
+$diamond-background : '/images/generic/diagmonds.png';
+$diamond-divider: '/images/generic/diamond-divide.png';
+$divider-color: #777777;
 
 a {
 	color: $primary-tan;
@@ -15,26 +18,6 @@ a {
 
 	&:hover {
 		color: $link-hover;
-	}
-}
-
-.tan-border {
-	padding: 1px;
-  border: 1px solid $primary-tan;
-}
-
-.btn-primary {
-	background-color: $primary-tan;
-	border-radius: 0%;
-	border: none;
-	text-transform: uppercase;
-
-	&:hover {
-		background-color: $hover-tan;
-	}
-
-	&:visited {
-		background-color: $visited-tan;
 	}
 }
 
@@ -60,8 +43,77 @@ blockquote {
 	}
 }
 
+section {
+	border-bottom: $divider-color solid 1px;
+	padding: 60px;
+}
+
+h1 {
+	margin-bottom: 10px;
+	font-size: 63px;
+	line-height: 1.2 em;
+	text-transform: uppercase
+}
+
+h2 {
+	font-size: 45px;
+	line-height: 1.2em;
+}
+
+h3 {
+	font-size: 32px;
+	line-height: 1.45em;
+}
+
+h4 {
+	font-size: 22px;
+	line-height: 1.45em;
+}
+
+small {
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+.lead-body-copy {
+	font-size: 26px;
+	line-height: 1.5em;
+	color: $subheader-gray;
+}
+
+.body-copy {
+	font-size: 16px;
+	line-height: 1.5em;
+	color: $subheader-gray;
+}
+
 .alt-base-section {
 	background-color: $alt-base-background;
+}
+
+.diamond-base-section {
+	background-image: url($diamond-background);
+}
+
+.tan-border {
+	padding: 1px;
+  border: 1px solid $primary-tan;
+}
+
+.btn-primary {
+	background-color: $primary-tan;
+	border-radius: 0%;
+	border: none;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $hover-tan;
+	}
+
+	&:visited {
+		background-color: $visited-tan;
+	}
 }
 
 .tan-header {
@@ -69,8 +121,8 @@ blockquote {
 }
 
 .centered-block {
-	margin-left: auto;
-	margin-right: auto; 
+	margin: auto;
+	margin-right: auto;
 	text-align: center; 
 	display: block;
 }
@@ -100,4 +152,14 @@ blockquote {
 		line-height: 1.5em;
 		color: $subheader-gray;
 	}
+}
+
+.diamond-separator {
+	background: url($diamond-divider);
+	background-repeat: no-repeat;
+	background-position: center; 
+  margin: auto;
+  height: 15px;
+  width: 100%;
+  padding: 60px;
 }
