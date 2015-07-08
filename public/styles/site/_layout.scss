@@ -6,7 +6,20 @@
 	margin-top: 30px;
 	border-top: 1px solid $gray-lighter;
 	padding-top: 30px;
+	padding-bottom: 30px;
 	color: $gray-light;
+
+	ul {
+		list-style-type: none;
+		display: table;
+		width: 100%;
+
+		li {
+			display: table-cell;
+			padding: 5px;
+			text-align: center;
+		}
+	}
 }
 
 .gallery-image img{

@@ -43,6 +43,7 @@ exports = module.exports = function(app) {
 	app.get('/brewers', routes.views.brewers);
 	app.get('/beers', routes.views.beers);
 	app.get('/profile/:profile?', routes.views.brewerProfile);
+	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
     app.get('/terms', routes.views.terms);
     app.get('/team', routes.views.team);
     app.get('/faq', routes.views.faq);
