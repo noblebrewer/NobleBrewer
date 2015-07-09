@@ -176,6 +176,22 @@ small {
   padding: 60px;
 }
 
+.social-media {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-around; /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-around;
+
+  img {
+  	width: 50%;
+  	height: 50%;
+  }
+}
+
 #about-banner {
 	background:url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
 	@include border-radius;

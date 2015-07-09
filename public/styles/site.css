@@ -4920,6 +4920,20 @@ button.close {
       padding: 5px;
       text-align: center; }
 
+.small-social-media {
+  margin-top: 10px;
+  width: 150px;
+  margin: auto;
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-justify-content: space-around;
+  /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-around; }
+  .small-social-media img {
+    width: 45%;
+    height: 45%; }
+
 .gallery-image img {
   display: block;
   max-width: 100%;
@@ -5046,6 +5060,21 @@ small {
   height: 15px;
   width: 100%;
   padding: 60px; }
+
+.social-media {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-justify-content: space-around;
+  /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-around; }
+  .social-media img {
+    width: 50%;
+    height: 50%; }
 
 #about-banner {
   background: url('/images/about/aboutbanner.jpg') no-repeat center center fixed;

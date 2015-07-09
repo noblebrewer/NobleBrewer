@@ -50,6 +50,7 @@ exports = module.exports = function(app) {
     app.get('/press', routes.views.press);
     app.get('/releases', routes.views.releases);
     app.get('/user', routes.views.user);
+  app.get('/brewerSignUp', routes.views.brewerSignUp);
 	app.all('/contact', routes.views.contact);
 
 	
