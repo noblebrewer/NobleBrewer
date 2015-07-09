@@ -11,6 +11,13 @@ $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
 $divider-color: #777777;
 
+@mixin border-radius {
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+      -ms-background-size: cover;
+          background-size: cover;
+}
+
 a {
 	color: $primary-tan;
 	text-transform: uppercase;
@@ -56,7 +63,7 @@ h1 {
 }
 
 h2 {
-	font-size: 45px;
+	font-size: 2.827em;
 	line-height: 1.2em;
 }
 
@@ -120,6 +127,11 @@ small {
 	color: $primary-tan;
 }
 
+.banner-text {
+	font-size: 6.0vh;
+	line-height: 1.2em;
+}
+
 .centered-block {
 	margin: auto;
 	margin-right: auto;
@@ -163,3 +175,16 @@ small {
   width: 100%;
   padding: 60px;
 }
+
+#about-banner {
+	background:url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
+	@include border-radius;
+}
+
+#vat-banner {
+	background:url('/images/about/brewingvats.jpg') no-repeat center center fixed;
+	height: 315px;
+	@include border-radius;
+}
+
+

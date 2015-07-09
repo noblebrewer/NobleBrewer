@@ -4958,7 +4958,7 @@ h1 {
   text-transform: uppercase; }
 
 h2 {
-  font-size: 45px;
+  font-size: 2.827em;
   line-height: 1.2em; }
 
 h3 {
@@ -5007,6 +5007,10 @@ small {
 .tan-header {
   color: #C5A77E; }
 
+.banner-text {
+  font-size: 6vh;
+  line-height: 1.2em; }
+
 .centered-block {
   margin: auto;
   margin-right: auto;
@@ -5042,3 +5046,18 @@ small {
   height: 15px;
   width: 100%;
   padding: 60px; }
+
+#about-banner {
+  background: url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#vat-banner {
+  background: url('/images/about/brewingvats.jpg') no-repeat center center fixed;
+  height: 315px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
