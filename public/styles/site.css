@@ -4976,8 +4976,7 @@ h2 {
   line-height: 1.2em; }
 
 h3 {
-  font-size: 32px;
-  line-height: 1.45em; }
+  font-size: 32px; }
 
 h4 {
   font-size: 22px;
@@ -5039,7 +5038,7 @@ small {
   border-radius: 100%; }
 
 .faq-block {
-  background-color: #232121;
+  background-color: #333333;
   padding: 2em 3em 2em 3em;
   margin-bottom: 3em; }
   .faq-block dt {

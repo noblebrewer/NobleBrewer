@@ -7,6 +7,7 @@ $header-white : #FFFFFF;
 $subheader-gray : #666666;
 
 $alt-base-background : #232121;
+$light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
 $divider-color: #777777;
@@ -148,7 +149,7 @@ small {
 }
 
 .faq-block {
-	background-color: $alt-base-background;
+	background-color: $light-base-background;
 	padding: 2em 3em 2em 3em;
 	margin-bottom: 3em;
 
