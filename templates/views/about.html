@@ -1,7 +1,7 @@
 {% extends "templates/layouts/default.html" %}
 
 {% block content %}
-<section>
+<section id="about-banner">
     <div class="container">
         <div class="row">
             <div class="centered-block">
@@ -9,8 +9,6 @@
                 <br>for craft beer lovers to help bring 
                 <br>the best artisan homebrews to life
                 </h2>
-                <br>
-                <br>
             </div>
         </div>
     </div>
@@ -43,11 +41,13 @@
         <br>
     </div>
 </section>
+<section id="vat-banner">
+</section>
 <section>
     <div class="container">
         <div class="row">
             <div class="centered-block">
-                <h1 class="tan-header">OUR PROCESS</h1>
+                <h2 class="tan-header">OUR PROCESS</h2>
                 <div class="lead-body-copy"> 
                     <p>We seek out the best recipes</p>
                     <p>Lorem ipsum</p>
@@ -60,7 +60,7 @@
         <br>
         <div class="row">
             <div class="col-md-5 col-sm-5 col-sm-offset-1 col-md-offset-1">
-                <img src="http://www.fillmurray.com/400/200" class="img-responsive tan-border">
+                <img src="/images/about/process1.jpg" class="img-responsive tan-border">
             </div>
             <div class="col-md-5 col-sm-5">
                 <h4>WE SEEK OUT THE BEST RECIPES</h4>
@@ -79,17 +79,17 @@
                 </div>
             </div>
             <div class="col-md-5 col-sm-5" >
-                <img src="http://www.fillmurray.com/400/200" class="img-responsive tan-border">
+                <img src="/images/about/process2.jpg" class="img-responsive tan-border">
             </div>
         </div>
         <br>
         <br>
         <div class="row">
             <div class="col-md-5 col-sm-5 col-sm-offset-1 col-md-offset-1">
-                <img src="http://www.fillmurray.com/400/200" class="img-responsive tan-border">
+                <img src="/images/about/process3.jpg" class="img-responsive tan-border">
             </div>
             <div class="col-md-5 col-sm-5">
-                <h4>BEER IS BREWED</h4>
+                <h4>PARTNER BREWERY SCALES THE RECIPE</h4>
                 <div class="body-copy">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 </div>
@@ -99,15 +99,30 @@
         <br>
         <div class="row">
             <div class="col-md-5 col-sm-5 col-sm-offset-2 col-md-offset-2">
-                <h4>WE DELIVER TO YOUR DOOR</h4>
+                <h4>BEER IS BREWED</h4>
                 <div class="body-copy">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 </div>
             </div>
             <div class="col-md-5 col-sm-5" >
-                <img src="http://www.fillmurray.com/400/200" class="img-responsive tan-border">
+                <img src="/images/about/process4.jpg" class="img-responsive tan-border">
             </div>
         </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-sm-offset-1 col-md-offset-1">
+                <img src="/images/about/process5.jpg" class="img-responsive tan-border">
+            </div>
+            <div class="col-md-5 col-sm-5">
+                <h4>WE DELIVER TO YOUR DOOR</h4>
+                <div class="body-copy">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
     </div>
 </section>
 <section class="diamond-base-section">
@@ -115,9 +130,11 @@
         <div class="row">
             <div class="centered-block">
                 <h3>BECOME A PATRON</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                <p>dunt ut labore et dolore magna aliqua. Ut enim ad enim ad minim veniam, quis nostrud exercit</p>
-                <p>tion ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="body-copy">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p>dunt ut labore et dolore magna aliqua. Ut enim ad enim ad minim veniam, quis nostrud exercit</p>
+                    <p>tion ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
                 <br>
                 <button class="btn btn-primary">Join</button>
                 <br>
@@ -131,19 +148,15 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>JOIN THE CONVERSATION</h3>
-                <p>Connect with us on any of these social networks to join the conversation and be a part of the craft beer community.</p>
+                <div class="body-copy">
+                    <p>Connect with us on any of these social networks to join the conversation and be a part of the craft beer community.</p>
+                </div>
             </div>
             <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
-                <div style = "white-space: nowrap;">
-                    <div class="col-md-4">
-                        <a><img style="margin: 7% " src="http://www.mactrast.com/wp-content/uploads/2014/10/Pokeball-100x100.png"></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a><img style="margin: 7% " src="http://www.mactrast.com/wp-content/uploads/2014/10/Pokeball-100x100.png"></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a><img style="margin: 7% " src="http://www.mactrast.com/wp-content/uploads/2014/10/Pokeball-100x100.png"></a>
-                    </div>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/noblebrewer" target="_blank"><img src="/images/generic/facebook.png"></a>
+                    <a href="https://instagram.com/NobleBrewer" target="_blank"><img src="/images/generic/instagram.png"></a>
+                    <a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img src="/images/generic/twitter.png"></a>
                 </div>
             </div>
         </div>

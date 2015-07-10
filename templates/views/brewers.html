@@ -22,29 +22,34 @@
 		<div class="row">
 			<h2 class="tan-header" align="center">Featured Brewers</h2>
 		</div>
-		    
-		<div class="col-md-12" align="center">
-			{% for featuredBrewer in filters.featuredBrewers %}
-				{% if loop.index0%2 == 0 %}
-					<div class="col-md-12" align="center">
-				{% endif %}
-				{% if featuredBrewer.profilePicture.url != nil %}
-					<div class="col-md-6" align="center">
-						<img src="{{featuredBrewer.profilePicture.url}}" class="img-thumbnail">
-						<br>
-						<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
-					</div>
-				{% else %}
-					<div class="col-md-6" align="center">
-						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail">
-						<br>
-						<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
-					</div>
-				{% endif %}
-				{% if loop.index0%2 != 0 %}
-					</div>
-				{% endif %}
-			{% endfor %}
+		<div class="row">
+			<div class="col-md-12" align="center">
+				{% for featuredBrewer in filters.featuredBrewers %}
+					{% if loop.index0%2 == 0 %}
+						<div class="col-md-12" align="center">
+					{% endif %}
+					{% if featuredBrewer.profilePicture.url != nil %}
+						<div class="col-md-6" align="center">
+							<img src="{{featuredBrewer.profilePicture.url}}" class="img-thumbnail">
+							<br>
+							<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
+						</div>
+					{% else %}
+						<div class="col-md-6" align="center">
+							<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail">
+							<br>
+							<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
+						</div>
+					{% endif %}
+					{% if loop.index0%2 != 0 %}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<br>
+		<div class="centered-block">                
+			<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
 		</div>
 	</div>
 </section>

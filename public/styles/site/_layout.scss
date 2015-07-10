@@ -21,6 +21,21 @@
 	}
 }
 
+.small-social-media {
+	margin-top: 10px;
+	width: 150px;
+	margin: auto;
+	display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-around; /* Safari 6.1+ */
+  display: flex;
+  justify-content: space-around;
+
+  img {
+  	width: 45%;
+  	height: 45%;
+  }
+}
+
 .gallery-image img{
     display: block;
     max-width: 100%;
