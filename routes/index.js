@@ -44,12 +44,13 @@ exports = module.exports = function(app) {
 	app.get('/beers', routes.views.beers);
 	app.get('/profile/:profile?', routes.views.brewerProfile);
 	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
-    app.get('/terms', routes.views.terms);
-    app.get('/team', routes.views.team);
-    app.get('/faq', routes.views.faq);
-    app.get('/press', routes.views.press);
-    app.get('/releases', routes.views.releases);
-    app.get('/user', routes.views.user);
+  app.get('/terms', routes.views.terms);
+  app.get('/team', routes.views.team);
+  app.get('/faq', routes.views.faq);
+  app.get('/press', routes.views.press);
+  app.get('/releases', routes.views.releases);
+  app.get('/user', routes.views.user);
+  app.get('/signup', routes.views.signup);
   app.get('/brewerSignUp', routes.views.brewerSignUp);
 	app.all('/contact', routes.views.contact);
 
