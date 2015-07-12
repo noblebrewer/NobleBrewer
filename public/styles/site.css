@@ -4968,7 +4968,7 @@ section {
 h1 {
   margin-top: 0px;
   margin-bottom: 10px;
-  font-size: 63px;
+  font-size: 3.998 em;
   line-height: 1.2 em;
   text-transform: uppercase; }
 
@@ -4979,26 +4979,26 @@ h2 {
 
 h3 {
   margin-top: 0px;
-  font-size: 32px;
+  font-size: 1.999em;
   line-height: 1.45em; }
 
 h4 {
   margin-top: 0px;
-  font-size: 22px;
+  font-size: 1.414em;
   line-height: 1.45em; }
 
 small {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: .707em;
   line-height: 1.5em; }
 
 .lead-body-copy {
-  font-size: 26px;
+  font-size: 1.618em;
   line-height: 1.5em;
   color: #666666; }
 
 .body-copy {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5em;
   color: #666666; }
 
@@ -5024,10 +5024,6 @@ small {
 
 .tan-header {
   color: #C5A77E; }
-
-.banner-text {
-  font-size: 6vh;
-  line-height: 1.2em; }
 
 .centered-block {
   margin: auto;
@@ -5079,6 +5075,29 @@ small {
   .social-media img {
     width: 50%;
     height: 50%; }
+
+.order-selection {
+  background-color: #333333;
+  padding: 2em 3em 2em 3em;
+  margin-bottom: 2em;
+  text-align: center;
+  display: block; }
+  .order-selection button {
+    min-width: 200px;
+    margin: 10px;
+    text-transform: none; }
+
+.box-selection {
+  background-color: #232121;
+  padding: 4px;
+  margin-bottom: 3em;
+  margin: auto;
+  text-align: center;
+  display: block; }
+  .box-selection button {
+    width: 90%;
+    height: 70px;
+    border-radius: 4px; }
 
 #about-banner {
   background: url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
