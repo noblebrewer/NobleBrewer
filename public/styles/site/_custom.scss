@@ -11,6 +11,8 @@ $light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
 $divider-color: #777777;
+$inactive-button-color: #C1C0C0;
+$inactive-button-font-color: #000000;
 
 @mixin border-radius {
   -webkit-background-size: cover;
@@ -206,11 +208,27 @@ small {
 	}
 }
 
+#frequency {
+	button {
+		min-width: 215px;
+		margin: 30px;
+		height: 60px;
+		border-radius: 4px;
+	}
+}
+
+.inactive-selection {
+	font-color: $inactive-button-font-color;
+	background-color: $inactive-button-color;
+}
+
 .box-selection {
 	background-color: $alt-base-background;
+	border: 1px solid #FFFFFF;
 	padding: 4px;
-	margin-bottom: 3em;
+	max-width: 250px;
 	margin: auto;
+	margin-bottom: 2em;
 	text-align: center; 
 	display: block;
 
@@ -218,6 +236,7 @@ small {
 		width: 90%;
 		height: 70px;
 		border-radius: 4px;
+
 	}
 }
 

@@ -5087,11 +5087,23 @@ small {
     margin: 10px;
     text-transform: none; }
 
+#frequency button {
+  min-width: 215px;
+  margin: 30px;
+  height: 60px;
+  border-radius: 4px; }
+
+.inactive-selection {
+  font-color: #000000;
+  background-color: #C1C0C0; }
+
 .box-selection {
   background-color: #232121;
+  border: 1px solid #FFFFFF;
   padding: 4px;
-  margin-bottom: 3em;
+  max-width: 250px;
   margin: auto;
+  margin-bottom: 3em;
   text-align: center;
   display: block; }
   .box-selection button {
