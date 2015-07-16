@@ -2,4 +2,217 @@
 
 {% block content %}
 
+<div class="container">
+		<div class="row">
+			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
+				<div style="padding-left: 30px; padding-right: 30px">
+					<div class="row">
+						<span>
+							<h4 style="float: left">Your order</h4>
+							<a style="float: right; text-transform: none">Edit</a>
+						</span>
+					</div>
+					<div class="centered-block">
+						<img style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/250/200/1">
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Product cost</p>
+							<p id="cost-per-bottle" style="float: right">$ per bottle</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Quantity</p>
+							<p id="quantity" style="float: right">bottles</p>
+						</span>
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Shipping</p>
+							<p id="shipping-cost" style="float: right">Flat rate</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Delivery</p>
+							<p id="frequency" style="float: right">Every</p>
+						</span>
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Subtotal</p>
+							<p id="subtotal" style="float: right">$</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Tax</p>
+							<p id="tax" style="float: right">$</p>
+						</span>
+					</div>
+					<hr style="width: 100%">
+					<div class="row">
+						<span>
+							<p style="float: left">Total</p>
+							<p id="total" style="float: right">$</p>
+						</span>
+					</div>
+				</div>
+				<br>
+				<hr style="width: 100%">
+				<div class="centered-block" >
+					<a style="text-transform: none">Have a coupon code or AHA membership?</a>
+				</div>
+				<br>
+			</div>
+			<div class="col-md-8">
+					<h3>Enter your shipping info</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="firstName">First name*</label>
+								  <input type="text" class="form-control" id="firstName">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="firstName">Last name*</label>
+								  <input type="text" class="form-control" id="lastName">
+								</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+								<div class="form-group">
+								  <label for="address">Address*</label>
+								  <input type="text" class="form-control" id="address">
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+								<div class="form-group">
+								  <label for="city">City*</label>
+								  <input type="text" class="form-control" id="city">
+								</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="state">State*</label>
+								  <input type="text" class="form-control" id="state">
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="zip">Zip*</label>
+								  <input type="text" class="form-control" id="zip">
+								</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="phone">Phone #*</label>
+								  <input type="text" class="form-control" id="phone">
+								</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<p>Warning about drop off. Suggestion to ship to office. Must be 21 or older to sign for the shipment </p>						
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="instructions">Special instructions</label>
+								<textarea name="instructions" id="instructions" class="form-control"></textarea>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<h3>Enter payment details</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="cardName">Name on Card*</label>
+								  <input type="text" class="form-control" id="cardName">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="cardNumber">Card Number*</label>
+								  <input type="text" class="form-control" id="cardNumber">
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="cvc">CVC*</label>
+								  <input type="text" class="form-control" id="cvc">
+								</div>
+						</div>
+
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="expiry">MM/YY*</label>
+								  <input type="text" class="form-control" id="expiry">
+								</div>
+						</div>
+
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="billingZip">Billing Zip*</label>
+								  <input type="text" class="form-control" id="billingZip">
+								</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<h3>Create Account</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="email">Email*</label>
+								  <input type="text" class="form-control" id="email">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="password">Password*</label>
+								  <input type="password" class="form-control" id="password">
+								</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-md-12">
+							<input type="checkbox" name="agree" value="agree"> I have read and agree to the Noble Brewer 
+							<a style="text-transform: none">Terms & Conditions</a>
+						</div>
+					</div>
+
+					<hr>
+
+			</div>
+		</div>
+</div>
 {% endblock %}

@@ -9,109 +9,160 @@
   </div>
 </div> -->
 
-<div class="container">
-	<h2>Customize your order</h2>
-	
-	<div class="order-selection">
-		<h4>Who is getting this shipment?</h4>
-		<div class="row">
-			<button class="btn btn-primary" id="for-me">ME!</button>
 
-			<button class="btn btn-primary" id="gift">This is a gift</button>
-		</div>
-	</div>
-
-	<div id="me-choices" style="display: none">
-		<div class="order-selection" id="box-size">
-			<h4>What size box would you like?</h4>
+<form action="/checkout" method="get">
+	<div class="container">
+		<h2>Customize your order</h2>
+		
+		<div class="order-selection">
+			<h4>Who is getting this shipment?</h4>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="box-selection">
-						<img src="http://lorempixel.com/output/food-q-g-200-200-6.jpg">
-						<br>
-							<p>11.99 per bottle<br><br></p>
+				<button type="button" class="btn btn-primary" id="for-me">ME!</button>
 
-						<button class="btn btn-primary" id="small-box">Small<br>(4 bottles per box)</button>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="box-selection">
-						<img src="http://lorempixel.com/output/food-q-g-200-200-1.jpg">
-						<br>
-							<p>10.99 per bottle<br><br></p>
+				<button type="button" class="btn btn-primary" id="gift">This is a gift</button>
 
-						<button class="btn btn-primary" id="medium-box">Medium<br>(8 bottles per box)</button>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="box-selection">
-						<img src="http://lorempixel.com/output/food-q-g-200-200-9.jpg">
+				<input type="hidden" name="recipient" id="recipient">
+			</div>
+		</div>
+
+		<div id="me-choices" style="display: none">
+			<div class="order-selection" id="box-size-choices">
+				<h4>What size box would you like?</h4>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempixel.com/output/food-q-g-200-200-9.jpg">
 							<br>
-							<p>11.99 per bottle<br>+ Free Shipping </p>
-
-						<button class="btn btn-primary" id="large-box">Large<br>
-						(12 bottles per box)
-						</button>
+								<p>11.99 per bottle<br><br></p>
+							<button type="button" class="btn btn-primary" id="small-box">Small<br>(4 bottles per box)</button>
+						</div>
 					</div>
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempixel.com/output/food-q-g-200-200-9.jpg">
+							<br>
+								<p>10.99 per bottle<br><br></p>
+
+							<button type="button" class="btn btn-primary" id="medium-box">Medium<br>(8 bottles per box)</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempixel.com/output/food-q-g-200-200-9.jpg">
+								<br>
+								<p>11.99 per bottle<br>+ Free Shipping </p>
+
+							<button type="button" class="btn btn-primary" id="large-box">Large<br>
+							(12 bottles per box)
+							</button>
+						</div>
+					</div>
+					<input type="hidden" name="box-size" id="box-size">
+				</div>
+			</div>
+
+			<div class="order-selection" id="frequency-choices" style="display: none">
+				<h4>How often do you want to get shipments?</h4>
+
+				<div class="row">
+					<button type="button" class="btn btn-primary inactive-selection">Every other week<br>(This feature coming soon)</button>
+
+					<button type="button" class="btn btn-primary inactive-selection">Every month<br>
+					(This feature coming soon)</button>
+
+					<button type="button" class="btn btn-primary" id="seasonally">Seasonally<br>
+					(Every 3 months)</button>
 				</div>
 
+				<input type="hidden" name="frequency" id="frequency">
+
+				<hr>
+
+				<p style="margin-left: 150px; margin-right: 150px;"> Don't worry! No matter what shipment schedule you select, all of our members can re-order their favorites until we run out of inventory.</p>
+			</div>
+
+			<div class="order-selection" id="billing-choices" style="display: none">
+				<h4>How often should we bill you?</h4>
+
+				<div class="row">
+					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px" id="per-shipment">Pay per shipment<br></button>
+
+					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px"id="annually">Pay per year<br>
+					(Save 20%)</button>
+				</div>
+
+				<input type="hidden" name="billing" id="billing">
+
+				<hr>
+
+				<p style="margin-left: 150px; margin-right: 150px;"> In addition to saving 20%, when you sign up for an annual payment plan, you'll also receive TWO IPA glasses in your first shipment.</p>
+			</div>
+
+			<div class="order-selection" id="me-continue" style="display: none">
+				<h4 id="me-subtotal"></h4>
+				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
 			</div>
 		</div>
 
-		<div class="order-selection" id="frequency" style="display: none">
-			<h4>How often do you want to get shipments?</h4>
-
-			<div class="row">
-				<button class="btn btn-primary inactive-selection">Every other week<br>(This feature coming soon)</button>
-
-				<button class="btn btn-primary inactive-selection">Every month<br>
-				(This feature coming soon)</button>
-
-				<button class="btn btn-primary" id="seasonally">Seasonally<br>
-				(Every 3 months)</button>
+		<div id="gift-choices" style="display: none">
+			<div class="order-selection" id="gift-continue">
+				<h4 id="gift-subtotals"></h4>
+				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
 			</div>
-
-			<hr>
-
-			<p style="margin-left: 150px; margin-right: 150px;"> Don't worry! No matter what shipment schedule you select, all of our members can re-order their favorites until we run out of inventory.</p>
 		</div>
 
-		<div class="order-selection" id="billing" style="display: none">
-			<h4>How often should we bill you?</h4>
-
-			<div class="row">
-				<button class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px">Pay per shipment<br></button>
-
-				<button class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px">Pay per year<br>
-				(Save 20%)</button>
-			</div>
-
-			<hr>
-
-			<p style="margin-left: 150px; margin-right: 150px;"> In addition to saving 20%, when you sign up for an annual payment plan, you'll also receive TWO IPA glasses in your first shipment.</p>
-		</div>
-
-		<div class="order-selection" id="me-continue" style="display: none">
-			<h4>Costs</h4>
-			<a class="btn btn-primary" style="height: 40px; width: 350px; border-radius:4px" href="/checkout">Continue to checkout</a>
-		</div>
 	</div>
-
-	<div id="gift-choices" style="display: none">
-		<div class="order-selection" id="gift-continue">
-			<h4>Costs</h4>
-			<a class="btn btn-primary" style="height: 40px; width: 350px; border-radius:4px" href="/checkout">Continue to checkout</a>
-		</div>
-	</div>
-
-</div>
+</form>
 
 {% endblock %}
 
 {% block js %}
 <script>
 
-	var selection = {};
+	function calculateTotals() {
+		//me flow
+		if (localStorage.getItem("recipient") == "me") {
+			 if (localStorage.getItem("box-size") == "small") {
+			 		
+			 		//small per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $43.96");
+			 		}
+
+			 		//small annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $39.60");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "medium") {
+			 		
+			 		//medium per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $79.92");
+			 		}
+
+			 		//medium annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $71.93");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "large") {
+			 		
+			 		//large per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $107.88");
+			 		}
+
+			 		//large annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $97.10");
+			 		}
+			 }
+
+		}
+	}
 
 	$(document).ready(function () {
 
@@ -120,8 +171,9 @@
 	    	$('#gift').addClass("inactive-selection");
 	    	$('#for-me').removeClass('inactive-selection');
 	    	$('#me-choices').show('slow');
-	    	selection.recipient = "me";
-	    	console.log(selection.recipient);
+	    	$('#recipient').val('me');
+	    	localStorage.setItem("recipient", "me");
+	    	calculateTotals();
 	    });
 
 	    $('#gift').click(function () {
@@ -129,22 +181,29 @@
 	    	$('#for-me').addClass("inactive-selection");
 	    	$('#gift').removeClass('inactive-selection');
 	    	$('#gift-choices').show('slow');
-	    	selection.recipient = "gift";
-	    	console.log(selection.recipient);
+	    	$('#recipient').val('gift');
+	    	localStorage.setItem("recipient", "gift");
+	    	calculateTotals();
 	    });
 
 	    $('#small-box').click(function () {
 	    	$('#small-box').removeClass("inactive-selection");
 	    	$('#medium-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
-	    	$('#frequency').show('slow');
+	    	$('#frequency-choices').show('slow');
+	    	$('#box-size').val("small");
+	    	localStorage.setItem("box-size", "small");
+	    	calculateTotals();
 	    });
 
 	    $('#medium-box').click(function () {
 	    	$('#medium-box').removeClass("inactive-selection");
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
-	    	$('#frequency').show('slow');
+	    	$('#frequency-choices').show('slow');
+	    	$('#box-size').val("medium");
+	    	localStorage.setItem("box-size", "medium");
+	    	calculateTotals();
 	    });
 
 	    $('#large-box').click(function () {
@@ -152,13 +211,36 @@
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#medium-box').addClass("inactive-selection");
 	    	$('#frequency').show('slow');
+	    	localStorage.setItem("box-size", "large");
+	    	calculateTotals();
 	    });
 
 	    $('#seasonally').click(function () {
-	    	$('me-continue').show('slow');`
+	    	$('#billing-choices').show('slow');
+	    	$('#frequency').val("seasonally");
 	    });
 
+	    $('#per-shipment').click(function () {
+	    	$('#billing').val("shipment");
+	    	$('#per-shipment').removeClass("inactive-selection");
+	    	$('#annually').addClass("inactive-selection");
+	    	
+	    	localStorage.setItem("frequency", "shipment");
 
+	    	calculateTotals();
+	    	$('#me-continue').show('slow');
+	    });
+
+	    $('#annually').click(function () {
+	    	$('#billing').val("annually");
+	    	$('#annually').removeClass("inactive-selection");
+	    	$('#per-shipment').addClass("inactive-selection");
+	    	
+	    	localStorage.setItem("frequency", "annually");
+
+	    	calculateTotals();
+	    	$('#me-continue').show('slow');
+	    });
 	});
 </script>
 {% endblock %}

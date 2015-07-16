@@ -5019,6 +5019,8 @@ small {
   text-transform: uppercase; }
   .btn-primary:hover {
     background-color: #D4C0AA; }
+  .btn-primary:focus {
+    background-color: #C5A77E; }
   .btn-primary:visited {
     background-color: #8A7762; }
 
@@ -5087,14 +5089,14 @@ small {
     margin: 10px;
     text-transform: none; }
 
-#frequency button {
+#frequency-choices button {
   min-width: 215px;
   margin: 30px;
   height: 60px;
   border-radius: 4px; }
 
 .inactive-selection {
-  font-color: #000000;
+  color: #302d2d;
   background-color: #C1C0C0; }
 
 .box-selection {
@@ -5103,13 +5105,16 @@ small {
   padding: 4px;
   max-width: 250px;
   margin: auto;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   text-align: center;
   display: block; }
   .box-selection button {
     width: 90%;
     height: 70px;
     border-radius: 4px; }
+
+#cost-breakdown p {
+  margin: 0px; }
 
 #about-banner {
   background: url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
