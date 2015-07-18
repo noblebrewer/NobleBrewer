@@ -3,13 +3,14 @@
 {% block content %}
 
 <div class="container">
+	<form onsubmit="return isValidForm()" action="/thankYou"  method="post">
 		<div class="row">
 			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
 				<div style="padding-left: 30px; padding-right: 30px">
 					<div class="row">
 						<span>
 							<h4 style="float: left">Your order</h4>
-							<a style="float: right; text-transform: none">Edit</a>
+							<a href="/customize" style="float: right; text-transform: none">Edit</a>
 						</span>
 					</div>
 					<div class="centered-block">
@@ -38,7 +39,7 @@
 					<div class="row">
 						<span>
 							<p style="float: left">Delivery</p>
-							<p id="frequency" style="float: right">Every</p>
+							<p id="frequency" style="float: right">Every 3 months</p>
 						</span>
 					</div>
 					<br>
@@ -69,7 +70,7 @@
 				</div>
 				<br>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-8" style="padding-left: 25px">
 					<h3>Enter your shipping info</h3>
 
 					<div class="row">
@@ -107,7 +108,24 @@
 								<div class="form-group">
 								  <label for="state">State*</label>
 								  <input type="text" class="form-control" id="state">
+								  <a style="text-transform: none; text-decoration: underline" data-toggle="modal" data-target="#states">Shippable states</a>
 								</div>
+
+								<!-- Modal -->
+								<div class="modal fade" id="states" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h3 class="modal-title" style="color: #302d2d" >What states do you ship?</h3>
+								      </div>
+								      <div class="modal-body">
+								        <p style="color: #302d2d">Due to varing state regulations, we are only able to ship to the following states: AZ, CA, CO, CT, DC, FL, GA, ID, IL, IA, KS, LA, MD, MI, MN, MO, MT, NE, NV, NY, NC, NM, OH, OK, OR, RI, SC, SD, TN, VT, VA, WA, WI, </p>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+
 						</div>
 					</div>
 					<div class="row">
@@ -205,14 +223,122 @@
 					</div>						
 					<div class="row">
 						<div class="col-md-12">
-							<input type="checkbox" name="agree" value="agree"> I have read and agree to the Noble Brewer 
+							<input type="checkbox" name="agree" value="agree" id="agree"> I have read and agree to the Noble Brewer 
 							<a style="text-transform: none">Terms & Conditions</a>
 						</div>
 					</div>
 
 					<hr>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-6">
+							<button type="submit" class="btn btn-primary" style="height: 40px; width: 100%; margin-top: auto;margin-bottom: auto; border-radius:4px">
+								Continue to checkout</button>
+						</div>
+					</div>
 
 			</div>
 		</div>
+	</form>
 </div>
+{% endblock %}
+
+{% block js %}
+<script>
+	function isValidForm(){
+		if($('#agree').prop('checked', false)){
+			alert('You must agree to the terms before continuing.');
+			return false;
+		}
+		else {
+			return true;
+		}
+
+
+	}
+
+	function calculateTotals() {
+		//me flow
+		if (localStorage.getItem("recipient") == "me") {
+			 if (localStorage.getItem("box-size") == "small") {
+			 		
+			 		//small per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$10.99 per bottle");
+			 			$('#quantity').html("4 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$57.95");
+			 			$('#tax').html("$5.21");
+			 			$('#total').html("$63.16");
+			 		}
+
+			 		//small annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$9.89 per bottle");
+			 			$('#quantity').html("4 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$53.59");
+			 			$('#tax').html("$4.82");
+			 			$('#total').html("$233.64");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "medium") {
+			 		
+			 		//medium per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$9.99 per bottle");
+			 			$('#quantity').html("8 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$93.91");
+			 			$('#tax').html("$8.45");
+			 			$('#total').html("$102.36");
+			 		}
+
+			 		//medium annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$8.99 per bottle");
+			 			$('#quantity').html("8 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$85.91");
+			 			$('#tax').html("$7.73");
+			 			$('#total').html("$374.56");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "large") {
+			 		
+			 		//large per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$8.99 per bottle");
+			 			$('#quantity').html("12 bottles");
+			 			$('#shipping-cost').html("FREE");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$107.88");
+			 			$('#tax').html("$9.70");
+			 			$('#total').html("$117.58");
+			 		}
+
+			 		//large annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$8.09 per bottle");
+			 			$('#quantity').html("12 bottles");
+			 			$('#shipping-cost').html("FREE");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$105.83");
+			 			$('#tax').html("$8.73");
+			 			$('#total').html("$423.32");
+			 		}
+			 }
+
+		}
+	}
+	$(document).ready(function () {
+		calculateTotals();
+	});
+</script>
+
 {% endblock %}

@@ -10,6 +10,7 @@ $alt-base-background : #232121;
 $light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
+$footer-divider: '/images/generic/footerbg.png';
 $divider-color: #777777;
 $inactive-button-color: #C1C0C0;
 $inactive-button-font-color: #302d2d;
@@ -64,6 +65,7 @@ h1 {
 	margin-bottom: 10px;
 	font-size: 3.998 em;
 	line-height: 1.2 em;
+	font-weight: normal;
 	text-transform: uppercase
 }
 
@@ -71,18 +73,25 @@ h2 {
 	margin-top: 0px;
 	font-size: 2.827em;
 	line-height: 1.2em;
+	font-weight: normal;
 }
 
 h3 {
 	margin-top: 0px;
 	font-size: 1.999em;
 	line-height: 1.45em;
+	font-weight: normal;
 }
 
 h4 {
 	margin-top: 0px;
 	font-size: 1.414em;
 	line-height: 1.45em;
+	font-weight: normal;
+}
+
+label {
+	font-weight: normal;
 }
 
 small {
@@ -90,6 +99,8 @@ small {
 	font-size: .707em;
 	line-height: 1.5em;
 }
+
+
 
 .lead-body-copy {
 	font-size: 1.618em;
@@ -121,6 +132,8 @@ small {
 	border-radius: 0%;
 	border: none;
 	text-transform: uppercase;
+	min-width: 200px;
+	margin-bottom: 1em;
 
 	&:hover {
 		background-color: $hover-tan;
@@ -131,7 +144,7 @@ small {
 	}
 
 	&:visited {
-		background-color: $visited-tan;
+		background-color: $primary-tan;
 	}
 }
 
@@ -183,6 +196,17 @@ small {
   padding: 60px;
 }
 
+.footer-pattern {
+	background: url($footer-divider);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 36px;
+}
+
 .social-media {
 	width: 400px;
 	margin-left: auto;
@@ -231,7 +255,7 @@ small {
 	background-color: $alt-base-background;
 	border: 1px solid #FFFFFF;
 	padding: 4px;
-	max-width: 250px;
+	min-width: 290px;
 	margin: auto;
 	margin-bottom: 2em;
 	text-align: center; 

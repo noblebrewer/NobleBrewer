@@ -101,7 +101,9 @@
 		{# FOOTER #}
 
 		<div id="footer" class="container">
-	    <div class="row">
+
+		{% if title != "Checkout" %}
+	    <div class="row" >
 	      <div class="col-sm-8 col-sm-offset-2 text-center">
 	        <h1>STAY IN TOUCH</h1>
 	        <h4>ENTER YOUR EMAIL TO GET ALL THE BEST UPDATES</h4>
@@ -114,11 +116,15 @@
 	        </form>
 	      </div>
 	    </div>
+	  {% endif %}
 	    <br>
 	    <br>
-	    <div align="center">
-	    	<a href="#">UP TOP</a>
+	    <div class="footer-pattern">
+		    <div align="center">
+		    	<a href="#"><img src="/images/generic/footerbadge.png"></a>
+		    </div>
 	    </div>
+
 	    <br>
 	    <br>
 	    <br>
