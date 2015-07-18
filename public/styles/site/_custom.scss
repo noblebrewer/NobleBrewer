@@ -7,9 +7,13 @@ $header-white : #FFFFFF;
 $subheader-gray : #666666;
 
 $alt-base-background : #232121;
+$light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
+$footer-divider: '/images/generic/footerbg.png';
 $divider-color: #777777;
+$inactive-button-color: #C1C0C0;
+$inactive-button-font-color: #302d2d;
 
 @mixin border-radius {
   -webkit-background-size: cover;
@@ -26,6 +30,7 @@ a {
 	&:hover {
 		color: $link-hover;
 	}
+
 }
 
 blockquote {
@@ -56,41 +61,55 @@ section {
 }
 
 h1 {
+	margin-top: 0px;
 	margin-bottom: 10px;
-	font-size: 63px;
+	font-size: 3.998 em;
 	line-height: 1.2 em;
+	font-weight: normal;
 	text-transform: uppercase
 }
 
 h2 {
+	margin-top: 0px;
 	font-size: 2.827em;
 	line-height: 1.2em;
+	font-weight: normal;
 }
 
 h3 {
-	font-size: 32px;
+	margin-top: 0px;
+	font-size: 1.999em;
 	line-height: 1.45em;
+	font-weight: normal;
 }
 
 h4 {
-	font-size: 22px;
+	margin-top: 0px;
+	font-size: 1.414em;
 	line-height: 1.45em;
+	font-weight: normal;
+}
+
+label {
+	font-weight: normal;
 }
 
 small {
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: .707em;
 	line-height: 1.5em;
 }
 
+
+
 .lead-body-copy {
-	font-size: 26px;
+	font-size: 1.618em;
 	line-height: 1.5em;
 	color: $subheader-gray;
 }
 
 .body-copy {
-	font-size: 16px;
+	font-size: 1em;
 	line-height: 1.5em;
 	color: $subheader-gray;
 }
@@ -113,23 +132,24 @@ small {
 	border-radius: 0%;
 	border: none;
 	text-transform: uppercase;
+	min-width: 200px;
+	margin-bottom: 1em;
 
 	&:hover {
 		background-color: $hover-tan;
 	}
 
+	&:focus {
+		background-color: $primary-tan;
+	}
+
 	&:visited {
-		background-color: $visited-tan;
+		background-color: $primary-tan;
 	}
 }
 
 .tan-header {
 	color: $primary-tan;
-}
-
-.banner-text {
-	font-size: 6.0vh;
-	line-height: 1.2em;
 }
 
 .centered-block {
@@ -148,7 +168,7 @@ small {
 }
 
 .faq-block {
-	background-color: $alt-base-background;
+	background-color: $light-base-background;
 	padding: 2em 3em 2em 3em;
 	margin-bottom: 3em;
 
@@ -176,6 +196,17 @@ small {
   padding: 60px;
 }
 
+.footer-pattern {
+	background: url($footer-divider);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 36px;
+}
+
 .social-media {
 	width: 400px;
 	margin-left: auto;
@@ -192,6 +223,60 @@ small {
   }
 }
 
+.order-selection {
+	background-color: $light-base-background;
+	padding: 2em 3em 2em 3em;
+	margin-bottom: 2em;
+	text-align: center; 
+	display: block;
+
+	button {
+		min-width: 200px;
+		margin: 10px;
+		text-transform: none;
+	}
+}
+
+#frequency-choices {
+	button {
+		min-width: 215px;
+		margin: 30px;
+		height: 60px;
+		border-radius: 4px;
+	}
+}
+
+.inactive-selection {
+	color: $inactive-button-font-color;
+	background-color: $inactive-button-color;
+}
+
+.box-selection {
+	background-color: $alt-base-background;
+	border: 1px solid #FFFFFF;
+	padding: 4px;
+	min-width: 290px;
+	margin: auto;
+	margin-bottom: 2em;
+	text-align: center; 
+	display: block;
+
+	button {
+		width: 90%;
+		height: 70px;
+		border-radius: 4px;
+
+	}
+}
+
+#cost-breakdown {
+
+	p {
+		margin: 0px;
+	}
+
+}
+
 #about-banner {
 	background:url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
 	@include border-radius;
@@ -202,5 +287,3 @@ small {
 	height: 315px;
 	@include border-radius;
 }
-
-

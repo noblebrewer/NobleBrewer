@@ -1,0 +1,345 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block content %}
+
+<div class="container">
+	<form onsubmit="return isValidForm()" action="/thankYou"  method="get">
+		<div class="row">
+			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
+				<div style="padding-left: 30px; padding-right: 30px">
+					<div class="row">
+						<span>
+							<h4 style="float: left">Your order</h4>
+							<a href="/customize" style="float: right; text-transform: none">Edit</a>
+						</span>
+					</div>
+					<div class="centered-block">
+						<img style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/280/200/1">
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Product cost</p>
+							<p id="cost-per-bottle" style="float: right">$ per bottle</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Quantity</p>
+							<p id="quantity" style="float: right">bottles</p>
+						</span>
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Shipping</p>
+							<p id="shipping-cost" style="float: right">Flat rate</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Delivery</p>
+							<p id="frequency" style="float: right">Every 3 months</p>
+						</span>
+					</div>
+					<br>
+					<div class="row">
+						<span>
+							<p style="float: left">Subtotal</p>
+							<p id="subtotal" style="float: right">$</p>
+						</span>
+					</div>
+					<div class="row">
+						<span>
+							<p style="float: left">Tax</p>
+							<p id="tax" style="float: right">$</p>
+						</span>
+					</div>
+					<hr style="width: 100%">
+					<div class="row">
+						<span>
+							<p style="float: left">Total</p>
+							<p id="total" style="float: right">$</p>
+						</span>
+					</div>
+				</div>
+				<br>
+				<hr style="width: 100%">
+				<div class="centered-block" >
+					<a style="text-transform: none">Have a coupon code or AHA membership?</a>
+				</div>
+				<br>
+			</div>
+			<div class="col-md-8" style="padding-left: 25px">
+					<h3>Enter your shipping info</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="firstName">First name*</label>
+								  <input type="text" class="form-control" id="firstName">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="firstName">Last name*</label>
+								  <input type="text" class="form-control" id="lastName">
+								</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+								<div class="form-group">
+								  <label for="address">Address*</label>
+								  <input type="text" class="form-control" id="address">
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+								<div class="form-group">
+								  <label for="city">City*</label>
+								  <input type="text" class="form-control" id="city">
+								</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="state">State*</label>
+								  <input type="text" class="form-control" id="state">
+								  <a style="text-transform: none; text-decoration: underline" data-toggle="modal" data-target="#states">Shippable states</a>
+								</div>
+
+								<!-- Modal -->
+								<div class="modal fade" id="states" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h3 class="modal-title" style="color: #302d2d" >What states do you ship?</h3>
+								      </div>
+								      <div class="modal-body">
+								        <p style="color: #302d2d">Due to varing state regulations, we are only able to ship to the following states: AZ, CA, CO, CT, DC, FL, GA, ID, IL, IA, KS, LA, MD, MI, MN, MO, MT, NE, NV, NY, NC, NM, OH, OK, OR, RI, SC, SD, TN, VT, VA, WA, WI, </p>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="zip">Zip*</label>
+								  <input type="text" class="form-control" id="zip">
+								</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="phone">Phone #*</label>
+								  <input type="text" class="form-control" id="phone">
+								</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<p>Warning about drop off. Suggestion to ship to office. Must be 21 or older to sign for the shipment </p>						
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="instructions">Special instructions</label>
+								<textarea rows="6" id="instructions" class="form-control"></textarea>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<h3>Enter payment details</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="cardName">Name on Card*</label>
+								  <input type="text" class="form-control" id="cardName">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="cardNumber">Card Number*</label>
+								  <input type="text" class="form-control" id="cardNumber">
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="cvc">CVC*</label>
+								  <input type="text" class="form-control" id="cvc">
+								</div>
+						</div>
+
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="expiry">MM/YY*</label>
+								  <input type="text" class="form-control" id="expiry">
+								</div>
+						</div>
+
+						<div class="col-md-4">
+								<div class="form-group">
+								  <label for="billingZip">Billing Zip*</label>
+								  <input type="text" class="form-control" id="billingZip">
+								</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<h3>Create Account</h3>
+
+					<div class="row">
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="email">Email*</label>
+								  <input type="text" class="form-control" id="email">
+								</div>
+						</div>
+
+						<div class="col-md-6">
+								<div class="form-group">
+								  <label for="password">Password*</label>
+								  <input type="password" class="form-control" id="password">
+								</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-md-12">
+							<input type="checkbox" id="agree"> I have read and agree to the Noble Brewer 
+							<a style="text-transform: none">Terms & Conditions</a>
+						</div>
+					</div>
+
+					<hr>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-6">
+							<button type="submit" class="btn btn-primary" style="height: 40px; width: 100%; margin-top: auto;margin-bottom: auto; border-radius:4px">
+								Continue to checkout</button>
+						</div>
+					</div>
+					<br>
+					<br>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	function isValidForm(){
+		if(!$('#agree').prop('checked')){
+			alert('You must agree to the terms before continuing.');
+			return false;
+		}
+		else {
+			return true;
+		}
+
+
+	}
+
+	function calculateTotals() {
+		//me flow
+		if (localStorage.getItem("recipient") == "me") {
+			 if (localStorage.getItem("box-size") == "small") {
+			 		
+			 		//small per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$10.99 per bottle");
+			 			$('#quantity').html("4 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$57.95");
+			 			$('#tax').html("$5.21");
+			 			$('#total').html("$63.16");
+			 		}
+
+			 		//small annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$9.89 per bottle");
+			 			$('#quantity').html("4 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$53.59");
+			 			$('#tax').html("$4.82");
+			 			$('#total').html("$233.64");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "medium") {
+			 		
+			 		//medium per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$9.99 per bottle");
+			 			$('#quantity').html("8 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$93.91");
+			 			$('#tax').html("$8.45");
+			 			$('#total').html("$102.36");
+			 		}
+
+			 		//medium annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$8.99 per bottle");
+			 			$('#quantity').html("8 bottles");
+			 			$('#shipping-cost').html("Flat rate $13.99");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$85.91");
+			 			$('#tax').html("$7.73");
+			 			$('#total').html("$374.56");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "large") {
+			 		
+			 		//large per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#cost-per-bottle').html("$8.99 per bottle");
+			 			$('#quantity').html("12 bottles");
+			 			$('#shipping-cost').html("FREE");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$107.88");
+			 			$('#tax').html("$9.70");
+			 			$('#total').html("$117.58");
+			 		}
+
+			 		//large annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#cost-per-bottle').html("$8.09 per bottle");
+			 			$('#quantity').html("12 bottles");
+			 			$('#shipping-cost').html("FREE");
+			 			$('#frequency').html("Every 3 months");
+			 			$('#subtotal').html("$105.83");
+			 			$('#tax').html("$8.73");
+			 			$('#total').html("$423.32");
+			 		}
+			 }
+
+		}
+	}
+	$(document).ready(function () {
+		calculateTotals();
+	});
+</script>
+
+{% endblock %}

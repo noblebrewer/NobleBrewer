@@ -1,0 +1,246 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block content %}
+
+<!-- <div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    Order process
+  </div>
+</div> -->
+
+
+<form action="/checkout" method="get">
+	<div class="container">
+		<h2>Customize your order</h2>
+		
+		<div class="order-selection">
+			<h4>Who is getting this shipment?</h4>
+			<div class="row">
+				<button type="button" class="btn btn-primary" id="for-me">ME!</button>
+
+				<button type="button" class="btn btn-primary" id="gift">This is a gift</button>
+
+				<input type="hidden" name="recipient" id="recipient">
+			</div>
+		</div>
+
+		<div id="me-choices" style="display: none">
+			<div class="order-selection" id="box-size-choices">
+				<h4>What size box would you like?</h4>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempicsum.com/futurama/280/200/1">
+							<br>
+								<p>11.99 per bottle<br><br></p>
+							<button type="button" class="btn btn-primary" id="small-box">Small<br>(4 bottles per box)</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempicsum.com/futurama/280/200/1">
+							<br>
+								<p>10.99 per bottle<br><br></p>
+
+							<button type="button" class="btn btn-primary" id="medium-box">Medium<br>(8 bottles per box)</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-selection">
+							<img src="http://lorempicsum.com/futurama/280/200/1">
+								<br>
+								<p>11.99 per bottle<br>+ Free Shipping </p>
+
+							<button type="button" class="btn btn-primary" id="large-box">Large<br>
+							(12 bottles per box)
+							</button>
+						</div>
+					</div>
+					<input type="hidden" name="box-size" id="box-size">
+				</div>
+			</div>
+
+			<div class="order-selection" id="frequency-choices" style="display: none">
+				<h4>How often do you want to get shipments?</h4>
+
+				<div class="row">
+					<button type="button" class="btn btn-primary inactive-selection">Every other week<br>(This feature coming soon)</button>
+
+					<button type="button" class="btn btn-primary inactive-selection">Every month<br>
+					(This feature coming soon)</button>
+
+					<button type="button" class="btn btn-primary" id="seasonally">Seasonally<br>
+					(Every 3 months)</button>
+				</div>
+
+				<input type="hidden" name="frequency" id="frequency">
+
+				<hr>
+
+				<p style="margin-left: 150px; margin-right: 150px;"> Don't worry! No matter what shipment schedule you select, all of our members can re-order their favorites until we run out of inventory.</p>
+			</div>
+
+			<div class="order-selection" id="billing-choices" style="display: none">
+				<h4>How often should we bill you?</h4>
+
+				<div class="row">
+					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px" id="per-shipment">Pay per shipment<br></button>
+
+					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px"id="annually">Pay per year<br>
+					(Save 20%)</button>
+				</div>
+
+				<input type="hidden" name="billing" id="billing">
+
+				<hr>
+
+				<p style="margin-left: 150px; margin-right: 150px;"> In addition to saving 20%, when you sign up for an annual payment plan, you'll also receive TWO IPA glasses in your first shipment.</p>
+			</div>
+
+			<div class="order-selection" id="me-continue" style="display: none">
+				<h4 id="me-subtotal"></h4>
+				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
+			</div>
+		</div>
+
+		<div id="gift-choices" style="display: none">
+			<div class="order-selection" id="gift-continue">
+				<h4 id="gift-subtotals"></h4>
+				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
+			</div>
+		</div>
+
+	</div>
+</form>
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+	function calculateTotals() {
+		//me flow
+		if (localStorage.getItem("recipient") == "me") {
+			 if (localStorage.getItem("box-size") == "small") {
+			 		
+			 		//small per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $57.95");
+			 		}
+
+			 		//small annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $53.59");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "medium") {
+			 		
+			 		//medium per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $93.91");
+			 		}
+
+			 		//medium annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $85.91");
+			 		}
+			 }
+
+			 else if (localStorage.getItem("box-size") == "large") {
+			 		
+			 		//large per-shipment order
+			 		if (localStorage.getItem("frequency") == "shipment"){
+			 			$('#me-subtotal').html("Subtotal per box: $107.88");
+			 		}
+
+			 		//large annually order
+			 		else if (localStorage.getItem("frequency") == "annually"){
+			 			$('#me-subtotal').html("Subtotal per box: $97.10");
+			 		}
+			 }
+
+		}
+	}
+
+	$(document).ready(function () {
+
+	    $('#for-me').click(function () {
+	    	$('#gift-choices').hide();
+	    	$('#gift').addClass("inactive-selection");
+	    	$('#for-me').removeClass('inactive-selection');
+	    	$('#me-choices').show('slow');
+	    	$('#recipient').val('me');
+	    	localStorage.setItem("recipient", "me");
+	    	calculateTotals();
+	    });
+
+	    $('#gift').click(function () {
+	    	$('#me-choices').hide();
+	    	$('#for-me').addClass("inactive-selection");
+	    	$('#gift').removeClass('inactive-selection');
+	    	$('#gift-choices').show('slow');
+	    	$('#recipient').val('gift');
+	    	localStorage.setItem("recipient", "gift");
+	    	calculateTotals();
+	    });
+
+	    $('#small-box').click(function () {
+	    	$('#small-box').removeClass("inactive-selection");
+	    	$('#medium-box').addClass("inactive-selection");
+	    	$('#large-box').addClass("inactive-selection");
+	    	$('#frequency-choices').show('slow');
+	    	$('#box-size').val("small");
+	    	localStorage.setItem("box-size", "small");
+	    	calculateTotals();
+	    });
+
+	    $('#medium-box').click(function () {
+	    	$('#medium-box').removeClass("inactive-selection");
+	    	$('#small-box').addClass("inactive-selection");
+	    	$('#large-box').addClass("inactive-selection");
+	    	$('#frequency-choices').show('slow');
+	    	$('#box-size').val("medium");
+	    	localStorage.setItem("box-size", "medium");
+	    	calculateTotals();
+	    });
+
+	    $('#large-box').click(function () {
+	    	$('#large-box').removeClass("inactive-selection");
+	    	$('#small-box').addClass("inactive-selection");
+	    	$('#medium-box').addClass("inactive-selection");
+	    	$('#frequency').show('slow');
+	    	localStorage.setItem("box-size", "large");
+	    	calculateTotals();
+	    });
+
+	    $('#seasonally').click(function () {
+	    	$('#billing-choices').show('slow');
+	    	$('#frequency').val("seasonally");
+	    });
+
+	    $('#per-shipment').click(function () {
+	    	$('#billing').val("shipment");
+	    	$('#per-shipment').removeClass("inactive-selection");
+	    	$('#annually').addClass("inactive-selection");
+	    	
+	    	localStorage.setItem("frequency", "shipment");
+
+	    	calculateTotals();
+	    	$('#me-continue').show('slow');
+	    });
+
+	    $('#annually').click(function () {
+	    	$('#billing').val("annually");
+	    	$('#annually').removeClass("inactive-selection");
+	    	$('#per-shipment').addClass("inactive-selection");
+	    	
+	    	localStorage.setItem("frequency", "annually");
+
+	    	calculateTotals();
+	    	$('#me-continue').show('slow');
+	    });
+	});
+</script>
+{% endblock %}

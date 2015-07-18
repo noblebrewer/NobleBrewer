@@ -44,14 +44,19 @@ exports = module.exports = function(app) {
 	app.get('/beers', routes.views.beers);
 	app.get('/profile/:profile?', routes.views.brewerProfile);
 	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
-    app.get('/terms', routes.views.terms);
-    app.get('/team', routes.views.team);
-    app.get('/faq', routes.views.faq);
-    app.get('/press', routes.views.press);
-    app.get('/releases', routes.views.releases);
-    app.get('/user', routes.views.user);
+  app.get('/terms', routes.views.terms);
+  app.get('/team', routes.views.team);
+  app.get('/faq', routes.views.faq);
+  app.get('/press', routes.views.press);
+  app.get('/releases', routes.views.releases);
+  app.get('/user', routes.views.user);
+  app.get('/signup', routes.views.signup);
+  app.get('/customize', routes.views.customize);
+  app.get('/checkout', routes.views.checkout);
+  app.get('/thankYou', routes.views.thankYou);
   app.get('/brewerSignUp', routes.views.brewerSignUp);
 	app.all('/contact', routes.views.contact);
+
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
