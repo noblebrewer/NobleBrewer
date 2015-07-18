@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container">
-	<form onsubmit="return isValidForm()" action="/thankYou"  method="post">
+	<form onsubmit="return isValidForm()" action="/thankYou"  method="get">
 		<div class="row">
 			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
 				<div style="padding-left: 30px; padding-right: 30px">
@@ -14,7 +14,7 @@
 						</span>
 					</div>
 					<div class="centered-block">
-						<img style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/250/200/1">
+						<img style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/280/200/1">
 					</div>
 					<br>
 					<div class="row">
@@ -153,7 +153,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="instructions">Special instructions</label>
-								<textarea name="instructions" id="instructions" class="form-control"></textarea>
+								<textarea rows="8" name="instructions" id="instructions" class="form-control"></textarea>
 								</label>
 							</div>
 						</div>
@@ -223,7 +223,7 @@
 					</div>						
 					<div class="row">
 						<div class="col-md-12">
-							<input type="checkbox" name="agree" value="agree" id="agree"> I have read and agree to the Noble Brewer 
+							<input type="checkbox" id="agree"> I have read and agree to the Noble Brewer 
 							<a style="text-transform: none">Terms & Conditions</a>
 						</div>
 					</div>
@@ -245,7 +245,7 @@
 {% block js %}
 <script>
 	function isValidForm(){
-		if($('#agree').prop('checked', false)){
+		if(!$('#agree').prop('checked')){
 			alert('You must agree to the terms before continuing.');
 			return false;
 		}

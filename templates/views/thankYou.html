@@ -2,4 +2,56 @@
 
 {% block content %}
 
+<div class="row">
+	<div class="container">
+		<div style="padding-left: 30px; padding-right: 30px; padding-top: 20px">
+			<div class="col-md-6">
+				<h3>Thank you for your order</h3>
+				<p>Very soon you'll be the proud owner of a delicious box of Noble Brewer beer. You can expect to have your god damned mind blown when you take your first sip. We're not even kidding. Our beer is the bee's knees.</p>
+
+				<br>
+				<h4>When will I get my shipment?</h4>
+				<p>Right now, little beer-elves are packing up your order and are doing their best to ship it out to you as soon as possible. We will reach out to you via email to update you as your order ships.</p>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				<div id="invoice"  style="border: 1px solid #FFF; padding:15px;">
+					<h4>Invoice</h4>
+					<hr>
+					<div class="row" style="margin-left: 0px">
+						<p style="float: left" id="order">4 big boxes of beer<br>Delivered every 3 months<br>Your next box will ship on: MM/DD/YY
+						</p>
+					</div>
+					<hr>
+					<div class="row" style="margin-left: 0px; margin-right: 0px;">
+						<span>
+							<p style="float: left">Total</p>
+							<p id="quantity" style="float: right">$198.39</p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div style="margin: 45px; padding: 45px; background-color: #FFF;">
+		<div class="centered-block" color: #302d2d;>
+			<h4 style="color: #302d2d;"> Share a beer with a good friend </h4>
+			<p style="color: #302d2d;">Refer a friend to give them some cool shit and you'll get some cool shit too! I mean, <br>
+			who doesn't like being used to sell to their friends?
+			</p>
+			<a>Learn more</a>
+			<br>
+			<br>
+
+	    <form class="form-inline">
+	      <div class="form-group">
+	        <input type="text" size="35" class="form-control" id="email">
+	      </div>
+	      <button type="button" class="btn btn-default" style="background-color: #C5A77E; color: #FFF; width:150px">Send invite</button>
+	    </form>
+	  </div>
+	</div>
+</div>
+
 {% endblock %}
