@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container">
-	<form onsubmit="return isValidForm()" action="/thankYou"  method="get">
+	<form action="/thankYou"  method="get">
 		<div class="row">
 			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
 				<div style="padding-left: 30px; padding-right: 30px">
@@ -77,14 +77,14 @@
 						<div class="col-md-6">
 								<div class="form-group">
 								  <label for="firstName">First name*</label>
-								  <input type="text" class="form-control" id="firstName">
+								  <input type="text" class="form-control" id="firstName" required>
 								</div>
 						</div>
 
 						<div class="col-md-6">
 								<div class="form-group">
-								  <label for="firstName">Last name*</label>
-								  <input type="text" class="form-control" id="lastName">
+								  <label for="lastName">Last name*</label>
+								  <input type="text" class="form-control" id="lastName" required>
 								</div>
 						</div>
 
@@ -93,7 +93,7 @@
 						<div class="col-md-12">
 								<div class="form-group">
 								  <label for="address">Address*</label>
-								  <input type="text" class="form-control" id="address">
+								  <input type="text" class="form-control" id="address" required>
 								</div>
 						</div>
 					</div>
@@ -101,13 +101,13 @@
 						<div class="col-md-8">
 								<div class="form-group">
 								  <label for="city">City*</label>
-								  <input type="text" class="form-control" id="city">
+								  <input type="text" class="form-control" id="city" required>
 								</div>
 						</div>
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="state">State*</label>
-								  <input type="text" class="form-control" id="state">
+								  <input type="text" class="form-control" id="state" required>
 								  <a style="text-transform: none; text-decoration: underline" data-toggle="modal" data-target="#states">Shippable states</a>
 								</div>
 
@@ -132,13 +132,13 @@
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="zip">Zip*</label>
-								  <input type="text" class="form-control" id="zip">
+								  <input type="text" class="form-control" id="zip" required>
 								</div>
 						</div>
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="phone">Phone #*</label>
-								  <input type="text" class="form-control" id="phone">
+								  <input type="text" class="form-control" id="phone" required>
 								</div>
 						</div>
 					</div>
@@ -167,14 +167,14 @@
 						<div class="col-md-6">
 								<div class="form-group">
 								  <label for="cardName">Name on Card*</label>
-								  <input type="text" class="form-control" id="cardName">
+								  <input type="text" class="form-control" id="cardName" required>
 								</div>
 						</div>
 
 						<div class="col-md-6">
 								<div class="form-group">
 								  <label for="cardNumber">Card Number*</label>
-								  <input type="text" class="form-control" id="cardNumber">
+								  <input type="text" class="form-control" id="cardNumber" required>
 								</div>
 						</div>
 					</div>
@@ -182,21 +182,21 @@
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="cvc">CVC*</label>
-								  <input type="text" class="form-control" id="cvc">
+								  <input type="text" pattern="[0-9]" class="form-control" id="cvc" required>
 								</div>
 						</div>
 
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="expiry">MM/YY*</label>
-								  <input type="text" class="form-control" id="expiry">
+								  <input type="text" class="form-control" id="expiry" required>
 								</div>
 						</div>
 
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="billingZip">Billing Zip*</label>
-								  <input type="text" class="form-control" id="billingZip">
+								  <input type="text" maxlength="5"class="form-control" id="billingZip" required>
 								</div>
 						</div>
 
@@ -210,20 +210,20 @@
 						<div class="col-md-6">
 								<div class="form-group">
 								  <label for="email">Email*</label>
-								  <input type="text" class="form-control" id="email">
+								  <input type="email" class="form-control" id="email" required>
 								</div>
 						</div>
 
 						<div class="col-md-6">
 								<div class="form-group">
 								  <label for="password">Password*</label>
-								  <input type="password" class="form-control" id="password">
+								  <input type="password" class="form-control" id="password" required>
 								</div>
 						</div>
 					</div>						
 					<div class="row">
 						<div class="col-md-12">
-							<input type="checkbox" id="agree"> I have read and agree to the Noble Brewer 
+							<input type="checkbox" id="agree" required> I have read and agree to the Noble Brewer 
 							<a style="text-transform: none">Terms & Conditions</a>
 						</div>
 					</div>
@@ -245,17 +245,6 @@
 
 {% block js %}
 <script>
-	function isValidForm(){
-		if(!$('#agree').prop('checked')){
-			alert('You must agree to the terms before continuing.');
-			return false;
-		}
-		else {
-			return true;
-		}
-
-
-	}
 
 	function calculateTotals() {
 		//me flow

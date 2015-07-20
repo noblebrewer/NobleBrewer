@@ -170,7 +170,7 @@
 	    	$('#gift-choices').hide();
 	    	$('#gift').addClass("inactive-selection");
 	    	$('#for-me').removeClass('inactive-selection');
-	    	$('#me-choices').show('slow');
+	    	$('#me-choices').fadeIn('slow');
 	    	$('#recipient').val('me');
 	    	localStorage.setItem("recipient", "me");
 	    	calculateTotals();
@@ -180,7 +180,7 @@
 	    	$('#me-choices').hide();
 	    	$('#for-me').addClass("inactive-selection");
 	    	$('#gift').removeClass('inactive-selection');
-	    	$('#gift-choices').show('slow');
+	    	$('#gift-choices').fadeIn('slow');
 	    	$('#recipient').val('gift');
 	    	localStorage.setItem("recipient", "gift");
 	    	calculateTotals();
@@ -190,7 +190,7 @@
 	    	$('#small-box').removeClass("inactive-selection");
 	    	$('#medium-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
-	    	$('#frequency-choices').show('slow');
+	    	$('#frequency-choices').fadeIn('slow');
 	    	$('#box-size').val("small");
 	    	localStorage.setItem("box-size", "small");
 	    	calculateTotals();
@@ -200,7 +200,7 @@
 	    	$('#medium-box').removeClass("inactive-selection");
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
-	    	$('#frequency-choices').show('slow');
+	    	$('#frequency-choices').fadeIn('slow');
 	    	$('#box-size').val("medium");
 	    	localStorage.setItem("box-size", "medium");
 	    	calculateTotals();
@@ -210,13 +210,13 @@
 	    	$('#large-box').removeClass("inactive-selection");
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#medium-box').addClass("inactive-selection");
-	    	$('#frequency').show('slow');
+	    	$('#frequency').fadeIn('slow');
 	    	localStorage.setItem("box-size", "large");
 	    	calculateTotals();
 	    });
 
 	    $('#seasonally').click(function () {
-	    	$('#billing-choices').show('slow');
+	    	$('#billing-choices').fadeIn('slow');
 	    	$('#frequency').val("seasonally");
 	    });
 
@@ -228,7 +228,7 @@
 	    	localStorage.setItem("frequency", "shipment");
 
 	    	calculateTotals();
-	    	$('#me-continue').show('slow');
+	    	$('#me-continue').fadeIn('slow');
 	    });
 
 	    $('#annually').click(function () {
@@ -239,7 +239,7 @@
 	    	localStorage.setItem("frequency", "annually");
 
 	    	calculateTotals();
-	    	$('#me-continue').show('slow');
+	    	$('#me-continue').fadeIn('slow');
 	    });
 	});
 </script>
