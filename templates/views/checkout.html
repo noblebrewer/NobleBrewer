@@ -4,6 +4,15 @@
 
 <div class="container">
 	<form action="/thankYou"  method="get">
+		<div class="centered-block">
+			<div class="html5-progressbar">
+				<span id="progress-value" style="font-size: 18px">Order process completion 80%</span>
+				<progress id="progressbar" value="60" max="100"></progress> 
+			</div>
+		</div>
+		<br>
+
+
 		<div class="row">
 			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
 				<div style="padding-left: 30px; padding-right: 30px">
@@ -145,7 +154,7 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<p>Warning about drop off. Suggestion to ship to office. Must be 21 or older to sign for the shipment </p>						
+							<p>Remember someone over the age of 21 must sign for the delivery, we recommend shipping to a business address.</p>						
 						</div>
 					</div>
 
@@ -182,7 +191,7 @@
 						<div class="col-md-4">
 								<div class="form-group">
 								  <label for="cvc">CVC*</label>
-								  <input type="text" pattern="[0-9]" class="form-control" id="cvc" required>
+								  <input type="text" class="form-control" id="cvc" required>
 								</div>
 						</div>
 
@@ -326,7 +335,9 @@
 
 		}
 	}
+	
 	$(document).ready(function () {
+		$('#progressbar').animate({'value':'80'}, 'slow');
 		calculateTotals();
 	});
 </script>

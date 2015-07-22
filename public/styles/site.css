@@ -5122,8 +5122,9 @@ small {
   background-color: #232121;
   border: 1px solid #FFFFFF;
   padding: 4px;
-  min-width: 290px;
-  margin: auto;
+  min-width: 260px;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-bottom: 2em;
   text-align: center;
   display: block; }
@@ -5149,3 +5150,34 @@ small {
   -moz-background-size: cover;
   -ms-background-size: cover;
   background-size: cover; }
+
+.html5-progressbar {
+  padding: 15px;
+  background-color: #222120;
+  border-radius: 5px 20px 5px 20px; }
+
+progress {
+  width: 300px;
+  height: 16px;
+  border: 0;
+  border-radius: 9px;
+  background-color: #f3f3f3; }
+
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 9px; }
+
+progress::-webkit-progress-value {
+  background: #C5A77E;
+  border-radius: 9px; }
+
+progress::-moz-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 9px; }
+
+progress::-moz-progress-value {
+  background: #C5A77E;
+  border-radius: 9px; }
+
+.progress_value {
+  color: #fff; }
