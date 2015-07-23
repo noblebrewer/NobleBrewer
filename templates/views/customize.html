@@ -206,6 +206,9 @@
 	    	$('#progressbar').animate({'value':'40'}, 'slow');
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "small");
+	    	$('html, body').animate({
+				    scrollTop: $("#billing-choices").offset().top
+				}, 1000);
 	    	calculateTotals();
 	    });
 
@@ -218,6 +221,9 @@
 	    	$('#progressbar').animate({'value':'40'}, 'slow');
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "medium");
+	    	$('html, body').animate({
+				    scrollTop: $("#billing-choices").offset().top
+				}, 1000);
 	    	calculateTotals();
 	    });
 
@@ -229,6 +235,9 @@
 	    	$('#progressbar').animate({'value':'40'}, 'slow');
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "large");
+	    	$('html, body').animate({
+				    scrollTop: $("#billing-choices").offset().top
+				}, 1000);
 	    	calculateTotals();
 	    });
 
