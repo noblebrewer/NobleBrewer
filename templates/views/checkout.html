@@ -23,7 +23,7 @@
 						</span>
 					</div>
 					<div class="centered-block">
-						<img style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/280/200/1">
+						<img id="order-photo" style="margin-bottom: 10px"src="http://lorempicsum.com/futurama/280/200/1">
 					</div>
 					<br>
 					<div class="row">
@@ -240,7 +240,7 @@
 					<hr>
 					<div class="row">
 						<div class="col-md-6 col-md-offset-6">
-							<button type="submit" class="btn btn-primary" style="height: 40px; width: 100%; margin-top: auto;margin-bottom: auto; border-radius:4px">
+							<button type="submit" class="btn btn-primary" style="width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px; padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30">
 								Continue to checkout</button>
 						</div>
 					</div>
@@ -260,6 +260,8 @@
 		if (localStorage.getItem("recipient") == "me") {
 			 if (localStorage.getItem("box-size") == "small") {
 			 		
+			 		$('#order-photo').prop('src', '/images/checkout/4_beers.png');
+
 			 		//small per-shipment order
 			 		if (localStorage.getItem("frequency") == "shipment"){
 			 			$('#cost-per-bottle').html("$10.99 per bottle");
@@ -280,10 +282,14 @@
 			 			$('#subtotal').html("$53.59");
 			 			$('#tax').html("$4.82");
 			 			$('#total').html("$233.64");
+
 			 		}
 			 }
 
 			 else if (localStorage.getItem("box-size") == "medium") {
+
+			 		$('#order-photo').prop('src', '/images/checkout/8_beers.png');
+
 			 		
 			 		//medium per-shipment order
 			 		if (localStorage.getItem("frequency") == "shipment"){
@@ -309,7 +315,9 @@
 			 }
 
 			 else if (localStorage.getItem("box-size") == "large") {
-			 		
+			 	
+			 		$('#order-photo').prop('src', '/images/checkout/12_beers.png');
+
 			 		//large per-shipment order
 			 		if (localStorage.getItem("frequency") == "shipment"){
 			 			$('#cost-per-bottle').html("$8.99 per bottle");

@@ -1,3 +1,5 @@
+
+
 $primary-tan: #C5A77E;
 $hover-tan : #D4C0AA;
 $visited-tan : #8A7762;
@@ -10,6 +12,7 @@ $alt-base-background : #232121;
 $light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
+$bar-diamond-divider: '/images/generic/bar-diamond-divide.png';
 $footer-divider: '/images/generic/footerbg.png';
 $divider-color: #777777;
 $inactive-button-color: #C1C0C0;
@@ -56,7 +59,6 @@ blockquote {
 }
 
 section {
-	border-bottom: $divider-color solid 1px;
 	padding: 60px;
 }
 
@@ -109,13 +111,24 @@ small {
 }
 
 .body-copy {
-	font-size: 1em;
-	line-height: 1.5em;
-	color: $subheader-gray;
+	font-size: 22px;
+	line-height: 1.45em;
+	color: #DDD;
 }
 
 .alt-base-section {
 	background-color: $alt-base-background;
+}
+
+.section-divider {
+	width: 100%;
+	margin: 0px;
+}
+
+.diamond-section-divider {
+	background: url($bar-diamond-divider) no-repeat center;
+	width: 100%;
+	margin: 0px;
 }
 
 .diamond-base-section {
@@ -253,7 +266,7 @@ small {
 
 .box-selection {
 	background-color: $alt-base-background;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #999999;
 	padding: 4px;
 	min-width: 260px;
 	margin-left: 1em;
@@ -319,4 +332,11 @@ progress::-moz-progress-value{
 }
 .progress_value{
   color:#fff;
+}
+
+
+/*change breadcrumb separator to raquo symbol*/
+.breadcrumb > li + li:before {
+     content: "\00BB";
+     color: #aaa;
 }

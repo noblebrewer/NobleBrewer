@@ -4962,7 +4962,6 @@ blockquote {
     color: #FFFFFF; }
 
 section {
-  border-bottom: #777777 solid 1px;
   padding: 60px; }
 
 h1 {
@@ -5005,12 +5004,21 @@ small {
   color: #666666; }
 
 .body-copy {
-  font-size: 1em;
-  line-height: 1.5em;
-  color: #666666; }
+  font-size: 22px;
+  line-height: 1.45em;
+  color: #DDD; }
 
 .alt-base-section {
   background-color: #232121; }
+
+.section-divider {
+  width: 100%;
+  margin: 0px; }
+
+.diamond-section-divider {
+  background: url('/images/generic/bar-diamond-divide.png') no-repeat center;
+  width: 100%;
+  margin: 0px; }
 
 .diamond-base-section {
   background-image: url('/images/generic/diagmonds.png'); }
@@ -5120,7 +5128,7 @@ small {
 
 .box-selection {
   background-color: #232121;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #999999;
   padding: 4px;
   min-width: 260px;
   margin-left: 1em;
@@ -5181,3 +5189,8 @@ progress::-moz-progress-value {
 
 .progress_value {
   color: #fff; }
+
+/*change breadcrumb separator to raquo symbol*/
+.breadcrumb > li + li:before {
+  content: "\00BB";
+  color: #aaa; }

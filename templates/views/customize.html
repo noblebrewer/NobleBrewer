@@ -13,14 +13,14 @@
 			</div>
 		</div>
 		<br>
-		<h2>Customize your order</h2>
+		<h4>Customize your order</h4>
 		
 		<div class="order-selection">
-			<h4>Who is getting this shipment?</h4>
+			<h3>Who is getting this shipment?</h3>
 			<div class="row">
-				<button type="button" class="btn btn-primary" id="for-me">ME!</button>
+				<button type="button" class="btn btn-primary" style="padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30; border-radius: 4px" id="for-me">ME!</button>
 
-				<button type="button" class="btn btn-primary" id="gift">This is a gift</button>
+				<button type="button" class="btn btn-primary" style="padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30; border-radius: 4px" id="gift">This is a gift</button>
 
 				<input type="hidden" name="recipient" id="recipient">
 			</div>
@@ -28,32 +28,35 @@
 
 		<div id="me-choices" style="display: none">
 			<div class="order-selection" id="box-size-choices">
-				<h4>What size box would you like?</h4>
+				<h3>What size box would you like?</h3>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="box-selection">
-							<img src="http://lorempicsum.com/futurama/250/200/1">
+							<img src="/images/checkout/4_beers.png">
+							<br>
 							<br>
 								<p>11.99 per bottle<br><br></p>
-							<button type="button" class="btn btn-primary" id="small-box">Small<br>(4 bottles per box)</button>
+							<button type="button" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 1px; font-size:30" id="small-box">Small<br>(4 bottles per box)</button>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="box-selection">
-							<img src="http://lorempicsum.com/futurama/250/200/1">
+							<img src="/images/checkout/8_beers.png">
+							<br>
 							<br>
 								<p>10.99 per bottle<br><br></p>
 
-							<button type="button" class="btn btn-primary" id="medium-box">Medium<br>(8 bottles per box)</button>
+							<button type="button" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 1px; font-size:30" id="medium-box">Medium<br>(8 bottles per box)</button>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="box-selection">
-							<img src="http://lorempicsum.com/futurama/250/200/1">
+							<img src="/images/checkout/12_beers.png">
+								<br>
 								<br>
 								<p>11.99 per bottle<br>+ Free Shipping </p>
 
-							<button type="button" class="btn btn-primary" id="large-box">Large<br>
+							<button type="button" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 1px; font-size:30" id="large-box">Large<br>
 							(12 bottles per box)
 							</button>
 						</div>
@@ -61,7 +64,7 @@
 				</div>
 				<hr>
 
-				<p style="margin-left: 150px; margin-right: 150px;"> Beer is delivered every 3 months, however all of our members can re-order their favorites until we run out of inventory.</p>					<input type="hidden" name="box-size" id="box-size">
+				<p id="note" style="margin-left: 150px; margin-right: 150px;"> Beer is delivered every 3 months, however all of our members can re-order their favorites until we run out of inventory.</p>					<input type="hidden" name="box-size" id="box-size">
 			</div>
 
 	<!-- 		<div class="order-selection" id="frequency-choices" style="display: none">
@@ -86,12 +89,12 @@
  -->
 
 			<div class="order-selection" id="billing-choices" style="display: none">
-				<h4>How often should we bill you?</h4>
+				<h3>How often should we bill you?</h3>
 
 				<div class="row">
-					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px" id="per-shipment">Pay per shipment<br></button>
+					<button type="button" class="btn btn-primary" style="height: 70px; width: 250px; border-radius:4px; text-transform: uppercase; letter-spacing: 1px; font-size:30" id="per-shipment">Pay per shipment<br></button>
 
-					<button type="button" class="btn btn-primary" style="height: 60px; width: 250px; border-radius:4px"id="annually">Pay per year<br>
+					<button type="button" class="btn btn-primary" id="annually" style="height: 70px; width: 250px; border-radius:4px; text-transform: uppercase; letter-spacing: 1px; font-size:30" id="per-shipment">Pay per year<br>
 					(Save 20%)</button>
 				</div>
 
@@ -99,19 +102,19 @@
 
 				<hr>
 
-				<p style="margin-left: 150px; margin-right: 150px;"> In addition to saving 20%, when you sign up for an annual payment plan, you'll also receive TWO IPA glasses in your first shipment.</p>
+				<p id="billing-copy" style="margin-left: 150px; margin-right: 150px;"> In addition to saving 20%, when you sign up for an annual payment plan, you'll also receive TWO IPA glasses in your first shipment.</p>
 			</div>
 
 			<div class="order-selection" id="me-continue" style="display: none">
-				<h4 id="me-subtotal"></h4>
-				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
+				<h3 id="me-subtotal"></h3>
+				<button type="submit" class="btn btn-primary" style="width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px; padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30">Continue to checkout</button>
 			</div>
 		</div>
 
 		<div id="gift-choices" style="display: none">
 			<div class="order-selection" id="gift-continue">
-				<h4 id="gift-subtotals"></h4>
-				<button type="submit" class="btn btn-primary" style="height: 40px; width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px">Continue to checkout</button>
+				<h3 id="gift-subtotals"></h3>
+				<button type="submit" class="btn btn-primary" style="width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px; padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30">Continue to checkout</button>
 			</div>
 		</div>
 
@@ -182,6 +185,9 @@
 	    	$('#progressbar').animate({'value':'20'}, 'slow');
 	    	$('#progress-value').html('Order process completion 20%');
 	    	localStorage.setItem("recipient", "me");
+	    	$('html, body').animate({
+				    scrollTop: $("#box-size-choices").offset().top
+				}, 1000);
 	    	calculateTotals();
 	    });
 
@@ -207,7 +213,7 @@
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "small");
 	    	$('html, body').animate({
-				    scrollTop: $("#billing-choices").offset().top
+				    scrollTop: $("#note").offset().top
 				}, 1000);
 	    	calculateTotals();
 	    });
@@ -222,7 +228,7 @@
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "medium");
 	    	$('html, body').animate({
-				    scrollTop: $("#billing-choices").offset().top
+				    scrollTop: $("#note").offset().top
 				}, 1000);
 	    	calculateTotals();
 	    });
@@ -236,7 +242,7 @@
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "large");
 	    	$('html, body').animate({
-				    scrollTop: $("#billing-choices").offset().top
+				    scrollTop: $("#note").offset().top
 				}, 1000);
 	    	calculateTotals();
 	    });
@@ -254,6 +260,9 @@
 	    	$('#progress-value').html('Order process completion 60%');
 	    	localStorage.setItem("frequency", "shipment");
 
+	    	$('html, body').animate({
+				    scrollTop: $("#billing-copy").offset().top
+				}, 1000);
 	    	calculateTotals();
 	    	$('#me-continue').fadeIn('slow');
 	    });
@@ -265,6 +274,10 @@
 	    	$('#progressbar').animate({'value':'60'}, 'slow');
 	    	$('#progress-value').html('Order process completion 60%');
 	    	localStorage.setItem("frequency", "annually");
+
+	    	$('html, body').animate({
+				    scrollTop: $("#billing-copy").offset().top
+				}, 1000);
 
 	    	calculateTotals();
 	    	$('#me-continue').fadeIn('slow');
