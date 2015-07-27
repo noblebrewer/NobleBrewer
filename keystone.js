@@ -20,8 +20,8 @@ keystone.init({
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': 'swig',
-  	'custom engine': swig.renderFile,
+	'view engine': 'ejs',
+  	'custom engine': ejs.renderFile,
 	
 	'emails': 'templates/emails',
 	
