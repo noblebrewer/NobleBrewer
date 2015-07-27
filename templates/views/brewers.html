@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
-				<h1 class="tan-header">NOBLE BREWERS</h1>
+				<h1>NOBLE BREWERS</h1>
 				<p>Home brewers are the backbone of Noble Brewer. Theirs are the stories that sell our fucking beer. So fucking click on their fucking pages you evil bastards.
 				</p>
 			</div>
@@ -17,28 +17,45 @@
 
 {% block content %}
 <section class="alt-base-section">
-	<div class="container">
-
 		<div class="row">
-			<h2 class="tan-header" align="center">Featured Brewers</h2>
+			<h2 align="center">Featured Brewers</h2>
 		</div>
 		<div class="row">
-			<div class="col-md-12" align="center">
+			<div class="col-md-12">
 				{% for featuredBrewer in filters.featuredBrewers %}
 					{% if loop.index0%2 == 0 %}
-						<div class="col-md-12" align="center">
+						<div class="col-md-12">
 					{% endif %}
 					{% if featuredBrewer.profilePicture.url != nil %}
-						<div class="col-md-6" align="center">
-							<img src="{{featuredBrewer.profilePicture.url}}" class="img-thumbnail">
-							<br>
-							<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
+						<div class="col-xs-12 col-md-6">
+							<div class="brewer_card">
+								<img src="{{featuredBrewer.profilePicture.url}}">
+								<div class="brewer-text">
+									<h5>{{featuredBrewer.profileHeadline}}</h5>
+
+									<h6>{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</h6>
+ 									<h7>{{featuredBrewer.city}}, {{featuredBrewer.state}}</h7>
+ 									<br>
+ 									<hr align="left">
+ 									<p>{{featuredBrewer.profileBody}}</p>
+
+								</div>
+							</div>
 						</div>
 					{% else %}
-						<div class="col-md-6" align="center">
-							<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail">
-							<br>
-							<a href="/profile/{{featuredBrewer.slug}}">{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</a>
+						<div class="col-xs-12 col-md-6">
+							<div class="brewer_card">
+								<img src="http://www.vtecsoft.com/images/default-avatar_0.png">
+								<br>
+								<div class="brewer-text">
+									<h5>{{featuredBrewer.profileHeadline}}</h5>
+									<h6>{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</h6>
+ 									<h7>{{featuredBrewer.city}}, {{featuredBrewer.state}}</h7>
+ 									<br>
+ 									<hr align="left">
+ 									<p>{{featuredBrewer.profileBody}}</p>
+								</div>
+							</div>
 						</div>
 					{% endif %}
 					{% if loop.index0%2 != 0 %}
@@ -51,12 +68,10 @@
 		<div class="centered-block">                
 			<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
 		</div>
-	</div>
 </section>
 <section>
-	<div class="container">
 		<div class="row">
-			<h2 class="tan-header" align="center">All Brewers</h2>
+			<h2 align="center">All Brewers</h2>
 		</div>
 
 		<div class="col-md-12" align="center">
@@ -82,7 +97,6 @@
 				{% endif %}
 			{% endfor %}
 		</div>
-	</div>
 </section>
 
 
