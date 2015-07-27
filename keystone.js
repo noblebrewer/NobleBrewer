@@ -5,7 +5,7 @@ require('dotenv').load();
 // Require keystone
 var keystone = require('keystone'),
 	cons = require('consolidate'),
-	nunjucks = require('nunjucks');
+	ejs = require('ejs');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -20,8 +20,8 @@ keystone.init({
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': 'html',
-	'custom engine': cons.nunjucks,
+	'view engine': 'swig',
+  	'custom engine': swig.renderFile,
 	
 	'emails': 'templates/emails',
 	
