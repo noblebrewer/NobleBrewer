@@ -5038,8 +5038,8 @@ small {
 
 .btn-primary {
   background-color: #C5A77E;
-  vertical-align: middle;
   letter-spacing: 1px;
+  font-weight: bold;
   border-radius: 4px;
   border: none;
   height: 56px;
@@ -5048,11 +5048,15 @@ small {
   box-shadow: 0px 4px 0px #8A7762;
   text-transform: uppercase;
   min-width: 200px;
-  margin-top: auto;
-  margin-bottom: auto; }
+  padding-top: 19px; }
   .btn-primary:hover {
-    background-color: #D4C0AA; }
+    background-color: #D4C0AA;
+    height: 60px;
+    padding-top: 16px;
+    border: 2px solid #FFF;
+    box-shadow: none; }
   .btn-primary:focus {
+    border: 1px solid #FFF;
     background-color: #C5A77E; }
   .btn-primary:visited {
     background-color: #C5A77E; }
@@ -5069,11 +5073,12 @@ small {
 .circle-img {
   width: 150px;
   height: 150px;
+  padding-bottom: 15px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  opacity: 0.4;
-  filter: alpha(opacity=40); }
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); }
 
 .faq-block {
   background-color: #333333;
@@ -5214,10 +5219,13 @@ progress::-moz-progress-value {
   color: #aaa; }
 
 .brewer-text {
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-left: 10px;
-  margin-right: 25px;
+  background-color: #FFF;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 25px;
   color: #666666; }
   .brewer-text h5 {
     margin-bottom: 3px; }
@@ -5228,32 +5236,43 @@ progress::-moz-progress-value {
   .brewer-text h7 {
     margin-top: 0px; }
   .brewer-text hr {
-    margin-top: 18px;
-    margin-bottom: 18px;
+    margin-top: 14px;
+    margin-bottom: 15px;
     width: 20%;
     color: #000; }
-
-.brewer_card {
-  background-color: #FFF; }
   @media (max-width: 37.5em) {
-    .brewer_card {
-      margin-bottom: 15px;
-      width: 320px;
-      height: 500px; } }
+    .brewer-text {
+      min-height: 200px; } }
   @media (min-width: 37.5em) {
-    .brewer_card {
-      margin: 15px;
-      width: 420px;
-      height: 420px; } }
+    .brewer-text {
+      min-height: 250px; } }
   @media (min-width: 64em) {
-    .brewer_card {
-      margin: 15px;
-      width: 600px;
-      height: 600px; } }
+    .brewer-text {
+      height: 250px; } }
   @media (min-width: 85em) {
-    .brewer_card {
-      margin: 15px;
-      width: 600px;
-      height: 600px; } }
-  .brewer_card img {
-    width: 100%; }
+    .brewer-text {
+      height: 250px; } }
+
+@media (max-width: 37.5em) {
+  .brewer_card {
+    padding-bottom: 15px;
+    margin: auto;
+    width: 320px; } }
+@media (min-width: 37.5em) {
+  .brewer_card {
+    align: center;
+    margin: auto;
+    padding-bottom: 15px;
+    width: 500px; } }
+@media (min-width: 64em) {
+  .brewer_card {
+    margin: 15px;
+    width: 95%;
+    height: 600px; } }
+@media (min-width: 85em) {
+  .brewer_card {
+    margin: 15px;
+    width: 95%;
+    height: 650px; } }
+.brewer_card img {
+  width: 100%; }

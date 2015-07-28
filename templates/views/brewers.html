@@ -17,17 +17,13 @@
 
 {% block content %}
 <section class="alt-base-section">
-		<div class="row">
 			<h2 align="center">Featured Brewers</h2>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
 				{% for featuredBrewer in filters.featuredBrewers %}
 					{% if loop.index0%2 == 0 %}
-						<div class="col-md-12">
+					<div class="row" class="featured-row">
 					{% endif %}
 					{% if featuredBrewer.profilePicture.url != nil %}
-						<div class="col-xs-12 col-md-6">
+						<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
 							<div class="brewer_card">
 								<img src="{{featuredBrewer.profilePicture.url}}">
 								<div class="brewer-text">
@@ -43,10 +39,9 @@
 							</div>
 						</div>
 					{% else %}
-						<div class="col-xs-12 col-md-6">
+						<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
 							<div class="brewer_card">
 								<img src="http://www.vtecsoft.com/images/default-avatar_0.png">
-								<br>
 								<div class="brewer-text">
 									<h5>{{featuredBrewer.profileHeadline}}</h5>
 									<h6>{{featuredBrewer.brewerName.first}} {{featuredBrewer.brewerName.last}}</h6>
@@ -62,40 +57,42 @@
 						</div>
 					{% endif %}
 				{% endfor %}
-			</div>
 		</div>
 		<br>
-		<div class="centered-block">                
-			<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
+		<div class="row">
+			<div class="centered-block">                
+				<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
+			</div>
 		</div>
 </section>
 <section>
 		<div class="row">
 			<h2 align="center">All Brewers</h2>
 		</div>
-
-		<div class="col-md-12" align="center">
-			{% for brewer in data.allBrewers %}
-				{% if loop.index0%6 == 0 %}
-					<div class="col-md-12" align="center">
-				{% endif %}
-				{% if brewer.profilePicture.url != nil %}
-					<div class="col-md-3" align="center">
-						<img src={{brewer.profilePicture.url}} class="img-thumbnail circle-img">
-						<br>
-						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
-					</div>
-				{% else %}
-					<div class="col-md-3" align="center">
-						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"> 
-						<br>
-						<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
-					</div>
-				{% endif %}
-				{% if (loop.index0+1)%6 == 0 %}
-					</div>
-				{% endif %}
-			{% endfor %}
+		<div class="row">
+			<div class="col-md-12" align="center">
+				{% for brewer in data.allBrewers %}
+					{% if loop.index0%6 == 0 %}
+						<div class="col-md-12" align="center">
+					{% endif %}
+					{% if brewer.profilePicture.url != nil %}
+						<div class="col-md-3" align="center">
+							<img src={{brewer.profilePicture.url}} class="img-thumbnail circle-img">
+							<br>
+							<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
+						</div>
+					{% else %}
+						<div class="col-md-3" align="center">
+							<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"> 
+							<br>
+							<a href="/profile/{{brewer.slug}}">{{brewer.brewerName.first}} {{brewer.brewerName.last}}</a>
+						</div>
+					{% endif %}
+					{% if (loop.index0+1)%6 == 0 %}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
 		</div>
 </section>
 

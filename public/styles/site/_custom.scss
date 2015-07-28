@@ -2,7 +2,7 @@
 
 $primary-tan: #C5A77E;
 $hover-tan : #D4C0AA;
-$visited-tan : #8A7762;
+$dark-tan : #8A7762;
 $link-hover : #FFFFFF;
 
 $header-white : #FFFFFF;
@@ -189,24 +189,29 @@ small {
 
 .btn-primary {
 	background-color: $primary-tan;
-	vertical-align: middle;
 	letter-spacing: 1px;
+	font-weight: bold;
 	border-radius: 4px;
 	border: none;
 	height: 56px;
-	-webkit-box-shadow: 0px 4px 0px #8A7762;
-	-moz-box-shadow:    0px 4px 0px #8A7762;
-	box-shadow:         0px 4px 0px #8A7762;
+	-webkit-box-shadow: 0px 4px 0px $dark-tan;
+	-moz-box-shadow:    0px 4px 0px $dark-tan;
+	box-shadow:         0px 4px 0px $dark-tan;
 
 	text-transform: uppercase;
 	min-width: 200px;
-	padding-top: 17px;
+	padding-top: 19px;
 
 	&:hover {
 		background-color: $hover-tan;
+		height: 60px;
+		padding-top: 16px;
+		border: 2px solid #FFF;
+		box-shadow: none;
 	}
 
 	&:focus {
+		border: 1px solid #FFF;
 		background-color: $primary-tan;
 	}
 
@@ -229,11 +234,12 @@ small {
 .circle-img {
 	width: 150px;
 	height: 150px;
+	padding-bottom: 15px;
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;
 	border-radius: 100%;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }
 
 .faq-block {
@@ -398,10 +404,13 @@ progress::-moz-progress-value{
 }
 
 .brewer-text{
-	margin-top:15px;
-	margin-bottom:30px;
-	margin-left:10px;
-	margin-right: 25px;
+	background-color: #FFF;
+	width: 100%;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right: 25px;
 	color: $subheader-gray;
 
 	h5 {
@@ -419,38 +428,53 @@ progress::-moz-progress-value{
 	}
 
 	hr {
-		margin-top: 18px;
-		margin-bottom: 18px;
+		margin-top: 14px;
+		margin-bottom: 15px;
 		width: 20%;
 		color: #000;
+	}
+
+	@include breakpoint(mobileonly){
+		min-height: 200px;
+	}
+
+	@include breakpoint(phablet){
+		min-height: 250px;
+	}
+
+	@include breakpoint(laptop){
+		height: 250px;
+	}
+
+	@include breakpoint(desktop){
+		height: 250px;
 	}
 }
 
 .brewer_card {
-	background-color: #FFF;
-
 	@include breakpoint(mobileonly){
-		margin-bottom: 15px;
+		padding-bottom: 15px;
+		margin: auto;
 		width: 320px;
-		height: 500px;
 	}
 
 	@include breakpoint(phablet){
-		margin: 15px;
-		width: 420px;
-		height: 420px;
+		align: center;
+		margin: auto;
+		padding-bottom: 15px;
+		width: 500px;
 	}
 
 	@include breakpoint(laptop){
 		margin: 15px;
-		width: 600px;
+		width: 95%;
 		height: 600px;
 	}
 
 	@include breakpoint(desktop){
 		margin: 15px;
-		width: 600px;
-		height: 600px;
+		width: 95%;
+		height: 650px;
 	}
 
 	img{
