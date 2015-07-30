@@ -1,13 +1,11 @@
+<head>
+  <div class="title">
+      <title>Beer Profile</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-<% extends "templates/layouts/default.html" %>
-
-
-<% block intro %>
-
-<% endblock %>
-
-<% block content %>
-
+<% include ./partials/header %>
 <div class="bodyToLoad">
 	<div class="row">
 
@@ -55,7 +53,7 @@
 			</div>
 			<br/>
 			<div class="col-md-12">
-				<p>					{{data.profileBody%>
+				<p>	<%= data.profileBody %>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
 				</div>
 			</div>
@@ -86,11 +84,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center col-md-12">
-					<a class="btn btn-warning" href="/brewers" role="button">BACK TO ALL beers</a>
+					<a class="btn btn-warning" href="/beers" role="button">BACK TO ALL beers</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<% endblock %>
+<% include ./partials/footer %>
+
 
