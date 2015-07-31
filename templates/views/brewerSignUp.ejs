@@ -1,7 +1,12 @@
+<head>
+  <div class="title">
+      <title><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% extends "templates/layouts/default.html" %}
 
-{% block content %}
+<% include ./partials/header %>
 <section>
     <div class="container">
         <div class="row">
@@ -16,9 +21,8 @@
         </div>
     </div>
 </section>
-{% endblock %}
 
-{% block content %}
+
 <section>
 	<div class="container">
 		<h2 class="tan-header">FEATURED BREWER SIGN UP</h2>
@@ -65,5 +69,5 @@
 	</div>
 </section>
 
-{% endblock %}
+<% include ./partials/footer %>
 
