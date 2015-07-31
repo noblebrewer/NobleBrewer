@@ -1,19 +1,24 @@
-{% extends "templates/layouts/default.html" %}
+{% extends "templates/layouts/order-layout.html" %}
 
 {% block content %}
 
+<div class="navbar-fixed-top" style="background-color: 111;">
+
+	<div class="navbar-brand" style="margin-left: 20px">ADD SHIPPING INFO TO UPDATE
+	</div> 
+<!-- 			<div class="html5-progressbar">
+		<span id="progress-value" style="font-size: 18px">Order process completion 80%</span>
+		<progress id="progressbar" value="60" max="100"></progress> 
+	</div> -->
+	<p style="float:right; margin-right: 20px;" id="nav-subtotal">SUBTOTAL:</p> 
+</div>
+
 <div class="container">
 	<form action="/thankYou"  method="get">
-		<div class="centered-block">
-			<div class="html5-progressbar">
-				<span id="progress-value" style="font-size: 18px">Order process completion 80%</span>
-				<progress id="progressbar" value="60" max="100"></progress> 
-			</div>
-		</div>
-		<br>
 
 
-		<div class="row">
+
+		<div class="row" style="margin-top: 75px;">
 			<div class="col-md-4" id="cost-breakdown" style="padding-top: 10px; padding-left: 0px; padding-right: 0px; border: 1px solid #FFFFFF">
 				<div style="padding-left: 30px; padding-right: 30px">
 					<div class="row">
@@ -41,12 +46,6 @@
 					<br>
 					<div class="row">
 						<span>
-							<p style="float: left">Shipping</p>
-							<p id="shipping-cost" style="float: right">Flat rate</p>
-						</span>
-					</div>
-					<div class="row">
-						<span>
 							<p style="float: left">Delivery</p>
 							<p id="frequency" style="float: right">Every 3 months</p>
 						</span>
@@ -54,21 +53,36 @@
 					<br>
 					<div class="row">
 						<span>
-							<p style="float: left">Subtotal</p>
-							<p id="subtotal" style="float: right">$</p>
+							<p style="float: left">Shipping</p>
+							<p id="shipping-cost" style="float: right">--</p>
 						</span>
 					</div>
 					<div class="row">
 						<span>
 							<p style="float: left">Tax</p>
-							<p id="tax" style="float: right">$</p>
+							<p id="tax" style="float: right">--</p>
 						</span>
 					</div>
+					<br>
+					<div class="row" >
+						<span>
+							<p style="float: left">Subtotal</p>
+							<p id="subtotal" style="float: right">$</p>
+						</span>
+					</div>
+
+					<div class="row" style="display: none" id="discount-row">
+						<span>
+							<p style="float: left">Discount</p>
+							<p id="discount" style="float: right">$</p>
+						</span>
+					</div>
+
 					<hr style="width: 100%">
 					<div class="row">
 						<span>
 							<p style="float: left">Total</p>
-							<p id="total" style="float: right">$</p>
+							<p id="total" style="float: right">--</p>
 						</span>
 					</div>
 				</div>
@@ -79,8 +93,9 @@
 				</div>
 				<br>
 			</div>
+
 			<div class="col-md-8" style="padding-left: 25px">
-					<h3>Enter your shipping info</h3>
+					<h3>Add shipping info</h3>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -167,10 +182,27 @@
 							</div>
 						</div>
 					</div>
+			</div>
+			<br>
+		</div>
+		<hr>
 
-					<hr>
+		<div class="order-selection" style="height: 250px; display: none" id="payment-frequency">
+			<h3 style="margin-bottom: 30px;">How often do you want to pay?</h3>
+			<span>
+				<div class="centered-block" style="margin-left: 25%; float: left">
+					Pay per shipment<br>
+					<a class="btn btn-primary" id="shipment">$</a>
+				</div>
+				<div class="centered-block" style="margin-right: 25%; float: right">
+					Pay annually 20% off<br>
+					<a class="btn btn-primary" id="annually">$</a>
+				</div>
+      </span>
+		</div>
 
-					<h3>Enter payment details</h3>
+		<div class="col-md-8 col-md-offset-4" style="display: none" id="payment-info">
+					<h3>Add Billing Info</h3>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -208,7 +240,6 @@
 								  <input type="text" maxlength="5"class="form-control" id="billingZip" required>
 								</div>
 						</div>
-
 					</div>
 
 					<hr>
@@ -236,17 +267,16 @@
 							<a style="text-transform: none">Terms & Conditions</a>
 						</div>
 					</div>
-
 					<hr>
 					<div class="row">
-						<div class="col-md-6 col-md-offset-6">
-							<button type="submit" class="btn btn-primary" style="width: 350px; margin-top: auto;margin-bottom: auto; border-radius:4px; padding:20px; text-transform: uppercase; letter-spacing: 1px; font-size:30">
-								Continue to checkout</button>
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-primary" style="width:100%">
+								Submit Payment</button>
 						</div>
 					</div>
+
 					<br>
 					<br>
-			</div>
 		</div>
 	</form>
 </div>
@@ -254,64 +284,82 @@
 
 {% block js %}
 <script>
+	//base prices
+	var small = 43.96;
+	var medium = 79.92;
+	var large = 107.88;
+
+	var subtotal = 0;
+	var annual = 0;
+	var shipping = 12; //default cali shipping
+
+	function adjustSubtotal(total){
+		var dollarAmount = '$'+total.toFixed(2);
+		$('#subtotal').html(dollarAmount);
+		$('#nav-subtotal').html("Subtotal: " + dollarAmount);
+	}
+
+	//redo if user goes back and updates state
+	function adjustTaxShipping(shipping){
+		var currentSubtotal = subtotal + shipping;
+		var tax = currentSubtotal * .09;
+
+		currentSubtotal += tax;
+
+		$('#tax').html('$' + tax.toFixed(2));
+		adjustSubtotal(currentSubtotal);
+		$('#total').html('$' + currentSubtotal.toFixed(2));
+		$('#nav-subtotal').html("Total: $" + currentSubtotal.toFixed(2));
+		$('#shipment').html('$' + currentSubtotal.toFixed(2));
+
+		calculateAnnual();
+
+		$('#annually').html('$' + annual.toFixed(2));
+	}
+
+	function adjustAnnual(){
+		annual = (subtotal*4)*.8;
+		var discount = (subtotal*4)*.2;
+		shipping = 4*12;
+
+		var tax = annual * .09;
+
+		annual += shipping + tax;
+
+		$('#discount-row').fadeIn('slow');
+		$('#discount').html('- ($' + discount.toFixed(2) + ')');
+		$('#total').html('$' + annual.toFixed(2));
+		$('#nav-subtotal').html("Total: $" + annual.toFixed(2));
+	}
+
+	function calculateAnnual(){
+		annual = (subtotal * 4)*.8;
+		annual += 4*12;
+	}
 
 	function calculateTotals() {
-		//me flow
-		if (localStorage.getItem("recipient") == "me") {
 			 if (localStorage.getItem("box-size") == "small") {
 			 		
 			 		$('#order-photo').prop('src', '/images/checkout/4_beers.png');
 
-			 		//small per-shipment order
-			 		if (localStorage.getItem("frequency") == "shipment"){
 			 			$('#cost-per-bottle').html("$10.99 per bottle");
 			 			$('#quantity').html("4 bottles");
-			 			$('#shipping-cost').html("Flat rate $13.99");
 			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$57.95");
-			 			$('#tax').html("$5.21");
-			 			$('#total').html("$63.16");
-			 		}
-
-			 		//small annually order
-			 		else if (localStorage.getItem("frequency") == "annually"){
-			 			$('#cost-per-bottle').html("$9.89 per bottle");
-			 			$('#quantity').html("4 bottles");
-			 			$('#shipping-cost').html("Flat rate $13.99");
-			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$53.59");
-			 			$('#tax').html("$4.82");
-			 			$('#total').html("$233.64");
-
-			 		}
+			 			$('#subtotal').html("$43.96");
+			 			subtotal=small;
+			 			adjustSubtotal(subtotal);
 			 }
 
 			 else if (localStorage.getItem("box-size") == "medium") {
 
 			 		$('#order-photo').prop('src', '/images/checkout/8_beers.png');
 
-			 		
-			 		//medium per-shipment order
-			 		if (localStorage.getItem("frequency") == "shipment"){
-			 			$('#cost-per-bottle').html("$9.99 per bottle");
-			 			$('#quantity').html("8 bottles");
-			 			$('#shipping-cost').html("Flat rate $13.99");
-			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$93.91");
-			 			$('#tax').html("$8.45");
-			 			$('#total').html("$102.36");
-			 		}
-
-			 		//medium annually order
-			 		else if (localStorage.getItem("frequency") == "annually"){
-			 			$('#cost-per-bottle').html("$8.99 per bottle");
-			 			$('#quantity').html("8 bottles");
-			 			$('#shipping-cost').html("Flat rate $13.99");
-			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$85.91");
-			 			$('#tax').html("$7.73");
-			 			$('#total').html("$374.56");
-			 		}
+		 			$('#cost-per-bottle').html("$9.99 per bottle");
+		 			$('#quantity').html("8 bottles");
+		 			$('#frequency').html("Every 3 months");
+		 			$('#subtotal').html("$79.92");
+		 			subtotal=medium;
+		 			adjustSubtotal(subtotal);
 			 }
 
 			 else if (localStorage.getItem("box-size") == "large") {
@@ -319,34 +367,44 @@
 			 		$('#order-photo').prop('src', '/images/checkout/12_beers.png');
 
 			 		//large per-shipment order
-			 		if (localStorage.getItem("frequency") == "shipment"){
-			 			$('#cost-per-bottle').html("$8.99 per bottle");
-			 			$('#quantity').html("12 bottles");
-			 			$('#shipping-cost').html("FREE");
-			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$107.88");
-			 			$('#tax').html("$9.70");
-			 			$('#total').html("$117.58");
-			 		}
-
-			 		//large annually order
-			 		else if (localStorage.getItem("frequency") == "annually"){
-			 			$('#cost-per-bottle').html("$8.09 per bottle");
-			 			$('#quantity').html("12 bottles");
-			 			$('#shipping-cost').html("FREE");
-			 			$('#frequency').html("Every 3 months");
-			 			$('#subtotal').html("$105.83");
-			 			$('#tax').html("$8.73");
-			 			$('#total').html("$423.32");
-			 		}
+		 			$('#cost-per-bottle').html("$8.99 per bottle");
+		 			$('#quantity').html("12 bottles");
+		 			$('#frequency').html("Every 3 months");
+		 			$('#subtotal').html("$107.88");
+		 			subtotal=large;
+		 			adjustSubtotal(subtotal);
 			 }
-
-		}
 	}
+
+
 	
 	$(document).ready(function () {
-		$('#progressbar').animate({'value':'80'}, 'slow');
 		calculateTotals();
+
+		$('#progressbar').animate({'value':'80'}, 'slow');
+		$("#state").change(function () {
+			//assume there was state input
+			if ($("#state").val().length > 0 ){
+				adjustTaxShipping(12);
+				$('#shipping-cost').html("$12.00");
+				$('#payment-frequency').fadeIn('slow');
+
+			}
+		});
+	  $('#shipment').click(function () {
+	  	$('#payment-info').fadeIn('slow');
+	  	$('html, body').animate({
+			    scrollTop: $("#shipment").offset().top
+			}, 1000);
+	  });
+	  $('#annually').click(function () {
+	  	adjustAnnual();
+	  	$('#payment-info').fadeIn('slow');
+	  	$('html, body').animate({
+			    scrollTop: $("#shipment").offset().top
+			}, 1000);
+	  });
+
 	});
 </script>
 

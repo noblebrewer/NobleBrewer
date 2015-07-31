@@ -1,15 +1,14 @@
-{% extends "templates/layouts/default.html" %}
+{% extends "templates/layouts/default-noemail.html" %}
 
 {% block content %}
 
-
-<section>
+<section style="border: none">
 	<div class="row">
 		<div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
 			<img class="img-responsive" src="/images/checkout/kinsu.jpg">
 		</div>
 		<div class="col-md-5">
-			<h3 class="tan-header"> Noble Brewer Beer Subscription</h3>
+			<h3 class="tan-header" style="letter-spacing: 1px">AN ASSORTMENT OF BEER 4 TIMES A YEAR</h3>
 			<div style="font-size:22px">
 				<p>Get impossible-to-find craft beer made from homebrew recipes delivered to your door on a quarterly release schedule.</p>
 			</div>
@@ -17,7 +16,7 @@
 			<div style="font-size:22px">
 				<ul>
 					<li>Every shipment contains:</li>
-					<li>Four large 22oz bottles of homebrew-inspired beer</li>
+					<li>22oz bottles of homebrew-inspired beer</li>
 					<li>Tasting cards to provide feedback to the homebrewer</li>
 					<li>The story behind the recipe creator</li>
 				</ul>
@@ -42,10 +41,10 @@
 							<img src="/images/checkout/4_beers.png">
 							<div class="amount-circle"><div class="quantity" id="four">4</div></div>
 							<br>
-							<p>Four large 22oz bottles of<br>homebrew-inspired beer<br></p>
+							<p>Four large 22oz bottles of<br>homebrew-inspired beer<br><br>
 							Tasting cards to provide feedback to the homebrewer<br>
 							<br>
-							<p>The story behind the recipe creator</p>
+							The story behind the recipe creator</p>
 							<br>
 						</div>
 					</div>
@@ -54,10 +53,10 @@
 							<img src="/images/checkout/8_beers.png">
 							<div class="amount-circle"><div class="quantity" id="eight">8</div></div>
 							<br>
-							<p>Eight large 22oz bottles of<br>homebrew-inspired beer<br></p>
+							<p>Eight large 22oz bottles of<br>homebrew-inspired beer<br><br>
 							Tasting cards to provide feedback to the homebrewer<br>
 							<br>
-							<p>The story behind the recipe creator</p>
+							The story behind the recipe creator</p>
 							<br>
 						</div>
 					</div>
@@ -66,18 +65,16 @@
 							<img src="/images/checkout/12_beers.png">
 							<div class="amount-circle"><div class="quantity" id="twelve">12</div></div>
 							<br>
-							<p>Twelve large 22oz bottles of<br>homebrew-inspired beer<br></p>
+							<p>Twelve large 22oz bottles of<br>homebrew-inspired beer<br><br>
 							Tasting cards to provide feedback to the homebrewer<br>
 							<br>
-							<p>The story behind the recipe creator</p>
+							The story behind the recipe creator</p>
 							<br>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="order-selection" id="continue" style="display: none">
-				<button type="submit" class="btn btn-primary" style="width: 350px; text-transform: uppercase; letter-spacing: 1px; font-size:30" id="subscribe">Continue to checkout</button>
+				<button type="submit" class="btn btn-primary" id="continue" style="width: 350px; text-transform: uppercase; letter-spacing: 1px; font-size:30; margin-top:30px; margin-bottom: 30px; display: none">Continue to checkout</button>
 			</div>
 
 		</div>
@@ -90,22 +87,22 @@
 <script>
 
 	function calculateTotals() {
-		//me flow
+
 			 if (localStorage.getItem("box-size") == "small") {
 
-			 			$('#subscribe').html("Subscribe for $ 43.96");
+			 			$('#continue').html("Subscribe for $ 43.96");
 
 			 }
 
 			 else if (localStorage.getItem("box-size") == "medium") {
 	
-			 			$('#subscribe').html("Subscribe for $ 79.92");
+			 			$('#continue').html("Subscribe for $ 79.92");
 
 			 }
 
 			 else if (localStorage.getItem("box-size") == "large"){
 
-			 		$('#subscribe').html("Subscribe for $ 107.88");
+			 			$('#continue').html("Subscribe for $ 107.88");
 
 			 }
 	}
@@ -126,8 +123,8 @@
 
 	    	$("#eight").html("8");
 	    	$("#twelve").html("12");
-	    	$("#medium-box").css("border", "1px solid #999999");
-	    	$("#large-box").css("border", "1px solid #999999");
+	    	$("#medium-box").css("border", "none");
+	    	$("#large-box").css("border", "none");
 	    	$('#medium-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
 
@@ -137,9 +134,7 @@
 	    	$('#progressbar').animate({'value':'40'}, 'slow');
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "small");
-	    	$('html, body').animate({
-				    scrollTop: $("#four").offset().top
-				}, 1000);
+
 	    	calculateTotals();
 	    });
 
@@ -151,8 +146,8 @@
 	    	$("#four").html("4");
 	    	$("#twelve").html("12");
 	    	//unselect the other boxes
-	    	$("#small-box").css("border", "1px solid #999999");
-	    	$("#large-box").css("border", "1px solid #999999");
+	    	$("#small-box").css("border", "none");
+	    	$("#large-box").css("border", "none");
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#large-box').addClass("inactive-selection");
 
@@ -161,9 +156,7 @@
 	    	$('#progressbar').animate({'value':'40'}, 'slow');
 	    	$('#progress-value').html('Order process completion 40%');
 	    	localStorage.setItem("box-size", "medium");
-	    	$('html, body').animate({
-				    scrollTop: $("#four").offset().top
-				}, 1000);
+
 	    	calculateTotals();
 	    });
 
@@ -175,15 +168,14 @@
 	    	$("#four").html("4");
 	    	$("#eight").html("8");
 
-	    	$("#medium-box").css("border", "1px solid #999999");
-	    	$("#small-box").css("border", "1px solid #999999");
+	    	$("#medium-box").css("border", "none");
+	    	$("#small-box").css("border", "none");
 	    	$('#small-box').addClass("inactive-selection");
 	    	$('#medium-box').addClass("inactive-selection");
+	    	localStorage.setItem("box-size", "large");
 
 	    	$('#continue').fadeIn('slow');
-	    	$('html, body').animate({
-				    scrollTop: $("#four").offset().top
-				}, 1000);
+
 	    	calculateTotals();
 	    });
 
