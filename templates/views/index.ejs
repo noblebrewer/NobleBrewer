@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Index</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 <section class="diamond-base-section">
   <div class="container">
       <div class="row">
@@ -134,4 +140,4 @@
   <br>
 </section>
 
-{% endblock %}
+<% include ./partials/footer %>
