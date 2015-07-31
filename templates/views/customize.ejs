@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Customize</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 
 <!-- <div class="progress">
   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
@@ -114,9 +120,6 @@
 	</div>
 </form>
 
-{% endblock %}
-
-{% block js %}
 <script>
 
 	function calculateTotals() {
@@ -243,4 +246,5 @@
 	    });
 	});
 </script>
-{% endblock %}
+
+<% include ./partials/footer %>

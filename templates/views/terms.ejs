@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Terms</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 	<div class="container">
         <h1>Terms of Service</h1>
         <p>Terms of Service
@@ -181,4 +187,4 @@
     If you have any questions about these Terms of Service, please contact us at Support@NobleBrewerB eer.com
     The Terms of Service were updated March 11, 2015.	
 	</div>
-{% endblock %}
+<% include ./partials/footer %>

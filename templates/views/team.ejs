@@ -1,6 +1,13 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Team</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block intro %}
+
+<% include ./partials/header %>
+
 <section>
     <div class="container">
         <div class="row">
@@ -12,9 +19,6 @@
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block content %}
 
 <section>
       <div class="container">
@@ -129,4 +133,4 @@
       </div>
 </section>
 
-{% endblock %}
+<% include ./partials/footer %>

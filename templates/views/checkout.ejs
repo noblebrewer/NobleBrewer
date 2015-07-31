@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Checkout</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 
 <div class="container">
 	<form action="/thankYou"  method="get">
@@ -241,9 +247,7 @@
 		</div>
 	</form>
 </div>
-{% endblock %}
 
-{% block js %}
 <script>
 
 	function calculateTotals() {
@@ -331,4 +335,4 @@
 	});
 </script>
 
-{% endblock %}
+<% include ./partials/footer %>
