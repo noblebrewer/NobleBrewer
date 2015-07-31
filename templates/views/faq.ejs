@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>About</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 
 <section>
     <div class="container">
@@ -65,4 +71,6 @@
         </dl>    		
     </div>
 </section>
-{% endblock %}
+
+
+<% include ./partials/footer %>
