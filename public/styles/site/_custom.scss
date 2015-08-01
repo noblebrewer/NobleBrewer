@@ -367,12 +367,12 @@ small {
 }
 
 #about-banner {
-	background:url('/images/about/aboutbanner.jpg') no-repeat center center fixed;
+	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
 	@include border-radius;
 }
 
 #vat-banner {
-	background:url('/images/about/brewingvats.jpg') no-repeat center center fixed;
+	background:url('/images/about/brewingvats.jpg') no-repeat center center;
 	height: 315px;
 	@include border-radius;
 }
