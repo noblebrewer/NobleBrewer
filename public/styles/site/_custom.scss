@@ -100,6 +100,10 @@ blockquote {
 	}
 }
 
+h3 {
+	margin-top: 0px;
+}
+
 section {
 	padding-top: 90px;
 	padding-bottom: 90px;
@@ -376,6 +380,26 @@ small {
 	height: 315px;
 	@include border-radius;
 }
+
+#team-banner {
+	background:url('/images/footer/team/team-banner.jpg') no-repeat center center;
+	max-height:300px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid $primary-tan;
+	border-top: 3px solid $primary-tan;
+	@include border-radius;
+}
+
+#faq-banner {
+	margin-top: 20px;
+	height: 70%;
+	max-height:340px;
+	border-bottom: 1px solid $primary-tan;
+	border-top: 3px solid $primary-tan;
+	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
+	@include border-radius;
+}
+
 .html5-progressbar{
   padding:15px;
   background-color: #222120;
@@ -494,6 +518,10 @@ progress::-moz-progress-value{
 	img{
  		width:100%;
 	}
+}
+
+.team-photo {
+	float: right;
 }
 
 .navbar {
