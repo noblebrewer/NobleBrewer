@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<div class="navbar-fixed-top" style=" border: 5px solid #FFF; background-color: #333333; height:60px;">
+<div class="navbar-fixed-top" style=" border: 10px solid #FFF; background-color: #333333; height:80px;">
 
-	<div class="navbar-brand" style="margin-left: 20px; margin-top: 2px;">ADD SHIPPING INFO TO UPDATE
+	<div class="navbar-brand" id="shipping-status" style="margin-left: 20px; margin-top: 4px;">ADD SHIPPING INFO TO UPDATE
 	</div> 
 <!-- 			<div class="html5-progressbar">
 		<span id="progress-value" style="font-size: 18px">Order process completion 80%</span>
 		<progress id="progressbar" value="60" max="100"></progress> 
 	</div> -->
-	<p style="float:right; margin-right: 50px; margin-top: 14px;" id="nav-subtotal">SUBTOTAL:</p> 
+	<p style="float:right; margin-right: 50px; margin-top: 14px; font-size: 22px;" id="nav-subtotal">SUBTOTAL:</p> 
 </div>
 
 <div class="container">
@@ -115,6 +115,14 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-md-12">
+								<div class="form-group">
+								  <label for="address">Address 2</label>
+								  <input type="text" class="form-control" id="address">
+								</div>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-8">
 								<div class="form-group">
 								  <label for="city">City*</label>
@@ -183,16 +191,16 @@
 		</div>
 		<hr>
 
-		<div class="order-selection" style="height: 250px; display: none" id="payment-frequency">
+		<div class="order-selection" style="height: 280px; display: none" id="payment-frequency">
 			<h3 style="margin-bottom: 30px;">How often do you want to pay?</h3>
 			<span>
-				<div class="centered-block" style="margin-left: 25%; float: left">
+				<div class="centered-block" style="margin-left: 20%; float: left">
 					<h4 style="margin-bottom: -25px">Pay per shipment</h4><br>
-					<a class="btn btn-primary" style="padding: 14px;" id="shipment">$</a>
+					<a class="btn btn-primary" style="padding: 15px; height: 66px; width: 250px; font-size: 22px"  id="shipment">$</a>
 				</div>
-				<div class="centered-block" style="margin-right: 25%; float: right">
+				<div class="centered-block" style="margin-right: 20%; float: right">
 					<h4 style="margin-bottom: -25px">Pay annually 20% off</h4><br>
-					<a class="btn btn-primary" style="padding: 14px;" id="annually">$</a>
+					<a class="btn btn-primary" style="padding: 15px; height: 66px; width: 250px; font-size: 22px" id="annually">$</a>
 				</div>
       </span>
 		</div>
@@ -385,6 +393,7 @@
 			if ($("#state").val().length > 0 ){
 				adjustTaxShipping(12);
 				$('#shipping-cost').html("$12.00");
+				$('#shipping-status').html("ADDED CALIFORNIA SHIPPING AND TAX");
 				$('#payment-frequency').fadeIn('slow');
 
 			}
