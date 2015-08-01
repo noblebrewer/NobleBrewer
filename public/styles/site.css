@@ -4979,8 +4979,8 @@ blockquote {
 section {
   padding-top: 90px;
   padding-bottom: 90px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
   border-bottom: 1px solid #777777; }
 
 label {
@@ -4999,7 +4999,7 @@ small {
 .lead-body-copy {
   font-size: 1.618em;
   line-height: 1.5em;
-  color: #666666; }
+  color: #888888; }
 
 .body-copy {
   font-size: 1em;
@@ -5087,7 +5087,7 @@ small {
     margin-top: 1em;
     font-size: 1em;
     line-height: 1.5em;
-    color: #666666; }
+    color: #888888; }
 
 .diamond-separator {
   background: url('/images/generic/diamond-divide.png');
@@ -5241,7 +5241,7 @@ progress::-moz-progress-value {
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 25px;
-  color: #666666; }
+  color: #888888; }
   .brewer-text h5 {
     margin-bottom: 3px; }
   .brewer-text h6 {
