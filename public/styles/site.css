@@ -4975,6 +4975,9 @@ blockquote {
     line-height: 1.2em;
     color: #FFFFFF; }
 
+h3 {
+  margin-top: 0px; }
+
 section {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -5198,6 +5201,29 @@ small {
   -ms-background-size: cover;
   background-size: cover; }
 
+#team-banner {
+  background: url('/images/footer/team/team-banner.jpg') no-repeat center center;
+  max-height: 300px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 3px solid #C5A77E;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#faq-banner {
+  margin-top: 20px;
+  height: 70%;
+  max-height: 340px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 3px solid #C5A77E;
+  background: url('/images/footer/footer-banner2.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
 .html5-progressbar {
   padding: 15px;
   background-color: #222120;
@@ -5292,6 +5318,9 @@ progress::-moz-progress-value {
     height: 650px; } }
 .brewer_card img {
   width: 100%; }
+
+.team-photo {
+  float: right; }
 
 .navbar {
   -webkit-box-shadow: 0 8px 6px -6px #999;
