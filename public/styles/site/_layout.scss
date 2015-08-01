@@ -2,10 +2,28 @@
 	margin-top: 30px;
 }
 
+#email-signup {
+	input {
+		border-radius: 0px;
+		margin-right: 0px;
+	}
+
+	button {
+		border-radius: 0px;
+		margin-left: 0px;
+		color: #FFF;
+		text-transform: uppercase;
+		background-color: $primary-tan;
+		border: none;
+		padding: 7px 12px;
+	}
+
+}
+
 #footer {
 	margin-top: 30px;
 	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 90px;
 	color: $gray-light;
 
 	ul {
@@ -32,7 +50,6 @@
 
   img {
   	width: 45%;
-  	height: 45%;
   }
 }
 

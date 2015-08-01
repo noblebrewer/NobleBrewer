@@ -1,25 +1,70 @@
+
+
 $primary-tan: #C5A77E;
 $hover-tan : #D4C0AA;
-$visited-tan : #8A7762;
+$dark-tan : #8A7762;
 $link-hover : #FFFFFF;
 
 $header-white : #FFFFFF;
-$subheader-gray : #666666;
+$subheader-gray : #b0b0b0;
+
+$mobile : 500px;
 
 $alt-base-background : #232121;
 $light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
 $diamond-divider: '/images/generic/diamond-divide.png';
+$bar-diamond-divider: '/images/generic/bar-diamond-divide.png';
 $footer-divider: '/images/generic/footerbg.png';
 $divider-color: #777777;
 $inactive-button-color: #C1C0C0;
 $inactive-button-font-color: #302d2d;
+
+/*********************
+BREAKPOINTS
+*********************/
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 85em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
 
 @mixin border-radius {
   -webkit-background-size: cover;
      -moz-background-size: cover;
       -ms-background-size: cover;
           background-size: cover;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 a {
@@ -56,39 +101,14 @@ blockquote {
 }
 
 section {
-	border-bottom: $divider-color solid 1px;
-	padding: 60px;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	padding-left: 60px;
+	padding-right: 60px;
+	border-bottom: 1px solid $divider-color;
 }
 
-h1 {
-	margin-top: 0px;
-	margin-bottom: 10px;
-	font-size: 3.998 em;
-	line-height: 1.2 em;
-	font-weight: normal;
-	text-transform: uppercase
-}
 
-h2 {
-	margin-top: 0px;
-	font-size: 2.827em;
-	line-height: 1.2em;
-	font-weight: normal;
-}
-
-h3 {
-	margin-top: 0px;
-	font-size: 1.999em;
-	line-height: 1.45em;
-	font-weight: normal;
-}
-
-h4 {
-	margin-top: 0px;
-	font-size: 1.414em;
-	line-height: 1.45em;
-	font-weight: normal;
-}
 
 label {
 	font-weight: normal;
@@ -100,7 +120,11 @@ small {
 	line-height: 1.5em;
 }
 
-
+.how-it-works-heading {
+	color: $primary-tan;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
 
 .lead-body-copy {
 	font-size: 1.618em;
@@ -110,12 +134,17 @@ small {
 
 .body-copy {
 	font-size: 1em;
-	line-height: 1.5em;
-	color: $subheader-gray;
+	line-height: 1.45em;
+	color: #DDD;
 }
 
 .alt-base-section {
 	background-color: $alt-base-background;
+}
+
+.section-divider {
+	width: 100%;
+	margin: 0px;
 }
 
 .diamond-base-section {
@@ -129,22 +158,48 @@ small {
 
 .btn-primary {
 	background-color: $primary-tan;
-	border-radius: 0%;
-	border: none;
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 2px solid transparent;
+	height: 56px;
+	margin-top: 10px;
+	-webkit-box-shadow: 0px 4px 0px $dark-tan;
+	-moz-box-shadow:    0px 4px 0px $dark-tan;
+	box-shadow:         0px 4px 0px $dark-tan;
+
 	text-transform: uppercase;
 	min-width: 200px;
-	margin-bottom: 1em;
+	padding: 12px;
+	margin-left: 15px;
+	margin-right: 15px;
 
 	&:hover {
 		background-color: $hover-tan;
+		border: 2px solid #FFF;
+		box-shadow: none;
 	}
 
 	&:focus {
+		border: 1px solid #FFF;
 		background-color: $primary-tan;
 	}
 
 	&:visited {
 		background-color: $primary-tan;
+	}
+}
+
+.gift-button {
+	background-color: #333333 !important; 
+	padding: 14px; 
+	border: 2px solid $primary-tan; 
+	color: $primary-tan;
+
+	&:hover {
+		color: #FFF;
+		border: 2px solid #FFF;
+		box-shadow: none;
 	}
 }
 
@@ -162,9 +217,12 @@ small {
 .circle-img {
 	width: 150px;
 	height: 150px;
+	padding-bottom: 15px;
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;
 	border-radius: 100%;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }
 
 .faq-block {
@@ -203,6 +261,7 @@ small {
 	background-position: center; 
   margin: 0;
   padding: 0;
+  margin-bottom: 30px;
   width: 100%;
   height: 36px;
 }
@@ -229,11 +288,10 @@ small {
 	margin-bottom: 2em;
 	text-align: center; 
 	display: block;
+	min-height: 200px;
 
 	button {
-		min-width: 200px;
-		margin: 10px;
-		text-transform: none;
+		padding: 12px;
 	}
 }
 
@@ -247,25 +305,55 @@ small {
 }
 
 .inactive-selection {
-	color: $inactive-button-font-color;
+	color: #DDD;
 	background-color: $inactive-button-color;
 }
 
+.active-selection {
+	border: 4px solid green;
+}
+
 .box-selection {
-	background-color: $alt-base-background;
-	border: 1px solid #FFFFFF;
+	background-color: #FFF;
 	padding: 4px;
-	min-width: 290px;
-	margin: auto;
+	min-width: 300px;
 	margin-bottom: 2em;
 	text-align: center; 
 	display: block;
 
-	button {
-		width: 90%;
-		height: 70px;
-		border-radius: 4px;
+	p {
+		color: #333;
+	}
 
+	img {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.amount-circle {
+		margin-left: auto;
+		margin-right: auto;
+		border: 1px solid #999;
+    background: #FFF;
+    width: 100px;
+    height: 100px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 9000;
+    border-radius: 100%;
+
+    .quantity{
+    	position: relative;
+    	padding-top: 8px;
+    	z-index: 9001;
+    	text-align: center;
+    	color: #000;
+    	font-size: 58px;
+    }
 	}
 }
 
@@ -286,4 +374,130 @@ small {
 	background:url('/images/about/brewingvats.jpg') no-repeat center center fixed;
 	height: 315px;
 	@include border-radius;
+}
+.html5-progressbar{
+  padding:15px;
+  background-color: #222120;
+  border-radius:5px 20px 5px 20px;
+}
+
+progress{
+  width:300px;
+  height:16px;
+  border:0;
+  border-radius:9px;
+  background-color:#f3f3f3;
+
+}
+progress::-webkit-progress-bar{
+  background-color:#f3f3f3;
+  border-radius:9px;
+}
+progress::-webkit-progress-value{
+  background:$primary-tan;
+  border-radius:9px;
+}
+progress::-moz-progress-bar{
+  background-color:#f3f3f3;
+  border-radius:9px;
+}
+progress::-moz-progress-value{
+  background:$primary-tan;
+  border-radius:9px;
+}
+.progress_value{
+  color:#fff;
+}
+
+
+/*change breadcrumb separator to raquo symbol*/
+.breadcrumb > li + li:before {
+     content: "\00BB";
+     color: #aaa;
+}
+
+.brewer-text{
+	background-color: #FFF;
+	width: 100%;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right: 25px;
+	color: $subheader-gray;
+
+	h5 {
+		margin-bottom: 3px;
+	}
+
+	h6 {
+		margin-top: 0px;
+		margin-bottom: 3px;
+		color: #000;
+	}
+
+	h7 {
+		margin-top: 0px;
+	}
+
+	hr {
+		margin-top: 14px;
+		margin-bottom: 15px;
+		width: 20%;
+		color: #000;
+	}
+
+	@include breakpoint(mobileonly){
+		min-height: 200px;
+	}
+
+	@include breakpoint(phablet){
+		min-height: 250px;
+	}
+
+	@include breakpoint(laptop){
+		height: 250px;
+	}
+
+	@include breakpoint(desktop){
+		height: 250px;
+	}
+}
+
+.brewer_card {
+	@include breakpoint(mobileonly){
+		padding-bottom: 15px;
+		margin: auto;
+		width: 320px;
+	}
+
+	@include breakpoint(phablet){
+		align: center;
+		margin: auto;
+		padding-bottom: 15px;
+		width: 500px;
+	}
+
+	@include breakpoint(laptop){
+		margin: 15px;
+		width: 95%;
+		height: 600px;
+	}
+
+	@include breakpoint(desktop){
+		margin: 15px;
+		width: 95%;
+		height: 650px;
+	}
+
+	img{
+ 		width:100%;
+	}
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    /* the rest of your styling */
 }
