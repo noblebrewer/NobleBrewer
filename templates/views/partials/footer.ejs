@@ -1,0 +1,36 @@
+<!-- views/partials/footer.ejs -->
+
+<div id="footer" class="container">
+			<div class="footer-pattern">
+			  <div align="center">
+			  	<a href="#"><img src="/images/generic/footerbadge.png"></a>
+			  </div>
+			</div>
+	    <div class="row">
+		    <div class="col-md-8">
+				<ul>
+					<% footerLinks.forEach(function(link, index){ %>
+						<li>
+							<a href="<%= link.href %>"><%= link.label %></a>
+						</li>
+					<% }) %>
+				</ul>
+		    </div>
+	    	<div class="col-md-3 col-md-offset-1">
+	    		<div class="small-social-media">
+		    		<a href="https://www.facebook.com/noblebrewer" target="_blank"><img src="/images/generic/facebook.png"></a>
+            		<a href="https://instagram.com/NobleBrewer" target="_blank"><img src="/images/generic/instagram.png"></a>
+            		<a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img src="/images/generic/twitter.png"></a>
+	    		</div>
+	    	</div>
+   	 	</div>
+
+		<script src="/js/jquery/jquery-1.11.2.min.js"></script>
+		<script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
+
+		<% if (user) { %>
+			<% if (user.canAccessKeystone) { %>
+				<script src="/keystone/js/content/editor.js"></script>
+			<% } %>
+		<% } %>
+</div>

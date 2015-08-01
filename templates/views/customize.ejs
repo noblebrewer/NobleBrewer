@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default-noemail.html" %}
+<head>
+  <div class="title">
+      <title>Customize</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 
 <section style="border: none">
 	<div class="row">
@@ -81,9 +87,9 @@
 	</form>
 </section>
 
-{% endblock %}
+<% include ./partials/footer %>
 
-{% block js %}
+
 <script>
 
 	function calculateTotals() {
@@ -181,4 +187,3 @@
 
 	});
 </script>
-{% endblock %}

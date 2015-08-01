@@ -1,0 +1,17 @@
+<!-- views/partials/head.ejs -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- this had a filter in nunjucks - title|default(Noble Brewer) - need to figure out where that was coming from -->
+<title>Noble Brewer</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<link href="/styles/site.css" rel="stylesheet">
+
+<% if (user) { %>
+	<% if (user.canAccessKeystone) { %>
+	<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
+	<% } %>
+<% } %>

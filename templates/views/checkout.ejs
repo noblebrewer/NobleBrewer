@@ -1,6 +1,12 @@
-{% extends "templates/layouts/order-layout.html" %}
 
-{% block content %}
+<head>
+  <div class="title">
+      <title>Checkout</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+<% include ./partials/header %>
 
 <div class="navbar-fixed-top" style=" border: 10px solid #FFF; background-color: #333333; height:80px;">
 
@@ -284,9 +290,7 @@
 		</div>
 	</form>
 </div>
-{% endblock %}
 
-{% block js %}
 <script>
 	//base prices
 	var small = 43.96;
@@ -412,4 +416,4 @@
 	});
 </script>
 
-{% endblock %}
+<% include ./partials/footer %>

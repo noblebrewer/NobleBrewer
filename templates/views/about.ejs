@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>About</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 <section id="about-banner">
     <div class="container">
         <div class="row">
@@ -143,23 +149,7 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>JOIN THE CONVERSATION</h3>
-                <div class="body-copy">
-                    <p>Connect with us on any of these social networks to join the conversation and be a part of the craft beer community.</p>
-                </div>
-            </div>
-            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
-                <div class="social-media">
-                    <a href="https://www.facebook.com/noblebrewer" target="_blank"><img src="/images/generic/facebook.png"></a>
-                    <a href="https://instagram.com/NobleBrewer" target="_blank"><img src="/images/generic/instagram.png"></a>
-                    <a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img src="/images/generic/twitter.png"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
+
+<% include ./partials/emailFooter %>
+<% include ./partials/footer %>
+
