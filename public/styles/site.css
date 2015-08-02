@@ -5218,10 +5218,22 @@ small {
 #faq-banner {
   margin-top: 20px;
   height: 70%;
-  max-height: 340px;
+  max-height: 360px;
   border-bottom: 1px solid #C5A77E;
   border-top: 3px solid #C5A77E;
   background: url('/images/footer/footer-banner2.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#terms-banner {
+  margin-top: 20px;
+  height: 70%;
+  max-height: 360px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 3px solid #C5A77E;
+  background: url('/images/footer/footer-banner.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
