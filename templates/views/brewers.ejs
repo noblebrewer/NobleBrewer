@@ -7,7 +7,7 @@
 
 
 <% include ./partials/header %>
-<section>
+<section id="brewers-banner">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
@@ -23,8 +23,9 @@
 	<div class="container">
 
 		<div class="row">
-			<h2 align="center">Featured Brewers</h2>
+			<h1 align="center">FEATURED BREWERS</h1>
 		</div>
+		<br>
 		<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
 				<% if (index%2 == 0){ %>
 						<div class="row" class="featured-row">
@@ -34,11 +35,10 @@
 							<div class="brewer_card">
 								<img src="<%=featuredBrewer.profilePicture.url%>">
 								<div class="brewer-text">
-									<h5><%=featuredBrewer.profileHeadline%></h5>
+									<h3><%=featuredBrewer.profileHeadline%></h3>
 
-									<h6><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h6>
- 									<h7><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h7>
- 									<br>
+									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+ 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
  									<hr align="left">
  									<p><%=featuredBrewer.profileBody%></p>
 								</div>
@@ -49,11 +49,10 @@
 							<div class="brewer_card">
 								<img src="http://www.vtecsoft.com/images/default-avatar_0.png">
 								<div class="brewer-text">
-									<h5><%=featuredBrewer.profileHeadline%></h5>
+									<h3><%=featuredBrewer.profileHeadline%></h3>
 
-									<h6><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h6>
- 									<h7><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h7>
- 									<br>
+									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+ 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
  									<hr align="left">
  									<p><%=featuredBrewer.profileBody%></p>
 								</div>
@@ -73,34 +72,37 @@
 			</div>
 		</div>
 </section>
-<section>
+<section id="diamond-base-section">
 		<div class="row">
 			<h2 align="center">All Brewers</h2>
 		</div>
-
-		<div class="col-md-12" align="center">
+		<br>
+		<br>
 			<% data.allBrewers.forEach(function(brewer, index){ %>
 				<% if (index%6 == 0){ %>
-					<div class="col-md-12" align="center">
+					<div class="row">
+						<div class="col-md-12" align="center">
 				<% } %>
 				<% if (brewer.profilePicture.url){ %>
-					<div class="col-md-3" align="center">
-						<img src="<%= brewer.profilePicture.url%>" class="img-thumbnail circle-img">
-						<br>
-						<a href="/profile/<%= brewer.slug%>"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></a>
-					</div>
+						<div class="col-md-3" align="center">
+							<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.profilePicture.url%>" class="img-thumbnail circle-img gray-img"></a>
+							<br>
+							<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+							<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
+						</div>
 				<% } else { %>
-					<div class="col-md-3" align="center">
-						<img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"> 
-						<br>
-						<a href="/profile/<%= brewer.slug%>"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></a>
-					</div>
+						<div class="col-md-3" align="center">
+							<a href="/profile/<%= brewer.slug%>"><img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"></a>
+							<br>
+							<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+							<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
+						</div>
 				<% } %>
 				<% if ((index+1)%6 == 0){ %>
+						</div>
 					</div>
 				<% } %>
 			<% }) %>
-		</div>
 </section>
 
 <% include ./partials/emailFooter %>
