@@ -4932,6 +4932,9 @@ button.close {
       padding: 5px;
       text-align: center; }
 
+.stripe-background {
+  background-image: url('/images/generic/10pxstripe.png'); }
+
 .small-social-media {
   margin-top: 10px;
   width: 150px;
