@@ -10,7 +10,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Noble Brewer</a>
+				<a class="navbar-brand" href="/"><img src='/images/generic/simple_logo.svg'></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-left">
@@ -25,9 +25,9 @@
 						<% if (user.canAccessKeystone) { %>
 						<li><a class="nav-link" href="/keystone">Open Keystone</a></li>
 						<% } %>
-						<li><a class="nav-link" href="/keystone/signout">Sign Out</a></li>
+						<li><a class="nav-link login" href="/keystone/signout">Sign Out</a></li>
 					<% } else { %>
-						<li><a class="nav-link" href="/keystone/signin">Sign In</a></li>
+						<li><a class="nav-link login" href="/keystone/signin">Sign In</a></li>
 					<% } %>
 				</ul>
 			</div>
