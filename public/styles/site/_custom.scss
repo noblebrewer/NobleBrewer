@@ -162,6 +162,7 @@ small {
 }
 
 .btn-primary {
+	color: $dark-text;
 	background-color: $primary-tan;
 	letter-spacing: 1px;
 	font-weight: bold;
@@ -386,9 +387,10 @@ small {
 }
 
 #team-banner {
-	background:url('/images/footer/team/team-banner.jpg') no-repeat center center;
-	max-height:300px;
-	margin-bottom: 20px;
+	background:url('/images/footer/team/team-banner.png') no-repeat center center;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 220px;
 	border-bottom: 1px solid $primary-tan;
 	border-top: 2px solid $primary-tan;
 	@include border-radius;
@@ -567,7 +569,12 @@ progress::-moz-progress-value{
 }
 
 .team-photo {
-	float: right;
+
+	margin-bottom: 20px;
+
+	@include breakpoint(laptop) {
+		float: right;
+	}
 }
 
 #about-header {

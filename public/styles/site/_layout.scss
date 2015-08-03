@@ -26,21 +26,21 @@
 
 .navbar-brand {
 	background-color: #232121;
-	background-image: url('/images/generic/logo-background.png');
-	&:hover,
-      &:focus {
-      	
-      	background-color: #232121;
-				background-image: url('/images/generic/logo-background.png');
-  }
-}
+	padding-left: 35px;
+	padding-right: 35px;
 
-.navbar-collapse {
+	img {
+		width: 100%;
+		position: relative;
+		bottom: -5px;
+	}
 
-	@include breakpoint(laptop){
-		margin-right: 80px;
+	&:hover {
+		background-color: #232121;
 	}
 }
+
+
 
 .navbar-nav > li, navbar-default {
 	
@@ -53,8 +53,6 @@
 			border-bottom : 1px solid #FFF;
     }
 	}
-
-
 
 	@include breakpoint(laptop){
 		margin-left: 10px;
@@ -113,7 +111,10 @@
 			color: #FFF;
 		}
 	}
+}
 
+.navbar-right {
+	background-image: none;
 }
 
 .stripe-background {
