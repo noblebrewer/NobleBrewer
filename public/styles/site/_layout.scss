@@ -1,8 +1,64 @@
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 85em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
 #header {
 	width:100%;
 	margin-top: 30px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid $primary-tan;
+}
+
+.navbar-brand {
+	background-color: #232121;
+	background-image: url('/images/generic/logo-background.png');
+	&:hover,
+      &:focus {
+      	
+      	background-color: #232121;
+				background-image: url('/images/generic/logo-background.png');
+  }
+}
+
+.navbar-collapse {
+
+	@include breakpoint(laptop){
+		margin-right: 80px;
+	}
+}
+
+.navbar-nav > li, navbar-default {
+	
+	a {
+		color: $primary-tan;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			color: #FFF;
+			border-bottom : 1px solid #FFF;
+    }
+	}
+
+
+
+	@include breakpoint(laptop){
+		margin-left: 10px;
+	}
 }
 
 #email-signup {
