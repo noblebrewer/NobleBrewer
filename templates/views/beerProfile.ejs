@@ -1,18 +1,16 @@
+<head>
+  <div class="title">
+      <title><%= data.beerName%></title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% extends "templates/layouts/default.html" %}
-
-
-{% block intro %}
-
-{% endblock %}
-
-{% block content %}
-
+<% include ./partials/header %>
 <div class="bodyToLoad">
 	<div class="row">
 
 		<div class="col-md-4">	
-			<h4>Beers -> {{data.beerName}}</h4>		
+			<h4>Beers -> <%= data.beerName%></h4>		
 		</div>
 		<div class="col-md-2 col-md-offset-6" style="border:1px solid black">
 			<span>order this beer</span>
@@ -22,7 +20,7 @@
 
 	<div class="row">
 		<div class="col-md-12" align="center">
-			<h1>{{data.beerName}}</h1>
+			<h1><%= data.beerName%></h1>
 		</div>
 	</div>
 
@@ -33,12 +31,12 @@
 	<div class="col-md-12">
 		<div class="row">	
 			<div class="col-md-6">
-				<h4>{{data.beerName}}</h4>
-				<p>{{data.beerType}}</p>
+				<h4><%= data.beerName%></h4>
+				<p><%= data.beerType%></p>
 			</div>
 
 			<div class="col-md-6">
-				{{data.brewerName}}
+				<%= data.brewerName%>
 			</div>
 		</div>
 	</div>
@@ -55,7 +53,7 @@
 			</div>
 			<br/>
 			<div class="col-md-12">
-				<p>					{{data.profileBody}}
+				<p>	<%= data.profileBody %>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
 				</div>
 			</div>
@@ -65,7 +63,7 @@
 				</div>
 
 				<div class="col-md-12">
-					<a class="btn btn-warning btn-block" href="mailto:{{data.brewerEmail}}" role="button" >Connect with {{data.brewerName}}</a>
+					<a class="btn btn-warning btn-block" href="mailto:{{data.brewerEmail%>" role="button" >Connect with <%= data.brewerName%></a>
 				</div>
 			</div>
 		</div>
@@ -78,7 +76,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center col-md-12">
-					Flavor profile: {{data.profileBody}}
+					Flavor profile: <%= data.profileBody%>
 				</div>
 			</div>
 		</div>
@@ -86,11 +84,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center col-md-12">
-					<a class="btn btn-warning" href="/brewers" role="button">BACK TO ALL beers</a>
+					<a class="btn btn-warning" href="/beers" role="button">BACK TO ALL beers</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	{% endblock %}
+<% include ./partials/footer %>
+
 

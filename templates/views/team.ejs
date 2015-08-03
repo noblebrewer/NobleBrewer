@@ -1,30 +1,30 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Team</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block intro %}
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="centered-block">
-                <h1> MEET</h1>
-                <h1>THE TEAM</h1>
-                <br>
-            </div>
-        </div>
-    </div>
+
+<% include ./partials/header %>
+
+<section id="team-banner">
 </section>
-{% endblock %}
-
-{% block content %}
 
 <section>
       <div class="container">
-            <h2>OUR TEAM</h2>
-            <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-5 col-md-offset-1">
+                        <h1>OUR TEAM</h1>
+                        <br>
                   </div>
-                  <div class="col-md-9">
+            </div>
+
+            <div class="row">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_img1.jpg">
+                  </div>
+                  <div class="col-md-7">
                         <h3>Claude Burns</h3>
                         <div class="body-copy">
                               <p>Claude Burns finished the World Beer Tour, consisting of 100 different beers at Ram’s Head Tavern in Annapolis, MD, shortly after his 21st birthday. He later had the good fortune of living in two of America’s great beer cities– Seattle and San Diego– while serving on active duty. The one constant for him whether he was deployed on an aircraft carrier or working alongside Navy SEALs was his love and passion for exploring new beers. He’s a homebrewer and the founder of Noble Brewer.</p>
@@ -34,10 +34,10 @@
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_img2.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7">
                         <h3>Lauralynn Stubler</h3>
                         <div class="body-copy">
                               <p>Lauralynn’s years in Colorado indoctrinated her into the craft of homebrewing, where her first attempts at batched brews resulted in basement explosions and flying bottle caps. With an admiration for the art of brewing at home, and a passion for helping founders build their companies, she landed in San Francisco where she founded her own eCommerce company, and advises a number of San Francisco startups on all things growth marketing related.</p>
@@ -47,10 +47,10 @@
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_img3.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7">
                         <h3>Anders Houston</h3>
                         <div class="body-copy">
                               <p>He likes to draw dinosaurs, he went to RISD (Rhode Island School of Design), now he makes products and cooks food, sometimes using beer. When he’s not too busy pushing pixels, you can reach him at anders@noblebrewerbeer.com.</p>
@@ -59,10 +59,10 @@
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_img4.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7">
                         <h3>Cathy Trainor</h3>
                         <div class="body-copy">
                               <p>After discovering “live beer” on the street in Russia, Cathy thought that she’d never find anything else that she loved. This changed when she moved to Washington D.C. and lived around the corner from an amazing craft beer bar called Meridian Pint and a grocery store where Dogfish Head’s Midas Touch was readily available.</p>
@@ -74,25 +74,31 @@
             <br>
             <br>
             <br>
-            <h2>OUR ADVISORS</h2>
-            <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-5 col-md-offset-1">
+                        <h1>OUR ADVISORS</h1>
+                        <br>
                   </div>
-                  <div class="col-md-9">
+            </div>
+
+            <div class="row">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_adv1.jpg">
+                  </div>
+                  <div class="col-md-7">
                         <h3>John Gillooly</h3>
                         <div class="body-copy">
                               <p>John Gillooly is a craft beer industry veteran of 20 years; He’s held leadership positions at Dogfish Head, Mammoth Brewing, Speakeasy, and currently is the Brewmaster at Drake’s Brewing in San Leandro.  Relentlessly experimental, but focused on quality and consistency.  Loves adjuncts.</p>
                         </div>
                   </div>
+                  <br>
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_adv2.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7">
                         <h3>Victoria Gutierrez</h3>
                         <div class="body-copy">
                                <p>Victoria Gutierrez’s first love is wine but she’s falling hard for beer. A certified Sommelier and boutique beverage consultant in the San Francisco Bay Area, Victoria has helped small brands grow. Her career has involved everything from running a winery and producing award winning wines to overseeing brand development and strategy at a design firm. When she’s not brewing beer at home, she oversees the company’s long term planning and acts as an advisor to the board of directors.</p>
@@ -102,10 +108,10 @@
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_adv3.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7 ">
                         <h3>Steve Hoffman</h3>
                         <div class="body-copy">
                               <p>Steve Hoffman (a.k.a. Captain Hoff) is a serial entrepreneur. He is Captain of Founders Space, one of INC Magazine’s top 10 incubators, an angel investor and the Managing Director of FOUNDERS.VC, the early-stage venture fund for Founders Space.</p>
@@ -115,10 +121,10 @@
             </div>
             <br>
             <div class="row">
-                  <div class="col-md-3">
-                        <img src="http://www.fillmurray.com/200/200">
+                  <div class="col-md-3 col-md-offset-1">
+                        <img class="team-photo" src="/images/footer/team/team_adv4.jpg">
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-7">
                         <h3>Mark Weiss</h3>
                         <div class="body-copy">
                               <p>Mark Weiss brewed his first beer, Elyse Amber, before his first daughter was born and has been a long time fan of craft beer. He has a penchant for start-ups and has spent the past 15 years helping them create strategic partnerships. His career has spanned several well known Internet companies starting with HotJobs.com in 1999 which went public and was acquired by Yahoo. He joined Trulia as Director of Business Development as an early employee which went public and was acquired by Zillow.</p>
@@ -129,4 +135,4 @@
       </div>
 </section>
 
-{% endblock %}
+<% include ./partials/footer %>

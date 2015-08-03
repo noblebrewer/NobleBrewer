@@ -1,6 +1,12 @@
-{% extends "templates/layouts/default.html" %}
+<head>
+  <div class="title">
+      <title>Thank you</title>
+  </div>
+  <% include ./partials/head %>
+</head>
 
-{% block content %}
+
+<% include ./partials/header %>
 <div class="alert alert-info" style="background-color: #C5A77E; padding: 1px;color: #302d2d; border: 0px">
     <a href="#" class="close" style="padding-top: 6px" data-dismiss="alert">&times;</a>
     <div class="centered-block" style="padding-top: 8px">
@@ -61,4 +67,4 @@
 	</div>
 </div>
 
-{% endblock %}
+<% include ./partials/footer %>

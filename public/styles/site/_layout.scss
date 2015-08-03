@@ -1,11 +1,90 @@
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 85em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
 #header {
+	width:100%;
 	margin-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid $primary-tan;
+}
+
+.navbar-brand {
+	background-color: #232121;
+	background-image: url('/images/generic/logo-background.png');
+	&:hover,
+      &:focus {
+      	
+      	background-color: #232121;
+				background-image: url('/images/generic/logo-background.png');
+  }
+}
+
+.navbar-collapse {
+
+	@include breakpoint(laptop){
+		margin-right: 80px;
+	}
+}
+
+.navbar-nav > li, navbar-default {
+	
+	a {
+		color: $primary-tan;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			color: #FFF;
+			border-bottom : 1px solid #FFF;
+    }
+	}
+
+
+
+	@include breakpoint(laptop){
+		margin-left: 10px;
+	}
+}
+
+#email-signup {
+	input {
+		border-radius: 0px;
+		margin-right: 0px;
+	}
+
+	button {
+		border-radius: 0px;
+		margin-left: -5px;
+		color: #232121;
+		text-transform: uppercase;
+		font-weight: 500;
+		background-color: $primary-tan;
+		border: none;
+		padding: 7px 12px;
+		width: 130px;
+	}
+
 }
 
 #footer {
 	margin-top: 30px;
 	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 90px;
 	color: $gray-light;
 
 	ul {
@@ -21,6 +100,26 @@
 	}
 }
 
+.main-navbar {
+	background-color: #232121;
+	border: none;
+	background-image: url('/images/generic/header-stripe.png');
+	color: $primary-tan;
+
+	a {
+		color: $primary-tan;
+
+		&:hover {
+			color: #FFF;
+		}
+	}
+
+}
+
+.stripe-background {
+	background-image: url('/images/generic/10pxstripe.png');
+}
+
 .small-social-media {
 	margin-top: 10px;
 	width: 150px;
@@ -32,7 +131,6 @@
 
   img {
   	width: 45%;
-  	height: 45%;
   }
 }
 

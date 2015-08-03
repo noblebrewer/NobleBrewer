@@ -1,0 +1,66 @@
+<head>
+  <div class="title">
+      <title>Contact Us</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+
+<% include ./partials/header %>
+
+	<div class="container">
+		<h1>Contact Us</h1>
+	</div>
+
+<div class="container">
+	<%if (enquirySubmitted) { %>
+		<h3>Thanks for getting in touch.</h3>
+	<% } else { %>
+		<div class="row">
+			<div class="col-sm-8 col-md-6">
+				<form method="post">
+					<input type="hidden" name="action" value="contact">
+					<div class="form-group <%= validationErrors.name ? 'has-error' : '' %>">
+						<label>
+							<span>Name</span>
+							<input type="text" name="name.full" value="<% formData["name.full"] %>" class="form-control">
+						</label>
+					</div>
+					<div class="form-group <%= validationErrors.email ? 'has-error' : '' %>">
+						<label>
+							<span>Email</span>
+							<input type="email" name="email" value="<%= formData.email %>" class="form-control">
+						</label>
+					</div>
+					<div class="form-group">
+						<label>
+							<span>Phone</span>
+							<input type="text" name="phone" value="<%= formData.phone %>" placeholder="(optional)" class="form-control">
+						</label>
+					</div>
+					<div class="form-group <%= validationErrors.enquiryType ? 'has-error' : '' %>">
+						<label>
+						<span>What are you contacting us about?</span>
+						<select name="enquiryType" class="form-control">
+						<option value="">(select one)</option>
+						<% enquiryTypes.forEach(function(type, index) { %>
+							<option value="<%= type.value %>" <%=  formData.enquiryType === type.value ? 'selected' : '' %>><%=  type.label %></option>
+						<% }) %>
+						</select>
+					</div>
+					<div class="form-group <%= validationErrors.message ? 'has-error' : '' %>">
+						<label>
+							<span>Message</span>
+							<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control"><%= formData.message %></textarea>
+						</label>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	<% } %>
+</div>
+
+<% include ./partials/footer %>
