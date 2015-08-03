@@ -10,6 +10,7 @@ $subheader-gray : #b0b0b0;
 
 $mobile : 500px;
 
+$dark-text: #232121;
 $alt-base-background : #232121;
 $light-base-background: #333333;
 $diamond-background : '/images/generic/diagmonds.png';
@@ -219,15 +220,18 @@ small {
 	display: block;
 }
 
+.gray-image {
+	filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
 .circle-img {
-	width: 150px;
-	height: 150px;
-	padding-bottom: 15px;
+	border: 1px solid $primary-tan;
+	width: 128px;
+	height: 128px;
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;
 	border-radius: 100%;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
 }
 
 .faq-block {
@@ -386,17 +390,39 @@ small {
 	max-height:300px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid $primary-tan;
-	border-top: 3px solid $primary-tan;
+	border-top: 2px solid $primary-tan;
+	@include border-radius;
+}
+
+#brewers-banner {
+	background:url('/images/brewers/brewer-banner.jpg') no-repeat center center;
 	@include border-radius;
 }
 
 #faq-banner {
-	margin-top: 20px;
 	height: 70%;
-	max-height:340px;
+	max-height:360px;
+	border-bottom: 1px solid $primary-tan;
+	border-top: 2px solid $primary-tan;
+	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#terms-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $primary-tan;
+	border-top: 2px solid $primary-tan;
+	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#press-banner {
+	height: 70%;
+	max-height:360px;
 	border-bottom: 1px solid $primary-tan;
 	border-top: 3px solid $primary-tan;
-	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
+	background:url('/images/footer/press-banner.jpg') no-repeat center center;
 	@include border-radius;
 }
 
@@ -451,18 +477,26 @@ progress::-moz-progress-value{
 	padding-right: 25px;
 	color: $subheader-gray;
 
+	h3 {
+		margin-bottom: 3px;
+		font-weight: normal;
+		font-size: 22px;
+		text-transform: uppercase;
+	}
+
+	h4 {
+		margin-top: 0px;
+		margin-bottom: 3px;
+		color: $dark-text;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+
 	h5 {
-		margin-bottom: 3px;
-	}
-
-	h6 {
 		margin-top: 0px;
 		margin-bottom: 3px;
-		color: #000;
-	}
-
-	h7 {
-		margin-top: 0px;
+		font-size: 14px;
+		text-transform: uppercase;
 	}
 
 	hr {
@@ -487,6 +521,18 @@ progress::-moz-progress-value{
 	@include breakpoint(desktop){
 		height: 250px;
 	}
+}
+
+.brewer-name {
+	margin-top: 15px;
+	margin-bottom: 0px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.subheading {
+	font-size: 12px;
+	color: #666666;
 }
 
 .brewer_card {
@@ -522,13 +568,6 @@ progress::-moz-progress-value{
 
 .team-photo {
 	float: right;
-}
-
-.navbar {
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-    /* the rest of your styling */
 }
 
 #about-header {
