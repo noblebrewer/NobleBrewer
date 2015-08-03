@@ -13,12 +13,14 @@
 
 	button {
 		border-radius: 0px;
-		margin-left: 0px;
-		color: #FFF;
+		margin-left: -5px;
+		color: #232121;
 		text-transform: uppercase;
+		font-weight: 500;
 		background-color: $primary-tan;
 		border: none;
 		padding: 7px 12px;
+		width: 130px;
 	}
 
 }
