@@ -4951,10 +4951,11 @@ button.close {
   color: #777777; }
   #footer ul {
     list-style-type: none;
-    display: table;
+    display: flex;
     width: 100%; }
     #footer ul li {
       display: table-cell;
+      flex-grow: 1;
       padding: 5px;
       text-align: center; }
 
