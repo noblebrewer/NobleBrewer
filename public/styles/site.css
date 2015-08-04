@@ -5017,7 +5017,7 @@ blockquote {
     line-height: 1.2em;
     color: #FFFFFF; }
 
-h3 {
+h1, h3 {
   margin-top: 0px; }
 
 section {
@@ -5276,7 +5276,7 @@ small {
   -ms-background-size: cover;
   background-size: cover; }
 
-#terms-banner {
+#legal-banner {
   height: 70%;
   max-height: 360px;
   border-bottom: 1px solid #C5A77E;
@@ -5424,3 +5424,20 @@ progress::-moz-progress-value {
     text-shadow: 1px 1px 0px #C5A77E;
     letter-spacing: 1px;
     line-height: 46px; }
+
+.legal-link-group {
+  padding-bottom: 30px; }
+
+.legal-link {
+  text-transform: uppercase;
+  display: block;
+  line-height: 2.5em;
+  text-align: center; }
+  .legal-link:hover {
+    text-decoration: none; }
+  @media (min-width: 64em) {
+    .legal-link {
+      text-align: left; } }
+
+.legal-link-active {
+  color: #FFF; }
