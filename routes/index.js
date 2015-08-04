@@ -45,6 +45,9 @@ exports = module.exports = function(app) {
 	app.get('/profile/:profile?', routes.views.brewerProfile);
 	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
   app.get('/terms', routes.views.terms);
+  app.get('/privacy', routes.views.privacy);
+  app.get('/shipping', routes.views.shipping);
+  app.get('/return', routes.views.return);
   app.get('/team', routes.views.team);
   app.get('/faq', routes.views.faq);
   app.get('/press', routes.views.press);
