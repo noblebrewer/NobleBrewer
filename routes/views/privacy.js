@@ -6,9 +6,9 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	// Set locals
-	locals.section = 'brewerSignUp';
+	locals.section = 'privacy';
 	
 	// Render the view
-	view.render('brewerSignUp');
+	view.render('privacy');
 	
 };

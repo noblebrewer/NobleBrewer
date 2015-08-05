@@ -86,6 +86,7 @@ blockquote {
 		font-size: 45px;
 		font-style: italic;
 		color: #666666;
+		line-height: 1.1em;
 
 		> .quote {
 			color: #FFFFFF;
@@ -101,7 +102,7 @@ blockquote {
 	}
 }
 
-h3 {
+h1, h3 {
 	margin-top: 0px;
 }
 
@@ -113,7 +114,11 @@ section {
 	border-bottom: 1px solid $divider-color;
 }
 
-
+iframe{
+	@include breakpoint(mobileonly){
+		width: 100%;
+	}
+}
 
 label {
 	font-weight: normal;
@@ -126,7 +131,6 @@ small {
 }
 
 .how-it-works-heading {
-	color: $primary-tan;
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
@@ -162,6 +166,7 @@ small {
 }
 
 .btn-primary {
+	color: $dark-text;
 	background-color: $primary-tan;
 	letter-spacing: 1px;
 	font-weight: bold;
@@ -192,6 +197,10 @@ small {
 
 	&:visited {
 		background-color: $primary-tan;
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
 	}
 }
 
@@ -386,9 +395,10 @@ small {
 }
 
 #team-banner {
-	background:url('/images/footer/team/team-banner.jpg') no-repeat center center;
-	max-height:300px;
-	margin-bottom: 20px;
+	background:url('/images/footer/team/team-banner.png') no-repeat center center;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 220px;
 	border-bottom: 1px solid $primary-tan;
 	border-top: 2px solid $primary-tan;
 	@include border-radius;
@@ -408,7 +418,7 @@ small {
 	@include border-radius;
 }
 
-#terms-banner {
+#legal-banner {
 	height: 70%;
 	max-height:360px;
 	border-bottom: 1px solid $primary-tan;
@@ -567,7 +577,12 @@ progress::-moz-progress-value{
 }
 
 .team-photo {
-	float: right;
+
+	margin-bottom: 20px;
+
+	@include breakpoint(laptop) {
+		float: right;
+	}
 }
 
 #about-header {
@@ -579,4 +594,27 @@ progress::-moz-progress-value{
 		letter-spacing: 1px;
 		line-height: 46px;
 	}
+}
+
+.legal-link-group {
+	padding-bottom: 30px;
+}
+
+.legal-link {
+	text-transform: uppercase;
+	display: block;
+	line-height: 2.5em;
+	text-align: center;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	@include breakpoint(laptop) {
+		text-align: left;
+	}
+}
+
+.legal-link-active {
+	color: #FFF;
 }
