@@ -86,6 +86,7 @@ blockquote {
 		font-size: 45px;
 		font-style: italic;
 		color: #666666;
+		line-height: 1.1em;
 
 		> .quote {
 			color: #FFFFFF;
@@ -113,7 +114,11 @@ section {
 	border-bottom: 1px solid $divider-color;
 }
 
-
+iframe{
+	@include breakpoint(mobileonly){
+		width: 100%;
+	}
+}
 
 label {
 	font-weight: normal;
@@ -126,7 +131,6 @@ small {
 }
 
 .how-it-works-heading {
-	color: $primary-tan;
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
@@ -193,6 +197,10 @@ small {
 
 	&:visited {
 		background-color: $primary-tan;
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
 	}
 }
 

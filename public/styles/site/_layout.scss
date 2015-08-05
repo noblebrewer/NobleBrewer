@@ -87,11 +87,12 @@
 
 	ul {
 		list-style-type: none;
-		display: table;
+		display: flex;
 		width: 100%;
 
 		li {
 			display: table-cell;
+			flex-grow: 1;
 			padding: 5px;
 			text-align: center;
 		}
