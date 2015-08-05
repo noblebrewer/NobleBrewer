@@ -5008,7 +5008,8 @@ blockquote {
   blockquote > p {
     font-size: 45px;
     font-style: italic;
-    color: #666666; }
+    color: #666666;
+    line-height: 1.1em; }
     blockquote > p > .quote {
       color: #FFFFFF; }
   blockquote > footer {
@@ -5028,6 +5029,10 @@ section {
   padding-right: 30px;
   border-bottom: 1px solid #777777; }
 
+@media (max-width: 37.5em) {
+  iframe {
+    width: 100%; } }
+
 label {
   font-weight: normal; }
 
@@ -5037,7 +5042,6 @@ small {
   line-height: 1.5em; }
 
 .how-it-works-heading {
-  color: #C5A77E;
   margin-top: 30px;
   margin-bottom: 10px; }
 
@@ -5091,6 +5095,9 @@ small {
     background-color: #C5A77E; }
   .btn-primary:visited {
     background-color: #C5A77E; }
+  @media (max-width: 37.5em) {
+    .btn-primary {
+      width: 100%; } }
 
 .gift-button {
   background-color: #333333 !important;
