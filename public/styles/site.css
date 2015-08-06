@@ -4907,7 +4907,7 @@ button.close {
   width: 100%;
   height: 120px;
   margin-top: 30px;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-bottom: 30px;
   border-bottom: 1px solid #C5A77E; }
 
@@ -4931,6 +4931,23 @@ button.close {
 @media (min-width: 64em) {
   .navbar-nav > li, navbar-default {
     margin-left: 10px; } }
+
+@media only screen and (max-width: 882px) {
+  #header .navbar-collapse.in {
+    background-color: #232121;
+    display: block;
+    position: absolute;
+    z-index: 20;
+    width: 83%; }
+  #header .main-navbar {
+    background-image: none;
+    background-color: #232121; }
+  #header .navbar-collapse {
+    border-top: none;
+    box-shadow: none; }
+  #header .nav-link {
+    padding-left: 5.5;
+    padding-right: 5.5; } }
 
 #email-signup input {
   border-radius: 0px;
