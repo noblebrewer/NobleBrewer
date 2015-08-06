@@ -4905,7 +4905,9 @@ button.close {
 
 #header {
   width: 100%;
+  height: 120px;
   margin-top: 30px;
+  padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #C5A77E; }
 
@@ -4922,10 +4924,10 @@ button.close {
 
 .navbar-nav > li a, navbar-default a {
   color: #C5A77E;
-  border-bottom: 1px solid transparent; }
+  border-bottom: 2px solid transparent; }
   .navbar-nav > li a:hover, navbar-default a:hover {
     color: #FFF;
-    border-bottom: 1px solid #FFF; }
+    border-bottom: 2px solid #FFF; }
 @media (min-width: 64em) {
   .navbar-nav > li, navbar-default {
     margin-left: 10px; } }
@@ -4993,9 +4995,9 @@ button.close {
   max-width: 100%;
   height: auto; }
 
-/*********************
+/*********************\
 BREAKPOINTS
-*********************/
+\*********************/
 a {
   color: #C5A77E;
   text-transform: uppercase;
@@ -5097,7 +5099,8 @@ small {
     background-color: #C5A77E; }
   @media (max-width: 37.5em) {
     .btn-primary {
-      width: 100%; } }
+      width: 100%;
+      margin: 0px; } }
 
 .gift-button {
   background-color: #333333 !important;
@@ -5115,7 +5118,6 @@ small {
 
 .centered-block {
   margin: auto;
-  margin-right: auto;
   text-align: center;
   display: block; }
 
@@ -5189,12 +5191,6 @@ small {
   min-height: 200px; }
   .order-selection button {
     padding: 12px; }
-
-#frequency-choices button {
-  min-width: 215px;
-  margin: 30px;
-  height: 60px;
-  border-radius: 4px; }
 
 .inactive-selection {
   color: #DDD;

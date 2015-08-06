@@ -8,8 +8,6 @@ $link-hover : #FFFFFF;
 $header-white : #FFFFFF;
 $subheader-gray : #b0b0b0;
 
-$mobile : 500px;
-
 $dark-text: #232121;
 $alt-base-background : #232121;
 $light-base-background: #333333;
@@ -21,9 +19,9 @@ $divider-color: #777777;
 $inactive-button-color: #C1C0C0;
 $inactive-button-font-color: #302d2d;
 
-/*********************
+/*********************\
 BREAKPOINTS
-*********************/
+\*********************/
 
  @mixin breakpoint($point) {
    @if $point == desktop {
@@ -201,6 +199,7 @@ small {
 
 	@include breakpoint(mobileonly){
 		width: 100%;
+    margin: 0px;
 	}
 }
 
@@ -224,7 +223,6 @@ small {
 
 .centered-block {
 	margin: auto;
-	margin-right: auto;
 	text-align: center; 
 	display: block;
 }
@@ -310,15 +308,6 @@ small {
 
 	button {
 		padding: 12px;
-	}
-}
-
-#frequency-choices {
-	button {
-		min-width: 215px;
-		margin: 30px;
-		height: 60px;
-		border-radius: 4px;
 	}
 }
 
