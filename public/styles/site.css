@@ -5088,6 +5088,12 @@ small {
   padding: 1px;
   border: 1px solid #C5A77E; }
 
+@media (max-width: 37.5em) {
+  .col-xs-12 {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px; } }
+
 .btn-primary {
   color: #232121;
   background-color: #C5A77E;
@@ -5097,14 +5103,14 @@ small {
   border: 2px solid transparent;
   height: 56px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  padding: 14px;
+  min-width: 200px;
   -webkit-box-shadow: 0px 4px 0px #8A7762;
   -moz-box-shadow: 0px 4px 0px #8A7762;
   box-shadow: 0px 4px 0px #8A7762;
-  text-transform: uppercase;
-  min-width: 200px;
-  padding: 14px;
-  margin-left: 15px;
-  margin-right: 15px; }
+  text-transform: uppercase; }
   .btn-primary:hover {
     background-color: #D4C0AA;
     border: 2px solid #FFF;
@@ -5117,7 +5123,10 @@ small {
   @media (max-width: 37.5em) {
     .btn-primary {
       width: 100%;
-      margin: 0px; } }
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 22px; } }
 
 .gift-button {
   background-color: #333333 !important;
