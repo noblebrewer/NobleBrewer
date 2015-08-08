@@ -20,15 +20,9 @@
 						</li>
 					<% }) %>
 				</ul>
+				
 				<ul class="nav navbar-nav navbar-right">
-					<% if (user) { %>
-						<% if (user.canAccessKeystone) { %>
-						<li><a class="nav-link" href="/keystone">Open Keystone</a></li>
-						<% } %>
-						<li><a class="nav-link login" href="/keystone/signout">Sign Out</a></li>
-					<% } else { %>
-						<li><a class="nav-link login" href="/keystone/signin">Sign In</a></li>
-					<% } %>
+					<li><a class="nav-link login" href="http://noblebrewer.myshopify.com/account/login">Sign In</a></li>
 				</ul>
 			</div>
 		</div>

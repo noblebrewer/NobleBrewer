@@ -44,19 +44,20 @@ exports = module.exports = function(app) {
 	app.get('/beers', routes.views.beers);
 	app.get('/profile/:profile?', routes.views.brewerProfile);
 	app.get('/beerProfile/:beerName?', routes.views.beerProfile);
-  app.get('/terms', routes.views.terms);
-  app.get('/privacy', routes.views.privacy);
-  app.get('/shipping', routes.views.shipping);
-  app.get('/return', routes.views.return);
-  app.get('/team', routes.views.team);
-  app.get('/faq', routes.views.faq);
-  app.get('/press', routes.views.press);
-  app.get('/releases', routes.views.releases);
-  app.get('/user', routes.views.user);
-  app.get('/customize', routes.views.customize);
-  app.get('/checkout', routes.views.checkout);
-  app.get('/thankYou', routes.views.thankYou);
-  app.get('/brewerSignUp', routes.views.brewerSignUp);
+	app.get('/terms', routes.views.terms);
+	app.get('/privacy', routes.views.privacy);
+	app.get('/shipping', routes.views.shipping);
+	app.get('/return', routes.views.return);
+	app.get('/team', routes.views.team);
+	app.get('/faq', routes.views.faq);
+	app.get('/press', routes.views.press);
+	app.get('/releases', routes.views.releases);
+	app.get('/user', routes.views.user);
+	app.get('/customize', routes.views.customize);
+	app.get('/checkout', routes.views.checkout);
+	app.get('/thankYou', routes.views.thankYou);
+	app.get('/brewerSignUp', routes.views.brewerSignUp);
+	app.get('/keystone', routes.views.keystoneSignIn)
 	app.all('/contact', routes.views.contact);
 
 
