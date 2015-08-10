@@ -5093,7 +5093,7 @@ small {
   border: 1px solid #C5A77E; }
 
 @media (max-width: 37.5em) {
-  .col-xs-12 {
+  .mobile-column {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px; } }

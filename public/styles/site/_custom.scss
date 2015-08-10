@@ -163,7 +163,7 @@ small {
   border: 1px solid $primary-tan;
 }
 
-.col-xs-12 {
+.mobile-column {
   @include breakpoint(mobileonly){
     width: 100%;
     padding-left: 0px;
