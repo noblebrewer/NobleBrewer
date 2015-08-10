@@ -5012,6 +5012,10 @@ button.close {
   max-width: 100%;
   height: auto; }
 
+.collapsing {
+  -webkit-transition: none;
+  transition: none; }
+
 /*********************\
 BREAKPOINTS
 \*********************/
