@@ -5471,3 +5471,6 @@ progress::-moz-progress-value {
 
 .legal-link-active {
   color: #FFF; }
+
+.custom-font {
+  font-family: "Gotham SSm A", "Gotham SSm B"; }
