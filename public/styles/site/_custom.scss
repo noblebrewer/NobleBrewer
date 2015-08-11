@@ -693,10 +693,6 @@ progress::-moz-progress-value{
     color: #FFFFFF;
 }
 
-.profile.container {
-    width: 1300px;
-    background-color: #232121;
-}
 
 .brewername {
     color: #ffffff;
@@ -716,10 +712,12 @@ progress::-moz-progress-value{
     text-transform: uppercase;
 }
 
-.fullName {
+div.row.fullName {
     height: 269px;
     width: 1300px;
-    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100;
 
 }
 
@@ -751,13 +749,8 @@ progress::-moz-progress-value{
     text-align: center;
     border-top: 1px 1px solid $primary-tan;
     border-bottom: 1px 1px solid $primary-tan;
-    font-family: $Gotham;
 }
 
-
-hr {
-    color: #232121;
-}
 
 .connectBrewer {
     width: 1300px;

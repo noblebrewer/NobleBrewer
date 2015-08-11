@@ -8,33 +8,31 @@
 
 <% include ./partials/header %>
 </script>
-<div class="bodyToLoad">
-			<div class="row profilebreadcrumb">
-				<div class="col-sm-9 visible-lg breadcrumbname">
-					Brewers  >> <span class="inlinechange"> <%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></span>
-				</div>
+    <div class="bodyToLoad custom-font">
+		<div class="row profilebreadcrumb">
+			<div class="col-sm-9 visible-lg breadcrumbname">Brewers  >>
+                <span class="inlinechange">
+                    <%= data.brewer.brewerName.first %>
+                    <%= data.brewer.brewerName.last %>
+                </span>
+			</div>
 				<div class="col-lg-3 visible-lg messagebutton">
                     <a class="btn btn-default message" href="mailto:<%= data.brewer.brewerEmail %>" role="button">MESSAGE</a>
 				</div>
-
-			</div>
+		</div>
 
         <div class="container profile">
             <div class="row">
                 <img class="img-responsive lgProfilePhoto" src="http://placehold.it/1300x458">
             </div>
-<hr>
 
 			<div class="row fullName">
-				<div class="col-md-12 brewername" align="center">
-					<p><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></p>
-				</div>
-
-				<div class="col-md-12 brewercity" align="center">
-					<p><%= data.brewer.city %> <%= data.brewer.state %></p>
-				</div>
+				<p class="brewername"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></p>
+				<p class="brewercity"><%= data.brewer.city %> <%= data.brewer.state %></p>
 			</div>
-<hr>
+
+    <div class="diamond-separator"></div>
+
             <div class="row headline">
 				<div class="col-md-6">
 					<h4><%= data.brewer.profileHeadline %></h4>
@@ -42,47 +40,50 @@
 				</div>
 
 				<div class="col-md-6">
-					<%= data.brewer.profileVideo %>
+				<img class="img-responsive lgProfilePhoto" src="http://placehold.it/670x379">
+                <!-- Replace above img with	<%= data.brewer.profileVideo %> -->
 				</div>
             </div>
         </div> <!-- container -->
-        <br />
-        <br />
-        <hr>
-        <p>Brewer Story and Photos Here</p>
-        <br />
-        <br />
-        <hr>
-        <br />
-        <br />
+
+
+    <div class="diamond-separator"></div>
+
 
             <div class="row thebeer">
                 <h4>THE BEER</h4>
 
+                <img class="img-responsive lgProfilePhoto" src="http://placehold.it/570x240">
 
-                <div class="row profileBeer">
+
+
+                <!--  Split img into description and photo -->
+                <!-- <div class="row profileBeer">
 
                     <div class="col-md-6 profileBeerDesc" style="width:270; height: 240">
                         <h4>STOUT</h4>
                         <H2>CAFE CON LECHE STOUT</H2>
                     </div>
+
+
                     <div class="col-md-6 profileBeerPic"
                         <img src="http://placehold.it/270x240">
                     </div>
-                </div>
+                </div> -->
 
-                <div>
                     <a class="btn btn-default order" href="mailto:<%= data.brewer.brewerEmail %>" role="button">ORDER THIS BEER</a>
-                </div>
             </div>
 
 
 
+
+    <div class="diamond-separator"></div>
         <br />
 		<br />
-		<hr>
+        <H1 style="text-align: center">Brewer Story and Photos Here</H1>
         <br />
-		<br />
+        <br />
+    <div class="diamond-separator"></div>
 
 
 		<div class="row connectBrewer">
@@ -97,20 +98,16 @@
 
                 <a class="btn btn-default connect"
                     href="mailto:<%= data.brewer.brewerEmail %>" role="button" placeholder="Enter your message here..." >SEND</a>
+
             </div>
         </div>
 
-
-
-        <hr>
-		<br />
-		<br />
-
+    <div class="diamond-separator"></div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center col-md-12">
-					<a class="btn btn-default message" href="/brewers" role="button">BACK TO ALL BREWERS</a>
+					<a class="btn btn-primary gift-button" href="/brewers">Back to All Brewers</a>
 				</div>
 			</div>
 		</div>

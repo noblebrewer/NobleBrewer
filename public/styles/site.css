@@ -5015,6 +5015,9 @@ button.close {
 /*********************\
 FONT
 \*********************/
+.custom-font {
+  font-family: "Gotham SSm A", "Gotham SSm B"; }
+
 /*********************\
 BREAKPOINTS
 \*********************/
@@ -5475,10 +5478,6 @@ progress::-moz-progress-value {
 .legal-link-active {
   color: #FFF; }
 
-<<<<<<< Updated upstream
-.custom-font {
-  font-family: "Gotham SSm A", "Gotham SSm B"; }
-=======
 .container {
   width: 1300px; }
 
@@ -5537,10 +5536,6 @@ progress::-moz-progress-value {
 .inlinechange {
   color: #FFFFFF; }
 
-.profile.container {
-  width: 1300px;
-  background-color: #232121; }
-
 .brewername {
   color: #ffffff;
   font-size: 63px;
@@ -5561,10 +5556,12 @@ progress::-moz-progress-value {
   text-align: center;
   text-transform: uppercase; }
 
-.fullName {
+div.row.fullName {
   height: 269px;
   width: 1300px;
-  vertical-align: middle; }
+  justify-content: center;
+  align-items: center;
+  padding-top: 100; }
 
 .headline {
   background-color: #232121;
@@ -5595,11 +5592,7 @@ progress::-moz-progress-value {
   /* Approximation due to font substitution */
   text-align: center;
   border-top: 1px 1px solid #C5A77E;
-  border-bottom: 1px 1px solid #C5A77E;
-  font-family: "Gotham SSm A", "Gotham SSm B"; }
-
-hr {
-  color: #232121; }
+  border-bottom: 1px 1px solid #C5A77E; }
 
 .connectBrewer {
   width: 1300px;
@@ -5646,4 +5639,3 @@ hr {
   vertical-align: middle;
   margin-top: 20px;
   margin-bottom: 20px; }
->>>>>>> Stashed changes
