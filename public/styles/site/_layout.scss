@@ -165,3 +165,8 @@ and (max-width: 882px) {
     max-width: 100%;
     height: auto;
 }
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
