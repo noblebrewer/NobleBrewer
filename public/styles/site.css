@@ -5017,6 +5017,12 @@ button.close {
   transition: none; }
 
 /*********************\
+FONT
+\*********************/
+.custom-font {
+  font-family: "Gotham SSm A", "Gotham SSm B"; }
+
+/*********************\
 BREAKPOINTS
 \*********************/
 a {
@@ -5475,3 +5481,165 @@ progress::-moz-progress-value {
 
 .legal-link-active {
   color: #FFF; }
+
+.container {
+  width: 1300px; }
+
+.profilebreadcrumb {
+  color: #c5a778;
+  font-size: 22px;
+  /* Approximation due to font substitution */
+  font-weight: 500;
+  line-height: 31.9px;
+  /* Approximation due to font substitution */
+  text-align: left;
+  background-color: #333333;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+  width: auto;
+  height: 80px;
+  text-transform: uppercase; }
+
+.breadcrumbname {
+  padding-left: 113px;
+  padding-top: 20px; }
+
+.btn.btn-default.message {
+  color: white;
+  font-size: 16px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  background-color: #C5A77E;
+  vertical-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.btn.btn-default.connect {
+  color: white;
+  font-size: 16px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  background-color: #C5A77E;
+  vertical-align: middle;
+  margin-top: 20px;
+  position: relative;
+  float: right; }
+
+.lgProfilePhoto {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.inlinechange {
+  color: #FFFFFF; }
+
+.brewername {
+  color: #ffffff;
+  font-size: 63px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 75.6px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  text-transform: uppercase; }
+
+.brewercity {
+  color: #999999;
+  font-size: 22px;
+  /* Approximation due to font substitution */
+  font-weight: 500;
+  line-height: 31.9px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  text-transform: uppercase; }
+
+div.row.fullName {
+  height: 269px;
+  width: 1300px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100; }
+
+.headline {
+  background-color: #232121;
+  box-shadow: 0px 0px 15px 0px rgba(0, 1, 1, 0.15);
+  width: 1300px;
+  height: auto; }
+
+.profilebeer {
+  background-color: black;
+  color: #ffffff;
+  font-size: 32px;
+  /* Approximation due to font substitution */
+  font-weight: 500;
+  line-height: 46.4px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  height: 240px;
+  width: 270px;
+  vertical-align: middle;
+  text-align: center; }
+
+.thebeer {
+  background-color: black;
+  font-size: 32px;
+  /* Approximation due to font substitution */
+  font-weight: 500;
+  line-height: 46.4px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  border-top: 1px 1px solid #C5A77E;
+  border-bottom: 1px 1px solid #C5A77E; }
+
+.connectBrewer {
+  width: 1300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.connectMain {
+  width: 470px;
+  float: left;
+  padding-left: 100;
+  padding-right: 30; }
+
+.connectForm.textarea {
+  width: 570px;
+  float: right;
+  padding-left: 30;
+  padding-right: 100; }
+
+.profileBeer {
+  width: 570px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.profileBeerDesc {
+  width: 300px;
+  float: left; }
+
+.profileBeerPic {
+  width: 270px;
+  float: right; }
+
+.btn.btn-default.order {
+  color: white;
+  font-size: 16px;
+  /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 24px;
+  /* Approximation due to font substitution */
+  text-align: center;
+  background-color: #C5A77E;
+  vertical-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px; }

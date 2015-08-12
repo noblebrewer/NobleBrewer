@@ -10,11 +10,12 @@
 		<title>{{ title|default("Noble Brewer") }}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-		<!-- Gotham fonts -->
-		<!-- <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6256932/670608/css/fonts.css" /> -->
 
 		{# Customise the stylesheet for your site by editing /public/styles/site.sass #}
+
 		<link href="/styles/site.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6256932/670608/css/fonts.css" />
+
 
 
 
@@ -36,7 +37,7 @@
 		{# Add any other template-specific HEAD tags by extending the head block #}
 		{% block head %}{% endblock %}
 	</head>
-	<body>
+	<body class="custom-font">
 		{# HEADER #}
 		<div id="header" class="container">
 
@@ -77,7 +78,7 @@
 		</div>
 
 		{# BODY #}
-		<div id="body">
+		<div id="body" class="custom-font">
 			{# NOTE:
 			   There is no .container wrapping class around body blocks to allow more flexibility in design.
 			   Remember to include it in your templates when you override the intro and content blocks! #}

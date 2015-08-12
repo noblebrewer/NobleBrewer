@@ -26,10 +26,11 @@ exports.initLocals = function(req, res, next) {
 	locals.navLinks = [
 		{ label: 'About',		key: 'about',		href: '/about' },
 		{ label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
-		{ label: 'Beers',		key: 'beers',		href: '/beers' },
+		{ label: 'Beer',		key: 'beers',		href: '/beers' },
 		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Sign Up',		key: 'customize',		href: '/customize' },
-
+		{ label: 'Market',		key: 'market',		href: '/market' },
+		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
+		//Sign Up link in the header is coming from the header.ejs
 	];
 	
     locals.footerLinks = [

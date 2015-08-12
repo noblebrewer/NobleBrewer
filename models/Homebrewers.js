@@ -24,7 +24,8 @@ Homebrewer.add(
 	profileHeadline: { type: String, required: false },
 	profileBody: { type: Types.Textarea, required: false },
 	profileVideo: { type: Types.Url, required: false },
-	beerList: {type: String, required: false }  },
+	beerList: {type: String, required: false },
+	imageGallery: {type: Types.CloudinaryImages, required: false}  },
 	{heading: 'Other Data'},
 	{brewerEmail: { type: Types.Email, displayGravatar: true },
 	enteredDate: { type: Types.Date, default: Date.now}}
