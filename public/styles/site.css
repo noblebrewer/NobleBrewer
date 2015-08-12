@@ -5049,7 +5049,8 @@ blockquote {
     color: #FFFFFF; }
 
 h1, h3 {
-  margin-top: 0px; }
+  margin-top: 0px;
+  text-transform: uppercase; }
 
 section {
   padding-top: 90px;
@@ -5643,3 +5644,19 @@ div.row.fullName {
   vertical-align: middle;
   margin-top: 20px;
   margin-bottom: 20px; }
+
+.press-date {
+  font-size: 16;
+  color: #aaa;
+  margin-bottom: 4px; }
+
+.press-article {
+  font-size: 18;
+  line-height: 1.3;
+  margin-bottom: 8px; }
+
+.press-source {
+  font-size: 16;
+  color: #aaa;
+  line-height: 1.1;
+  margin-bottom: 45px; }
