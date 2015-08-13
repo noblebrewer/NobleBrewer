@@ -11,8 +11,10 @@ var Beers = new keystone.List('Beers', {
 });
 Beers.add({
     beer_name: { type: String },
-    cover_photo: {type: Types.CloudinaryImage}
+    cover_photo: { type: Types.CloudinaryImage },
+    all_beer_photo: { type: Types.CloudinaryImage },
+    featured_beer_photo: { type: Types.CloudinaryImage }
 });
 
-Beers.defaultColumns = 'beer_name, cover_photo';
+Beers.defaultColumns = 'beer_name, cover_photo, all_beer_photo, featured_beer_photo';
 Beers.register();
