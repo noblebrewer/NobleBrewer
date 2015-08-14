@@ -1,8 +1,8 @@
 <head>
-  <div class="title">
-      <title>Homebrewers</title>
-  </div>
-  <% include ./partials/head %>
+	<div class="title">
+		<title>Homebrewers</title>
+	</div>
+	<% include ./partials/head %>
 </head>
 
 
@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
-				<h1>NOBLE BREWERS</h1>
+				<h1 class="brewer-banner-heading">NOBLE BREWERS</h1>
 				<p>Home brewers are the backbone of Noble Brewer. Theirs are the stories that sell our fucking beer. So fucking click on their fucking pages you evil bastards.
 				</p>
 			</div>
@@ -19,93 +19,51 @@
 	</div>
 </section>
 
-<section class="alt-base-section">
+<section class="alt-base-section brewers-section">
 	<div class="container">
-
 		<div class="row">
-			<h1 align="center">FEATURED BREWERS</h1>
+			<h1 class="brewers-heading">FEATURED BREWERS</h1>
 		</div>
-		<br>
-		<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
-				<% if (index%2 == 0){ %>
-						<div class="row" class="featured-row">
-				<% } %>
-				<% if (featuredBrewer.profilePicture.url) { %>
-						<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-							<div class="brewer_card">
-								<img src="<%=featuredBrewer.profilePicture.url%>">
-								<div class="brewer-text">
-									<h3><%=featuredBrewer.profileHeadline%></h3>
-
-									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
- 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
- 									<hr align="left">
- 									<p><%=featuredBrewer.profileBody%></p>
-								</div>
-							</div>
-						</div>
-					<% } else { %>
-						<div class="col-md-6" align="center">
-							<div class="brewer_card">
-								<img src="http://www.vtecsoft.com/images/default-avatar_0.png">
-								<div class="brewer-text">
-									<h3><%=featuredBrewer.profileHeadline%></h3>
-
-									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
- 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
- 									<hr align="left">
- 									<p><%=featuredBrewer.profileBody%></p>
-								</div>
-							</div>
-						</div>
-					<% } %>
-					<% if (index%2 != 0){ %>
-						</div>
-					<% } %>
-				<% }) %>
-			</div>
-		</div>
-		<br>
 		<div class="row">
-
-			<div class="centered-block">
-
-				<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
-			</div>
-		</div>
-</section>
-<section id="diamond-base-section">
-		<div class="row">
-			<h2 align="center">All Brewers</h2>
-		</div>
-		<br>
-		<br>
-			<% data.allBrewers.forEach(function(brewer, index){ %>
-				<% if (index%6 == 0){ %>
-					<div class="row">
-						<div class="col-md-12" align="center">
-				<% } %>
-				<% if (brewer.profilePicture.url){ %>
-						<div class="col-md-3" align="center">
-							<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.profilePicture.url%>" class="img-thumbnail circle-img gray-img"></a>
-							<br>
-							<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
-							<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
-						</div>
-				<% } else { %>
-						<div class="col-md-3" align="center">
-							<a href="/profile/<%= brewer.slug%>"><img src="http://www.vtecsoft.com/images/default-avatar_0.png" class="img-thumbnail circle-img"></a>
-							<br>
-							<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
-							<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
-						</div>
-				<% } %>
-				<% if ((index+1)%6 == 0){ %>
-						</div>
+			<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
+			<div class="col-md-6">
+				<div class="brewer-card">
+					<a href="/profile/<%=featuredBrewer.slug%>"><img src="<%=featuredBrewer.profilePicture.url%>" class="img-responsive"></a>
+					<div class="brewer-text">
+						<h3><%=featuredBrewer.profileHeadline%></h3>
+						<a href="/profile/<%=featuredBrewer.slug%>"><h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4></a>
+						<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
+						<hr align="left">
+						<p><%=featuredBrewer.profileBody%></p>
 					</div>
-				<% } %>
+				</div>
+			</div>
 			<% }) %>
+		</div>
+	</div>
 </section>
+
+<section id="diamond-base-section">
+	<div class="row">
+		<h1 class="brewers-heading">ALL BREWERS</h1>
+	</div>
+	<div class="row">
+		<% data.allBrewers.forEach(function(brewer, index){ %>
+		<div class="col-sm-3 brewers-profile">
+			<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.profilePicture.url%>" class="img-thumbnail circle-img gray-img"></a>
+			<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+			<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
+		</div>
+		<% }) %>
+	</div>
+	<div class="row">
+		<div class="brewer-become">
+			<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
+		</div>
+	</div>
+</section>
+
+
 
 <% include ./partials/emailFooter %>
 <% include ./partials/footer %>

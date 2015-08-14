@@ -5052,13 +5052,6 @@ h1, h3 {
   margin-top: 0px;
   text-transform: uppercase; }
 
-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-bottom: 1px solid #777777; }
-
 @media (max-width: 37.5em) {
   iframe {
     width: 100%; } }
@@ -5070,6 +5063,23 @@ small {
   text-transform: uppercase;
   font-size: .707em;
   line-height: 1.5em; }
+
+section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #777777; }
+
+.alt-base-section {
+  background-color: #232121; }
+
+.section-divider {
+  width: 100%;
+  margin: 0px; }
+
+.diamond-base-section {
+  background-image: url('/images/generic/diagmonds.png'); }
 
 .how-it-works-heading {
   margin-top: 30px;
@@ -5084,16 +5094,6 @@ small {
   font-size: 1em;
   line-height: 1.45em;
   color: #DDD; }
-
-.alt-base-section {
-  background-color: #232121; }
-
-.section-divider {
-  width: 100%;
-  margin: 0px; }
-
-.diamond-base-section {
-  background-image: url('/images/generic/diagmonds.png'); }
 
 .tan-border {
   padding: 1px;
@@ -5168,7 +5168,8 @@ small {
   height: 128px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
-  border-radius: 100%; }
+  border-radius: 100%;
+  background-size: contain; }
 
 .faq-block {
   background-color: #333333;
@@ -5375,6 +5376,40 @@ progress::-moz-progress-value {
   content: "\00BB";
   color: #aaa; }
 
+.subheading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 50px;
+  margin-top: 4px; }
+
+/***** brewers.ejs *****/
+.brewer-name {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase; }
+
+.brewer-card {
+  margin-bottom: 30px; }
+
+.brewer-banner-heading {
+  font-size: 63px;
+  font-weight: 700; }
+
+.brewers-heading {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: -8px; }
+
+.brewers-section {
+  padding-bottom: 60px; }
+
+.brewers-profile {
+  text-align: center; }
+
 .brewer-text {
   background-color: #FFF;
   width: 100%;
@@ -5418,39 +5453,14 @@ progress::-moz-progress-value {
     .brewer-text {
       height: 250px; } }
 
-.brewer-name {
-  margin-top: 15px;
-  margin-bottom: 0px;
-  font-size: 18px;
-  text-transform: uppercase; }
+.brewer-text hr {
+  border-top-color: #000; }
 
-.subheading {
-  font-size: 12px;
-  color: #666666; }
-
-@media (max-width: 37.5em) {
-  .brewer_card {
-    padding-bottom: 15px;
-    margin: auto;
-    width: 320px; } }
-@media (min-width: 37.5em) {
-  .brewer_card {
-    align: center;
-    margin: auto;
-    padding-bottom: 15px;
-    width: 500px; } }
-@media (min-width: 64em) {
-  .brewer_card {
-    margin: 15px;
-    width: 95%;
-    height: 600px; } }
-@media (min-width: 85em) {
-  .brewer_card {
-    margin: 15px;
-    width: 95%;
-    height: 650px; } }
-.brewer_card img {
-  width: 100%; }
+.brewer-become {
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  display: block; }
 
 .team-photo {
   margin-bottom: 20px; }
