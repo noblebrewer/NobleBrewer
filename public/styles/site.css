@@ -5414,19 +5414,19 @@ progress::-moz-progress-value {
   background-color: #FFF;
   width: 100%;
   margin-top: 0px;
-  padding-top: 10px;
+  padding-top: 24px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 25px;
   color: #b0b0b0; }
   .brewer-text h3 {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     font-weight: normal;
     font-size: 22px;
     text-transform: uppercase; }
   .brewer-text h4 {
     margin-top: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     color: #232121;
     font-size: 18px;
     text-transform: uppercase; }
