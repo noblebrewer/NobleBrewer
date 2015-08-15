@@ -15,16 +15,16 @@ keystone.init({
 
 	'name': 'Noble Brewer',
 	'brand': 'Noble Brewer',
-	
+
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'ejs',
   	'custom engine': ejs.renderFile,
-	
+
 	'emails': 'templates/emails',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -95,7 +95,7 @@ keystone.set('nav', {
 	'galleries': 'galleries',
 	'enquiries': 'enquiries',
 	'user': 'User',
-	'Homebrewers': 'Homebrewers',	
+	'Homebrewers': 'Homebrewers',
 	'Beers': 'Beers',
 	'Releases' : 'Releases'
 
