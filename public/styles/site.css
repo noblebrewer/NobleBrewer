@@ -5017,12 +5017,6 @@ button.close {
   transition: none; }
 
 /*********************\
-FONT
-\*********************/
-.custom-font {
-  font-family: "Gotham SSm A", "Gotham SSm B"; }
-
-/*********************\
 BREAKPOINTS
 \*********************/
 a {
@@ -5048,16 +5042,12 @@ blockquote {
     line-height: 1.2em;
     color: #FFFFFF; }
 
+.paragraph-999 {
+  color: #999; }
+
 h1, h3 {
   margin-top: 0px;
   text-transform: uppercase; }
-
-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-bottom: 1px solid #777777; }
 
 @media (max-width: 37.5em) {
   iframe {
@@ -5070,6 +5060,23 @@ small {
   text-transform: uppercase;
   font-size: .707em;
   line-height: 1.5em; }
+
+section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #777777; }
+
+.alt-base-section {
+  background-color: #232121; }
+
+.section-divider {
+  width: 100%;
+  margin: 0px; }
+
+.diamond-base-section {
+  background-image: url('/images/generic/diagmonds.png'); }
 
 .how-it-works-heading {
   margin-top: 30px;
@@ -5084,16 +5091,6 @@ small {
   font-size: 1em;
   line-height: 1.45em;
   color: #DDD; }
-
-.alt-base-section {
-  background-color: #232121; }
-
-.section-divider {
-  width: 100%;
-  margin: 0px; }
-
-.diamond-base-section {
-  background-image: url('/images/generic/diagmonds.png'); }
 
 .tan-border {
   padding: 1px;
@@ -5149,6 +5146,9 @@ small {
     border: 2px solid #FFF;
     box-shadow: none; }
 
+.gift-button-brewer-profile {
+  margin: -30px; }
+
 .tan-header {
   margin-top: 0px;
   color: #C5A77E; }
@@ -5168,7 +5168,8 @@ small {
   height: 128px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
-  border-radius: 100%; }
+  border-radius: 100%;
+  background-size: contain; }
 
 .faq-block {
   background-color: #333333;
@@ -5375,23 +5376,57 @@ progress::-moz-progress-value {
   content: "\00BB";
   color: #aaa; }
 
+.subheading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 50px;
+  margin-top: 4px; }
+
+/***** brewers.ejs *****/
+.brewer-name {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase; }
+
+.brewer-card {
+  margin-bottom: 30px; }
+
+.brewer-banner-heading {
+  font-size: 63px;
+  font-weight: 700; }
+
+.brewers-heading {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: -8px; }
+
+.brewers-section {
+  padding-bottom: 60px; }
+
+.brewers-profile {
+  text-align: center; }
+
 .brewer-text {
   background-color: #FFF;
   width: 100%;
   margin-top: 0px;
-  padding-top: 10px;
+  padding-top: 24px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 25px;
   color: #b0b0b0; }
   .brewer-text h3 {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     font-weight: normal;
     font-size: 22px;
     text-transform: uppercase; }
   .brewer-text h4 {
     margin-top: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     color: #232121;
     font-size: 18px;
     text-transform: uppercase; }
@@ -5418,39 +5453,17 @@ progress::-moz-progress-value {
     .brewer-text {
       height: 250px; } }
 
-.brewer-name {
-  margin-top: 15px;
-  margin-bottom: 0px;
-  font-size: 18px;
-  text-transform: uppercase; }
+.brewer-text hr {
+  border-top-color: #000; }
 
-.subheading {
-  font-size: 12px;
-  color: #666666; }
+.brewer-become {
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  display: block; }
 
-@media (max-width: 37.5em) {
-  .brewer_card {
-    padding-bottom: 15px;
-    margin: auto;
-    width: 320px; } }
-@media (min-width: 37.5em) {
-  .brewer_card {
-    align: center;
-    margin: auto;
-    padding-bottom: 15px;
-    width: 500px; } }
-@media (min-width: 64em) {
-  .brewer_card {
-    margin: 15px;
-    width: 95%;
-    height: 600px; } }
-@media (min-width: 85em) {
-  .brewer_card {
-    margin: 15px;
-    width: 95%;
-    height: 650px; } }
-.brewer_card img {
-  width: 100%; }
+.brewer-profile-section {
+  height: 270px; }
 
 .team-photo {
   margin-bottom: 20px; }
@@ -5482,9 +5495,6 @@ progress::-moz-progress-value {
 
 .legal-link-active {
   color: #FFF; }
-
-.container {
-  width: 1300px; }
 
 .profilebreadcrumb {
   color: #c5a778;
@@ -5531,13 +5541,6 @@ progress::-moz-progress-value {
   position: relative;
   float: right; }
 
-.lgProfilePhoto {
-  margin-top: 1px;
-  margin-bottom: 1px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
 .inlinechange {
   color: #FFFFFF; }
 
@@ -5549,29 +5552,36 @@ progress::-moz-progress-value {
   line-height: 75.6px;
   /* Approximation due to font substitution */
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: -12px; }
 
 .brewercity {
   color: #999999;
   font-size: 22px;
   /* Approximation due to font substitution */
   font-weight: 500;
-  line-height: 31.9px;
+  line-height: 40px;
   /* Approximation due to font substitution */
   text-align: center;
   text-transform: uppercase; }
 
-div.row.fullName {
-  height: 269px;
-  width: 1300px;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100; }
+.brewer-profile-thebeer {
+  margin-top: -24px;
+  margin-bottom: 22px;
+  font-size: 32px; }
+
+.brewer-profile-heading {
+  font-size: 32px; }
+
+.brewer-profile-subheading {
+  font-size: 22px;
+  margin-top: 45px;
+  margin-bottom: 30px; }
 
 .headline {
   background-color: #232121;
   box-shadow: 0px 0px 15px 0px rgba(0, 1, 1, 0.15);
-  width: 1300px;
   height: auto; }
 
 .profilebeer {
@@ -5599,24 +5609,14 @@ div.row.fullName {
   border-top: 1px 1px solid #C5A77E;
   border-bottom: 1px 1px solid #C5A77E; }
 
-.connectBrewer {
-  width: 1300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.connectMain {
-  width: 470px;
-  float: left;
-  padding-left: 100;
-  padding-right: 30; }
-
 .connectForm.textarea {
-  width: 570px;
-  float: right;
-  padding-left: 30;
-  padding-right: 100; }
+  padding: 20px; }
+
+.connectForm-text {
+  color: #999;
+  margin-left: 55px;
+  margin-right: 30px;
+  margin-top: 60px; }
 
 .profileBeer {
   width: 570px;
@@ -5642,8 +5642,8 @@ div.row.fullName {
   text-align: center;
   background-color: #C5A77E;
   vertical-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-top: 30px;
+  margin-bottom: -10px; }
 
 .press-date {
   font-size: 16;
