@@ -34,7 +34,7 @@
     <div class="headline ">
       <div class="col-md-4 col-md-offset-1" >
        <h3><%= data.brewer.profileHeadline %></h3>
-       <p><%= data.brewer.profileBody %></p>
+       <p class="paragraph-999"><%= data.brewer.profileBody %></p>
       </div>
 
       <div class="col-md-6">
@@ -78,13 +78,13 @@
       </div>
       <div class="col-md-6">
         <h3 class="brewer-profile-heading"><%= data.brewer.brewerName.first %>'s Story</h3>
-        <p>The core ideal is to reflect a sense of place. We’d use locally sourced ingredients to stimulate the local economy and improve the lives of the community overall. Our brewery could be a cornerstone providing jobs and work for others.</p>
-        <p>Ideally we’d scale up with little to no debt. Start out building a presence locally, gaining tap space with our beers which will help those bars even though it may not be the most profitable for us.</p>
+        <p class="paragraph-999">The core ideal is to reflect a sense of place. We’d use locally sourced ingredients to stimulate the local economy and improve the lives of the community overall. Our brewery could be a cornerstone providing jobs and work for others.</p>
+        <p class="paragraph-999">Ideally we’d scale up with little to no debt. Start out building a presence locally, gaining tap space with our beers which will help those bars even though it may not be the most profitable for us.</p>
         <h3 class="brewer-profile-subheading">family</h3>
-        <p>I think I’d always prefer to stay small, maybe a max 30BBL system, but that would be way down the road. That growth would need to be done in an environmentally neutral way using sustainable energy. Maybe deliver our beer in an ox drawn wagon. The hard fast rule will be to grow only if its sustainable. We love working with local farmers and artisans, and not needing to ship ingredients will cut down on the carbon footprint.</p>
+        <p class="paragraph-999">I think I’d always prefer to stay small, maybe a max 30BBL system, but that would be way down the road. That growth would need to be done in an environmentally neutral way using sustainable energy. Maybe deliver our beer in an ox drawn wagon. The hard fast rule will be to grow only if its sustainable. We love working with local farmers and artisans, and not needing to ship ingredients will cut down on the carbon footprint.</p>
         <h3 class="brewer-profile-subheading">brewery</h3>
-        <p>My goal is to make the very best beer I can make. I don’t plan to do a lot of popular styles – maybe just 1 in 50 batches. My plan is to focus on beers with a Belgian influence, like the farmhouses and sours. I love to experiment so I’ll try new styles and attempt to recreate old ones as well. I think historical styles are powerful because they beers that could have been enjoyed 800 years ago and likely was. My twist would be to still use local ingredients. So instead of doing a German Alt Bier with German ingredients, I’d use local ingredients and try to replicate it as closely as possible. That way, we are still supporting small local family farms, which is also something those older beer producers did naturally</p>
-        <p>Ideally we’d scale up with little to no debt. Start out building a presence locally, gaining tap space with our beers which will help those bars even though it may not be the most profitable for us.</p>
+        <p class="paragraph-999">My goal is to make the very best beer I can make. I don’t plan to do a lot of popular styles – maybe just 1 in 50 batches. My plan is to focus on beers with a Belgian influence, like the farmhouses and sours. I love to experiment so I’ll try new styles and attempt to recreate old ones as well. I think historical styles are powerful because they beers that could have been enjoyed 800 years ago and likely was. My twist would be to still use local ingredients. So instead of doing a German Alt Bier with German ingredients, I’d use local ingredients and try to replicate it as closely as possible. That way, we are still supporting small local family farms, which is also something those older beer producers did naturally</p>
+        <p class="paragraph-999">Ideally we’d scale up with little to no debt. Start out building a presence locally, gaining tap space with our beers which will help those bars even though it may not be the most profitable for us.</p>
 
       </div>
     </div>
@@ -93,35 +93,25 @@
   <section class="row diamond-base-section">
     <div class="col-md-6">
       <h3>Connect with <%= data.brewer.brewerName.first %></h3>
-
-      <p>Test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
+      <p class="connectForm-text">Test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
     </div>
 
     <div class="col-md-6 connectForm">
-      <textarea class="form-control" rows="7"></textarea>
+      <textarea class="form-control" rows="9" placeholder="Enter your message here..."></textarea>
       <a class="btn btn-default connect"
       href="mailto:<%= data.brewer.brewerEmail %>" role="button" placeholder="Enter your message here..." >SEND</a>
     </div>
   </section>
 
+  <section class="row alt-base-section">
+    <div class="text-center col-md-12">
+      <a class="btn btn-primary gift-button" href="/brewers">Back to All Brewers</a>
+    </div>
+ </section>
+
 </div> <!-- container -->
 
-
-
-
-
-
-
-<div class="row">
- <div class="col-md-12">
-  <div class="text-center col-md-12">
-   <a class="btn btn-primary gift-button" href="/brewers">Back to All Brewers</a>
- </div>
-</div>
-</div>
-
-
-</div> <!-- bodytoload -->
+<% include ./partials/emailFooter %>
 
 <% include ./partials/footer %>
 

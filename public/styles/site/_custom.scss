@@ -102,6 +102,10 @@ blockquote {
   }
 }
 
+.paragraph-999 {
+  color: #999
+}
+
 h1, h3 {
   margin-top: 0px;
   text-transform: uppercase;
@@ -219,6 +223,7 @@ section {
 .gift-button {
   background-color: #333333 !important;
   padding: 14px;
+  margin: -30px;
   border: 2px solid $primary-tan;
   color: $primary-tan;
 
@@ -777,8 +782,14 @@ progress::-moz-progress-value{
 }
 
 .connectForm.textarea {
-    padding-left: 30;
-    padding-right: 100;
+    padding: 20px;
+}
+
+.connectForm-text {
+    color: #999;
+    margin-left: 55px;
+    margin-right: 30px;
+    margin-top: 60px;
 }
 
 .profileBeer {
