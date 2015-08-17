@@ -15,59 +15,72 @@
                 <br>WITH THE WORLD
                 </h2>
                 <div class="body-copy">
-                	<p>We're always on the hunt for the best homebrews to produce and share with our members. Fill out the form below to let us know you want to be featured in an upcoming shipment of Noble Brewer.
+                	<p>We're always on the hunt for the best homebrews to produce and share with our members. Fill out the form below to let us know you want to be featured in an upcoming shipment of Noble Brewer.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
 <section>
 	<div class="container">
-		<h2 class="tan-header">FEATURED BREWER SIGN UP</h2>
 		<div class="row">
-			<div class="col-md-4">
+			
+			<div class="col-md-6 col-md-offset-3">
+				<h1>APPLY TO BE FEATURED</h1>
 				<p>Tell us a little about yourself and the beer you want to share with the world.</p>
 			</div>
-			<div class="col-md-5">
-				<form>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form id="apply" action="/success">
 					<div class="form-group">
-					  <label for="name">Full Name</label>
-					  <input type="text" class="form-control" id="name">
+					  <label for="name">Your name</label>
+					  <input type="text" class="form-control" id="name" placeholder="Enter full name">
 					</div>
 					<div class="form-group">
-					  <label for="email">Email</label>
-					  <input type="text" class="form-control" id="email">
+					  <label for="email">Your email</label>
+					  <input type="text" class="form-control" id="email" placeholder="Enter your email address">
 					</div>
 					<div class="form-group">
-					  <label for="location">Location</label>
-					  <input type="text" class="form-control" id="location">
+					  <label for="location">Your location</label>
+					  <input type="text" class="form-control" id="location" placeholder="Enter your city or region">
 					</div>
 					<div class="form-group">
-					  <label for="email">Email</label>
-					  <input type="text" class="form-control" id="email">
+					  <label for="reason">Why do you want to be featured?</label>
+					  <textarea class="form-control" rows="5" id="reason" placeholder="What separates you from other brewers?"></textarea>
 					</div>
 					<div class="form-group">
-					  <label for="reason">Why you want to be a Noble Brewer</label>
-					  <textarea class="form-control" rows="5" id="reason"></textarea>
-					</div>
-					<div class="form-group">
-					  <label for="recipe">What recipe you plan to brew</label>
-					  <textarea class="form-control" rows="5" id="recipe"></textarea>
+					  <label for="recipe">What recipe do you plan to brew?</label>
+					  <textarea class="form-control" rows="5" id="recipe" placeholder="Tell us a bit about the beer we should feature"></textarea>
 					</div>
 					<div class="form-group">
 					  <label for="awards">Brewing accomplishments/awards</label>
-					  <textarea class="form-control" rows="5" id="awards"></textarea>
+					  <textarea class="form-control" rows="5" id="awards" placeholder="Enter any awards or other brewing accomplishments that can attest to the quality of your beer"></textarea>
 					</div>
 
- 					<button type="submit" class="btn btn-default">Submit</button>
+ 					<button type="submit" id="submit" class="btn btn-default">Submit</button>
 				</form>
 			</div>
-
 		</div>
 	</div>
 </section>
 
 <% include ./partials/footer %>
 
+<script>
+
+$(document).ready(function () {
+
+	$('#submit').click(function() {
+		var name = document.getElementById("name").value;
+		var email = document.getElementById("email").value;
+		var location = document.getElementById("location").value;
+		var reason = document.getElementById("reason").value;
+		var recipe = document.getElementById("recipe").value;
+		var awards = document.getElementById("awards").value;
+	});
+		
+})
+
+</script>
