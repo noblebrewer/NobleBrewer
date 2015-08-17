@@ -5139,13 +5139,15 @@ section {
 .gift-button {
   background-color: #333333 !important;
   padding: 14px;
-  margin: -30px;
   border: 2px solid #C5A77E;
   color: #C5A77E; }
   .gift-button:hover {
     color: #FFF;
     border: 2px solid #FFF;
     box-shadow: none; }
+
+.gift-button-brewer-profile {
+  margin: -30px; }
 
 .tan-header {
   margin-top: 0px;
