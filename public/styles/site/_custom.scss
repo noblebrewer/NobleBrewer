@@ -19,16 +19,7 @@ $divider-color: #777777;
 $inactive-button-color: #C1C0C0;
 $inactive-button-font-color: #302d2d;
 
-$Gotham: "Gotham SSm A", "Gotham SSm B";
 
-
-/*********************\
-FONT
-\*********************/
-
-.custom-font {
-    font-family: "Gotham SSm A", "Gotham SSm B";
-}
 
 /*********************\
 BREAKPOINTS
@@ -622,6 +613,10 @@ progress::-moz-progress-value{
   display: block;
 }
 
+.brewer-profile-section {
+  height: 270px;
+}
+
 .team-photo {
 
   margin-bottom: 20px;
@@ -663,11 +658,6 @@ progress::-moz-progress-value{
 
 .legal-link-active {
   color: #FFF;
-}
-
-
-.container {
-    width: 1300px;
 }
 
 .profilebreadcrumb {
@@ -713,16 +703,6 @@ progress::-moz-progress-value{
     margin-top: 20px;
     position: relative;
     float: right;
-
-}
-
-
-.lgProfilePhoto {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .inlinechange {
@@ -737,30 +717,39 @@ progress::-moz-progress-value{
     line-height: 75.6px; /* Approximation due to font substitution */
     text-align: center;
     text-transform: uppercase;
+    margin: auto;
+    margin-top: -12px
+
 }
 
 .brewercity {
     color: #999999;
     font-size: 22px; /* Approximation due to font substitution */
     font-weight: 500;
-    line-height: 31.9px; /* Approximation due to font substitution */
+    line-height: 40px; /* Approximation due to font substitution */
     text-align: center;
     text-transform: uppercase;
 }
 
-div.row.fullName {
-    height: 269px;
-    width: 1300px;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100;
+.brewer-profile-thebeer {
+  margin-top: -24px;
+  margin-bottom: 22px;
+  font-size: 32px;
+}
 
+.brewer-profile-heading {
+  font-size: 32px;
+}
+
+.brewer-profile-subheading {
+  font-size: 22px;
+  margin-top: 45px;
+  margin-bottom: 30px;
 }
 
 .headline {
     background-color:  #232121;
     box-shadow: 0px 0px 15px 0px rgba(0, 1, 1, 0.15);
-    width: 1300px;
     height: auto;
 }
 
@@ -787,25 +776,7 @@ div.row.fullName {
     border-bottom: 1px 1px solid $primary-tan;
 }
 
-
-.connectBrewer {
-    width: 1300px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.connectMain {
-    width: 470px;
-    float: left;
-    padding-left: 100;
-    padding-right: 30;
-}
-
 .connectForm.textarea {
-    width: 570px;
-    float: right;
     padding-left: 30;
     padding-right: 100;
 }
@@ -835,8 +806,8 @@ div.row.fullName {
     text-align: center;
     background-color: $primary-tan;
     vertical-align: middle;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: -10px;
 }
 
 .press-date {
