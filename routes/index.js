@@ -57,7 +57,8 @@ exports = module.exports = function(app) {
 	app.get('/checkout', routes.views.checkout);
 	app.get('/thankYou', routes.views.thankYou);
 	app.get('/brewerSignUp', routes.views.brewerSignUp);
-	app.get('/keystone', routes.views.keystoneSignIn)
+	app.get('/keystone', routes.views.keystoneSignIn);
+	app.get('/market', routes.views.market);
 	app.all('/contact', routes.views.contact);
 
 
