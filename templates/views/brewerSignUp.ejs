@@ -6,6 +6,7 @@
 </head>
 
 
+
 <% include ./partials/header %>
 <section>
     <div class="container">
@@ -68,18 +69,21 @@
 
 <% include ./partials/footer %>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/sendToHubspot.js"></script>
+
 <script>
 
 $(document).ready(function () {
 
-	$('#submit').click(function() {
-		var name = document.getElementById("name").value;
-		var email = document.getElementById("email").value;
-		var location = document.getElementById("location").value;
-		var reason = document.getElementById("reason").value;
-		var recipe = document.getElementById("recipe").value;
-		var awards = document.getElementById("awards").value;
-	});
+	// $('#submit').click(function() {
+	// 	var name = document.getElementById("name").value;
+	// 	var email = document.getElementById("email").value;
+	// 	var location = document.getElementById("location").value;
+	// 	var reason = document.getElementById("reason").value;
+	// 	var recipe = document.getElementById("recipe").value;
+	// 	var awards = document.getElementById("awards").value;
+	// });
 		
 })
 

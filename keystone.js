@@ -7,6 +7,7 @@ var keystone = require('keystone'),
 	cons = require('consolidate'),
 	ejs = require('ejs');
 
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -24,6 +25,9 @@ keystone.init({
   	'custom engine': ejs.renderFile,
 
 	'emails': 'templates/emails',
+
+	'hubspot_api': process.env.HUBSPOT_API,
+	'shopify_api': process.env.SHOPIFY_API_KEY,
 
 	'auto update': true,
 	'session': true,
