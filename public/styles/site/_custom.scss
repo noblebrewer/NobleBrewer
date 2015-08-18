@@ -1,27 +1,3 @@
-
-
-$primary-tan: #C5A77E;
-$hover-tan : #D4C0AA;
-$dark-tan : #8A7762;
-$link-hover : #FFFFFF;
-
-$header-white : #FFFFFF;
-$subheader-gray : #b0b0b0;
-
-$dark-text: #232121;
-$alt-base-background : #232121;
-$light-base-background: #333333;
-$diamond-background : '/images/generic/diagmonds.png';
-$diamond-divider: '/images/generic/diamond-divide.png';
-$bar-diamond-divider: '/images/generic/bar-diamond-divide.png';
-$footer-divider: '/images/generic/footerbg.png';
-$divider-color: #777777;
-$inactive-button-color: #C1C0C0;
-$inactive-button-font-color: #302d2d;
-
-$Gotham: "Gotham SSm A", "Gotham SSm B";
-
-
 /*********************\
 FONT
 \*********************/
@@ -77,29 +53,93 @@ BREAKPOINTS
   }
 }
 
-a {
-	color: $primary-tan;
+
+/**** HTML Tags ****/
+
+/*** Headers ****/
+
+@mixin htags() {
 	text-transform: uppercase;
+  	color: $white;
+}
+
+h1 {
+	@include htags();
+	font-size: 3.998em;
+	line-height: 1.2em;
+}
+
+h2 {
+	@include htags();
+	font-size: 2.827em;
+	line-height: 1.2em;
+}
+
+h3 {
+	@include htags();
+	font-size: 1.999em;
+	line-height: 1.45em;
+}
+
+h4 {
+	color: $white;
+	font-size: 1.414em;
+	line-height: 1.45em;
+	text-transform: uppercase;
+}
+
+
+.subheader {
+  	color: $medium-grey;
+  	text-transform: none;
+}
+
+/*** Text ***/
+
+p {
+	line-height: 1.5em;
+	font-size: 1em;
+	color: $off-white;
+
+	.lead {
+		font-size: 1.618em;
+	}
+}
+
+a {
+	color: $medium-tan;
 	text-decoration: none;
 
 	&:hover {
-		color: $link-hover;
+		color: $light-tan;
+	}
+	&:active {
+		color: $medium-tan;
 	}
 
 }
+
 
 blockquote {
 	border: 0px;
 
 	> p {
 		font-size: 45px;
-		font-style: italic;
-		color: #666666;
+		color: $light-grey;
 		line-height: 1.1em;
-
-		> .quote {
-			color: #FFFFFF;
+		&:before {
+			content: "\201C";
+			color: $off-white;
 		}
+		&:after {
+			content: "\201D";
+			color: $off-white;
+		}
+	}
+
+	> cite {
+			color: $off-white;
+			font-style:normal;
 	}
 
 	> footer {
@@ -107,14 +147,25 @@ blockquote {
 		font-size: 22px;
 		font-style: none;
 		line-height: 1.2em;
-		color: #FFFFFF;
+		color: $off-white;
 	}
 }
 
-h1, h3 {
-	margin-top: 0px;
-  text-transform: uppercase;
+small {
+	text-transform: uppercase;
+	font-size: .707em;
+	line-height: 1.5em;
+	color: $light-grey;
 }
+
+
+label {
+	font-weight: normal;
+}
+
+
+/*** Sections ****/
+/* Backgrounds, section setup */
 
 section {
 	padding-top: 90px;
@@ -122,40 +173,134 @@ section {
 	padding-left: 30px;
 	padding-right: 30px;
 	border-bottom: 1px solid $divider-color;
-}
+	background-color: $body-bg;
 
-iframe{
-	@include breakpoint(mobileonly){
-		width: 100%;
+	&.alt-base {
+		background-color: $dark-grey;
+	}
+	&.light-alt-base {
+		background-color: $medium-grey;
+	}
+	&.patterned {
+		background-image: url($pattern-background);
+	}
+	&.light-striped {
+		background: repeating-linear-gradient(
+		  45deg,
+		  $medium-grey,
+		  $medium-grey 8px,
+		  $light-grey 3px,
+		  $light-grey 10px
+		);
+	}
+	&.dark-striped {
+		background: repeating-linear-gradient(
+		  45deg,
+		  $dark-grey,
+		  $dark-grey 8px,
+		  $medium-grey 3px,
+		  $medium-grey 10px
+		);
 	}
 }
 
-label {
-	font-weight: normal;
+/* Fancy HRs */
+
+@mixin hr($color) {
+	border-top:3px;
+	border-top-color: $color;
+	border-top-style: solid;
 }
 
-small {
-	text-transform: uppercase;
-	font-size: .707em;
-	line-height: 1.5em;
+.hr-dark {
+	@include hr($light-grey)
 }
 
-.how-it-works-heading {
-	margin-top: 30px;
+.hr-gold {
+	@include hr($medium-tan)
+}
+
+.hr-light {
+	@include hr($off-white)
+}
+
+
+/* Buttons */
+/* Overriding bootstrap here because all buttons should look like this */
+.btn-nb {
+	color: $dark-text;
+	background-color: $medium-tan;
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 2px solid transparent;
+	height: 56px;
+	margin-top: 10px;
 	margin-bottom: 10px;
+	margin-right: 15px;
+	padding: 14px;
+	min-width: 200px;
+	
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $sand;
+		color: $dark-text;
+		@include box-shadow(0 2px 0px $btn-shadow);
+	}
+
+	&:active {
+		background-color: $wet-sand;
+		@include box-shadow(inset 0 2px 0px $btn-shadow);
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 22px;
+	}
 }
 
-.lead-body-copy {
-	font-size: 1.618em;
-	line-height: 1.5em;
-	color: $subheader-gray;
+.btn-nb-ghost {
+	color: $medium-tan;
+	background-color: rgba(0,0,0,.0);
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 3px solid $medium-tan;
+	height: 56px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	padding: 14px;
+	min-width: 200px;
+	
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $baked-sand;
+		color: $medium-tan;
+		@include box-shadow(0 2px 0px $btn-shadow);
+	}
+
+	&:active {
+		background-color: $medium-tan;
+		color: $off-white;
+		@include box-shadow(inset 0 2px 0px $btn-shadow);
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
+	    margin-top: 0px;
+	    margin-left: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 22px;
+	}
 }
 
-.body-copy {
-	font-size: 1em;
-	line-height: 1.45em;
-	color: #DDD;
-}
+
 
 .alt-base-section {
 	background-color: $alt-base-background;
@@ -170,9 +315,38 @@ small {
 	background-image: url($diamond-background);
 }
 
+
+
+
+iframe{
+	@include breakpoint(mobileonly){
+		width: 100%;
+	}
+}
+
+
+.how-it-works-heading {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+/*.lead-body-copy {
+	font-size: 1.618em;
+	line-height: 1.5em;
+	color: $subheader-gray;
+}
+
+.body-copy {
+	font-size: 1em;
+	line-height: 1.45em;
+	color: #DDD;
+}*/
+
+
+
 .tan-border {
 	padding: 1px;
-  border: 1px solid $primary-tan;
+  border: 1px solid $medium-tan;
 }
 
 .mobile-column {
@@ -185,7 +359,7 @@ small {
 
 .btn-primary {
 	color: $dark-text;
-	background-color: $primary-tan;
+	background-color: $medium-tan;
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-radius: 4px;
@@ -209,11 +383,11 @@ small {
 
 	&:focus {
 		border: 1px solid #FFF;
-		background-color: $primary-tan;
+		background-color: $medium-tan;
 	}
 
 	&:visited {
-		background-color: $primary-tan;
+		background-color: $medium-tan;
 	}
 
 	@include breakpoint(mobileonly){
@@ -228,8 +402,8 @@ small {
 .gift-button {
 	background-color: #333333 !important;
 	padding: 14px;
-	border: 2px solid $primary-tan;
-	color: $primary-tan;
+	border: 2px solid $medium-tan;
+	color: $medium-tan;
 
 	&:hover {
 		color: #FFF;
@@ -240,7 +414,7 @@ small {
 
 .tan-header {
 	margin-top: 0px;
-	color: $primary-tan;
+	color: $medium-tan;
 }
 
 .centered-block {
@@ -255,7 +429,7 @@ small {
 }
 
 .circle-img {
-	border: 1px solid $primary-tan;
+	border: 1px solid $medium-tan;
 	width: 128px;
 	height: 128px;
 	-moz-border-radius: 100%;
@@ -410,8 +584,8 @@ small {
 	width: 100%;
 	padding-top: 100px;
 	padding-bottom: 220px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
 	@include border-radius;
 }
 
@@ -423,8 +597,8 @@ small {
 #faq-banner {
 	height: 70%;
 	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
 	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
 	@include border-radius;
 }
@@ -432,8 +606,8 @@ small {
 #legal-banner {
 	height: 70%;
 	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
 	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
 	@include border-radius;
 }
@@ -441,8 +615,8 @@ small {
 #press-banner {
 	height: 70%;
 	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 3px solid $primary-tan;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 3px solid $medium-tan;
 	background:url('/images/footer/press-banner.jpg') no-repeat center center;
 	@include border-radius;
 }
@@ -466,7 +640,7 @@ progress::-webkit-progress-bar{
   border-radius:9px;
 }
 progress::-webkit-progress-value{
-  background:$primary-tan;
+  background:$medium-tan;
   border-radius:9px;
 }
 progress::-moz-progress-bar{
@@ -474,7 +648,7 @@ progress::-moz-progress-bar{
   border-radius:9px;
 }
 progress::-moz-progress-value{
-  background:$primary-tan;
+  background:$medium-tan;
   border-radius:9px;
 }
 .progress_value{
@@ -601,7 +775,7 @@ progress::-moz-progress-value{
 
 	h1 {
 		text-transform: uppercase;
-		text-shadow: 1px 1px 0px $primary-tan;
+		text-shadow: 1px 1px 0px $medium-tan;
 		letter-spacing: 1px;
 		line-height: 46px;
 	}
@@ -660,7 +834,7 @@ progress::-moz-progress-value{
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -673,7 +847,7 @@ progress::-moz-progress-value{
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     position: relative;
@@ -748,8 +922,8 @@ div.row.fullName {
     font-weight: 500;
     line-height: 46.4px; /* Approximation due to font substitution */
     text-align: center;
-    border-top: 1px 1px solid $primary-tan;
-    border-bottom: 1px 1px solid $primary-tan;
+    border-top: 1px 1px solid $medium-tan;
+    border-bottom: 1px 1px solid $medium-tan;
 }
 
 
@@ -798,7 +972,7 @@ div.row.fullName {
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
