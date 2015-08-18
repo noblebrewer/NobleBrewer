@@ -5809,6 +5809,8 @@ a {
     color: #C2B49D; }
   a:active {
     color: #C5A77E; }
+  a.header {
+    text-transform: uppercase; }
 
 blockquote {
   border: 0px; }
@@ -5971,6 +5973,8 @@ section {
 /* Media */
 img {
   border: 1px solid #C5A77E; }
+  img.no-border {
+    border: none; }
 
 /*.tan-border {
 	padding: 1px;

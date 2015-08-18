@@ -10,19 +10,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/"><img src='/images/generic/simple_logo.svg' width="147px"></a>
+				<a class="navbar-brand" href="/"><img class="no-border" src='/images/generic/simple_logo.svg' width="147px"></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-left">
 					<% navLinks.forEach(function(link, index){ %>
 						<li class="<%= link.key === 'section' ? 'active' : ''%>">
-							<a class="nav-link" href="<%= link.href %>"><%= link.label %></a>
+							<a class="nav-link header" href="<%= link.href %>"><%= link.label %></a>
 						</li>
 					<% }) %>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a class="nav-link login" href="http://noblebrewer.myshopify.com/account/login">Sign In</a></li>
+					<li><a class="nav-link login header" href="http://noblebrewer.myshopify.com/account/login">Sign In</a></li>
 				</ul>
 			</div>
 		</div>

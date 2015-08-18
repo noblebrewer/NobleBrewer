@@ -121,8 +121,13 @@ a {
 	&:hover {
 		color: $light-tan;
 	}
+	
 	&:active {
 		color: $medium-tan;
+	}
+
+	&.header {
+		text-transform: uppercase;
 	}
 
 }
@@ -339,6 +344,10 @@ section {
 /* Media */
 img {
 	border: 1px solid $medium-tan;
+
+	&.no-border{
+		border:none;
+	}
 }
 /*.tan-border {
 	padding: 1px;
