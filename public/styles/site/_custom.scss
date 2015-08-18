@@ -116,6 +116,9 @@ a {
 	&:active {
 		color: $medium-tan;
 	}
+	&.nav-link {
+		text-transform: uppercase;
+	}
 
 }
 
@@ -300,21 +303,60 @@ section {
 	}
 }
 
+.card {
+	@include breakpoint(mobileonly){
+		padding-bottom: 15px;
+		margin: auto;
+		width: 320px;
+	}
 
+	@include breakpoint(phablet){
+		align: center;
+		margin: auto;
+		padding-bottom: 15px;
+		width: 500px;
+	}
 
-.alt-base-section {
-	background-color: $alt-base-background;
+	@include breakpoint(laptop){
+		margin: 15px;
+		width: 95%;
+		height: 600px;
+	}
+
+	@include breakpoint(desktop){
+		margin: 15px;
+		width: 95%;
+		height: 650px;
+	}
+
+	img{
+ 		width:100%;
+ 		border: none;
+	}
+
+	hr {
+		margin-top: 14px;
+		margin-bottom: 15px;
+		width: 20%;
+		color: #000;
+	}
+
+	> .card-text {
+		background-color: $white;
+		color: $dark-text;
+		width: 100%;
+		padding-bottom:10px;
+		padding-left:10px;
+		padding-right: 25px;
+		overflow: scroll;
+		max-height: 200px;
+
+		> p {
+			color: $dark-text;
+		}
+	}
+
 }
-
-.section-divider {
-	width: 100%;
-	margin: 0px;
-}
-
-.diamond-base-section {
-	background-image: url($diamond-background);
-}
-
 
 
 
@@ -342,6 +384,18 @@ iframe{
 	color: #DDD;
 }*/
 
+.alt-base-section {
+	background-color: $alt-base-background;
+}
+
+.section-divider {
+	width: 100%;
+	margin: 0px;
+}
+
+.diamond-base-section {
+	background-image: url($diamond-background);
+}
 
 
 .tan-border {
@@ -396,19 +450,6 @@ iframe{
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 22px;
-	}
-}
-
-.gift-button {
-	background-color: #333333 !important;
-	padding: 14px;
-	border: 2px solid $medium-tan;
-	color: $medium-tan;
-
-	&:hover {
-		color: #FFF;
-		border: 2px solid #FFF;
-		box-shadow: none;
 	}
 }
 
@@ -662,104 +703,14 @@ progress::-moz-progress-value{
      color: #aaa;
 }
 
-.brewer-text{
-	background-color: #FFF;
-	width: 100%;
-	margin-top: 0px;
-	padding-top: 10px;
-	padding-bottom:10px;
-	padding-left:10px;
-	padding-right: 25px;
-	color: $subheader-gray;
 
-	h3 {
-		margin-bottom: 3px;
-		font-weight: normal;
-		font-size: 22px;
-		text-transform: uppercase;
-	}
-
-	h4 {
-		margin-top: 0px;
-		margin-bottom: 3px;
-		color: $dark-text;
-		font-size: 18px;
-		text-transform: uppercase;
-	}
-
-	h5 {
-		margin-top: 0px;
-		margin-bottom: 3px;
-		font-size: 14px;
-		text-transform: uppercase;
-	}
-
-	hr {
-		margin-top: 14px;
-		margin-bottom: 15px;
-		width: 20%;
-		color: #000;
-	}
-
-	@include breakpoint(mobileonly){
-		min-height: 200px;
-	}
-
-	@include breakpoint(phablet){
-		min-height: 250px;
-	}
-
-	@include breakpoint(laptop){
-		height: 250px;
-	}
-
-	@include breakpoint(desktop){
-		height: 250px;
-	}
-}
-
-.brewer-name {
-	margin-top: 15px;
-	margin-bottom: 0px;
-	font-size: 18px;
-	text-transform: uppercase;
-}
 
 .subheading {
 	font-size: 12px;
 	color: #666666;
 }
 
-.brewer_card {
-	@include breakpoint(mobileonly){
-		padding-bottom: 15px;
-		margin: auto;
-		width: 320px;
-	}
 
-	@include breakpoint(phablet){
-		align: center;
-		margin: auto;
-		padding-bottom: 15px;
-		width: 500px;
-	}
-
-	@include breakpoint(laptop){
-		margin: 15px;
-		width: 95%;
-		height: 600px;
-	}
-
-	@include breakpoint(desktop){
-		margin: 15px;
-		width: 95%;
-		height: 650px;
-	}
-
-	img{
- 		width:100%;
-	}
-}
 
 .team-photo {
 

@@ -22,6 +22,7 @@ Homebrewer.add(
 	{heading: 'Full Profile'},
 	{profileURL: { type: Types.Url, required: false },
 	profileHeadline: { type: String, required: false },
+	profileBrief: { type: Types.Textarea, required: false, default: "Read more..." },
 	profileBody: { type: Types.Textarea, required: false },
 	profileVideo: { type: Types.Url, required: false },
 	beerList: {type: String, required: false },
@@ -29,7 +30,7 @@ Homebrewer.add(
 	{heading: 'Other Data'},
 	{brewerEmail: { type: Types.Email, displayGravatar: true },
 	enteredDate: { type: Types.Date, default: Date.now}}
-)
+);
 	
 
 Homebrewer.defaultColumns = ('brewerName, brewerEmail, city, state|15%, enteredDate');

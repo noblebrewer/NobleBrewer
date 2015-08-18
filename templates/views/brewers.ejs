@@ -19,7 +19,7 @@
 	</div>
 </section>
 
-<section class="alt-base-section">
+<section class="alt-base">
 	<div class="container">
 
 		<div class="row">
@@ -32,29 +32,25 @@
 				<% } %>
 				<% if (featuredBrewer.profilePicture.url) { %>
 						<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-							<div class="brewer_card">
-								<img src="<%=featuredBrewer.profilePicture.url%>">
-								<div class="brewer-text">
-									<h3><%=featuredBrewer.profileHeadline%></h3>
-
-									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
- 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
+							<div class="card">
+								<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profilePicture.url%>"></a>
+								<div class="card-text">
+									<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+ 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
  									<hr align="left">
- 									<p><%=featuredBrewer.profileBody%></p>
+ 									<p><%=featuredBrewer.profileBrief%></p>
 								</div>
 							</div>
 						</div>
 					<% } else { %>
 						<div class="col-md-6" align="center">
-							<div class="brewer_card">
-								<img src="http://www.vtecsoft.com/images/default-avatar_0.png">
+							<div class="card">
+								<a href="/profile/<%= brewer.slug%>"><img src="http://www.vtecsoft.com/images/default-avatar_0.png"></a>
 								<div class="brewer-text">
-									<h3><%=featuredBrewer.profileHeadline%></h3>
-
-									<h4><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
- 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
+									<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+ 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
  									<hr align="left">
- 									<p><%=featuredBrewer.profileBody%></p>
+ 									<p><%=featuredBrewer.profileBrief%></p>
 								</div>
 							</div>
 						</div>
@@ -74,7 +70,7 @@
 			</div>
 		</div>
 </section>
-<section id="diamond-base-section">
+<section id="patterned">
 		<div class="row">
 			<h2 align="center">All Brewers</h2>
 		</div>
