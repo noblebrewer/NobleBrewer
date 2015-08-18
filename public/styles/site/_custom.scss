@@ -29,12 +29,6 @@ BREAKPOINTS
   }
 }
 
-@mixin border-radius {
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-      -ms-background-size: cover;
-          background-size: cover;
-}
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
@@ -94,6 +88,10 @@ h4 {
 	font-size: 1.414em;
 	line-height: 1.45em;
 	text-transform: uppercase;
+
+	&.dark {
+		color: $dark-grey;
+	}
 }
 
 
@@ -132,6 +130,13 @@ a {
 
 }
 
+ul {
+	list-style-image: url('/images/tan-diamond.png'); 
+	background-color: #c5a778;
+	width: 16px;
+	height: 16px;
+}
+
 
 blockquote {
 	border: 0px;
@@ -164,7 +169,7 @@ blockquote {
 	}
 }
 
-small {
+.small {
 	text-transform: uppercase;
 	font-size: .707em;
 	line-height: 1.5em;
@@ -215,6 +220,17 @@ section {
 		  $medium-grey 10px
 		);
 	}
+	&.off-white {
+		background-color: $off-white;
+	}
+}
+/*********** BACKGROUNDS(NO SECTION) *****/
+.light-alt-base {
+	background-color: $medium-grey;
+}
+.base {
+	border-bottom: 1px solid $divider-color;
+	background-color: $body-bg;
 }
 
 /*********** DIVIDERS ***************/
@@ -250,7 +266,14 @@ section {
 	height: 36px;
 }
 
-/* Unique section banners */
+/********* Unique section banners *******/
+
+@mixin border-radius {
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+      -ms-background-size: cover;
+          background-size: cover;
+}
 
 #about-banner {
 	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
@@ -260,6 +283,47 @@ section {
 #vat-banner {
 	background:url('/images/about/brewingvats.jpg') no-repeat center center;
 	height: 315px;
+	@include border-radius;
+}
+#team-banner {
+	background:url('/images/footer/team/team-banner.png') no-repeat center center;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 220px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	@include border-radius;
+}
+
+#brewers-banner {
+	background:url('/images/brewers/brewer-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#faq-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#legal-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#press-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 3px solid $medium-tan;
+	background:url('/images/footer/press-banner.jpg') no-repeat center center;
 	@include border-radius;
 }
 
@@ -282,6 +346,11 @@ section {
 .hr-light {
 	@include hr($off-white)
 }
+
+.hr-light-thin {
+  border-top: 1px;
+  border-top-color: #DAD8D6;
+  border-top-style: solid; }
 
 
 /* Buttons */
@@ -381,6 +450,11 @@ img {
 
 	&.no-border{
 		border:none;
+	}
+	&.beer-glass{
+		height:40px;
+		width:auto;
+		padding-top: 8px;
 	}
 }
 /*.tan-border {
@@ -628,47 +702,7 @@ iframe{
 
 
 
-#team-banner {
-	background:url('/images/footer/team/team-banner.png') no-repeat center center;
-	width: 100%;
-	padding-top: 100px;
-	padding-bottom: 220px;
-	border-bottom: 1px solid $medium-tan;
-	border-top: 2px solid $medium-tan;
-	@include border-radius;
-}
 
-#brewers-banner {
-	background:url('/images/brewers/brewer-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#faq-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $medium-tan;
-	border-top: 2px solid $medium-tan;
-	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#legal-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $medium-tan;
-	border-top: 2px solid $medium-tan;
-	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#press-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $medium-tan;
-	border-top: 3px solid $medium-tan;
-	background:url('/images/footer/press-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
 
 .html5-progressbar{
   padding:15px;

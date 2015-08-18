@@ -1,0 +1,1 @@
+define(["jquery","./view"],function(n,e){return function(){var n,r={},t=new e;return r.appendTo=function(e){return n=e,r},r.setResource=function(n){return t.model=n,r},r.hide=function(){return n&&n.empty(),r},r.show=function(){return n.append(t.render().$el),r},r}});

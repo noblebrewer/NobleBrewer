@@ -5789,6 +5789,8 @@ h4 {
   font-size: 1.414em;
   line-height: 1.45em;
   text-transform: uppercase; }
+  h4.dark {
+    color: #232121; }
 
 .subheader {
   color: #333333;
@@ -5812,6 +5814,12 @@ a {
   a.header {
     text-transform: uppercase; }
 
+ul {
+  list-style-image: url("/images/tan-diamond.png");
+  background-color: #c5a778;
+  width: 16px;
+  height: 16px; }
+
 blockquote {
   border: 0px; }
   blockquote > p {
@@ -5834,7 +5842,7 @@ blockquote {
     line-height: 1.2em;
     color: #DAD8D6; }
 
-small {
+.small {
   text-transform: uppercase;
   font-size: .707em;
   line-height: 1.5em;
@@ -5862,6 +5870,16 @@ section {
     background: repeating-linear-gradient(45deg, #333333, #333333 8px, #565656 3px, #565656 10px); }
   section.dark-striped {
     background: repeating-linear-gradient(45deg, #232121, #232121 8px, #333333 3px, #333333 10px); }
+  section.off-white {
+    background-color: #DAD8D6; }
+
+/*********** BACKGROUNDS(NO SECTION) *****/
+.light-alt-base {
+  background-color: #333333; }
+
+.base {
+  border-bottom: 1px solid #777777;
+  background-color: #222120; }
 
 /*********** DIVIDERS ***************/
 .diamond-separator {
@@ -5892,7 +5910,7 @@ section {
   margin-bottom: 30px;
   height: 36px; }
 
-/* Unique section banners */
+/********* Unique section banners *******/
 #about-banner {
   background: url("/images/about/aboutbanner.jpg") no-repeat center center;
   -webkit-background-size: cover;
@@ -5903,6 +5921,58 @@ section {
 #vat-banner {
   background: url("/images/about/brewingvats.jpg") no-repeat center center;
   height: 315px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#team-banner {
+  background: url("/images/footer/team/team-banner.png") no-repeat center center;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 220px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 2px solid #C5A77E;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#brewers-banner {
+  background: url("/images/brewers/brewer-banner.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#faq-banner {
+  height: 70%;
+  max-height: 360px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 2px solid #C5A77E;
+  background: url("/images/footer/footer-banner2.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#legal-banner {
+  height: 70%;
+  max-height: 360px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 2px solid #C5A77E;
+  background: url("/images/footer/footer-banner.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
+#press-banner {
+  height: 70%;
+  max-height: 360px;
+  border-bottom: 1px solid #C5A77E;
+  border-top: 3px solid #C5A77E;
+  background: url("/images/footer/press-banner.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
@@ -5921,6 +5991,11 @@ section {
 
 .hr-light {
   border-top: 3px;
+  border-top-color: #DAD8D6;
+  border-top-style: solid; }
+
+.hr-light-thin {
+  border-top: 1px;
   border-top-color: #DAD8D6;
   border-top-style: solid; }
 
@@ -6004,6 +6079,10 @@ img {
   border: 1px solid #C5A77E; }
   img.no-border {
     border: none; }
+  img.beer-glass {
+    height: 40px;
+    width: auto;
+    padding-top: 8px; }
 
 /*.tan-border {
 	padding: 1px;
@@ -6190,58 +6269,6 @@ img {
 
 #cost-breakdown p {
   margin: 0px; }
-
-#team-banner {
-  background: url("/images/footer/team/team-banner.png") no-repeat center center;
-  width: 100%;
-  padding-top: 100px;
-  padding-bottom: 220px;
-  border-bottom: 1px solid #C5A77E;
-  border-top: 2px solid #C5A77E;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover; }
-
-#brewers-banner {
-  background: url("/images/brewers/brewer-banner.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover; }
-
-#faq-banner {
-  height: 70%;
-  max-height: 360px;
-  border-bottom: 1px solid #C5A77E;
-  border-top: 2px solid #C5A77E;
-  background: url("/images/footer/footer-banner2.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover; }
-
-#legal-banner {
-  height: 70%;
-  max-height: 360px;
-  border-bottom: 1px solid #C5A77E;
-  border-top: 2px solid #C5A77E;
-  background: url("/images/footer/footer-banner.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover; }
-
-#press-banner {
-  height: 70%;
-  max-height: 360px;
-  border-bottom: 1px solid #C5A77E;
-  border-top: 3px solid #C5A77E;
-  background: url("/images/footer/press-banner.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover; }
 
 .html5-progressbar {
   padding: 15px;
