@@ -1,17 +1,17 @@
 <!-- views/partials/footer.ejs -->
 
-<div id="footer" class="container">
-			<div class="footer-pattern">
-			  <div align="center">
-			  	<a href="#"><img class="no-border" src="/images/generic/footerbadge.png"></a>
-			  </div>
-			</div>
+<div id="footer">
+	<div class="footer-pattern">
+	  <div align="center">
+	  	<a href="#"><img class="no-border" src="/images/generic/footerbadge.png"></a>
+	  </div>
+	</div>
 	    <div class="row">
 		    <div class="col-md-8">
 				<ul>
 					<% footerLinks.forEach(function(link, index){ %>
 						<li>
-							<a href="<%= link.href %>"><%= link.label %></a>
+							<a class="header" href="<%= link.href %>"><%= link.label %></a>
 						</li>
 					<% }) %>
 				</ul>

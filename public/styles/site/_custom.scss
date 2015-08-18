@@ -181,8 +181,8 @@ label {
 /* Backgrounds, section setup */
 
 section {
-	padding-top: 90px;
-	padding-bottom: 90px;
+	padding-top: 30px;
+	padding-bottom: 40px;
 	padding-left: 30px;
 	padding-right: 30px;
 	border-bottom: 1px solid $divider-color;
@@ -215,6 +215,29 @@ section {
 		  $medium-grey 10px
 		);
 	}
+}
+
+/*********** DIVIDERS ***************/
+@mixin divider-elements() {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+}
+
+.diamond-separator {
+	background: url($diamond-divider);
+	@include divider-elements();
+	margin: auto;
+	height: 15px;
+	padding: 60px;
+}
+.footer-pattern {
+	background: url($footer-divider);
+	@include divider-elements();
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	height: 36px;
 }
 
 /* Unique section banners */
@@ -287,6 +310,7 @@ section {
     margin-right: 0px;
     margin-bottom: 22px;
 	}
+
 }
 
 .btn-nb-ghost {
@@ -359,7 +383,11 @@ iframe{
 	}
 }
 
-/* buffers */
+/***** SIZING BUFFERS AND AUTO-SIZING ****/
+.auto-height {
+	height:auto;
+}
+
 .top-buffer {
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -496,28 +524,6 @@ iframe{
 		line-height: 1.5em;
 		color: $subheader-gray;
 	}
-}
-
-.diamond-separator {
-	background: url($diamond-divider);
-	background-repeat: no-repeat;
-	background-position: center;
-  margin: auto;
-  height: 15px;
-  width: 100%;
-  padding: 60px;
-}
-
-.footer-pattern {
-	background: url($footer-divider);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 36px;
 }
 
 .social-media {
