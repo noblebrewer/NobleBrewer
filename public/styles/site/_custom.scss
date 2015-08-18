@@ -73,6 +73,14 @@ h2 {
 	@include htags();
 	font-size: 2.827em;
 	line-height: 1.2em;
+
+	&.tan-outline {
+		text-shadow: 1px 1px 0px $medium-tan;
+	}
+
+	&.tan-header {
+		color: $medium-tan;
+	}
 }
 
 h3 {
@@ -204,6 +212,19 @@ section {
 	}
 }
 
+/* Unique section banners */
+
+#about-banner {
+	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#vat-banner {
+	background:url('/images/about/brewingvats.jpg') no-repeat center center;
+	height: 315px;
+	@include border-radius;
+}
+
 /* Fancy HRs */
 
 @mixin hr($color) {
@@ -315,8 +336,13 @@ section {
 	background-image: url($diamond-background);
 }
 
-
-
+/* Media */
+img {
+	border: 1px solid $medium-tan;
+}
+/*.tan-border {
+	padding: 1px;
+}*/
 
 iframe{
 	@include breakpoint(mobileonly){
@@ -324,6 +350,16 @@ iframe{
 	}
 }
 
+/* buffers */
+.top-buffer {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+
+.left-buffer {
+	padding-left: 20px;
+}
 
 .how-it-works-heading {
 	margin-top: 30px;
@@ -344,10 +380,7 @@ iframe{
 
 
 
-.tan-border {
-	padding: 1px;
-  border: 1px solid $medium-tan;
-}
+
 
 .mobile-column {
   @include breakpoint(mobileonly){
@@ -412,10 +445,10 @@ iframe{
 	}
 }
 
-.tan-header {
+/*.tan-header {
 	margin-top: 0px;
 	color: $medium-tan;
-}
+}*/
 
 .centered-block {
 	margin: auto;
@@ -568,16 +601,7 @@ iframe{
 
 }
 
-#about-banner {
-	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
-	@include border-radius;
-}
 
-#vat-banner {
-	background:url('/images/about/brewingvats.jpg') no-repeat center center;
-	height: 315px;
-	@include border-radius;
-}
 
 #team-banner {
 	background:url('/images/footer/team/team-banner.png') no-repeat center center;
@@ -770,7 +794,7 @@ progress::-moz-progress-value{
 	}
 }
 
-#about-header {
+/*#about-header {
 	max-width: 825px;
 
 	h1 {
@@ -779,7 +803,7 @@ progress::-moz-progress-value{
 		letter-spacing: 1px;
 		line-height: 46px;
 	}
-}
+}*/
 
 .legal-link-group {
 	padding-bottom: 30px;
