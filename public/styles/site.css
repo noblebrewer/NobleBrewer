@@ -5805,8 +5805,10 @@ p {
   line-height: 1.5em;
   font-size: 1em;
   color: #DAD8D6; }
-  p .lead {
+  p.lead {
     font-size: 1.618em; }
+  p.dark {
+    color: #232121; }
 
 a {
   color: #C5A77E;

@@ -111,9 +111,13 @@ p {
 	font-size: 1em;
 	color: $off-white;
 
-	.lead {
+	&.lead {
 		font-size: 1.618em;
 	}
+
+	&.dark {
+			color: $dark-grey;
+		}
 }
 
 a {
