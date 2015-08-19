@@ -1,6 +1,14 @@
 var async = require('async'),
 	keystone = require('keystone');
 var request = require("request");
+var GoogleSpreadsheet = require("google-spreadsheet");
+var my_sheet = new GoogleSpreadsheet('10Ky6T0EkQ4Ssk78ROcoK8DqqMSOmaMbG5-DT9F5YsZU');
+
+
+var creds = {
+  client_email: 'yourserviceaccountemailhere@google.com',
+  private_key: 'your long private key stuff here'
+}
 
 /**
  * List Posts
