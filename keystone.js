@@ -28,6 +28,7 @@ keystone.init({
 
 	'hubspot_api': process.env.HUBSPOT_API,
 	'shopify_api': process.env.SHOPIFY_API_KEY,
+	'google_api' : process.env.GOOGLE_API_KEY,
 
 	'auto update': true,
 	'session': true,
