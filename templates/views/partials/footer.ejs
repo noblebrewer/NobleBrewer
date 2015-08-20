@@ -1,29 +1,30 @@
 <!-- views/partials/footer.ejs -->
 
-<div id="footer" class="container">
-			<div class="footer-pattern">
-			  <div align="center">
-			  	<a href="#"><img src="/images/generic/footerbadge.png"></a>
-			  </div>
+<div id="footer">
+	<div class="footer-pattern">
+	  <div align="center">
+	  	<a href="#"><img class="no-border" src="/images/generic/footerbadge.png"></a>
+	  </div>
+	</div>
+    <div class="row centered-block">
+	    <div class="col-md-8 col-md-offset-1 col-sm-12">
+			<ul>
+				<% footerLinks.forEach(function(link, index){ %>
+					<li>
+						<a class="header col-sm-1" href="<%= link.href %>"><%= link.label %></a>
+					</li>
+				<% }) %>
+			</ul>
+		</div>
+		<div class="col-md-2 col-sm-12">
+			<div class="small-social-media">
+	    		<a href="https://www.facebook.com/noblebrewer" target="_blank"><img class="no-border" src="/images/generic/facebook.png"></a>
+	    		<a href="https://instagram.com/NobleBrewer" target="_blank"><img class="no-border" src="/images/generic/instagram.png"></a>
+	    		<a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img class="no-border" src="/images/generic/twitter.png"></a>
 			</div>
-	    <div class="row">
-		    <div class="col-md-8">
-				<ul>
-					<% footerLinks.forEach(function(link, index){ %>
-						<li>
-							<a href="<%= link.href %>"><%= link.label %></a>
-						</li>
-					<% }) %>
-				</ul>
-		    </div>
-	    	<div class="col-md-3 col-md-offset-1">
-	    		<div class="small-social-media">
-		    		<a href="https://www.facebook.com/noblebrewer" target="_blank"><img src="/images/generic/facebook.png"></a>
-            		<a href="https://instagram.com/NobleBrewer" target="_blank"><img src="/images/generic/instagram.png"></a>
-            		<a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img src="/images/generic/twitter.png"></a>
-	    		</div>
-	    	</div>
-   	 	</div>
+		</div>
+	</div>
+</div>
 
 		<script src="/js/jquery/jquery-1.11.2.min.js"></script>
 		<script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
@@ -33,4 +34,48 @@
 				<script src="/keystone/js/content/editor.js"></script>
 			<% } %>
 		<% } %>
+
+<!--SHOPIFY VERSION
+
+	<div id="footer">
+	<div class="footer-pattern" style="background:url({{ 'footerbg.png' | asset_url }}">
+	  <div align="center">
+			  	<a href="#"><img class="no-border" src="{{ "footerbadge.png" | asset_url }}"></a>
+	  </div>
+	</div>
+    <div class="row">
+        <div class="col-md-8">
+            <ul>
+                {% for link in linklists.footer.links %}
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                  <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+                    <a class="header" href="{{ link.url }}">{{ link.title }}</a>
+                    <ul class="site-nav--dropdown">
+                      {% for childlink in linklists[child_list_handle].links %}
+                        <li {% if childlink.active %}class="site-nav--active"{% endif %}><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li {% if link.active %}class="site-nav--active"{% endif %}>
+                    <a class="header" href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+        </div>
+	    	<div class="col-md-3 col-md-offset-1">
+	    		<div class="small-social-media">
+		    		<a href="https://www.facebook.com/noblebrewer" target="_blank"><img class="no-border" src="{{ "facebook.png" | asset_url }}"></a>
+            		<a href="https://instagram.com/NobleBrewer" target="_blank"><img class="no-border" src="{{ "instagram.png" | asset_url }}"></a>
+            		<a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img class="no-border" src="{{ "twitter.png" | asset_url }}"></a>
+	    		</div>
+	    	</div>
+   	 </div>
+
+    <script src="/js/jquery/jquery-1.11.2.min.js"></script>
+    <script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
 </div>
+
+-->

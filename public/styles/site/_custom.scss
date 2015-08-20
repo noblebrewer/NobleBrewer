@@ -1,27 +1,3 @@
-
-
-$primary-tan: #C5A77E;
-$hover-tan : #D4C0AA;
-$dark-tan : #8A7762;
-$link-hover : #FFFFFF;
-
-$header-white : #FFFFFF;
-$subheader-gray : #b0b0b0;
-
-$dark-text: #232121;
-$alt-base-background : #232121;
-$light-base-background: #333333;
-$diamond-background : '/images/generic/diagmonds.png';
-$diamond-divider: '/images/generic/diamond-divide.png';
-$bar-diamond-divider: '/images/generic/bar-diamond-divide.png';
-$footer-divider: '/images/generic/footerbg.png';
-$divider-color: #777777;
-$inactive-button-color: #C1C0C0;
-$inactive-button-font-color: #302d2d;
-
-$Gotham: "Gotham SSm A", "Gotham SSm B";
-
-
 /*********************\
 FONT
 \*********************/
@@ -53,13 +29,6 @@ BREAKPOINTS
   }
 }
 
-@mixin border-radius {
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-      -ms-background-size: cover;
-          background-size: cover;
-}
-
 @mixin aspect-ratio($width, $height) {
   position: relative;
   &:before {
@@ -77,29 +46,139 @@ BREAKPOINTS
   }
 }
 
-a {
-	color: $primary-tan;
+
+/**** HTML Tags ****/
+
+/*** Headers ****/
+
+@mixin htags() {
 	text-transform: uppercase;
+  	color: $white;
+}
+
+h1 {
+	@include htags();
+	font-size: 2.827em;
+	line-height: 1.2em;
+
+	&.tan-outline {
+		text-shadow: 1px 1px 0px $medium-tan;
+	}
+
+	&.tan-header {
+		color: $medium-tan;
+	}
+}
+
+h2 {
+	@include htags();
+	font-size: 2.827em;
+	line-height: 1.2em;
+
+	&.tan-outline {
+		text-shadow: 1px 1px 0px $medium-tan;
+	}
+
+	&.tan-header {
+		color: $medium-tan;
+	}
+}
+
+h3 {
+	@include htags();
+	font-size: 1.999em;
+	line-height: 1.45em;
+}
+
+h4 {
+	color: $white;
+	font-size: 1.414em;
+	line-height: 1.45em;
+	text-transform: uppercase;
+
+	&.dark {
+		color: $dark-grey;
+	}
+}
+
+
+.subheader {
+  	color: $medium-grey;
+  	text-transform: none;
+}
+
+.subheading {
+	font-size: 12px;
+	color: #666666;
+}
+
+/*** Text ***/
+
+p {
+	line-height: 1.5em;
+	font-size: 1em;
+	color: $off-white;
+
+	.lead {
+		font-size: 1.618em;
+	}
+}
+
+a {
+	color: $medium-tan;
 	text-decoration: none;
 
 	&:hover {
-		color: $link-hover;
+		color: $light-tan;
+	}
+	
+	&:active {
+		color: $medium-tan;
+	}
+	&.nav-link {
+		text-transform: uppercase;
+	}
+
+	&.header {
+		text-transform: uppercase;
+	}
+
+	&.white {
+    	color: $white;
 	}
 
 }
+
+ul {
+	&.diamond {
+		list-style-image: url('/images/tan-diamond.png'); 
+		background-color: #c5a778;
+		width: 16px;
+		height: 16px;
+	}
+}
+
 
 blockquote {
 	border: 0px;
 
 	> p {
 		font-size: 45px;
-		font-style: italic;
-		color: #666666;
+		color: $light-grey;
 		line-height: 1.1em;
-
-		> .quote {
-			color: #FFFFFF;
+		&:before {
+			content: "\201C";
+			color: $off-white;
 		}
+		&:after {
+			content: "\201D";
+			color: $off-white;
+		}
+	}
+
+	> cite {
+			color: $off-white;
+			font-style:normal;
 	}
 
 	> footer {
@@ -107,21 +186,360 @@ blockquote {
 		font-size: 22px;
 		font-style: none;
 		line-height: 1.2em;
-		color: #FFFFFF;
+		color: $off-white;
 	}
 }
 
-h1, h3 {
-	margin-top: 0px;
-  text-transform: uppercase;
+.small {
+	text-transform: uppercase;
+	font-size: .707em;
+	line-height: 1.5em;
+	color: $light-grey;
+
+	&.light{
+		color: $off-white;
+	}
 }
 
+
+label {
+	font-weight: normal;
+}
+
+
+/*** Sections ****/
+/* Backgrounds, section setup */
+
 section {
-	padding-top: 90px;
-	padding-bottom: 90px;
+	padding-top: 30px;
+	padding-bottom: 40px;
 	padding-left: 30px;
 	padding-right: 30px;
 	border-bottom: 1px solid $divider-color;
+	background-color: $body-bg;
+
+	&.alt-base {
+		background-color: $dark-grey;
+	}
+	&.light-alt-base {
+		background-color: $medium-grey;
+	}
+	&.patterned {
+		background-image: url($pattern-background);
+	}
+	&.light-striped {
+		background: repeating-linear-gradient(
+		  45deg,
+		  $medium-grey,
+		  $medium-grey 8px,
+		  $light-grey 3px,
+		  $light-grey 10px
+		);
+	}
+	&.dark-striped {
+		background: repeating-linear-gradient(
+		  45deg,
+		  $dark-grey,
+		  $dark-grey 8px,
+		  $medium-grey 3px,
+		  $medium-grey 10px
+		);
+	}
+	&.off-white {
+		background-color: $off-white;
+	}
+}
+/*********** BACKGROUNDS(NO SECTION) *****/
+.light-alt-base {
+	background-color: $medium-grey;
+}
+.base {
+	border-bottom: 1px solid $divider-color;
+	background-color: $body-bg;
+}
+
+/*********** DIVIDERS ***************/
+@mixin divider-elements() {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+}
+
+
+.diamond-separator {
+	background: url($diamond-divider);
+	@include divider-elements();
+	margin: auto;
+	height: 15px;
+	padding: 60px;
+}
+.footer-pattern {
+	background: url($footer-divider);
+	@include divider-elements();
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	height: 36px;
+}
+
+.footer-shopify {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	height: 36px;
+}
+
+/********* Unique section banners *******/
+
+@mixin border-radius {
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+      -ms-background-size: cover;
+          background-size: cover;
+}
+
+#about-banner {
+	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#vat-banner {
+	background:url('/images/about/brewingvats.jpg') no-repeat center center;
+	height: 315px;
+	@include border-radius;
+}
+#team-banner {
+	background:url('/images/footer/team/team-banner.png') no-repeat center center;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 220px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	@include border-radius;
+}
+
+#brewers-banner {
+	background:url('/images/brewers/brewer-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#faq-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#legal-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 2px solid $medium-tan;
+	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+#press-banner {
+	height: 70%;
+	max-height:360px;
+	border-bottom: 1px solid $medium-tan;
+	border-top: 3px solid $medium-tan;
+	background:url('/images/footer/press-banner.jpg') no-repeat center center;
+	@include border-radius;
+}
+
+/* Fancy HRs */
+
+@mixin hr($color) {
+	border-top:3px;
+	border-top-color: $color;
+	border-top-style: solid;
+}
+
+.hr-dark {
+	@include hr($light-grey)
+}
+
+.hr-gold {
+	@include hr($medium-tan)
+}
+
+.hr-light {
+	@include hr($off-white)
+}
+
+.hr-light-thin {
+  border-top: 1px;
+  border-top-color: #DAD8D6;
+  border-top-style: solid; 
+}
+
+.hr-diamonds {
+	border-image: url($bar-diamond-divider);
+}
+
+
+/* Buttons */
+/* Overriding bootstrap here because all buttons should look like this */
+.btn-nb {
+	color: $dark-text;
+	background-color: $medium-tan;
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 2px solid transparent;
+	height: 56px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	padding: 14px;
+	min-width: 200px;
+	
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $sand;
+		color: $dark-text;
+		@include box-shadow(0 2px 0px $btn-shadow);
+	}
+
+	&:active {
+		background-color: $wet-sand;
+		@include box-shadow(inset 0 2px 0px $btn-shadow);
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 22px;
+	}
+
+}
+
+.btn-nb-ghost {
+	color: $medium-tan;
+	background-color: rgba(0,0,0,.0);
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 3px solid $medium-tan;
+	height: 56px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	padding: 14px;
+	min-width: 200px;
+	
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $baked-sand;
+		color: $medium-tan;
+		@include box-shadow(0 2px 0px $btn-shadow);
+	}
+
+	&:active {
+		background-color: $medium-tan;
+		color: $off-white;
+		@include box-shadow(inset 0 2px 0px $btn-shadow);
+	}
+
+	@include breakpoint(mobileonly){
+		width: 100%;
+	    margin-top: 0px;
+	    margin-left: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 22px;
+	}
+}
+.brewer-story {
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right: 25px;
+	overflow: scroll;
+	max-height: 600px;
+}
+
+.card {
+	@include breakpoint(mobileonly){
+		padding-bottom: 15px;
+		margin: auto;
+		width: 320px;
+	}
+
+	@include breakpoint(phablet){
+		align: center;
+		margin: auto;
+		padding-bottom: 15px;
+		width: 500px;
+	}
+
+	@include breakpoint(laptop){
+		margin: 15px;
+		width: 95%;
+		height: 600px;
+	}
+
+	@include breakpoint(desktop){
+		margin: 15px;
+		width: 95%;
+		height: 650px;
+	}
+
+	img{
+ 		width:100%;
+ 		border: none;
+
+ 		&.image-cropper {
+			width: 589px;
+			height: 393px;
+			overflow: hidden;
+		}		
+ 	
+	}
+
+	hr {
+		margin-top: 14px;
+		margin-bottom: 15px;
+		width: 20%;
+		color: #000;
+	}
+
+	> .card-text {
+		background-color: $white;
+		color: $dark-text;
+		width: 100%;
+		padding-bottom:10px;
+		padding-left:10px;
+		padding-right: 25px;
+		overflow: scroll;
+		max-height: 200px;
+
+		> p {
+			color: $dark-text;
+		}
+	}
+}
+
+/* Media */
+img {
+	border: 1px solid $medium-tan;
+
+	&.no-border{
+		border:none;
+	}
+	&.beer-glass{
+		height:40px;
+		width:auto;
+		padding-top: 8px;
+	}
 }
 
 iframe{
@@ -130,31 +548,24 @@ iframe{
 	}
 }
 
-label {
-	font-weight: normal;
+/***** SIZING BUFFERS AND AUTO-SIZING ****/
+.auto-height {
+	height:auto;
 }
 
-small {
-	text-transform: uppercase;
-	font-size: .707em;
-	line-height: 1.5em;
+.top-buffer {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+
+.left-buffer {
+	padding-left: 20px;
 }
 
 .how-it-works-heading {
 	margin-top: 30px;
 	margin-bottom: 10px;
-}
-
-.lead-body-copy {
-	font-size: 1.618em;
-	line-height: 1.5em;
-	color: $subheader-gray;
-}
-
-.body-copy {
-	font-size: 1em;
-	line-height: 1.45em;
-	color: #DDD;
 }
 
 .alt-base-section {
@@ -170,77 +581,12 @@ small {
 	background-image: url($diamond-background);
 }
 
-.tan-border {
-	padding: 1px;
-  border: 1px solid $primary-tan;
-}
-
 .mobile-column {
   @include breakpoint(mobileonly){
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
   }
-}
-
-.btn-primary {
-	color: $dark-text;
-	background-color: $primary-tan;
-	letter-spacing: 1px;
-	font-weight: bold;
-	border-radius: 4px;
-	border: 2px solid transparent;
-	height: 56px;
-	margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  padding: 14px;
-  min-width: 200px;
-	-webkit-box-shadow: 0px 4px 0px $dark-tan;
-	-moz-box-shadow:    0px 4px 0px $dark-tan;
-	box-shadow:         0px 4px 0px $dark-tan;
-	text-transform: uppercase;
-
-	&:hover {
-		background-color: $hover-tan;
-		border: 2px solid #FFF;
-		box-shadow: none;
-	}
-
-	&:focus {
-		border: 1px solid #FFF;
-		background-color: $primary-tan;
-	}
-
-	&:visited {
-		background-color: $primary-tan;
-	}
-
-	@include breakpoint(mobileonly){
-		width: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 22px;
-	}
-}
-
-.gift-button {
-	background-color: #333333 !important;
-	padding: 14px;
-	border: 2px solid $primary-tan;
-	color: $primary-tan;
-
-	&:hover {
-		color: #FFF;
-		border: 2px solid #FFF;
-		box-shadow: none;
-	}
-}
-
-.tan-header {
-	margin-top: 0px;
-	color: $primary-tan;
 }
 
 .centered-block {
@@ -255,7 +601,7 @@ small {
 }
 
 .circle-img {
-	border: 1px solid $primary-tan;
+	border: 1px solid $medium-tan;
 	width: 128px;
 	height: 128px;
 	-moz-border-radius: 100%;
@@ -282,37 +628,15 @@ small {
 	}
 }
 
-.diamond-separator {
-	background: url($diamond-divider);
-	background-repeat: no-repeat;
-	background-position: center;
-  margin: auto;
-  height: 15px;
-  width: 100%;
-  padding: 60px;
-}
-
-.footer-pattern {
-	background: url($footer-divider);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 36px;
-}
-
 .social-media {
 	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
 	display: -webkit-flex; /* Safari */
-  -webkit-justify-content: space-around; /* Safari 6.1+ */
-  display: flex;
-  justify-content: space-around;
+	-webkit-justify-content: space-around; /* Safari 6.1+ */
+	display: flex;
+	justify-content: space-around;
 
   img {
   	width: 50%;
@@ -375,14 +699,14 @@ small {
     z-index: 9000;
     border-radius: 100%;
 
-    .quantity{
-    	position: relative;
-    	padding-top: 8px;
-    	z-index: 9001;
-    	text-align: center;
-    	color: #000;
-    	font-size: 58px;
-    }
+	    .quantity{
+	    	position: relative;
+	    	padding-top: 8px;
+	    	z-index: 9001;
+	    	text-align: center;
+	    	color: #000;
+	    	font-size: 58px;
+	    }
 	}
 }
 
@@ -394,58 +718,6 @@ small {
 
 }
 
-#about-banner {
-	background:url('/images/about/aboutbanner.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#vat-banner {
-	background:url('/images/about/brewingvats.jpg') no-repeat center center;
-	height: 315px;
-	@include border-radius;
-}
-
-#team-banner {
-	background:url('/images/footer/team/team-banner.png') no-repeat center center;
-	width: 100%;
-	padding-top: 100px;
-	padding-bottom: 220px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
-	@include border-radius;
-}
-
-#brewers-banner {
-	background:url('/images/brewers/brewer-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#faq-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
-	background:url('/images/footer/footer-banner2.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#legal-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 2px solid $primary-tan;
-	background:url('/images/footer/footer-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
-
-#press-banner {
-	height: 70%;
-	max-height:360px;
-	border-bottom: 1px solid $primary-tan;
-	border-top: 3px solid $primary-tan;
-	background:url('/images/footer/press-banner.jpg') no-repeat center center;
-	@include border-radius;
-}
 
 .html5-progressbar{
   padding:15px;
@@ -466,7 +738,7 @@ progress::-webkit-progress-bar{
   border-radius:9px;
 }
 progress::-webkit-progress-value{
-  background:$primary-tan;
+  background:$medium-tan;
   border-radius:9px;
 }
 progress::-moz-progress-bar{
@@ -474,7 +746,7 @@ progress::-moz-progress-bar{
   border-radius:9px;
 }
 progress::-moz-progress-value{
-  background:$primary-tan;
+  background:$medium-tan;
   border-radius:9px;
 }
 .progress_value{
@@ -488,104 +760,7 @@ progress::-moz-progress-value{
      color: #aaa;
 }
 
-.brewer-text{
-	background-color: #FFF;
-	width: 100%;
-	margin-top: 0px;
-	padding-top: 10px;
-	padding-bottom:10px;
-	padding-left:10px;
-	padding-right: 25px;
-	color: $subheader-gray;
 
-	h3 {
-		margin-bottom: 3px;
-		font-weight: normal;
-		font-size: 22px;
-		text-transform: uppercase;
-	}
-
-	h4 {
-		margin-top: 0px;
-		margin-bottom: 3px;
-		color: $dark-text;
-		font-size: 18px;
-		text-transform: uppercase;
-	}
-
-	h5 {
-		margin-top: 0px;
-		margin-bottom: 3px;
-		font-size: 14px;
-		text-transform: uppercase;
-	}
-
-	hr {
-		margin-top: 14px;
-		margin-bottom: 15px;
-		width: 20%;
-		color: #000;
-	}
-
-	@include breakpoint(mobileonly){
-		min-height: 200px;
-	}
-
-	@include breakpoint(phablet){
-		min-height: 250px;
-	}
-
-	@include breakpoint(laptop){
-		height: 250px;
-	}
-
-	@include breakpoint(desktop){
-		height: 250px;
-	}
-}
-
-.brewer-name {
-	margin-top: 15px;
-	margin-bottom: 0px;
-	font-size: 18px;
-	text-transform: uppercase;
-}
-
-.subheading {
-	font-size: 12px;
-	color: #666666;
-}
-
-.brewer_card {
-	@include breakpoint(mobileonly){
-		padding-bottom: 15px;
-		margin: auto;
-		width: 320px;
-	}
-
-	@include breakpoint(phablet){
-		align: center;
-		margin: auto;
-		padding-bottom: 15px;
-		width: 500px;
-	}
-
-	@include breakpoint(laptop){
-		margin: 15px;
-		width: 95%;
-		height: 600px;
-	}
-
-	@include breakpoint(desktop){
-		margin: 15px;
-		width: 95%;
-		height: 650px;
-	}
-
-	img{
- 		width:100%;
-	}
-}
 
 .team-photo {
 
@@ -593,17 +768,6 @@ progress::-moz-progress-value{
 
 	@include breakpoint(laptop) {
 		float: right;
-	}
-}
-
-#about-header {
-	max-width: 825px;
-
-	h1 {
-		text-transform: uppercase;
-		text-shadow: 1px 1px 0px $primary-tan;
-		letter-spacing: 1px;
-		line-height: 46px;
 	}
 }
 
@@ -660,7 +824,7 @@ progress::-moz-progress-value{
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -673,27 +837,13 @@ progress::-moz-progress-value{
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     position: relative;
     float: right;
 
 }
-
-
-.lgProfilePhoto {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.inlinechange {
-    color: #FFFFFF;
-}
-
 
 .brewername {
     color: #ffffff;
@@ -748,8 +898,8 @@ div.row.fullName {
     font-weight: 500;
     line-height: 46.4px; /* Approximation due to font substitution */
     text-align: center;
-    border-top: 1px 1px solid $primary-tan;
-    border-bottom: 1px 1px solid $primary-tan;
+    border-top: 1px 1px solid $medium-tan;
+    border-bottom: 1px 1px solid $medium-tan;
 }
 
 
@@ -798,7 +948,7 @@ div.row.fullName {
     font-weight: 700;
     line-height: 24px;/* Approximation due to font substitution */
     text-align: center;
-    background-color: $primary-tan;
+    background-color: $medium-tan;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -820,5 +970,7 @@ div.row.fullName {
   font-size: 16;
   color: #aaa;
   line-height: 1.1;
-  margin-bottom: 60px 
-}
+  margin-bottom: 60px;
+ }
+
+

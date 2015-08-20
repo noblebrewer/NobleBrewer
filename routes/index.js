@@ -32,8 +32,6 @@ var routes = {
 	api: importRoutes('./api')
 };
 
-console.log(routes);
-
 // Setup Route Bindings
 exports = module.exports = function(app) {
 	
@@ -63,6 +61,7 @@ exports = module.exports = function(app) {
 	app.get('/keystone', routes.views.keystoneSignIn);
 	app.get('/market', routes.views.market);
 	app.get('/success', routes.views.success);
+	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 
 

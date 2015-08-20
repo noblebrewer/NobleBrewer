@@ -23,11 +23,10 @@
 	margin-top: 30px;
   padding-top: 15px;
 	padding-bottom: 30px;
-	border-bottom: 1px solid $primary-tan;
+	border-bottom: 1px solid $medium-tan;
 }
 
 .navbar-brand {
-	background-color: #232121;
 	padding-left: 35px;
 	padding-right: 35px;
 
@@ -45,7 +44,7 @@
 .navbar-nav > li, navbar-default {
 	
 	a {
-		color: $primary-tan;
+		color: $medium-tan;
 		border-bottom: 2px solid transparent;
 
 		&:hover {
@@ -95,7 +94,7 @@ and (max-width: 882px) {
 		color: #232121;
 		text-transform: uppercase;
 		font-weight: 500;
-		background-color: $primary-tan;
+		background-color: $medium-tan;
 		border: none;
 		padding: 7px 12px;
 		width: 130px;
@@ -127,10 +126,10 @@ and (max-width: 882px) {
 	background-color: #232121;
 	border: none;
 	background-image: url('/images/generic/header-stripe.png');
-	color: $primary-tan;
+	color: $medium-tan;
 
 	a {
-		color: $primary-tan;
+		color: $medium-tan;
 
 		&:hover {
 			color: #FFF;
