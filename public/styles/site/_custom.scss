@@ -67,18 +67,21 @@ h1 {
 	@include htags();
 	font-size: 3.998em;
 	line-height: 1.2em;
+	@include gotham-bold();
 }
 
 h2 {
 	@include htags();
 	font-size: 2.827em;
 	line-height: 1.2em;
+	@include gotham-bold();
 }
 
 h3 {
 	@include htags();
 	font-size: 1.999em;
 	line-height: 1.45em;
+	@include gotham-medium();
 }
 
 h4 {
@@ -86,6 +89,7 @@ h4 {
 	font-size: 1.414em;
 	line-height: 1.45em;
 	text-transform: uppercase;
+	@include gotham-medium();
 }
 
 
@@ -100,9 +104,11 @@ p {
 	line-height: 1.5em;
 	font-size: 1em;
 	color: $off-white;
+	@include gotham-medium();
 
 	.lead {
 		font-size: 1.618em;
+		@include gotham-book();
 	}
 }
 
@@ -125,7 +131,7 @@ a {
 
 blockquote {
 	border: 0px;
-
+	@include gotham-book();
 	> p {
 		font-size: 45px;
 		color: $light-grey;
@@ -143,6 +149,7 @@ blockquote {
 	> cite {
 			color: $off-white;
 			font-style:normal;
+			@include gotham-medium();
 	}
 
 	> footer {
@@ -159,6 +166,7 @@ small {
 	font-size: .707em;
 	line-height: 1.5em;
 	color: $light-grey;
+	@include gotham-medium();
 }
 
 
