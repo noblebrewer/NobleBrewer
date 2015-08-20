@@ -8,6 +8,7 @@
     "dotenv": "^1.1.0",
     "ejs": "^2.3.3",
     "express": "^4.13.1",
+    "google-spreadsheet": "^1.0.1",
     "keystone": "^0.3.9",
     "node-sass": "^2.1.1",
     "node-sass-middleware": "^0.5.0",
