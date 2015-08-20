@@ -58,8 +58,16 @@ BREAKPOINTS
 
 h1 {
 	@include htags();
-	font-size: 3.998em;
+	font-size: 2.827em;
 	line-height: 1.2em;
+
+	&.tan-outline {
+		text-shadow: 1px 1px 0px $medium-tan;
+	}
+
+	&.tan-header {
+		color: $medium-tan;
+	}
 }
 
 h2 {

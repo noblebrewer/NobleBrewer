@@ -5765,8 +5765,12 @@ BREAKPOINTS
 h1 {
   text-transform: uppercase;
   color: #FFFFFF;
-  font-size: 3.998em;
+  font-size: 2.827em;
   line-height: 1.2em; }
+  h1.tan-outline {
+    text-shadow: 1px 1px 0px #C5A77E; }
+  h1.tan-header {
+    color: #C5A77E; }
 
 h2 {
   text-transform: uppercase;
