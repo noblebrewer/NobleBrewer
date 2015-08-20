@@ -5645,7 +5645,6 @@ button.close {
   border-bottom: 1px solid #C5A77E; }
 
 .navbar-brand {
-  background-color: #232121;
   padding-left: 35px;
   padding-right: 35px; }
   .navbar-brand img {
@@ -5765,8 +5764,12 @@ BREAKPOINTS
 h1 {
   text-transform: uppercase;
   color: #FFFFFF;
-  font-size: 3.998em;
+  font-size: 2.827em;
   line-height: 1.2em; }
+  h1.tan-outline {
+    text-shadow: 1px 1px 0px #C5A77E; }
+  h1.tan-header {
+    color: #C5A77E; }
 
 h2 {
   text-transform: uppercase;
@@ -5819,6 +5822,8 @@ a {
     text-transform: uppercase; }
   a.header {
     text-transform: uppercase; }
+  a.white {
+    color: #FFFFFF; }
 
 ul.diamond {
   list-style-image: url("/images/tan-diamond.png");
@@ -6074,6 +6079,13 @@ section {
       margin-left: 0px;
       margin-right: 0px;
       margin-bottom: 22px; } }
+
+.brewer-story {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 25px;
+  overflow: scroll;
+  max-height: 600px; }
 
 @media (max-width: 37.5em) {
   .card {
@@ -6370,16 +6382,6 @@ progress::-moz-progress-value {
   margin-top: 20px;
   position: relative;
   float: right; }
-
-.lgProfilePhoto {
-  margin-top: 1px;
-  margin-bottom: 1px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.inlinechange {
-  color: #FFFFFF; }
 
 .brewername {
   color: #ffffff;

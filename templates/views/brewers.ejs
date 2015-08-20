@@ -8,51 +8,46 @@
 
 <% include ./partials/header %>
 <section id="brewers-banner">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7">
-				<h1>NOBLE BREWERS</h1>
-				<p>Home brewers are the backbone of Noble Brewer. Theirs are the stories that sell our fucking beer. So fucking click on their fucking pages you evil bastards.
-				</p>
-			</div>
+	<div class="row">
+		<div class="col-md-7">
+			<h1>NOBLE BREWERS</h1>
+			<p>Home brewers are the backbone of Noble Brewer. Theirs are the stories that sell our fucking beer. So fucking click on their fucking pages you evil bastards.
+			</p>
 		</div>
 	</div>
 </section>
 
 <section class="alt-base">
-	<div class="container">
-
-		<div class="row">
-			<h2 align="center">FEATURED BREWERS</h2>
-		</div>
-		<br>
-		<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
-				<% if (index%2 == 0){ %>
-						<div class="row" class="featured-row">
-				<% } %>
-						<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-							<div class="card">
-								<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
-								<div class="card-text">
-									<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
- 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
- 									<hr align="left">
- 									<% if (featuredBrewer.profileBrief) { %>
- 										<p><%=featuredBrewer.profileBrief%></p>
- 										<a href="<%=featuredBrewer.profileBrief%>">Read More...</a>
- 									<% } else { %>
- 										<a href="<%=featuredBrewer.profileBrief%>">View Profile...</a>
- 									<% } %>
-								</div>
+	<div class="row">
+		<h2 align="center">FEATURED BREWERS</h2>
+	</div>
+	<br>
+	<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
+			<% if (index%2 == 0){ %>
+					<div class="row">
+			<% } %>
+					<div class="col-md-6 col-sm-12">
+						<div class="card">
+							<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
+							<div class="card-text">
+								<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
+									<hr align="left">
+									<% if (featuredBrewer.profileBrief) { %>
+										<p><%=featuredBrewer.profileBrief%></p>
+										<a href="<%=featuredBrewer.profileBrief%>">Read More...</a>
+									<% } else { %>
+										<a href="<%=featuredBrewer.profileBrief%>">View Profile...</a>
+									<% } %>
 							</div>
 						</div>
-					<% if (index%2 != 0){ %>
-						</div>
-					<% } %>
-				<% }) %>
-			</div>
+					</div>
+				<% if (index%2 != 0){ %>
+					</div>
+				<% } %>
+			<% }) %>
 		</div>
-		<br>
+	<br>
 </section>
 <section class="patterned">
 		<div class="row hr-diamonds">
@@ -63,14 +58,13 @@
 			<% data.allBrewers.forEach(function(brewer, index){ %>
 				<% if (index%6 == 0){ %>
 					<div class="row">
-						<div class="col-md-12" align="center">
 				<% } %>
-						<div class="col-md-3" align="center">
-							<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.thumbnailUrlNormalized%>" class="img-thumbnail circle-img gray-img"></a>
-							<br>
-							<p><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
-							<p class="small light"><%=brewer.city%>, <%=brewer.state%></p>
-						</div>
+					<div class="col-md-3 col-sm-2" align="center">
+						<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.thumbnailUrlNormalized%>" class="img-thumbnail circle-img gray-img"></a>
+						<br>
+						<p><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+						<p class="small light"><%=brewer.city%>, <%=brewer.state%></p>
+					</div>
 				<% if ((index+1)%6 == 0){ %>
 						</div>
 					</div>
