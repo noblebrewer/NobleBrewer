@@ -1,0 +1,83 @@
+
+.first-user-exp-overlay {
+  z-index: 9998; }
+.extract-plugin .context-menu {
+  z-index: 2010; }
+.color-list li:hover, .color-list li.selected, .color-list li.layer-over {
+  z-index: 300; }
+.job-list-window-overlay {
+  z-index: 9998; }
+.selection-controlbar {
+  z-index: 4000; }
+#detail-panel {
+  z-index: 2; }
+.mobile-styles-toggle {
+  z-index: 3; }
+.popup {
+  z-index: 3500; }
+.measurementTooltip {
+  z-index: 3550; }
+.modal-window-overlay {
+  z-index: 9997; }
+.layer-thumb-popup,
+.asset-thumb-popup {
+  z-index: 4000; }
+#notificationTooltip {
+  z-index: 5000; }
+.psd-preview-view .spinner {
+  z-index: 3000; }
+.focused {
+  z-index: 2001; }
+#workerProgress {
+  z-index: 3000; }
+#mouseListenerOverlay {
+  z-index: 3000; }
+#artboardOverlay {
+  z-index: 3001; }
+#inspectStyleOverlay {
+  z-index: 3002; }
+#popupOverlay {
+  z-index: 3003; }
+.style-callout {
+  z-index: 10; }
+  .style-callout .callout-notch {
+    z-index: 15; }
+  .style-callout.invisible {
+    z-index: 2; }
+.user-profile-popup {
+  z-index: 4500; }
+.button-bar__item > input {
+  z-index: 1; }
+.topcoat-button-bar__item > input {
+  z-index: 1; }
+.topcoat-button-bar__button:focus,
+.topcoat-button-bar__button--large:focus {
+  z-index: 1; }
+input[type="checkbox"] {
+  z-index: 1; }
+input[type="radio"] {
+  z-index: 1; }
+.switch__input {
+  z-index: 1; }
+.switch__toggle:before,
+.switch__toggle:after {
+  z-index: -1; }
+.switch__input,
+.topcoat-switch__input {
+  z-index: 1; }
+.switch__toggle:before,
+.switch__toggle:after,
+.topcoat-switch__toggle:before,
+.topcoat-switch__toggle:after {
+  z-index: -1; }
+.button-bar__item > input,
+.topcoat-tab-bar__item > input {
+  z-index: 1; }
+.topcoat-tab-bar__button:focus,
+.topcoat-tab-bar__button--large:focus {
+  z-index: 1; }
+#habla_beta_container_do_not_rely_on_div_classes_or_names {
+  z-index: 9998;
+  position: absolute; }
+.layer-group-item .folder {
+  z-index: 1; }

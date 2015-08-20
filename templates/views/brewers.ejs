@@ -23,7 +23,7 @@
 	<div class="container">
 
 		<div class="row">
-			<h1 align="center">FEATURED BREWERS</h1>
+			<h2 align="center">FEATURED BREWERS</h2>
 		</div>
 		<br>
 		<% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
@@ -37,7 +37,12 @@
 									<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
  									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
  									<hr align="left">
- 									<p><%=featuredBrewer.profileBrief%></p>
+ 									<% if (featuredBrewer.profileBrief) { %>
+ 										<p><%=featuredBrewer.profileBrief%></p>
+ 										<a href="<%=featuredBrewer.profileBrief%>">Read More...</a>
+ 									<% } else { %>
+ 										<a href="<%=featuredBrewer.profileBrief%>">View Profile...</a>
+ 									<% } %>
 								</div>
 							</div>
 						</div>
@@ -48,16 +53,9 @@
 			</div>
 		</div>
 		<br>
-		<div class="row">
-
-			<div class="centered-block">
-
-				<a class="btn btn-primary" href="/brewerSignUp">Become a Brewer</a>
-			</div>
-		</div>
 </section>
-<section id="patterned">
-		<div class="row">
+<section class="patterned">
+		<div class="row hr-diamonds">
 			<h2 align="center">All Brewers</h2>
 		</div>
 		<br>
@@ -70,14 +68,19 @@
 						<div class="col-md-3" align="center">
 							<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.thumbnailUrlNormalized%>" class="img-thumbnail circle-img gray-img"></a>
 							<br>
-							<p class="brewer-name"><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
-							<p class="subheading"><%=brewer.city%>, <%=brewer.state%></p>
+							<p><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+							<p class="small light"><%=brewer.city%>, <%=brewer.state%></p>
 						</div>
 				<% if ((index+1)%6 == 0){ %>
 						</div>
 					</div>
 				<% } %>
 			<% }) %>
+</section>
+<section>
+		<div class="row centered-block">
+			<a class="btn btn-nb" href="/brewerSignUp">Become a Brewer</a>
+		</div>
 </section>
 
 <% include ./partials/emailFooter %>

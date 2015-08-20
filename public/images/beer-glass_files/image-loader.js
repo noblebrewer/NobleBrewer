@@ -1,0 +1,1 @@
+define(["common/images/load"],function(n){return n});
