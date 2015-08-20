@@ -143,6 +143,10 @@ a {
 		text-transform: uppercase;
 	}
 
+	&.white {
+    	color: $white;
+	}
+
 }
 
 ul {
@@ -454,6 +458,13 @@ section {
 	    margin-right: 0px;
 	    margin-bottom: 22px;
 	}
+}
+.brewer-story {
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right: 25px;
+	overflow: scroll;
+	max-height: 600px;
 }
 
 .card {
@@ -833,20 +844,6 @@ progress::-moz-progress-value{
     float: right;
 
 }
-
-
-.lgProfilePhoto {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.inlinechange {
-    color: #FFFFFF;
-}
-
 
 .brewername {
     color: #ffffff;

@@ -7,113 +7,85 @@
 
 
 <% include ./partials/header %>
-</script>
-    <div class="bodyToLoad">
-		<div class="row profilebreadcrumb">
-			<div class="col-sm-9 visible-lg breadcrumbname">Brewers  >>
-                <span class="inlinechange">
-                    <%= data.brewer.brewerName.first %>
-                    <%= data.brewer.brewerName.last %>
-                </span>
-			</div>
-				<div class="col-lg-3 visible-lg messagebutton">
-                    <a class="btn btn-default message" href="mailto:<%= data.brewer.brewerEmail %>" role="button">MESSAGE</a>
-				</div>
-		</div>
+<section class="row">
+	<h4 class="col-md-9 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
+    <a class="col-md-2 btn btn-nb" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
+</section>
 
-        <div class="container profile">
-            <div class="row">
-                <img class="img-responsive lgProfilePhoto" src="http://placehold.it/1300x458">
-            </div>
+<section>
+    <div class="row-fluid">
+        <img class="img-responsive" src="<%= data.brewer.profilePicture.url %>">
+    </div>
+</section>
 
-			<div class="row fullName">
-				<p class="brewername"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></p>
-				<p class="brewercity"><%= data.brewer.city %> <%= data.brewer.state %></p>
-			</div>
+<section class="light-striped">
+	<div class="row-fluid">
+		<h2 class="centered-block"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h2>
+		<p class="brewercity"><%= data.brewer.city %> <%= data.brewer.state %></p>
+</section>
 
-    <div class="diamond-separator"></div>
+<section class="row">
+	<div class="col-md-12">
+		<h4><%= data.brewer.profileHeadline %></h4>
+		<p><%= data.brewer.profileBrief %></p>
+	</div>
 
-            <div class="row headline">
-				<div class="col-md-6">
-					<h4><%= data.brewer.profileHeadline %></h4>
-					<p><%= data.brewer.profileBody %></p>
-				</div>
+	<div class="col-md-12 embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" width="auto" height="200" src="<%= data.brewer.profileVideo %>"></iframe>
+	</div>
+</section>
 
-				<div class="col-md-6">
-				<img class="img-responsive lgProfilePhoto" src="http://placehold.it/670x379">
-                <!-- Replace above img with	<%= data.brewer.profileVideo %> -->
-				</div>
-            </div>
-        </div> <!-- container -->
+<section class="patterned row">
+    <h2 class="row centered-block">THE BEER</h4>
 
+    <img class="row img-responsive centered-block" src="http://placehold.it/570x240">
 
-    <div class="diamond-separator"></div>
+    <!--  Split img into description and photo -->
+    <!-- <div class="row-fluid profileBeer">
 
-
-            <div class="row thebeer">
-                <h4>THE BEER</h4>
-
-                <img class="img-responsive lgProfilePhoto" src="http://placehold.it/570x240">
-
-
-
-                <!--  Split img into description and photo -->
-                <!-- <div class="row profileBeer">
-
-                    <div class="col-md-6 profileBeerDesc" style="width:270; height: 240">
-                        <h4>STOUT</h4>
-                        <H2>CAFE CON LECHE STOUT</H2>
-                    </div>
-
-
-                    <div class="col-md-6 profileBeerPic"
-                        <img src="http://placehold.it/270x240">
-                    </div>
-                </div> -->
-
-                    <a class="btn btn-default order" href="mailto:<%= data.brewer.brewerEmail %>" role="button">ORDER THIS BEER</a>
-            </div>
-
-
-
-
-    <div class="diamond-separator"></div>
-        <br />
-		<br />
-        <H1 style="text-align: center">Brewer Story and Photos Here</H1>
-        <br />
-        <br />
-    <div class="diamond-separator"></div>
-
-
-		<div class="row connectBrewer">
-			<div class="col-md-6 connectMain">
-				<h4>Connect with <%= data.brewer.brewerName.first %></h4>
-
-					<p>Test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
-            </div>
-
-        	<div class="col-md-6 connectForm">
-        		<textarea class="form-control" rows="7"></textarea>
-
-                <a class="btn btn-default connect"
-                    href="mailto:<%= data.brewer.brewerEmail %>" role="button" placeholder="Enter your message here..." >SEND</a>
-
-            </div>
+        <div class="col-md-6 profileBeerDesc" style="width:270; height: 240">
+            <h4>STOUT</h4>
+            <H2>CAFE CON LECHE STOUT</H2>
         </div>
 
-    <div class="diamond-separator"></div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<div class="text-center col-md-12">
-					<a class="btn btn-primary gift-button" href="/brewers">Back to All Brewers</a>
-				</div>
-			</div>
-		</div>
+        <div class="col-md-6 profileBeerPic"
+            <img src="http://placehold.it/270x240">
+        </div>
+    </div> -->
+    <div class="row">
+        <button class="btn btn-nb col-md-2 col-md-offset-5" href="mailto:<%= data.brewer.brewerEmail %>">Order</button>
+    </div>
+</section>
 
+<section class="row">
+    <div class="col-md-6">
+        <% data.brewer.imageGallery.forEach(function(image, index){ %>
+            <img class="col-md-12 img-responsive" src="<%= image.url %>">
+        <% }) %>
+    </div>
+    <div class="col-md-6">
+        <%= data.brewer.profileBody %>
+    </div>
+</section>
 
-</div> <!-- bodytoload -->
+<section class="patterned">
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Connect with <%= data.brewer.brewerName.first %></h4>
+			<p>Test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat.</p>
+        </div>
+    	<div class="col-md-6">
+    		<textarea class="form-control" rows="5" placeholder="Enter your message here..."></textarea>
+            <button class="btn btn-nb col-md-12" href="mailto:<%= data.brewer.brewerEmail %>">SEND</button>
+        </div>
+    </div>
+</section>
 
+<section>
+	<div class="row centered-block">
+		<a class="btn btn-nb-ghost" href="/brewers">Back to All Brewers</a>
+	</div>
+</section>
 <% include ./partials/footer %>
 
