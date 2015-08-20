@@ -1,5 +1,6 @@
 var keystone = require("keystone"),
 	Types = keystone.Field.Types;
+var cloudinary = require("cloudinary")
 
 /**
  * Post Model
@@ -25,7 +26,7 @@ Homebrewer.add(
 	profileBrief: { type: Types.Textarea, required: false, "default": "Read more..." },
 	profileBody: { type: Types.Textarea, required: false },
 	profileVideo: { type: Types.Url, required: false },
-	beerList: {type: String, required: false },
+	beerList: { type: Types.Relationship, ref: 'Beer', index: true },,
 	imageGallery: {type: Types.CloudinaryImages, required: false}  },
 	{heading: "Other Data"},
 	{brewerEmail: { type: Types.Email, displayGravatar: true },
@@ -51,7 +52,20 @@ Homebrewer.schema.virtual("thumbnailUrlNormalized").get(function() {
 	if (this.profilePicture.url) {
 		var imageUrlParts = this.profilePicture.url.split("/");
 		var newUrl = imageUrlParts.slice(0,6);
-		newUrl.push("w_128,h_128,c_thumb,g_face");
+		newUrl.push("w_128,h_128,c_thumb,g_faces");
+		newUrl = newUrl.concat(imageUrlParts.slice(6));
+		newUrl = newUrl.join("/");
+		return newUrl;
+	} else {
+		return "http://www.vtecsoft.com/images/default-avatar_0.png"
+	}
+});
+
+Homebrewer.schema.virtual("bannerUrlNormalized").get(function() {
+	if (this.profilePicture.url) {
+		var imageUrlParts = this.profilePicture.url.split("/");
+		var newUrl = imageUrlParts.slice(0,6);
+		newUrl.push("w_1300,h_450,c_fill,g_faces,e_sepia");
 		newUrl = newUrl.concat(imageUrlParts.slice(6));
 		newUrl = newUrl.join("/");
 		return newUrl;
