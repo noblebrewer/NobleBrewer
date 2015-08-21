@@ -28,9 +28,9 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	api: importRoutes('./api')
 };
-
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
@@ -64,6 +64,9 @@ exports = module.exports = function(app) {
 	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 
+
+	// API Routes
+	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

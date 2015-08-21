@@ -58,14 +58,24 @@ BREAKPOINTS
 
 h1 {
 	@include htags();
-	font-size: 3.998em;
+	font-size: 2.827em;
 	line-height: 1.2em;
+	@include gotham-bold();
+
+	&.tan-outline {
+		text-shadow: 1px 1px 0px $medium-tan;
+	}
+
+	&.tan-header {
+		color: $medium-tan;
+	}
 }
 
 h2 {
 	@include htags();
 	font-size: 2.827em;
 	line-height: 1.2em;
+	@include gotham-bold();
 
 	&.tan-outline {
 		text-shadow: 1px 1px 0px $medium-tan;
@@ -80,6 +90,7 @@ h3 {
 	@include htags();
 	font-size: 1.999em;
 	line-height: 1.45em;
+	@include gotham-medium();
 }
 
 h4 {
@@ -87,6 +98,7 @@ h4 {
 	font-size: 1.414em;
 	line-height: 1.45em;
 	text-transform: uppercase;
+	@include gotham-medium();
 
 	&.dark {
 		color: $dark-grey;
@@ -110,9 +122,11 @@ p {
 	line-height: 1.5em;
 	font-size: 1em;
 	color: $off-white;
+	@include gotham-medium();
 
 	&.lead {
 		font-size: 1.618em;
+		@include gotham-book();
 	}
 
 	&.dark {
@@ -139,6 +153,10 @@ a {
 		text-transform: uppercase;
 	}
 
+	&.white {
+    	color: $white;
+	}
+
 }
 
 ul {
@@ -153,7 +171,7 @@ ul {
 
 blockquote {
 	border: 0px;
-
+	@include gotham-book();
 	> p {
 		font-size: 45px;
 		color: $light-grey;
@@ -171,6 +189,7 @@ blockquote {
 	> cite {
 			color: $off-white;
 			font-style:normal;
+			@include gotham-medium();
 	}
 
 	> footer {
@@ -187,6 +206,7 @@ blockquote {
 	font-size: .707em;
 	line-height: 1.5em;
 	color: $light-grey;
+	@include gotham-medium();
 
 	&.light{
 		color: $off-white;
@@ -450,6 +470,13 @@ section {
 	    margin-right: 0px;
 	    margin-bottom: 22px;
 	}
+}
+.brewer-story {
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right: 25px;
+	overflow: scroll;
+	max-height: 600px;
 }
 
 .card {
@@ -829,20 +856,6 @@ progress::-moz-progress-value{
     float: right;
 
 }
-
-
-.lgProfilePhoto {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.inlinechange {
-    color: #FFFFFF;
-}
-
 
 .brewername {
     color: #ffffff;
