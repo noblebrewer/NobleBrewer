@@ -1,18 +1,77 @@
 // Override Bootstrap variables in this file, e.g.
 
-$primary-tan: #C5A77E;
-$lighter-tan : #D4C0AA;
+$medium-tan: #C5A77E;
+$white: #FFFFFF;
+$off-white: #DAD8D6;
+$light-grey: #565656;
+$medium-grey: #333333;
+$dark-grey: #232121;
+
+$lighter-tan: #C2B49D;
+$light-tan: #C2B49D;
+$dark-tan: #8A7762;
 
 $font-size-base: 16px;
 $body-bg: #222120;
 
-$text-color: #FFFFFF;
-$link-color: #C5A77E;
+$text-color: $white;
+$dark-text: $dark-grey;
+$link-color: $medium-tan;
 $link-hover-color: $lighter-tan;
+
+/* Buttons */
+$btn-text: $dark-grey;
+$btn-bg: $medium-tan;
+$btn-border: $medium-tan;
+$btn-shadow: #8A7763;
+$sand: #D0B895;
+$wet-sand: #B89E83;
+$baked-sand: #EDE4D7;
 
 $border-radius-base: 4px;
 
-$navbar-default-link-color:  #C5A77E;
+$navbar-default-link-color: $medium-tan;
 $navbar-default-link-hover-color: #FFF;
 
 $navbar-padding-horizontal: -20px;
+
+
+/* Fonts */
+@mixin gotham-book() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 400;
+}
+@mixin gotham-medium() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 500;
+}
+@mixin gotham-bold() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+///// FUCKED UP VARIABLES I NEED TO FIND AND DESTROY
+$hover-tan : #D4C0AA;
+$dark-tan : #8A7762;
+$link-hover : $white;
+
+$header-white : #FFFFFF;
+$subheader-gray : #b0b0b0;
+
+$dark-text: #232121;
+$alt-base-background : #232121;
+$light-base-background: #333333;
+$pattern-background : '/images/generic/diagmonds.png';
+$diamond-background : '/images/generic/diagmonds.png';
+$diamond-divider: '/images/generic/diamond-divide.png';
+$bar-diamond-divider: '/images/generic/bar-diamond-divide.png';
+$footer-divider: '/images/generic/footerbg.png';
+$divider-color: #777777;
+$inactive-button-color: #C1C0C0;
+$inactive-button-font-color: #302d2d;
+
+$Gotham: "Gotham SSm A", "Gotham SSm B";

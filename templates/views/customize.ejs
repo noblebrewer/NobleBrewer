@@ -7,9 +7,11 @@
   <% include ./partials/head %>
 </head>
 
-
 <% include ./partials/header %>
 
+<!-- THIS IS DEPRECATED. NOW IS DONE IN SHOPIFY -->
+
+<!--
 <section style="border: none">
 	<div class="row">
 		<div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
@@ -17,6 +19,8 @@
 		</div>
 		<div class="col-md-5">
 			<h2 class="tan-header" style="letter-spacing: 1px">AN ASSORTMENT OF BEER 4 TIMES A YEAR</h2>
+			<button id="test-button">CLICK ME</button>
+
 			<div style="font-size:22px">
 				<p>Get single release craft beers made from award winning homebrewers recipes delivered to your door on a quarterly release schedule.</p>
 			</div>
@@ -36,7 +40,8 @@
 	<br>
 	<button id="customize-button" class="btn btn-primary centered-block" >Customize your subscription</button>
 
-	<form action="/checkout" method="get" >
+
+	<form>
 		<div class="container"  id="customize-flow" style="display: none">
 			<br>
 			<br>
@@ -93,26 +98,29 @@
 
 
 <script>
+	var smallSubs = 43.96
+	var medSubs = 79.92
+	var lgSubs = 107.88
 
 	function calculateTotals() {
 
-			 if (localStorage.getItem("box-size") == "small") {
+		 if (localStorage.getItem("box-size") == "small") {
 
-			 			$('#continue').html("Subscribe for $ 44");
+				$('#continue').html("Subscribe for $"+smallSubs);
 
-			 }
+		 }
 
-			 else if (localStorage.getItem("box-size") == "medium") {
+		 else if (localStorage.getItem("box-size") == "medium") {
 	
-			 			$('#continue').html("Subscribe for $ 80");
+		 	$('#continue').html("Subscribe for $"+medSubs);
 
-			 }
+		 }
 
-			 else if (localStorage.getItem("box-size") == "large"){
+		 else if (localStorage.getItem("box-size") == "large"){
 
-			 			$('#continue').html("Subscribe for $ 108");
+		 	$('#continue').html("Subscribe for $"+lgSubs);
 
-			 }
+		 }
 	}
 
 	$(document).ready(function () {
@@ -123,6 +131,28 @@
 				    scrollTop: $("#box-size-choices").offset().top
 				}, 1000);
 			});
+
+	    $('#test-button').click(function(){
+			console.log("hi");
+			var data = JSON.stringify({
+			  "quantity": 1,
+			  "id": 4108657093,
+			  "subscription_id": 5385
+			});
+
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+			  if (this.readyState === this.DONE) {
+			    console.log(this.responseText);
+			  }
+			});
+
+			xhr.open("POST", "https://4439f01a1abd6ec2e67c77a0444df99b:cd24b952d3551735eca0bdc27fa66ff5@noblebrewer.myshopify.com/cart/add.js");
+			xhr.setRequestHeader("content-type", "application/json");
+			xhr.send(data);
+		});
 
 	    $('#small-box').click(function () {
 	    	$('#small-box').removeClass("inactive-selection");
@@ -188,5 +218,6 @@
 	    });
 
 	});
+
 </script>
  -->
