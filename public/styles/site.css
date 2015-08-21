@@ -1,4 +1,5 @@
 /* Buttons */
+/* Fonts */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -5031,7 +5032,10 @@ h1 {
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 2.827em;
-  line-height: 1.2em; }
+  line-height: 1.2em;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 700; }
   h1.tan-outline {
     text-shadow: 1px 1px 0px #C5A77E; }
   h1.tan-header {
@@ -5041,7 +5045,10 @@ h2 {
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 2.827em;
-  line-height: 1.2em; }
+  line-height: 1.2em;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 700; }
   h2.tan-outline {
     text-shadow: 1px 1px 0px #C5A77E; }
   h2.tan-header {
@@ -5051,13 +5058,19 @@ h3 {
   text-transform: uppercase;
   color: #FFFFFF;
   font-size: 1.999em;
-  line-height: 1.45em; }
+  line-height: 1.45em;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500; }
 
 h4 {
   color: #FFFFFF;
   font-size: 1.414em;
   line-height: 1.45em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500; }
   h4.dark {
     color: #232121; }
 
@@ -5073,9 +5086,15 @@ h4 {
 p {
   line-height: 1.5em;
   font-size: 1em;
-  color: #DAD8D6; }
+  color: #DAD8D6;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500; }
   p .lead {
-    font-size: 1.618em; }
+    font-size: 1.618em;
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 400; }
 
 a {
   color: #C5A77E;
@@ -5098,7 +5117,10 @@ ul.diamond {
   height: 16px; }
 
 blockquote {
-  border: 0px; }
+  border: 0px;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 400; }
   blockquote > p {
     font-size: 45px;
     color: #565656;
@@ -5111,7 +5133,10 @@ blockquote {
       color: #DAD8D6; }
   blockquote > cite {
     color: #DAD8D6;
-    font-style: normal; }
+    font-style: normal;
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 500; }
   blockquote > footer {
     text-align: center;
     font-size: 22px;
@@ -5123,7 +5148,10 @@ blockquote {
   text-transform: uppercase;
   font-size: .707em;
   line-height: 1.5em;
-  color: #565656; }
+  color: #565656;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500; }
   .small.light {
     color: #DAD8D6; }
 

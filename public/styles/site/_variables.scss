@@ -36,6 +36,24 @@ $navbar-default-link-hover-color: #FFF;
 $navbar-padding-horizontal: -20px;
 
 
+/* Fonts */
+@mixin gotham-book() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 400;
+}
+@mixin gotham-medium() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 500;
+}
+@mixin gotham-bold() {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 700;
+}
+
+
 ///// FUCKED UP VARIABLES I NEED TO FIND AND DESTROY
 $hover-tan : #D4C0AA;
 $dark-tan : #8A7762;
