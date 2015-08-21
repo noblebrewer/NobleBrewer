@@ -27,7 +27,6 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'About',		key: 'about',		href: '/about' },
 		{ label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
 		{ label: 'Market',		key: 'market',		href: '/market' },
 		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
 		//Sign Up link in the header is coming from the header.ejs
