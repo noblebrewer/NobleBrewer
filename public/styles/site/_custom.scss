@@ -124,10 +124,14 @@ p {
 	color: $off-white;
 	@include gotham-medium();
 
-	.lead {
+	&.lead {
 		font-size: 1.618em;
 		@include gotham-book();
 	}
+
+	&.dark {
+			color: $dark-grey;
+		}
 }
 
 a {
