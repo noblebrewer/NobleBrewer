@@ -1,6 +1,5 @@
 var keystone = require("keystone"),
 	Types = keystone.Field.Types;
-var cloudinary = require("cloudinary")
 
 /**
  * Post Model
