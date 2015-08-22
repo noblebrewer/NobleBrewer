@@ -30,7 +30,7 @@
 						<div class="card">
 							<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
 							<div class="card-text">
-								<h4 class="subheader"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
+								<a class="h4 subheader" href="/profile/<%= featuredBrewer.slug%>"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></h4>
 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
 									<hr align="left">
 									<% if (featuredBrewer.profileBrief) { %>
