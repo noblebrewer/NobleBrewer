@@ -16,5 +16,8 @@ Beers.add({
     featured_beer_photo: { type: Types.CloudinaryImage }
 });
 
+Beers.relationship({ ref: 'Homebrewer', path: 'homebrewers', refPath: 'beer_name' });
+
+
 Beers.defaultColumns = 'beer_name, cover_photo, all_beer_photo, featured_beer_photo';
 Beers.register();
