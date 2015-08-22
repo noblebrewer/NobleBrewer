@@ -25,7 +25,7 @@ Homebrewer.add(
 	profileBrief: { type: Types.Html, required: false, "default": "Read more..." },
 	profileBody: { type: Types.Html, required: false },
 	profileVideo: { type: Types.Url, required: false },
-	beerList: { type: Types.Relationship, ref: 'Beer', index: true },
+	beerList: { type: Types.Relationship, ref: 'Beers', index: true },
 	imageGallery: {type: Types.CloudinaryImages, required: false}  },
 	{heading: "Other Data"},
 	{brewerEmail: { type: Types.Email, displayGravatar: true },
