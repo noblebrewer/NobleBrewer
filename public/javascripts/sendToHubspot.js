@@ -16,6 +16,9 @@ $("#homebrewer-submit").click(function(e){
 			console.log(data);
 			if (data.status === 'error'){
 				alert('Shoot, something went wrong. Please try to submit again');
+			} else if (data.status === 'email') {
+				console.log('no email');
+				alert('Please include an email address');
 			} else {
 				window.location= "/success/homebrewersubmission";
 			}
@@ -57,6 +60,9 @@ $("#submit-registration").click(function(e){
 			console.log(data);
 			if (data.status === 'error'){
 				alert('Shoot, something went wrong. Please try to submit again');
+			} else if (data.status === 'email') {
+				console.log('no email');
+				alert('Please include an email address');
 			} else {
 				window.location= '/collections/beer';
 			}
