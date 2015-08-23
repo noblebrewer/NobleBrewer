@@ -15,9 +15,10 @@ $("#homebrewer-submit").click(function(e){
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
-				alert('oops, an error');
+				alert('Shoot, something went wrong. Please try to submit again');
+			} else {
+				window.location= "/success/homebrewersubmission";
 			}
-			window.location= "/success/homebrewersubmission";
 		}
 	);
 	
@@ -33,15 +34,15 @@ $('#signup-newsletter').click(function(e){
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
-				alert('oops, an error');
+				alert('Shoot, something went wrong. Please try to submit again');
+			} else {
+				window.location = '/success/emailsignup';
 			}
-			window.location = '/success/emailsignup';
 		}
 	);
 });
 
 $("#submit-registration").click(function(e){
-	alert('OHAI');
 	e.preventDefault();
 	var form = {
 		firstname : document.getElementById("first_name").value,
@@ -55,9 +56,10 @@ $("#submit-registration").click(function(e){
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
-				alert('oops, an error');
+				alert('Shoot, something went wrong. Please try to submit again');
+			} else {
+				window.location= '/collections/beer';
 			}
-			window.location= '/success';
 		}
 	);
 	
