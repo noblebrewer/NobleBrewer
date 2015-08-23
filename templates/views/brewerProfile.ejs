@@ -38,21 +38,16 @@
 <section class="patterned row">
     <h2 class="row centered-block">THE BEER</h4>
 
-    <img class="row img-responsive centered-block" src="http://placehold.it/570x240">
-
-    <!--  Split img into description and photo -->
-    <!-- <div class="row-fluid profileBeer">
-
-        <div class="col-md-6 profileBeerDesc" style="width:270; height: 240">
-            <h4>STOUT</h4>
-            <H2>CAFE CON LECHE STOUT</H2>
+    <div class="side-card clearfix col-md-6 col-md-offset-3">
+        <div class="card-text">
+            <h4 class="subheader"><%= data.brewer.featuredBeerName %></h4>
+            <hr class="gold">
+            <h5><%= data.brewer.featuredBeerShortDescription %></h5>
         </div>
-
-
-        <div class="col-md-6 profileBeerPic"
-            <img src="http://placehold.it/270x240">
+        <div>
+            <img class="side-img image-responsive" src="<%= data.brewer.featuredBeerURL%>">
         </div>
-    </div> -->
+    </div>
     <div class="row">
         <button class="btn btn-nb col-md-2 col-md-offset-5" href="mailto:<%= data.brewer.brewerEmail %>">Order</button>
     </div>
