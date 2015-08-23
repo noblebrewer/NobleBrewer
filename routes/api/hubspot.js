@@ -47,7 +47,9 @@ exports = module.exports = function(req, res) {
 			});
 		});
 	} else {
-		console.log('not valid email');
+		res.apiResponse({
+			status:'email'
+		})
 	}
 };
 
