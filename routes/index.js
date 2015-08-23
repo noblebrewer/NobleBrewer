@@ -61,7 +61,8 @@ exports = module.exports = function(app) {
 	app.get('/brewerSignUp', routes.views.brewerSignUp);
 	app.get('/keystone', routes.views.keystoneSignIn);
 	app.get('/market', routes.views.market);
-	app.get('/success', routes.views.success);
+	app.get('/success/homebrewersubmission', routes.views.success);
+	app.get('/success/emailsignup', routes.views.success_email);
 	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 

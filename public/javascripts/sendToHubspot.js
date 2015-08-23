@@ -17,7 +17,7 @@ $("#homebrewer-submit").click(function(e){
 			if (data.status === 'error'){
 				alert('oops, an error');
 			}
-			window.location= '/success';
+			window.location= "/success/homebrewersubmission";
 		}
 	);
 	
@@ -35,6 +35,7 @@ $('#signup-newsletter').click(function(e){
 			if (data.status === 'error'){
 				alert('oops, an error');
 			}
+			window.location = '/success/emailsignup';
 		}
 	);
 });
