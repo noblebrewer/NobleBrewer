@@ -5807,6 +5807,12 @@ h4 {
   font-weight: 500; }
   h4.dark {
     color: #232121; }
+  h4.light {
+    color: #999999; }
+  h4.tan {
+    color: #C5A77E; }
+  h4.white {
+    color: #FFFFFF; }
 
 .subheader {
   color: #333333;
@@ -6029,6 +6035,11 @@ section {
 
 .hr-gold {
   border-top: 3px;
+  border-top-color: #C5A77E;
+  border-top-style: solid; }
+
+.hr-gold-thin {
+  border-top: 1px;
   border-top-color: #C5A77E;
   border-top-style: solid; }
 
@@ -6262,6 +6273,37 @@ img {
   min-height: 200px; }
   .order-selection button {
     padding: 12px; }
+
+.side-card {
+  background-color: #FFFFFF; }
+
+.side-card img {
+  border: none;
+  width: 35%;
+  float: left; }
+
+.side-card hr {
+  margin-top: 14px;
+  margin-bottom: 15px;
+  width: 60%;
+  color: #333333; }
+
+.side-card h4 {
+  color: #C5A77E;
+  text-transform: uppercase; }
+
+.side-card > .card-text {
+  float: left;
+  width: 65%;
+  color: #333333;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 25px;
+  overflow: scroll;
+  height: 241px; }
+
+.side-card > .card-text > p {
+  color: #232121; }
 
 .inactive-selection {
   color: #DDD;

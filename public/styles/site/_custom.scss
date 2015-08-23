@@ -103,6 +103,19 @@ h4 {
 	&.dark {
 		color: $dark-grey;
 	}
+
+	&.light {
+		color: $lightest-grey;
+	}
+
+	&.tan {
+		color: $medium-tan;
+	}
+
+	&.white {
+		color: $white;
+	}
+
 }
 
 
@@ -379,6 +392,12 @@ section {
 
 .hr-gold {
 	@include hr($medium-tan)
+}
+
+.hr-gold-thin {
+	border-top: 1px;
+  	border-top-color: $medium-tan;
+ 	border-top-style: solid;
 }
 
 .hr-light {
@@ -669,6 +688,32 @@ iframe{
 	}
 }
 
+.side-card {
+  background-color: #FFFFFF; }
+  .side-card img {
+    border: none;
+    width: 35%;
+    float: left; }
+  .side-card hr {
+    margin-top: 14px;
+    margin-bottom: 15px;
+    width: 60%;
+    color: #333333; }
+  .side-card h4 {
+    color: #C5A77E;
+    text-transform: uppercase; }
+  .side-card > .card-text {
+    float: left;
+    width: 65%;
+    color: #333333;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 25px;
+    overflow: scroll;
+    height: 241px; }
+    .side-card > .card-text > p {
+      color: #232121; }
+      
 .inactive-selection {
 	color: #DDD;
 	background-color: $inactive-button-color;
