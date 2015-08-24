@@ -25,13 +25,13 @@
 </section>
 
 <section class="row">
-	<div class="col-md-12">
+	<div class="col-md-6">
 		<h4><%= data.brewer.profileHeadline %></h4>
 		<p><%= data.brewer.profileBrief %></p>
 	</div>
 
-	<div class="col-md-12 embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" width="auto" height="200" src="<%= data.brewer.profileVideo %>"></iframe>
+	<div class="embed-responsive embed-responsive-16by9" style="padding-bottom:400px">
+        <iframe class="embed-responsive-item" style="width:100%; min-height:400px; height:auto; padding-bottom:0px" src="<%= data.brewer.profileVideo %>"></iframe>
 	</div>
 </section>
 
@@ -49,14 +49,18 @@
         </div>
     </div>
     <div class="row">
-        <button class="btn btn-nb col-md-2 col-md-offset-5" href="mailto:<%= data.brewer.brewerEmail %>">Order</button>
+        <a class="btn btn-nb col-md-2 col-md-offset-5" href="<%= data.brewer.featuredBeerProfileURL %>">Order</a>
     </div>
 </section>
 
 <section class="row">
     <div class="col-md-6">
         <% data.brewer.imageGallery.forEach(function(image, index){ %>
-            <img class="col-md-12 img-responsive" src="<%= image.url %>">
+            <% if (index === 2) { %>
+                <img class="col-md-12 img-responsive top-buffer no-border" src="<%= image.url %>"> 
+            <% } else { %>
+                <img class="col-md-6 img-responsive top-buffer no-border" src="<%= image.url %>">
+            <% } %>
         <% }) %>
     </div>
     <div class="col-md-6">
