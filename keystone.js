@@ -29,6 +29,8 @@ keystone.init({
 	'hubspot_api': process.env.HUBSPOT_API,
 	'shopify_api': process.env.SHOPIFY_API_KEY,
 	'google_api' : process.env.GOOGLE_API_KEY,
+	'mandrill_api' : process.env.MANDRILL_API_KEY,
+	'winston_api' : process.env.WINSTON_KEY,
 
 	'auto update': true,
 	'session': true,

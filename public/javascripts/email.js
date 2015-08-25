@@ -12,8 +12,7 @@ $("#homebrewer-submit").click(function(e){
 		awards: document.getElementById("awards").value,
 		function: 'homebrewer'
 	}
-	console.log(form);
-	$.post("/api/hubspot",form,
+	$.post("/api/email",form,
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
@@ -22,55 +21,32 @@ $("#homebrewer-submit").click(function(e){
 				console.log('no email');
 				alert('Please include an email address');
 			} else {
-				window.location= "/success/homebrewersubmission";
-			}
-		}
-	);
-	
-});
-
-$('#signup-newsletter').click(function(e){
-	e.preventDefault();
-	var form = {
-		email : document.getElementById("email").value,
-		function: 'email'
-	}
-	$.post("/api/hubspot",form,
-		function(data){
-			console.log(data);
-			if (data.status === 'error'){
-				alert('Shoot, something went wrong. Please try to submit again');
-			} else {
-				window.location = '/success/emailsignup';
 			}
 		}
 	);
 });
 
-$("#submit-registration").click(function(e){
+$("#contact-homebrewer").click(function(e){
 	e.preventDefault();
-	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
+	var email = $('#contact-homebrewer').attr('href').split(':');
+	email = email[1];
+	console.log(email);
 	var form = {
-		firstname : document.getElementById("first_name").value,
-		lastname : document.getElementById("last_name").value,
-		fullname : fullname,
-		email : document.getElementById("email").value,
-		birthdate : document.getElementById("birthdate").value,
-		function: 'registration'
+		brewerEmail : "caitlin@tradecrafted.com",
+		messageContents : document.getElementById("message-to-hb").value,
+		function: 'contact-homebrewer'
 	}
-	console.log(form);
-	$.post("http://localhost:3000/api/hubspot",form,
+	$.post("/api/email",form,
 		function(data){
-			console.log(data);
+			console.log(data.status);
 			if (data.status === 'error'){
 				alert('Shoot, something went wrong. Please try to submit again');
 			} else if (data.status === 'email') {
 				console.log('no email');
 				alert('Please include an email address');
 			} else {
-				window.location= '/collections/beer';
+				window.location="/success/emailhomebrewer"
 			}
 		}
 	);
-	
 });

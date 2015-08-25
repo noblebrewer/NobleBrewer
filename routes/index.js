@@ -63,12 +63,14 @@ exports = module.exports = function(app) {
 	app.get('/market', routes.views.market);
 	app.get('/success/homebrewersubmission', routes.views.success);
 	app.get('/success/emailsignup', routes.views.success_email);
+	app.get('/success/emailhomebrewer', routes.views.success_emailhomebrewer);
 	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
+	app.all('/api/email', keystone.middleware.api, routes.api.email);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
