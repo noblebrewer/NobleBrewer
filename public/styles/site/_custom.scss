@@ -553,6 +553,10 @@ section {
 		overflow: scroll;
 		max-height: 185px;
 
+		> .brewers {
+			height: 200px;
+		}
+
 		> p {
 			color: $dark-text;
 		}

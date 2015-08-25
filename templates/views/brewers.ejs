@@ -30,8 +30,8 @@
 					<div class="col-md-6 col-sm-12">
 						<div class="card">
 							<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
-							<div class="card-text">
-								<a class="h4 subheader" href="/profile/<%= featuredBrewer.slug%>"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></a>
+							<div class="card-text brewers top-buffer" style="height:320px; max-height:none">
+								<a class="h4 subheader"  href="/profile/<%= featuredBrewer.slug%>"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></a>
 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
 									<hr align="left">
 									<% if (featuredBrewer.profileBrief) { %>
