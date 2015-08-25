@@ -1,8 +1,10 @@
 $("#homebrewer-submit").click(function(e){
 	e.preventDefault();
+	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
 		firstname : document.getElementById("first_name").value,
 		lastname : document.getElementById("last_name").value,
+		fullname : fullname,
 		email : document.getElementById("email").value,
 		location : document.getElementById("location").value,
 		reason : document.getElementById("reason").value,
@@ -47,9 +49,11 @@ $('#signup-newsletter').click(function(e){
 
 $("#submit-registration").click(function(e){
 	e.preventDefault();
+	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
 		firstname : document.getElementById("first_name").value,
 		lastname : document.getElementById("last_name").value,
+		fullname : fullname,
 		email : document.getElementById("email").value,
 		birthdate : document.getElementById("birthdate").value,
 		function: 'registration'
