@@ -32,6 +32,9 @@ keystone.init({
 	'mandrill_api' : process.env.MANDRILL_API_KEY,
 	'winston_api' : process.env.WINSTON_KEY,
 	'newrelic_api' : process.env.NEW_RELIC_KEY,
+	'hostname' : process.env.HOSTNAME,
+	'shopify_hostname' : process.env.SHOPIFY_HOSTNAME,
+	'blog_hostname' : process.env.BLOG_HOSTNAME,
 
 	'auto update': true,
 	'session': true,

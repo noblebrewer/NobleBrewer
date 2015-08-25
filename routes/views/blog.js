@@ -3,5 +3,6 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 	// Render the view
-	res.redirect('http://blog.noblebrewer.com/');
+  	var blog = keystone.get('blog_hostname');
+	res.redirect(blog+'/');
 };
