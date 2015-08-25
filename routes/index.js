@@ -63,6 +63,7 @@ exports = module.exports = function(app) {
 	app.get('/market', routes.views.market);
 	app.get('/success/homebrewersubmission', routes.views.success);
 	app.get('/success/emailsignup', routes.views.success_email);
+	app.get('/success/emailhomebrewer', routes.views.success_emailhomebrewer);
 	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 
