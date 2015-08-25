@@ -3,7 +3,8 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
   // Render the view
-  res.redirect('http://noblebrewer.myshopify.com/collections/beer');
+  var shopify = keystone.get('shopify_hostname');
+  res.redirect(shopify+'/collections/beer');
 };
 
 

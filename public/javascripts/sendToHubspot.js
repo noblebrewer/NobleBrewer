@@ -59,7 +59,8 @@ $("#submit-registration").click(function(e){
 		function: 'registration'
 	}
 	console.log(form);
-	$.post("http://localhost:3000/api/hubspot",form,
+	hostname = keystone.get('hostname');
+	$.post(hostname+"/api/hubspot",form,
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
