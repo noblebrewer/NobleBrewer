@@ -7,6 +7,7 @@
 
 
 <% include ./partials/header %>
+<% include ./partials/beta %>
 <section class="row">
 	<h4 class="col-md-9 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
     <a class="col-md-2 btn btn-nb" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
