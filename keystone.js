@@ -1,5 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
+require('newrelic');
 require('dotenv').load();
 
 // Require keystone
@@ -31,6 +32,7 @@ keystone.init({
 	'google_api' : process.env.GOOGLE_API_KEY,
 	'mandrill_api' : process.env.MANDRILL_API_KEY,
 	'winston_api' : process.env.WINSTON_KEY,
+	'newrelic_api' : process.env.NEW_RELIC_KEY,
 
 	'auto update': true,
 	'session': true,
