@@ -75,8 +75,8 @@
 			<p>Ask a question or send your compliments to the brewer.</p>
         </div>
     	<div class="col-md-6">
-    		<textarea class="form-control" rows="5" placeholder="Enter your message here..."></textarea>
-            <button class="btn btn-nb col-md-12" href="mailto:<%= data.brewer.brewerEmail %>">SEND</button>
+    		<textarea class="form-control" rows="5" id="message-to-hb" placeholder="Enter your message here..."></textarea>
+            <button class="btn btn-nb col-md-12" id="contact-homebrewer" href="mailto:<%= data.brewer.brewerEmail %>">SEND</button>
         </div>
     </div>
 </section>
@@ -87,4 +87,5 @@
 	</div>
 </section>
 <% include ./partials/footer %>
+<script src="/javascripts/email.js"></script>
 
