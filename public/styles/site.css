@@ -5761,6 +5761,10 @@ FONT
 BREAKPOINTS
 \*********************/
 /**** HTML Tags ****/
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
 /*** Headers ****/
 h1 {
   text-transform: uppercase;
