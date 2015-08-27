@@ -27,8 +27,8 @@
 
 <section class="row">
 	<div class="col-md-6">
-		<h4><%= data.brewer.profileHeadline %></h4>
-		<p><%= data.brewer.profileBrief %></p>
+		<%- data.brewer.profileHeadline %>
+		<%- data.brewer.profileBrief %>
 	</div>
 
 	<div class="embed-responsive embed-responsive-16by9" style="padding-bottom:400px">
@@ -65,7 +65,7 @@
         <% }) %>
     </div>
     <div class="col-md-6">
-        <%= data.brewer.profileBody %>
+        <%- data.brewer.profileBody %>
     </div>
 </section>
 

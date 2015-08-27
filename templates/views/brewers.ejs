@@ -35,10 +35,10 @@
 									<h5 class="subheader"><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
 									<hr align="left">
 									<% if (featuredBrewer.profileBrief) { %>
-										<p><%=featuredBrewer.profileBrief%></p>
+										<%-featuredBrewer.profileBrief%>
 										<a href="/profile/<%= featuredBrewer.slug%>">Read More...</a>
 									<% } else { %>
-										<a href="<%=featuredBrewer.profileBrief%>">View Profile...</a>
+										<a href="<%-featuredBrewer.profileBrief%>">View Profile...</a>
 									<% } %>
 							</div>
 						</div>
