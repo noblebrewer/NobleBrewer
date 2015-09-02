@@ -36,6 +36,35 @@ exports = module.exports = function(req, res) {
 		var to_email = req.body.brewerEmail;
 		var to_name = null;
 		var bcc = null;
+	} else if (req.body.function === 'dropahint') {
+		var html = (
+			'<body style="background-color:white">'
+			    +'<section class="row">'
+			        +'<h4 style="color:#C5A77E; font-size:1.6em; line-height:1.45em; text-transform: uppercase; text-align:center; padding-top:50px">'
+			            +req.body.firstname+' is dropping you a hint'
+			        +'</h4>'
+			        +'<img src="http://res.cloudinary.com/tradecraft/image/upload/v1441156267/u9g0mrw3tvqlqa9hoshi.png" style="width:100%;text-align:center">'
+			        +'<div style="text-align:left">'
+			            +'<p>We were asked to let you know that '+req.body.firstname+' would love to receive a Noble Brewer craft beer subscription this year for the holidays. This is what they had to say about it...</p>'
+			            +'<p><i>"'+req.body.excited+'"</i></p><br>'
+			            +'<p>They would really love the: '+req.body.gift+'<p>'
+			            +'<p>To spread more holiday cheer this season, we are giving you 15% off to help you fulfill their craft beer dreams. Just use code THEGIFTOFBEER at checkout.</p>'
+			            +'<br>'
+			            +'<a style="color:black;background-color:#C5A77E;letter-spacing:1px;font-weight:bold;border-radius:4px;border:2px solid transparent;height:56px;margin-top:10px;margin-bottom: 10px;margin-right:15px;padding:14px;min-width:200px;text-transform:uppercase" href="http://dev.shop.noblebrewer.com/pages/subscription">Shop gifts now</a>'
+			            +'<br><br>'
+			            +'<p>Cheers!</p>'
+			            +'<p>-The Noble Brewer Team</p>'
+			            +'<br><br>'
+			        +'</div>'
+			    +'</section>'
+			+'</body>'
+			)
+		var subject = req.body.firstname+" is dropping you a hint for the holidays. Get 15% off today!";
+		var from_email = "support@noblebrewerbeer.com";
+		var from_name = "Noble Brewer";
+		var to_email = req.body.friend;
+		var to_name = null;
+		var bcc = "support@noblebrewerbeer.com";
 	}
 	var message = {
 	    "html": html,

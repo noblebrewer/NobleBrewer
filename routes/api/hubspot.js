@@ -10,13 +10,13 @@ exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 	if (req.body.email) {
-		var applied = 'Yes';
+		var yes = 'Yes';
 		if (req.body.function === 'homebrewer') {
 			var data = { properties: 
 			  [ { property: 'email', value: req.body.email },
 			    { property: 'firstname', value: req.body.firstname },
 			    { property: 'lastname', value: req.body.lastname },
-			    { property: 'applied_to_be_a_homebrewer', value: applied},
+			    { property: 'applied_to_be_a_homebrewer', value: yes},
 			    { property: 'full_name', value: req.body.fullname } ] }
 		} else if (req.body.function === 'email') {
 			var data = { properties: 
@@ -27,6 +27,17 @@ exports = module.exports = function(req, res) {
 				    { property: 'firstname', value: req.body.firstname },
 				    { property: 'lastname', value: req.body.lastname },
 				    { property: 'full_name', value: req.body.fullname } ] }
+		} else if (req.body.function === 'dropahint') {
+			var data = { properties: 
+			  [ { property: 'email', value: req.body.email },
+			    { property: 'firstname', value: req.body.firstname },
+			    { property: 'lastname', value: req.body.lastname },
+			    { property: 'full_name', value: req.body.fullname },
+			    { property: 'asked_for_gift', value: yes}
+			    // { property: 'friend', value: req.body.friend },
+			    // { property: 'excited', value: req.body.excited },
+			    // { property: 'gift', value: req.body.gift } 
+			    ] }
 		}
 
 		var options = { method: 'POST',

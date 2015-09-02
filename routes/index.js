@@ -34,6 +34,8 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
+
+	var beercollection = (keystone.get('shopify_hostname')+"/collections/beer")
 	
 	// Views
 	app.get('/', routes.views.index);
@@ -59,11 +61,14 @@ exports = module.exports = function(app) {
 	app.get('/cart', routes.views.cart);
 	app.get('/thankYou', routes.views.thankYou);
 	app.get('/brewerSignUp', routes.views.brewerSignUp);
+	app.get('/dropahint', routes.views.dropAHint);
 	app.get('/keystone', routes.views.keystoneSignIn);
+	app.get('/collections/beer', routes.views.beercollection)
 	// app.get('/market', routes.views.market);
 	app.get('/success/homebrewersubmission', routes.views.success);
 	app.get('/success/emailsignup', routes.views.success_email);
 	app.get('/success/emailhomebrewer', routes.views.success_emailhomebrewer);
+	app.get('/success/dropahint', routes.views.success_dropahint);
 	app.get('/styleguide', routes.views.styleguide);
 	app.all('/contact', routes.views.contact);
 
