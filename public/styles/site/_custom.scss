@@ -96,6 +96,10 @@ h3 {
 	font-size: 1.999em;
 	line-height: 1.45em;
 	@include gotham-medium();
+
+	&.tan {
+		color: $medium-tan;
+	}
 }
 
 h4 {
