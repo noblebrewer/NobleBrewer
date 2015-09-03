@@ -61,7 +61,7 @@ exports = module.exports = function(app) {
 	app.get('/cart', routes.views.cart);
 	app.get('/thankYou', routes.views.thankYou);
 	app.get('/brewerSignUp', routes.views.brewerSignUp);
-	app.get('/dropahint', routes.views.dropAHint);
+	app.get('/dropahint', routes.views.dropahint);
 	app.get('/keystone', routes.views.keystoneSignIn);
 	app.get('/collections/beer', routes.views.beercollection)
 	// app.get('/market', routes.views.market);
