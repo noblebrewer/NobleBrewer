@@ -1,5 +1,3 @@
-var keystone = require('keystone');
-
 $("#homebrewer-submit").click(function(e){
 	e.preventDefault();
 	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
@@ -61,7 +59,7 @@ $("#submit-registration").click(function(e){
 		function: 'registration'
 	}
 	console.log(form);
-	hostname = keystone.get('hostname');
+	hostname = env.HOSTNAME;
 	$.post(hostname+"/api/hubspot",form,
 		function(data){
 			console.log(data);
