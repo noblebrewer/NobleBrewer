@@ -57,7 +57,7 @@ exports = module.exports = function(app) {
 	app.get('/releases', routes.views.releases);
 	app.get('/user', routes.views.user);
 	app.get('/subscription', routes.views.customize);
-	app.get('/product-category/memberships/', routes.views.customize);
+	app.get('/product-category/memberships', routes.views.customize);
 	app.get('/checkout', routes.views.checkout);
 	app.get('/cart', routes.views.cart);
 	app.get('/thankYou', routes.views.thankYou);
@@ -71,6 +71,8 @@ exports = module.exports = function(app) {
 	app.get('/success/emailhomebrewer', routes.views.success_emailhomebrewer);
 	app.get('/success/dropahint', routes.views.success_dropahint);
 	app.get('/styleguide', routes.views.styleguide);
+	app.get('/blog/brewers/mikeriddle/', routes.views.riddle);
+	app.get('/blog/brewers/john-f', routes.views.fuller);
 	app.all('/contact', routes.views.contact);
 
 

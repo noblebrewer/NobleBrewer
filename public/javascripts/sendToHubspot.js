@@ -1,3 +1,4 @@
+var keystone = require('keystone');
 
 $("#homebrewer-submit").click(function(e){
 	e.preventDefault();
