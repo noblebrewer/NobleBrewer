@@ -21,6 +21,7 @@ $("#homebrewer-submit").click(function(e){
 				console.log('no email');
 				alert('Please include an email address');
 			} else {
+
 			}
 		}
 	);
@@ -74,6 +75,7 @@ $("#drop-a-hint-submit").click(function(e){
 				console.log('no email');
 				alert('Please include an email address');
 			} else {
+				window.location = '/success/dropahint';
 			}
 		}
 	);

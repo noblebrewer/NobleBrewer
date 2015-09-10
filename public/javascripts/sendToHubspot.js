@@ -59,7 +59,7 @@ $("#submit-registration").click(function(e){
 		function: 'registration'
 	}
 	console.log(form);
-	hostname = env.HOSTNAME;
+	hostname = "http://www.noblebrewer.com";
 	$.post(hostname+"/api/hubspot",form,
 		function(data){
 			console.log(data);
