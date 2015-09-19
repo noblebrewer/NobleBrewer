@@ -1,12 +1,17 @@
 <head>
   <div class="title">
-<!--       <title><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></title> -->
+    <title><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></title>
   </div>
   <% include ./partials/head %>
 </head>
 
 
 <% include ./partials/header %>
+
+<div id="refcandy-poprocks" data-id="oa8fiutmw2ua9ww0ana70m8rn"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//portal.referralcandy.com/assets/widgets/refcandy-poprocks.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","refcandy-poprocks-js");</script>
+</head>
+
 <section class="row">
 	<h4 class="col-md-9 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
     <a class="col-md-2 btn btn-nb" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
