@@ -1,19 +1,4 @@
 <head>
-  <!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='80367997-2',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-
   <div class="title">
       <title>Noble Brewer</title>
   </div>
@@ -34,19 +19,21 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   window._fbq.push(['track', '6034253034193', {'value':'0.00','currency':'USD'}]);
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6034253034193&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
 
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <% include ./partials/header %>
 
 <section class="patterned row">
       <div class="col-md-6 col-sm-12">
-        <h4 class="hidden-lg hidden-md" style="font-weight:300">The best craft beers come from homebrewers. </h4>
-        <p class="hidden-lg hidden-md" >Become a member of Noble Brewer to try our award winning brewers' best beers.</p>
+        <h4 class="hidden-lg hidden-md centered-block" style="font-weight:300">Beer created by the nation's best homebrewers.</h4>
+        <br>
+        <p class="hidden-lg hidden-md centered-block">Members have access to beer you can't buy in any bar.</p>
         <h2 class="hidden-sm hidden-xs" style="font-weight:300">The best craft beers come from homebrewers. </h2>
         <h4 class="hidden-sm hidden-xs" style="text-transform:none; font-weight:300" >Become a member of Noble Brewer to try our award winning brewers' best beers.</h4>
-        <div class="row col-md-12 col-sm-12">
+        <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs">
             <div class="col-sm-6">
               <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
             </div>
@@ -54,8 +41,17 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
               <a class="btn btn-nb-ghost" id="gift-beer-top" href="/subscription">Gift Beer</a> 
             </div>
         </div>
+        <br>
+        <div class="row col-md-12 col-sm-12 hidden-md hidden-lg">
+            <div class="col-sm-6">
+              <a class="btn btn-nb" id="get-beer-top" href="/subscription">Subscriptions</a>
+            </div>
+            <div class="col-sm-6">
+              <a class="btn btn-nb" id="gift-beer-top" href="/collections/beer">Our beers</a> 
+            </div>
+        </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 hidden-sm hidden-xs">
         <div class="tan-border">
           <div class="embed-responsive embed-responsive-16by9">
               <iframe width="420" height="315" src="https://www.youtube.com/embed/hHulSUVbTuU"></iframe>
@@ -64,7 +60,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       </div>
   </div>
 </section>
-<section class="alt-base">
+<section class="alt-base hidden-sm hidden-xs">
   <div class="row">
     <div class="col-md-6">
       <img src="/images/home/img1.jpg" class="img-responsive tan-border">
@@ -93,7 +89,22 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
         </div>
 </section>
 
-<section class="patterned row centered-block">
+<section class="alt-base hidden-lg hidden-md">
+  <div class="row">
+    <img src="/images/home/brewing_hops.png" class="img-responsive tan-border">
+    <p class="centered-block top-buffer">We find award winning homebrewers</p>
+  </div>
+  <div class="row">
+    <img src="/images/home/img2.jpg" class="img-responsive">
+    <p class="centered-block top-buffer">Pair them with a professional brewery</p>
+  </div>
+  <div class="row">
+    <img src="/images/home/group_shot.png" class="img-responsive">
+    <p class="centered-block top-buffer">And then ship the creations out to our members</p>
+  </div>  
+</section>
+
+<section class="patterned row centered-block hidden-sm hidden-xs">
   <div class="col-md-6 col-md-offset-3">
     <h3>Want Noble Brewer as a gift?</h3>
     <p>Drop a hint to friends and family. Instantly give them 15% off gifts, so they can give you the gift you've really been wanting.</p>
@@ -115,7 +126,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   </div>
 </section>
 
-<section class="row light-striped">
+<section class="row light-striped hidden-sm hidden-xs">
     <div class="col-md-12 text-center" id="home-page-bottom">
       <div class="col-sm-12">
         <h3>I know what I want</h3>
@@ -129,4 +140,62 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   <br>
   <br>
 </section>
+
+<section class="hidden-lg hidden-md">
+  <p class="hidden-lg hidden-md centered-block">See what our members are saying on Untappd</p>
+  <br>
+  <div class="center-slick">
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling2.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle2.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling3.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle3.png" class="img-responsive"></div>
+  </div>
+</section>
+
+<section class="row light-striped hidden-md hidden-lg">
+    <div class="row text-center" id="home-page-bottom">
+      <div class="col-sm-12">
+        <a class="btn btn-nb" href="/subscription" id="get-beer-bottom">Become a member</a>
+      </div>
+      <div class="col-sm-12">
+        <a class="btn btn-nb" href="/collections/beer" id="see-beer-bottom">See what's on tap</a>
+      </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<script>
+$('.center-slick').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  draggable: true,  
+  arrows: true,
+  infinite: true,
+  touchMove: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
+</script>
 <% include ./partials/footer %>
