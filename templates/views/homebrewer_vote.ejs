@@ -1,0 +1,222 @@
+<head>
+  <div class="title">
+      <title>Vote for the next featured brewer</title>
+  </div>
+  <% include ./partials/head %>
+
+</head>
+
+
+<% include ./partials/simpleHeader %>
+
+<section class="patterned">
+	<h3>Choose the next featured homebrewer</h3>
+</section>
+
+<section class="row">
+	<div class="row top-buffer">
+		<div class="col-md-6">
+			<div class="vote-photo centered-block" style="background: url('http://res.cloudinary.com/keystone-demo/image/upload/h_500,w_400/v1442969010/krqkjievnzsqqfabims6.png')" role="button" >
+				<div class="vote-text col-md-10 hidden">
+				<h4>Lost Local Brewing</h4>
+				<p>Trubbel</p>
+				<p>Belgian Dark Strong ABV: 8.9%</p>
+				<ul>Awards:
+					<li>Motown MASH (NJ, BJCP Sanctioned: 1ST Place Belgian Strong2</li>
+					<li>Old Forge Old Ale Competition (NY, BJCP Sanctioned): 1st Place Belgian and Best of Show</li>
+				</ul>
+				<p><i>Click for more details...</i></p>
+				</div>
+			</div>
+			<div class="row vote-banner centered-block" role="button">
+				<h4>Lost Local Brewing</h4>
+			</div>
+		</div>
+		<div class="col-md-6 centered-block">
+			<img src="http://placehold.it/400x500">
+		</div>
+	</div>
+	<div class="row top-buffer">
+		<div class="col-md-6 centered-block">
+			<img src="http://placehold.it/400x500">
+		</div>
+		<div class="col-md-6 centered-block">
+			<img src="http://placehold.it/400x500">
+		</div>
+	</div>
+</section>
+
+<!-- Homebrewer Info Modal -->
+<div id="infoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content vote-info-modal">
+      <div class="modal-header" style="border:none">
+        <button type="button" style="color:white; opacity:.6" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Lost Local Brewing</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row hr-gold-thin top-buffer">
+        	<div class="col-md-6 centered-block">
+        		<img src="http://res.cloudinary.com/keystone-demo/image/upload/h_300,w_200/v1442969010/krqkjievnzsqqfabims6.png">
+        	</div>
+        	<div class="col-md-6">
+        		<p>Part Tripel, Part Dubbel, All Belgian</p>
+        		<p>Trubbel</p>
+        		<p>Belgian Dark Strong</p>
+        		<p>ABV: 8.9</p>
+        		<ul>Awards:
+					<li>Motown MASH (NJ, BJCP Sanctioned: 1ST Place Belgian Strong2</li>
+					<li>Old Forge Old Ale Competition (NY, BJCP Sanctioned): 1st Place Belgian and Best of Show</li>
+				</ul>
+        	</div>
+        </div>
+        <div class="row hr-gold-thin">
+        	<p class=" col-md-12 top-buffer">Starting with a deep red, dark caramel color, our Trubbel provides the mouthfeel you'd expect from a fuller bodied Belgian ale and continues to tempt with the malty sweetness of a traditional dubbel, finishing with a silky linger of dried fruits. Trubbel boasts a slightly higher alcohol content tempered by mild but identifiable banana-clove notes, traditional of a tripel. One of our proudest moments was reading notes from a BJCP judge calling Trubbel ‘liquid luxury in a glass,’ a sentiment we hope you'll share. Cheers!</p>
+        </div>
+      </div>
+      <div class="vote-modal-footer hr-gold-thin" role="button">
+      	<h4>Vote</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="voteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content vote-info-modal">
+      <div class="modal-header" style="border:none">
+        <button type="button" style="color:white; opacity:.6" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Vote for Lost Local Brewing</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row hr-gold-thin">
+        	<p class="col-md-12 top-buffer-thin">Each person can only vote once and you must be 21 to vote.</p>
+        </div>
+        <form class="row hr-gold-thin vote-form top-buffer">
+        	<div class="form-group col-md-12">
+				<input type="email" class="form-control" id="email_address" placeholder="Email">
+			</div>
+        	<div class="form-group col-md-12">
+				<input type="date" value="" name="customer[date]" style="width:100%" id="birthdate" placeholder="">
+			</div>
+        </form>
+      </div>
+      <div class="vote-modal-footer hr-gold-thin" role="button" disabled id="info-vote">
+      	<h4>Vote Now</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="shareModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content vote-info-modal">
+      <div class="modal-header" style="border:none">
+        <button type="button" style="color:white; opacity:.6" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row hr-gold-thin top-buffer-thin">
+        	<div class="col-md-6">
+        		<p class="col-md-12">Thanks for voting for me! I've been homebrewing for 10 years and am so excited for the chance to get my beer produced and shared with so many people. Please share with your friends and help me win!</p>
+        		<div class="small-social-media">
+	    		<a href="https://www.facebook.com/noblebrewer" target="_blank"><img class="no-border" src="/images/generic/facebook.png"></a>
+	    		<a href="https://instagram.com/NobleBrewer" target="_blank"><img class="no-border" src="/images/generic/instagram.png"></a>
+	    		<a href="http://twitter.com/NobleBrewerBeer" target="_blank"><img class="no-border" src="/images/generic/twitter.png"></a>
+			</div>
+        	</div>
+        	<div class="col-md-6">
+        		<div id="demo"></div>
+        	</div>
+        </div>
+      </div>
+      <div class="vote-modal-footer hr-gold-thin" role="button" disabled id="submit-vote">
+      	<h4>Vote Now</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% include ./partials/simpleFooter %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<script>
+$('.vote-photo').mouseenter(function(){
+	$('.vote-banner').css('background-color', '#C5A77E');	
+	$('.vote-text').toggleClass('hidden');
+})
+
+$('.vote-photo').mouseleave(function(){
+	$('.vote-banner').css('background-color', '');	
+	$('.vote-text').toggleClass('hidden');
+})
+
+$('.vote-banner').mouseenter(function(){
+	$('.vote-banner').css('background-color', '#C5A77E');	
+	$('.vote-text').toggleClass('hidden');
+})
+
+$('.vote-banner').mouseleave(function(){
+	$('.vote-banner').css('background-color', '');
+	$('.vote-text').toggleClass('hidden');
+})
+
+$('.vote-photo').click(function(){
+	$('#infoModal').modal('show')
+})
+
+$('.vote-banner').click(function(){
+	$('#voteModal').modal('show')
+})
+
+$('#submit-vote').click(function(){
+	$('#voteModal').modal('hide')
+	$('#successModal').modal('show')
+})
+
+$('#info-vote').click(function(){
+	$('#shareModal').modal('show')
+	$('#voteModal').modal('hide')
+})
+
+$('#birthdate').change(function(){
+  	var today = new Date();
+  	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+  	var twentyOneYear = yyyy - 21;
+  	var date = $('#birthdate').val();
+  	var dateArray = date.split('-');
+    if (dateArray[0] > twentyOneYear){
+		$('#age-warning').removeClass('hidden');
+      	$('#submit-registration').addClass('hidden');
+    } else if (dateArray[0] == twentyOneYear) {
+      	if (dateArray[1] > mm) {
+        	$('#age-warning').removeClass('hidden');
+          	$('#submit-registration').addClass('hidden');
+        } else if (dateArray[1] == mm) {
+          	if (dateArray[2] > dd) {
+           		$('#age-warning').removeClass('hidden');
+              	$('#submit-registration').addClass('hidden');
+            } else if (dateArray[2] == dd) {
+             	console.log('Happy Birthday!'); 
+            }
+        }
+    } else {
+     	$('#age-warning').addClass('hidden'); 
+      	$('#submit-registration').prop('disabled', false);
+    }
+})
+
+</script>
