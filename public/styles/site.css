@@ -5393,55 +5393,51 @@ section {
       margin-right: 0px;
       margin-bottom: 22px; } }
 
-.vote-photo {
-  position: relative;
-  width: 400px;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;}
-
-.vote-text {
-  position: absolute;
-  top: 100;
-  left: 0.5em;
-  width: auto;
-  text-align: left;
-}
-
-.vote-banner {
-  height: auto;
-  width: 400px;
-  border: #C5A77E 1px solid;
-}
-
-.vote-info-modal {
-  background-color: black;
-  border-color: #C5A77E;
-}
-
-.vote-modal-footer {
-  background-color: #C5A77E;
-  color: white;
-  height: auto;
-  text-align: center;
-}
-
-.vote-modal-footer > h4 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 10 0 10 0;
-}
-
-.vote-form {
-  color: gray;
-}
-
 .brewer-story {
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 25px;
   overflow: scroll;
   max-height: 600px; }
+
+.vote-photo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.vote-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  top: 100;
+  width: 100%;
+  text-align: center; }
+
+.vote-banner {
+  height: auto;
+  width: 100%;
+  border: #C5A77E 1px solid; }
+
+.vote-info-modal {
+  background-color: black;
+  border-color: #C5A77E; }
+
+.vote-modal-footer {
+  background-color: #C5A77E;
+  color: white;
+  height: auto;
+  text-align: center; }
+
+.vote-modal-footer > h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 10 0 10 0; }
+
+.vote-form {
+  color: gray; }
 
 @media (max-width: 37.5em) {
   .card {
@@ -5514,8 +5510,7 @@ img {
 
 .top-buffer-thin {
   padding-top: 15px;
-  padding-bottom: 15px;
-}
+  padding-bottom: 15px; }
 
 .left-buffer {
   padding-left: 20px; }

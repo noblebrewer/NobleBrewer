@@ -25,12 +25,6 @@ exports = module.exports = function(req,res) {
 
 };
 
-
-
-
-
-
-
 // var keystone = require('keystone'),
 // 	redis = require('redis'),
 // 	client = redis.createClient();
