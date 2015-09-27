@@ -2,6 +2,11 @@ var keystone = require('keystone'),
 	redis = require('redis'),
 	client = redis.createClient();
 
+var brewer1 = 'lostlocal';
+var brewer2 = 'papadoc';
+var brewer3 = 'myers';
+var brewer4 = 'boden';
+
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -16,23 +21,55 @@ exports = module.exports = function(req, res) {
 	})
 
 	var userEmail = ('email:'+req.body.emailaddress)
-	console.log(userEmail);
 
-	client.hmget(userEmail, 'vote', function(err, object){
-		console.log("object: "+object)
-		console.log("err: "+err)
-		if (object) {
+	client.hget(userEmail, 'vote', function(err, object){
+		console.log("object: "+object);
+		if (object !== null) {
+			var brewer1votes = client.get(brewer1);
+			console.log("else "+brewer1votes);
+			getVoteCount(function(reply){
+				res.apiResponse(reply)
+			})		
+		} else {
 			client.hmset(userEmail, 'vote', req.body.vote, 'date', req.body.date, function(err, reply){
-			console.log("reply: "+reply);
-			console.log("err: "+err);
-		});
+				if (!err) {
+					client.incr(req.body.vote, function(err, reply){
+						getVoteCount(function(reply){
+							res.apiResponse(reply)
+						})
+					})
+				} else {
+					console.log("error: "+err);
+				}
+			})
 		}
 	});
 
-
-	client.hmget(userEmail, 'vote', function(err, object){
-		console.log("object: "+object)
-		console.log("err: "+err)	
-	});
-
+	function getVoteCount(next){
+		
+		var brewer1votes;
+		var brewer2votes;
+		var brewer3votes;
+		var brewer4votes;
+		client.get(brewer1, function(err, reply){
+			brewer1votes = reply
+			client.get(brewer2, function(err, reply){
+				brewer2votes = reply
+				client.get(brewer3, function(err, reply){
+					brewer3votes = reply
+					client.get(brewer4, function(err, reply){
+						brewer4votes = reply
+						var response = {
+							one:brewer1votes,
+							two:brewer2votes,
+							three:brewer3votes,
+							four:brewer4votes
+						}
+						next(response);	
+					})
+				})
+			})
+		});
+	}
 }
+

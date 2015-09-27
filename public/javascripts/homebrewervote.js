@@ -1,25 +1,38 @@
-$('#vote-photo-1').mouseenter(function(){
-	$('#vote-banner-1').css('background-color', '#C5A77E');	
-	$('#vote-text-1').toggleClass('hidden');
+$('#container-1').mouseenter(function(){
+	toggleBanner(1, 'on');	
 })
 
-$('#vote-photo-1').mouseleave(function(){
-	$('#vote-banner-1').css('background-color', '');	
-	$('#vote-text-1').toggleClass('hidden');
+$('#container-1').mouseleave(function(){
+	toggleBanner(1, 'off');	
 })
+
+$('#container-2').mouseenter(function(){
+	toggleBanner(2, 'on');	
+})
+
+$('#container-2').mouseleave(function(){
+	toggleBanner(2, 'off');	
+})
+
+$('#container-3').mouseenter(function(){
+	toggleBanner(3, 'on');	
+})
+
+$('#container-3').mouseleave(function(){
+	toggleBanner(3, 'off');	
+})
+
+$('#container-4').mouseenter(function(){
+	toggleBanner(4, 'on');	
+})
+
+$('#container-4').mouseleave(function(){
+	toggleBanner(4, 'off');	
+})
+
 
 $('#vote-photo-1').click(function(){
-	$('#infoModal').modal('show')
-})
-
-$('#vote-banner-1').mouseenter(function(){
-	$('#vote-banner-1').css('background-color', '#C5A77E');	
-	$('#vote-text-1').toggleClass('hidden');
-})
-
-$('#vote-banner-1').mouseleave(function(){
-	$('#vote-banner-1').css('background-color', '');
-	$('#vote-text-1').toggleClass('hidden');
+	showHomebrewerModal(1);
 })
 
 $('.vote-banner').click(function(){
@@ -37,10 +50,24 @@ $('#info-vote').click(function(){
 	$('#infoModal').modal('hide')
 })
 
+function toggleBanner(num, toggle){
+	if (toggle === 'on') {
+		$('#vote-banner-'+num).css('background-color', '#C5A77E');
+		$('#vote-text-'+num).css('opacity', 1);
+	} else if (toggle === 'off') {
+		$('#vote-banner-'+num).css('background-color', '');
+		$('#vote-text-'+num).css('opacity', 0);
+	}
+}
+
+function showHomebrewerModal(num){
+	$('#brewer-modal-'+num).modal('show')
+}
+
 function submitVote(){
 	var form = {
 		vote:"lostlocal",
-		emailaddress:"ccmohnike11@gmail.com",
+		emailaddress:"ccmohnike22@gmail.com",
 		date:Date.now()
 	}
 	$.post("/api/homebrewervote", form, function(data){
