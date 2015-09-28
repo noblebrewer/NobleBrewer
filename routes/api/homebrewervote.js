@@ -27,6 +27,7 @@ exports = module.exports = function(req, res) {
 			var brewer1votes = client.get(brewer1);
 			console.log("else "+brewer1votes);
 			getVoteCount(function(reply){
+				client.end();
 				res.apiResponse(reply)
 			})		
 		} else {
@@ -34,6 +35,7 @@ exports = module.exports = function(req, res) {
 				if (!err) {
 					client.incr(req.body.vote, function(err, reply){
 						getVoteCount(function(reply){
+							client.end();
 							res.apiResponse(reply)
 						})
 					})
@@ -65,7 +67,6 @@ exports = module.exports = function(req, res) {
 							three : brewer3votes,
 							four : brewer4votes
 						}
-						client.end();
 						next(response);	
 					})
 				})
