@@ -23,7 +23,6 @@ exports = module.exports = function(req, res) {
 	var userEmail = ('email:'+req.body.emailaddress)
 
 	client.hget(userEmail, 'vote', function(err, object){
-		console.log("object: "+object);
 		if (object !== null) {
 			var brewer1votes = client.get(brewer1);
 			console.log("else "+brewer1votes);
@@ -59,11 +58,12 @@ exports = module.exports = function(req, res) {
 					brewer3votes = reply
 					client.get(brewer4, function(err, reply){
 						brewer4votes = reply
+						var total = brewer1votes + brewer2votes + brewer3votes + brewer4votes;
 						var response = {
-							one:brewer1votes,
-							two:brewer2votes,
-							three:brewer3votes,
-							four:brewer4votes
+							one : brewer1votes,
+							two : brewer2votes,
+							three : brewer3votes,
+							four : brewer4votes
 						}
 						next(response);	
 					})
