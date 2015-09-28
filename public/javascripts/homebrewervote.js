@@ -65,7 +65,17 @@ $('#vote-photo-1').click(function(){
 	currentVote = brewer1;
 })
 
+$('#vote-text-1').click(function(){
+	showHomebrewerModal(1);
+	currentVote = brewer1;
+})
+
 $('#vote-photo-2').click(function(){
+	showHomebrewerModal(2);
+	currentVote = brewer2;
+})
+
+$('#vote-text-2').click(function(){
 	showHomebrewerModal(2);
 	currentVote = brewer2;
 })
@@ -75,7 +85,17 @@ $('#vote-photo-3').click(function(){
 	currentVote = brewer3;
 })
 
+$('#vote-text-3').click(function(){
+	showHomebrewerModal(3);
+	currentVote = brewer3;
+})
+
 $('#vote-photo-4').click(function(){
+	showHomebrewerModal(4);
+	currentVote = brewer4;
+})
+
+$('#vote-text-4').click(function(){
 	showHomebrewerModal(4);
 	currentVote = brewer4;
 })
@@ -86,22 +106,23 @@ function showHomebrewerModal(num){
 
 //Shows the voting modal when the vote banner is clicked
 
-$('.vote-banner-1').click(function(){
+$('#vote-banner-1').click(function(){
+	console.log("here");
 	showVotingModal()
 	currentVote = brewer1;
 })
 
-$('.vote-banner-2').click(function(){
+$('#vote-banner-2').click(function(){
 	showVotingModal()
 	currentVote = brewer2;
 })
 
-$('.vote-banner-3').click(function(){
+$('#vote-banner-3').click(function(){
 	showVotingModal()
 	currentVote = brewer3;
 })
 
-$('.vote-banner-4').click(function(){
+$('#vote-banner-4').click(function(){
 	showVotingModal()
 	currentVote = brewer4;
 })
@@ -125,6 +146,7 @@ $('#info-vote-4').click(function(){
 })
 
 function showVotingModal(num){
+	console.log("function");
 	$('#voteModal').modal('show')
 	if (num !== null) {
 		$('#brewer-modal-'+num).modal('hide');
@@ -138,52 +160,64 @@ $('#submit-vote').click(function(){
 })
 
 function submitVote(){
-	//TODO: Submit email to hubspot
-	//TODO: display 21 error message
-	//TODO: Validate email regex
+	//TODO: Submit email to hubspot (after validating it)
 	var birthdate = document.getElementById('birthdate').value
-
+	var email = document.getElementById('email_address').value
 	var form = {
 		vote : currentVote,
-		emailaddress : document.getElementById('email_address').value,
+		emailaddress : email,
 		date : Date.now(),
 		birthdate : birthdate
 	}
-	if (verifyBirthdate(birthdate) === true) {
-		$.post("/api/homebrewervote", form, function(data){
-			console.log(data)
-			$('#shareModal').modal('show');
-			$('#voteModal').modal('hide');
-			$('#brewer1results').html(data.one);
-			$('#brewer2results').html(data.two);
-			$('#brewer3results').html(data.three);
-			$('#brewer4results').html(data.four);
-		})
+	if (validateEmail(email) === true) {
+		$('#email-warning').addClass('hidden');
+		if (verifyBirthdate(birthdate) === true) {
+			$.post("/api/homebrewervote", form, function(data){
+				console.log(data)
+				$('#shareModal').modal('show');
+				$('#voteModal').modal('hide');
+				$('#brewer1results').html(data.one);
+				$('#brewer2results').html(data.two);
+				$('#brewer3results').html(data.three);
+				$('#brewer4results').html(data.four);
+			})
+		} else {
+			$('#age-warning').removeClass('hidden');
+		}
 	} else {
-		console.log("not 21");
+		$('#email-warning').removeClass('hidden');
 	}
 }
 
 function verifyBirthdate(date){
-  	var today = new Date();
-  	var dd = today.getDate();
-	var mm = today.getMonth()+1; //January is 0!
-	var yyyy = today.getFullYear();
-  	var twentyOneYear = yyyy - 21;
-  	var dateArray = date.split('-');
-    if (dateArray[0] > twentyOneYear){
+  	if (date !== "") {
+	  	var today = new Date();
+	  	var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+	  	var twentyOneYear = yyyy - 21;
+	  	var dateArray = date.split('-');
+		if (dateArray[0] > twentyOneYear){
+			return false;
+	    } else if (dateArray[0] == twentyOneYear) {
+	      	if (dateArray[1] > mm) {
+	        	return false;
+	        } else if (dateArray[1] == mm) {
+	          	if (dateArray[2] > dd) {
+	           		return false;
+	            } else if (dateArray[2] == dd) {
+	             	return true;
+	            }
+	        }
+	    } else {
+	     	return true;
+	    }
+	} else {
 		return false;
-    } else if (dateArray[0] == twentyOneYear) {
-      	if (dateArray[1] > mm) {
-        	return false;
-        } else if (dateArray[1] == mm) {
-          	if (dateArray[2] > dd) {
-           		return false;
-            } else if (dateArray[2] == dd) {
-             	return true;
-            }
-        }
-    } else {
-     	return true;
-    }
+	}
+}
+
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
 }

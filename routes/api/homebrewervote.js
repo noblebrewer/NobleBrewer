@@ -1,6 +1,6 @@
 var keystone = require('keystone'),
 	redis = require('redis'),
-	client = redis.createClient();
+	client = redis.createClient(keystone.get('redis_url'));
 
 var brewer1 = 'lostlocal';
 var brewer2 = 'papadoc';
@@ -65,6 +65,7 @@ exports = module.exports = function(req, res) {
 							three : brewer3votes,
 							four : brewer4votes
 						}
+						client.end();
 						next(response);	
 					})
 				})

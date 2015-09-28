@@ -24,32 +24,3 @@ exports = module.exports = function(req,res) {
 	view.render('homebrewer_vote');
 
 };
-
-// var keystone = require('keystone'),
-// 	redis = require('redis'),
-// 	client = redis.createClient();
-
-
-// client.on('connect', function() {
-// 	console.log('connected');
-// });
-
-// client.on('error', function(err) {
-// 	console.log("Error: "+err)
-// })
-
-// client.set('framework', 'AngularJS', function(err, reply){
-// 	console.log(reply);
-// })	
-
-// client.hmset('frameworks', 'javascript', 'AngularJS', 'css', 'Bootstrap', 'node', 'Express');
-// client.hgetall('frameworks',function(err, object){
-// 	console.log(object);
-// });
-
-
-//   // Render the view
-//   //res.render('/homebrewer_vote');
-
-
-  
