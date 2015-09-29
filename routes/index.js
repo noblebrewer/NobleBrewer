@@ -80,6 +80,7 @@ exports = module.exports = function(app) {
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
 	app.all('/api/email', keystone.middleware.api, routes.api.email);
+	app.all('/api/hubspot/newcustomer', keystone.middleware.api, routes.api.newCustomerToHubspot);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
