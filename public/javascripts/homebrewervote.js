@@ -5,13 +5,6 @@ var currentVote = '';
 //Current homebrewers - these variables are also in the routes/api doc, so don't
 //forget to change them there too if you do another round of this
 
-//Need to also change the 
-Lost Local is 1
-Brent is 2
-Benjamin is 3
-Matthew is 4
-
-
 var brewer1 = 'lost_local';
 var brewer2 = 'brent_boden';
 var brewer3 = 'benjamin_myers';
@@ -210,10 +203,11 @@ function submitVote(){
 				console.log(data)
 				$('#shareModal').modal('show');
 				$('#voteModal').modal('hide');
-				$('#brewer1results').html(data.one);
-				$('#brewer2results').html(data.two);
-				$('#brewer3results').html(data.three);
-				$('#brewer4results').html(data.four);
+				data = calculateResults(data);
+				$('#percentage-brewer-1').css("width", data.one);
+				$('#percentage-brewer-2').css("width", data.two);
+				$('#percentage-brewer-3').css("width", data.three);
+				$('#percentage-brewer-4').css("width", data.four);
 				if (currentVote === brewer1) {
 					document.getElementById('twitter').href = brewer1twitterlink
 				} else if (currentVote === brewer2) {
@@ -263,4 +257,23 @@ function verifyBirthdate(date){
 function validateEmail(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
+}
+
+function calculateResults(data){
+	var one = parseInt(data.one);
+	var two = parseInt(data.two);
+	var three = parseInt(data.three);
+	var four = parseInt(data.four);
+	var total = one + two + three + four;
+	var onePercentage = (one / total) * 100;
+	var twoPercentage = (two / total) * 100;
+	var threePercentage = (three / total) * 100;
+	var fourPercentage = (four / total) * 100;
+	var percentages = {
+		one : onePercentage,
+		two : twoPercentage,
+		three : threePercentage,
+		four : fourPercentage
+	}
+	return percentages 
 }
