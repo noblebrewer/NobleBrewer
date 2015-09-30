@@ -1,3 +1,6 @@
+//TODO: Get the customer's order ID and then get that order's description. 
+//   	Should be able to find out what type of subscription it is
+
 var async = require('async'),
 	keystone = require('keystone');
 var request = require("request");
