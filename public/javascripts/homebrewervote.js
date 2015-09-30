@@ -5,10 +5,43 @@ var currentVote = '';
 //Current homebrewers - these variables are also in the routes/api doc, so don't
 //forget to change them there too if you do another round of this
 
-var brewer1 = "lostlocal",
-	brewer2 = "boden",
-	brewer3 = "myers",
-	brewer4 = "papadoc";
+//Need to also change the 
+Lost Local is 1
+Brent is 2
+Benjamin is 3
+Matthew is 4
+
+
+var brewer1 = 'lost_local';
+var brewer2 = 'brent_boden';
+var brewer3 = 'benjamin_myers';
+var brewer4 = 'matthew_morrison';
+
+var brewer1beerstyle = "BelgianDarkStrong"
+var brewer2beerstyle = "ClassicRauchbier"
+var brewer3beerstyle = "AmericanPaleAle"
+var brewer4beerstyle = "AmericanIPA"
+
+var brewer1beername = "Trubbel"
+var brewer2beername = "BaconMapleBourbonRauchbier"
+var brewer3beername = "SauvignonBlancPale"
+var brewer4beername = "PapaDocIPA"
+
+var brewer1twitterhandle = 'Lost%20Local'
+var brewer2twitterhandle = 'Matthew'
+var brewer3twitterhandle = 'Benjamin'
+var brewer4twitterhandle = '@btboden'
+
+var brewer1bitly = 'http://bit.ly/1L2Nk3Y'
+var brewer2bitly = 'http://bit.ly/1O6ybAU'
+var brewer3bitly = 'http://bit.ly/1MZ4otV'
+var brewer4bitly = 'http://bit.ly/1O0u8Vi'
+
+var brewer1twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer1twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer1beerstyle+'%20%23'+brewer1beername
+var brewer2twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer2twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer2beerstyle+'%20%23'+brewer2beername
+var brewer3twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer3twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer3beerstyle+'%20%23'+brewer3beername
+var brewer4twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer4twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer4beerstyle+'%20%23'+brewer4beername
+
 
 //Watches the photo container to show text and change color when mouse enters + leaves
 
@@ -161,6 +194,7 @@ $('#submit-vote').click(function(){
 
 function submitVote(){
 	//TODO: Submit email to hubspot (after validating it)
+	//TODO: Grab IP address?
 	var birthdate = document.getElementById('birthdate').value
 	var email = document.getElementById('email_address').value
 	var form = {
@@ -180,6 +214,15 @@ function submitVote(){
 				$('#brewer2results').html(data.two);
 				$('#brewer3results').html(data.three);
 				$('#brewer4results').html(data.four);
+				if (currentVote === brewer1) {
+					document.getElementById('twitter').href = brewer1twitterlink
+				} else if (currentVote === brewer2) {
+					document.getElementById('twitter').href = brewer2twitterlink
+				} else if (currentVote === brewer3) {
+					document.getElementById('twitter').href = brewer3twitterlink
+				} else if (currentVote === brewer4) {
+					document.getElementById('twitter').href = brewer4twitterlink
+				}
 			})
 		} else {
 			$('#age-warning').removeClass('hidden');

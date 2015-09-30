@@ -2,10 +2,10 @@ var keystone = require('keystone'),
 	redis = require('redis'),
 	client = redis.createClient(keystone.get('redis_url'));
 
-var brewer1 = 'lostlocal';
-var brewer2 = 'papadoc';
-var brewer3 = 'myers';
-var brewer4 = 'boden';
+var brewer1 = 'lost_local';
+var brewer2 = 'matthew_morrison';
+var brewer3 = 'benjamin_myers';
+var brewer4 = 'brent_boden';
 
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -27,7 +27,7 @@ exports = module.exports = function(req, res) {
 			var brewer1votes = client.get(brewer1);
 			console.log("else "+brewer1votes);
 			getVoteCount(function(reply){
-				client.end();
+				//client.end();
 				res.apiResponse(reply)
 			})		
 		} else {
@@ -35,7 +35,7 @@ exports = module.exports = function(req, res) {
 				if (!err) {
 					client.incr(req.body.vote, function(err, reply){
 						getVoteCount(function(reply){
-							client.end();
+							//client.end();
 							res.apiResponse(reply)
 						})
 					})
