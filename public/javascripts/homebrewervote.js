@@ -25,15 +25,16 @@ var brewer2twitterhandle = 'Matthew'
 var brewer3twitterhandle = 'Benjamin'
 var brewer4twitterhandle = '@btboden'
 
-var brewer1bitly = 'http://bit.ly/1L2Nk3Y'
-var brewer2bitly = 'http://bit.ly/1O6ybAU'
-var brewer3bitly = 'http://bit.ly/1MZ4otV'
-var brewer4bitly = 'http://bit.ly/1O0u8Vi'
+var brewer1bitly = 'http%3A//bit.ly/1L2Nk3Y'
+var brewer2bitly = 'http%3A//bit.ly/1O6ybAU'
+var brewer3bitly = 'http%3A//bit.ly/1MZ4otV'
+var brewer4bitly = 'http%3A//bit.ly/1O0u8Vi'
 
-var brewer1twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer1twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer1beerstyle+'%20%23'+brewer1beername
-var brewer2twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer2twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer2beerstyle+'%20%23'+brewer2beername
-var brewer3twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer3twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer3beerstyle+'%20%23'+brewer3beername
-var brewer4twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer4twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer4beerstyle+'%20%23'+brewer4beername
+
+var brewer1twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer1twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer1beerstyle+'%20'+brewer1bitly
+var brewer2twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer2twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer2beerstyle+'%20'+brewer2bitly
+var brewer3twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer3twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer3beerstyle+'%20'+brewer3bitly
+var brewer4twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer4twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer4beerstyle+'%20'+brewer4bitly
 
 var isCustomer = false;
 
