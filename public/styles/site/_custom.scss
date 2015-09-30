@@ -555,6 +555,16 @@ section {
   background-color: black;
   border-color: #C5A77E; }
 
+ .vote-info-modal > .modal-header {
+	padding-top:5px;
+ 	padding-bottom:5px; 
+ } 
+
+ .vote-info-modal > .modal-body {
+	padding-top:5px;
+ 	padding-bottom:5px; 
+ }
+
 .vote-modal-footer {
   background-color: #C5A77E;
   color: white;

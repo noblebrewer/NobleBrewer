@@ -6396,6 +6396,14 @@ section {
   background-color: black;
   border-color: #C5A77E; }
 
+.vote-info-modal > .modal-header {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.vote-info-modal > .modal-body {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
 .vote-modal-footer {
   background-color: #C5A77E;
   color: white;
@@ -6415,7 +6423,7 @@ section {
   background-color: #C5A77E;
   text-align: right;
   padding: 3px;
-  padding-left: 5px;
+  margin-left: 5px;
   margin: 1px;
   color: white;
   width: 100%;

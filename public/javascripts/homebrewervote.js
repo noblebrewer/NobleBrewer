@@ -35,6 +35,7 @@ var brewer2twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer2
 var brewer3twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer3twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer3beerstyle+'%20%23'+brewer3beername
 var brewer4twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer4twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer4beerstyle+'%20%23'+brewer4beername
 
+var isCustomer = false;
 
 //Watches the photo container to show text and change color when mouse enters + leaves
 
@@ -186,7 +187,6 @@ $('#submit-vote').click(function(){
 })
 
 function submitVote(){
-	//TODO: Submit email to hubspot (after validating it)
 	//TODO: Grab IP address?
 	var birthdate = document.getElementById('birthdate').value
 	var email = document.getElementById('email_address').value
@@ -194,36 +194,71 @@ function submitVote(){
 		vote : currentVote,
 		emailaddress : email,
 		date : Date.now(),
-		birthdate : birthdate
+		birthdate : birthdate,
+		customer: isCustomer
 	}
 	if (validateEmail(email) === true) {
 		$('#email-warning').addClass('hidden');
 		if (verifyBirthdate(birthdate) === true) {
-			$.post("/api/homebrewervote", form, function(data){
-				console.log(data)
-				$('#shareModal').modal('show');
-				$('#voteModal').modal('hide');
-				data = calculateResults(data);
-				$('#percentage-brewer-1').css("width", data.one);
-				$('#percentage-brewer-2').css("width", data.two);
-				$('#percentage-brewer-3').css("width", data.three);
-				$('#percentage-brewer-4').css("width", data.four);
-				if (currentVote === brewer1) {
-					document.getElementById('twitter').href = brewer1twitterlink
-				} else if (currentVote === brewer2) {
-					document.getElementById('twitter').href = brewer2twitterlink
-				} else if (currentVote === brewer3) {
-					document.getElementById('twitter').href = brewer3twitterlink
-				} else if (currentVote === brewer4) {
-					document.getElementById('twitter').href = brewer4twitterlink
-				}
-			})
+			logVote(form, email);
+			sendToHubspot();
 		} else {
 			$('#age-warning').removeClass('hidden');
 		}
 	} else {
 		$('#email-warning').removeClass('hidden');
 	}
+}
+
+function logVote(form){
+	$.post('/api/customer', form, function(data){
+		if (data === true) {
+			form.customer = true
+		} 
+		$.post("/api/homebrewervote", form, function(data){
+			console.log(data)
+			$('#shareModal').modal('show');
+			$('#voteModal').modal('hide');
+			data = calculateResults(data);
+			$('#percentage-brewer-1').css("width", data.one);
+			$('#percentage-brewer-2').css("width", data.two);
+			$('#percentage-brewer-3').css("width", data.three);
+			$('#percentage-brewer-4').css("width", data.four);
+			if (currentVote === brewer1) {
+				document.getElementById('twitter').href = brewer1twitterlink
+			} else if (currentVote === brewer2) {
+				document.getElementById('twitter').href = brewer2twitterlink
+			} else if (currentVote === brewer3) {
+				document.getElementById('twitter').href = brewer3twitterlink
+			} else if (currentVote === brewer4) {
+				document.getElementById('twitter').href = brewer4twitterlink
+			}
+		})
+	})
+}
+
+function sendToHubspot(){
+	var email = document.getElementById('email_address').value
+	var form = {
+		email : email,
+		function: 'email'
+	}
+	console.log(form);
+	hostname = "http://www.noblebrewer.com";
+	$.post(hostname+"/api/hubspot",form,
+		function(data){
+			console.log(data);
+			if (data.status === 'error'){
+				console.log("Didn't submit to hubspot");
+			} else if (data.status === 'email') {
+				//console.log('no email');
+				//alert('Please include an email address');
+			} else {
+				console.log(data.status);
+				//window.location= '/collections/beer';
+			}
+		}
+	);
 }
 
 function verifyBirthdate(date){

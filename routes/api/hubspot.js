@@ -49,7 +49,7 @@ exports = module.exports = function(req, res) {
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
-			console.log(body);
+			console.log(body.status);
 			res.apiResponse({
 				body:req.body,
 				hubspot:body,

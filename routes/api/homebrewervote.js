@@ -7,6 +7,8 @@ var brewer2 = 'matthew_morrison';
 var brewer3 = 'benjamin_myers';
 var brewer4 = 'brent_boden';
 
+var customerWeight = 2;
+
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -24,21 +26,26 @@ exports = module.exports = function(req, res) {
 
 	client.hget(userEmail, 'vote', function(err, object){
 		if (object !== null) {
-			var brewer1votes = client.get(brewer1);
-			console.log("else "+brewer1votes);
 			getVoteCount(function(reply){
-				//client.end();
 				res.apiResponse(reply)
 			})		
 		} else {
 			client.hmset(userEmail, 'vote', req.body.vote, 'date', req.body.date, function(err, reply){
 				if (!err) {
-					client.incr(req.body.vote, function(err, reply){
-						getVoteCount(function(reply){
-							//client.end();
-							res.apiResponse(reply)
+					if (req.body.customer === 'true') {
+						client.incrby(req.body.vote, customerWeight, function(err, reply){
+							getVoteCount(function(reply){
+								res.apiResponse(reply)
+							})
 						})
-					})
+					} else {
+						console.log("false?");
+						client.incr(req.body.vote, function(err, reply){
+							getVoteCount(function(reply){
+								res.apiResponse(reply)
+							})
+						})				
+					}
 				} else {
 					console.log("error: "+err);
 				}
