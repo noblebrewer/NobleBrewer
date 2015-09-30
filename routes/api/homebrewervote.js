@@ -33,6 +33,7 @@ exports = module.exports = function(req, res) {
 			client.hmset(userEmail, 'vote', req.body.vote, 'date', req.body.date, function(err, reply){
 				if (!err) {
 					if (req.body.customer === 'true') {
+						client.hset(userEmail, 'isCustomer', 'true')
 						client.incrby(req.body.vote, customerWeight, function(err, reply){
 							getVoteCount(function(reply){
 								res.apiResponse(reply)
