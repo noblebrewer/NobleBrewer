@@ -20,7 +20,7 @@ var brewer2beername = "BaconMapleBourbonRauchbier"
 var brewer3beername = "SauvignonBlancPale"
 var brewer4beername = "PapaDocIPA"
 
-var brewer1twitterhandle = 'Lost%20Local'
+var brewer1twitterhandle = 'Lost_Local_Brew'
 var brewer2twitterhandle = 'Matthew'
 var brewer3twitterhandle = 'Benjamin'
 var brewer4twitterhandle = '@btboden'
