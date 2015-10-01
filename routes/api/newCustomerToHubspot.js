@@ -29,6 +29,9 @@ exports = module.exports = function(req, res) {
 			} 
 		};
 	}
+	if (phone === undefined) {
+		phone = ''
+	}
 	var tags = body.tags.split(', ');
 	for (var i = 0; i < tags.length; i++) {
 		if (tags[i] === 'Active Subscriber') {
