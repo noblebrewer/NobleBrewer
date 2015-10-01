@@ -14,8 +14,11 @@ exports = module.exports = function(req, res) {
 		if (error) throw new Error(error);
 		if (body.length === 16){
 			res.apiResponse(false)
+			console.log(req.body.emailaddress+" is not a current member");
 		} else {
 			res.apiResponse(true)
+			console.log(req.body.emailaddress+" is a current member");
+
 		}
 	});
 }
