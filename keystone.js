@@ -36,6 +36,7 @@ keystone.init({
 	'shopify_hostname' : process.env.SHOPIFY_HOSTNAME,
 	'blog_hostname' : process.env.BLOG_HOSTNAME,
 	'heap_var' : process.env.HEAP,
+	'redis_url' : process.env.REDIS_URL,
 
 	'auto update': true,
 	'session': true,
