@@ -81,6 +81,7 @@ exports = module.exports = function(app) {
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
 	app.all('/api/email', keystone.middleware.api, routes.api.email);
+	app.all('/api/hubspot/newcustomer', keystone.middleware.api, routes.api.newCustomerToHubspot);
 	app.all('/api/homebrewervote', keystone.middleware.api, routes.api.homebrewervote);
 	app.all('/api/customer', keystone.middleware.api, routes.api.isShopifyCustomer);
 
