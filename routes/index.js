@@ -74,6 +74,7 @@ exports = module.exports = function(app) {
 	app.get('/styleguide', routes.views.styleguide);
 	app.get('/blog/brewers/mikeriddle/', routes.views.riddle);
 	app.get('/blog/brewers/john-f', routes.views.fuller);
+	app.get('/homebrewers/vote', routes.views.homebrewer_vote);
 	app.all('/contact', routes.views.contact);
 
 
@@ -81,6 +82,8 @@ exports = module.exports = function(app) {
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
 	app.all('/api/email', keystone.middleware.api, routes.api.email);
 	app.all('/api/hubspot/newcustomer', keystone.middleware.api, routes.api.newCustomerToHubspot);
+	app.all('/api/homebrewervote', keystone.middleware.api, routes.api.homebrewervote);
+	app.all('/api/customer', keystone.middleware.api, routes.api.isShopifyCustomer);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
