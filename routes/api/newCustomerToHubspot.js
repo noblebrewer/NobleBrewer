@@ -74,9 +74,11 @@ exports = module.exports = function(req, res) {
 	request(options, function (error, response, body) {
 		if (response.statusCode === 200) {
 			console.log("Updated "+email+' in the hubspot database')
+			res.apiResponse(response.statusCode)
 		} else {
 			console.log(response.statusCode);
 			console.log("error updating "+email+" in hubspot");
+			res.apiResponse(response.statusCode)
 		}
 	});
 
