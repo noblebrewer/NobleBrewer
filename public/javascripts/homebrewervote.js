@@ -342,20 +342,20 @@ $('#facebook').bind('click', function(e){
         e.preventDefault();
         var title = 'Vote for the next featured Noble Brewer';
         if (currentVote === brewer1) {
-        	var title = 'I just voted for '+brewer1name+' and their '+brewer1beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer1bitlytrue
+        	var title = 'I just voted for '+brewer1name+' and their '+brewer1beernametrue+' to become the next featured Noble Brewer. Place your vote now'
         	var im_url = brewer1picture
         } else if (currentVote === brewer2) {
-        	var title = 'I just voted for '+brewer2name+' and their '+brewer2beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer2bitlytrue
+        	var title = 'I just voted for '+brewer2name+' and their '+brewer2beernametrue+' to become the next featured Noble Brewer. Place your vote now'
         	var im_url = brewer2picture
         } else if (currentVote === brewer3) {
-        	var title = 'I just voted for '+brewer3name+' and their '+brewer3beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer3bitlytrue
+        	var title = 'I just voted for '+brewer3name+' and their '+brewer3beernametrue+' to become the next featured Noble Brewer. Place your vote now'
         	var im_url = brewer3picture
         } else if (currentVote === brewer4) {
-        	var title = 'I just voted for '+brewer4name+' and their '+brewer4beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer4bitlytrue
+        	var title = 'I just voted for '+brewer4name+' and their '+brewer4beernametrue+' to become the next featured Noble Brewer. Place your vote now'
         	var im_url = brewer4picture
         }
         var facebook_appID = '501125043399584'
-        url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent("http://www.noblebrewer.com")+ 
+        url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent(brewer1bitlytrue)+ 
                     "&name=" + encodeURIComponent(title) + 
                     "&caption=" + encodeURIComponent('Shared from Noble Brewer') + 
                     "&description=" + encodeURIComponent("Select your favorite style or homebrewer. The winner will be featured in December.") + 
