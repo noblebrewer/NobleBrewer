@@ -40,7 +40,6 @@ exports = module.exports = function(req, res) {
 							})
 						})
 					} else {
-						console.log("false?");
 						client.incr(req.body.vote, function(err, reply){
 							getVoteCount(function(reply){
 								res.apiResponse(reply)

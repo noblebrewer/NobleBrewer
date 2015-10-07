@@ -10,6 +10,16 @@ var brewer2 = 'brent_boden';
 var brewer3 = 'benjamin_myers';
 var brewer4 = 'matthew_morrison';
 
+var brewer1name = 'Lost Local';
+var brewer2name = 'Brent';
+var brewer3name = 'Benjamin';
+var brewer4name = 'Matthew';
+
+var brewer1picture = 'http://res.cloudinary.com/tradecraft/image/upload/v1444193747/fpzqoywh3eyfpxmv9cmc.png'
+var brewer2picture = 'http://res.cloudinary.com/tradecraft/image/upload/v1444193784/jg4bwf53ha4slg7njfpw.png'
+var brewer3picture = 'http://res.cloudinary.com/tradecraft/image/upload/v1444196213/jlnizi1axzdbwhxkqzqc.png'
+var brewer4picture = 'http://res.cloudinary.com/tradecraft/image/upload/v1444196299/f0424awd3jzpadbyrhl5.png'
+
 var brewer1beerstyle = "BelgianDarkStrong"
 var brewer2beerstyle = "ClassicRauchbier"
 var brewer3beerstyle = "AmericanPaleAle"
@@ -20,6 +30,11 @@ var brewer2beername = "BaconMapleBourbonRauchbier"
 var brewer3beername = "SauvignonBlancPale"
 var brewer4beername = "PapaDocIPA"
 
+var brewer1beernametrue = "Trubbel"
+var brewer2beernametrue = "Bacon Maple Bourbon Rauchbier"
+var brewer3beernametrue = "Sauvignon Blanc Pale"
+var brewer4beernametrue = "Papa Doc IPA"
+
 var brewer1twitterhandle = 'Lost_Local_Brew'
 var brewer2twitterhandle = 'Matthew'
 var brewer3twitterhandle = 'Benjamin'
@@ -29,6 +44,11 @@ var brewer1bitly = 'http%3A//bit.ly/1L2Nk3Y'
 var brewer2bitly = 'http%3A//bit.ly/1O6ybAU'
 var brewer3bitly = 'http%3A//bit.ly/1MZ4otV'
 var brewer4bitly = 'http%3A//bit.ly/1O0u8Vi'
+
+var brewer1bitlytrue = 'http://bit.ly/1L2Nk3Y'
+var brewer2bitlytrue = 'http://bit.ly/1O6ybAU'
+var brewer3bitlytrue = 'http://bit.ly/1MZ4otV'
+var brewer4bitlytrue = 'http://bit.ly/1O0u8Vi'
 
 
 var brewer1twitterlink = 'https://twitter.com/home?status=Vote%20for%20'+brewer1twitterhandle+'%20and%20make%20them%20the%20next%20featured%20brewer%20with%20%40NobleBrewerBeer%20%23craftbeer%20%23'+brewer1beerstyle+'%20'+brewer1bitly
@@ -138,21 +158,25 @@ $('#vote-banner-1').click(function(){
 	console.log("here");
 	showVotingModal()
 	currentVote = brewer1;
+	console.log(currentVote);
 })
 
 $('#vote-banner-2').click(function(){
 	showVotingModal()
 	currentVote = brewer2;
+	console.log(currentVote);
 })
 
 $('#vote-banner-3').click(function(){
 	showVotingModal()
 	currentVote = brewer3;
+	console.log(currentVote);
 })
 
 $('#vote-banner-4').click(function(){
 	showVotingModal()
 	currentVote = brewer4;
+	console.log(currentVote);
 })
 
 //Opens the voting modal from the homebrewer's info modal's 'vote' button
@@ -313,3 +337,29 @@ function calculateResults(data){
 	}
 	return percentages 
 }
+
+$('#facebook').bind('click', function(e){
+        e.preventDefault();
+        var title = 'Vote for the next featured Noble Brewer';
+        if (currentVote === brewer1) {
+        	var title = 'I just voted for '+brewer1name+' and their '+brewer1beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer1bitlytrue
+        	var im_url = brewer1picture
+        } else if (currentVote === brewer2) {
+        	var title = 'I just voted for '+brewer2name+' and their '+brewer2beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer2bitlytrue
+        	var im_url = brewer2picture
+        } else if (currentVote === brewer3) {
+        	var title = 'I just voted for '+brewer3name+' and their '+brewer3beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer3bitlytrue
+        	var im_url = brewer3picture
+        } else if (currentVote === brewer4) {
+        	var title = 'I just voted for '+brewer4name+' and their '+brewer4beernametrue+' to become the next featured Noble Brewer. Place your vote now: '+brewer4bitlytrue
+        	var im_url = brewer4picture
+        }
+        var facebook_appID = '501125043399584'
+        url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent("http://www.noblebrewer.com")+ 
+                    "&name=" + encodeURIComponent(title) + 
+                    "&caption=" + encodeURIComponent('Shared from Noble Brewer') + 
+                    "&description=" + encodeURIComponent("Select your favorite style or homebrewer. The winner will be featured in December.") + 
+                    "&picture=" + encodeURIComponent(im_url) +
+                    "&redirect_uri=https://www.facebook.com";
+        window.open(url);
+    });
