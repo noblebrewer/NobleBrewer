@@ -58,6 +58,7 @@ exports = module.exports = function(app) {
 	app.get('/releases', routes.views.releases);
 	app.get('/user', routes.views.user);
 	app.get('/subscription', routes.views.customize);
+	app.get('/gifts', routes.views.gifts);
 	app.get('/product-category/memberships', routes.views.customize);
 	app.get('/checkout', routes.views.checkout);
 	app.get('/cart', routes.views.cart);
