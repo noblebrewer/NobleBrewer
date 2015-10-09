@@ -36,7 +36,7 @@ exports.initLocals = function(req, res, next) {
     locals.footerLinks = [
 		{ label: 'Home',		key: 'home',		href: '/' },
 		// { label: 'Blog',		key: 'blog',		href: '/blog' },
-        { label: 'Team',		key: 'team',		href: '/team' },
+        // { label: 'Team',		key: 'team',		href: '/team' },
         { label: 'FAQ',         key: 'faq',         href: '/faq' },
         { label: 'Legal',		key: 'terms',		href: '/terms' },
         { label: 'Press',		key: 'press',		href: '/press' },
