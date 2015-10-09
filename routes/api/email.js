@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
 	if (req.body.function === 'homebrewer') {
 		var html = (
 			req.body.firstname+",<br><br>"
-			+"Thanks for applying to be a featured homebrewer! We are excited to read about your awesome brews. If you need to change any of the details below, please email us at support@noblebrewerbeer.com."
+			+"Thanks for applying to be a featured homebrewer! We are excited to read about your awesome brews. If you need to change any of the details below, please email us at support@noblebrewer.com."
 			+"<br><br>"
 			+"<h4>Name: </h4>"+req.body.fullname
 			+"<br><h4>Email: </h4>"+req.body.email
@@ -23,15 +23,15 @@ exports = module.exports = function(req, res) {
 			+"-The Noble Brewer Team"
 			)
 		var subject = "Thanks for applying to be a Noble Brewer featured homebrewer";
-		var from_email = "support@noblebrewerbeer.com";
+		var from_email = "support@noblebrewer.com";
 		var from_name = "Noble Brewer";
 		var to_email = req.body.email;
 		var to_name = req.body.firstname;
-		var bcc = "support@noblebrewerbeer.com";
+		var bcc = "support@noblebrewer.com";
 	} else if (req.body.function === 'contact-homebrewer') {
 		var html = (req.body.messageContents)
 		var subject = "New message for "+req.body.brewerEmail;
-		var from_email = "support@noblebrewerbeer.com";
+		var from_email = "support@noblebrewer.com";
 		var from_name = "Noble Brewer";
 		var to_email = req.body.brewerEmail;
 		var to_name = null;
@@ -60,11 +60,11 @@ exports = module.exports = function(req, res) {
 			+'</body>'
 			)
 		var subject = req.body.firstname+" is dropping you a hint for the holidays. Get 15% off today!";
-		var from_email = "support@noblebrewerbeer.com";
+		var from_email = "support@noblebrewer.com";
 		var from_name = "Noble Brewer";
 		var to_email = req.body.friend;
 		var to_name = null;
-		var bcc = "support@noblebrewerbeer.com";
+		var bcc = "support@noblebrewer.com";
 	}
 	var message = {
 	    "html": html,
@@ -77,7 +77,7 @@ exports = module.exports = function(req, res) {
 	            "type": "to"
 	        }],
 	    "headers": {
-	        "Reply-To": "support@noblebrewerbeer.com"
+	        "Reply-To": "support@noblebrewer.com"
 	    },
 	    "important": false,
 	    "track_opens": null,
