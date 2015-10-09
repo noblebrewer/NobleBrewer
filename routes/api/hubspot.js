@@ -21,6 +21,10 @@ exports = module.exports = function(req, res) {
 		} else if (req.body.function === 'email') {
 			var data = { properties: 
 				  [ { property: 'email', value: req.body.email } ] }
+		} else if (req.body.function === 'email-vote') {
+			var data = { properties: 
+				  [ { property: 'email', value: req.body.email },
+				   	{ property: 'where_captured', value: 'Fan Vote' } ] }
 		} else if (req.body.function === 'registration') {
 			var data = { properties: 
 				  [ { property: 'email', value: req.body.email },

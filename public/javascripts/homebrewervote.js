@@ -266,7 +266,7 @@ function sendToHubspot(){
 	var email = document.getElementById('email_address').value
 	var form = {
 		email : email,
-		function: 'email'
+		function: 'email-vote'
 	}
 	console.log(form);
 	hostname = "http://www.noblebrewer.com";
