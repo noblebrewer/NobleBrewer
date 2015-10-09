@@ -269,8 +269,7 @@ function sendToHubspot(){
 		function: 'email-vote'
 	}
 	console.log(form);
-	hostname = "http://www.noblebrewer.com";
-	$.post(hostname+"/api/hubspot",form,
+	$.post("/api/hubspot",form,
 		function(data){
 			console.log(data);
 			if (data.status === 'error'){
@@ -280,6 +279,7 @@ function sendToHubspot(){
 				//alert('Please include an email address');
 			} else {
 				console.log(data.status);
+				console.log(data);
 				//window.location= '/collections/beer';
 			}
 		}

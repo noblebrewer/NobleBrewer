@@ -9,6 +9,8 @@ exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	console.log("am i working");
+	var vote = "fan_vote";
 	if (req.body.email) {
 		var yes = 'Yes';
 		if (req.body.function === 'homebrewer') {
@@ -22,9 +24,10 @@ exports = module.exports = function(req, res) {
 			var data = { properties: 
 				  [ { property: 'email', value: req.body.email } ] }
 		} else if (req.body.function === 'email-vote') {
+			console.log("email vote function");
 			var data = { properties: 
 				  [ { property: 'email', value: req.body.email },
-				   	{ property: 'where_captured', value: 'Fan Vote' } ] }
+				   	{ property: 'where_captured', value: vote } ] }
 		} else if (req.body.function === 'registration') {
 			var data = { properties: 
 				  [ { property: 'email', value: req.body.email },
@@ -54,10 +57,11 @@ exports = module.exports = function(req, res) {
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 			console.log(body.status);
+			console.log(response.statusCode);
 			res.apiResponse({
 				body:req.body,
 				hubspot:body,
-				status:body.status
+				status:response.statusCode
 			});
 		});
 	} else {
