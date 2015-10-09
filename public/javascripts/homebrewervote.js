@@ -35,9 +35,9 @@ var brewer2beernametrue = "Bacon Maple Bourbon Rauchbier"
 var brewer3beernametrue = "Sauvignon Blanc Pale"
 var brewer4beernametrue = "Papa Doc IPA"
 
-var brewer1twitterhandle = 'Lost_Local_Brew'
+var brewer1twitterhandle = '@Lost_Local_Brew'
 var brewer2twitterhandle = 'Matthew'
-var brewer3twitterhandle = 'Benjamin'
+var brewer3twitterhandle = '@MyersBen'
 var brewer4twitterhandle = '@btboden'
 
 var brewer1bitly = 'http%3A//bit.ly/1L2Nk3Y'
