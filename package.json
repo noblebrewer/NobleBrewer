@@ -17,7 +17,7 @@
     "nodemon": "^1.4.0",
     "nunjucks": "^1.0.5",
     "redis": "^2.0.0",
-    "request": "^2.61.0",
+    "request": "^2.65.0",
     "underscore": "^1.8.0",
     "winston": "^1.0.1"
   },

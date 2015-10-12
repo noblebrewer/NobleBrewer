@@ -20,14 +20,17 @@ exports = module.exports = function(req, res) {
 	var phone;
 	var isCustomer = false;
 	var lifecyclestage;
-	if (body.default_address.phone !== '') {
-		phone = body.default_address.phone;
-	} else {
-		for (var i = 0; i < body.addresses.length; i++) {
-			if (body.addresses[i].phone !== '') {
-				phone = body.addresses[i].phone;
-			} 
-		};
+	console.log(body);
+	if (body.default_address) {
+		if (body.default_address.phone !== '') {
+			phone = body.default_address.phone;
+		} else {
+			for (var i = 0; i < body.addresses.length; i++) {
+				if (body.addresses[i].phone !== '') {
+					phone = body.addresses[i].phone;
+				} 
+			};
+		}
 	}
 	if (phone === undefined) {
 		phone = ''
@@ -47,10 +50,12 @@ exports = module.exports = function(req, res) {
 	//   	Should be able to find out what type of subscription it is
 	//TODO: Get the coupon used - can get when I parse the order information
 	var orderID = body.last_order_id;
-	var address = (body.default_address.address1+' '+body.default_address.address2);
-	var city = body.default_address.city;
-	var state = body.default_address.province;
-	var zip = body.default_address.zip;
+	if (body.default_address){
+		var address = (body.default_address.address1+' '+body.default_address.address2);
+		var city = body.default_address.city;
+		var state = body.default_address.province;
+		var zip = body.default_address.zip;
+	}
 	var data = { "properties": 
 	  [ { "property": 'email', value: email },
 	    { "property": 'firstname', value: first },
