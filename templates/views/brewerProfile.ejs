@@ -1,12 +1,17 @@
 <head>
   <div class="title">
-<!--       <title><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></title> -->
+    <title><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></title>
   </div>
   <% include ./partials/head %>
 </head>
 
 
 <% include ./partials/header %>
+
+<div id="refcandy-poprocks" data-id="oa8fiutmw2ua9ww0ana70m8rn"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//portal.referralcandy.com/assets/widgets/refcandy-poprocks.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","refcandy-poprocks-js");</script>
+</head>
+
 <section class="row">
 	<h4 class="col-md-9 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
     <a class="col-md-2 btn btn-nb" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
@@ -21,17 +26,17 @@
 <section class="light-striped">
 	<div class="row-fluid">
 		<h2 class="centered-block"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h2>
-		<p class="brewercity"><%= data.brewer.city %> <%= data.brewer.state %></p>
+		<p class="brewercity"><%= data.brewer.city %>, <%= data.brewer.state %></p>
 </section>
 
 <section class="row">
-	<div class="col-md-12">
-		<h4><%= data.brewer.profileHeadline %></h4>
-		<p><%= data.brewer.profileBrief %></p>
+	<div class="col-md-6">
+		<%- data.brewer.profileHeadline %>
+		<%- data.brewer.profileBrief %>
 	</div>
 
-	<div class="col-md-12 embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" width="auto" height="200" src="<%= data.brewer.profileVideo %>"></iframe>
+	<div class="embed-responsive embed-responsive-16by9" style="padding-bottom:400px">
+        <iframe class="embed-responsive-item" style="width:100%; min-height:400px; height:auto; padding-bottom:0px" src="<%= data.brewer.profileVideo %>"></iframe>
 	</div>
 </section>
 
@@ -45,22 +50,26 @@
             <h5><%= data.brewer.featuredBeerShortDescription %></h5>
         </div>
         <div>
-            <img class="side-img image-responsive" src="<%= data.brewer.featuredBeerURL%>">
+            <img class="side-img image-responsive" src="<%= data.brewer.featuredBeerPictureURL%>">
         </div>
     </div>
     <div class="row">
-        <button class="btn btn-nb col-md-2 col-md-offset-5" href="mailto:<%= data.brewer.brewerEmail %>">Order</button>
+        <a class="btn btn-nb col-md-2 col-md-offset-5" href="<%= data.brewer.featuredBeerProfileURL %>">Order</a>
     </div>
 </section>
 
 <section class="row">
     <div class="col-md-6">
         <% data.brewer.imageGallery.forEach(function(image, index){ %>
-            <img class="col-md-12 img-responsive" src="<%= image.url %>">
+            <% if (index === 2) { %>
+                <img class="col-md-12 img-responsive top-buffer no-border" src="<%= image.url %>"> 
+            <% } else { %>
+                <img class="col-md-6 img-responsive top-buffer no-border" src="<%= image.url %>">
+            <% } %>
         <% }) %>
     </div>
     <div class="col-md-6">
-        <%= data.brewer.profileBody %>
+        <%- data.brewer.profileBody %>
     </div>
 </section>
 
@@ -71,8 +80,8 @@
 			<p>Ask a question or send your compliments to the brewer.</p>
         </div>
     	<div class="col-md-6">
-    		<textarea class="form-control" rows="5" placeholder="Enter your message here..."></textarea>
-            <button class="btn btn-nb col-md-12" href="mailto:<%= data.brewer.brewerEmail %>">SEND</button>
+    		<textarea class="form-control" rows="5" id="message-to-hb" placeholder="Enter your message here..."></textarea>
+            <button class="btn btn-nb col-md-12" id="contact-homebrewer" href="mailto:<%= data.brewer.brewerEmail %>">SEND</button>
         </div>
     </div>
 </section>
@@ -83,4 +92,5 @@
 	</div>
 </section>
 <% include ./partials/footer %>
+<script src="/javascripts/email.js"></script>
 

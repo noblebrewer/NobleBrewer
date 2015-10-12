@@ -27,7 +27,7 @@ exports = module.exports = function(req,res) {
 
 	view.on('init', function(next) {
 
-		var q = keystone.list('Homebrewers').model.find().sort('-brewerName')
+		var q = keystone.list('Homebrewers').model.find().where('isPotentialBrewer', false).sort('-enteredDate')
 
 		q.exec(function(err,results) {
 

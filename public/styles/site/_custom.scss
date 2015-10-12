@@ -49,6 +49,11 @@ BREAKPOINTS
 
 /**** HTML Tags ****/
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /*** Headers ****/
 
 @mixin htags() {
@@ -91,6 +96,10 @@ h3 {
 	font-size: 1.999em;
 	line-height: 1.45em;
 	@include gotham-medium();
+
+	&.tan {
+		color: $medium-tan;
+	}
 }
 
 h4 {
@@ -498,6 +507,90 @@ section {
 	max-height: 600px;
 }
 
+.vote-container {
+  cursor: pointer;
+  position: relative;
+}
+
+.vote-photo {
+ position: relative;
+}
+
+.vote-photo img {
+  max-width: 100%;
+}
+
+.vote-text {
+	text-shadow: 1px 1px 0px $medium-tan;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center; 
+	z-index: 1;
+	transition: opacity .01s;
+	padding: 1em;
+}
+
+.vote-text ul, .vote-text ul li {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.vote-text h4, p {
+  color: inherit;
+}
+
+.vote-text:hover {
+  opacity: 1;
+}
+
+.vote-banner {
+  height: auto;
+  width: 100%;
+  border: #C5A77E 1px solid; }
+
+.vote-info-modal {
+  background-color: black;
+  border-color: #C5A77E; }
+
+ .vote-info-modal > .modal-header {
+	padding-top:5px;
+ 	padding-bottom:5px; 
+ } 
+
+ .vote-info-modal > .modal-body {
+	padding-top:5px;
+ 	padding-bottom:5px; 
+ }
+
+.vote-modal-footer {
+  background-color: #C5A77E;
+  color: white;
+  height: auto;
+  text-align: center; }
+
+.vote-modal-footer > h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 10 0 10 0; }
+
+.vote-form {
+  color: gray; }
+
+.vote-chart {
+  font: 10px sans-serif;
+  background-color: #C5A77E;
+  text-align: right;
+  padding: 3px;
+  margin-left: 5px;
+  margin: 1px;
+  color: white;
+  width: 100%;
+  height: 20px;
+}
+
 .card {
 	@include breakpoint(mobileonly){
 		padding-bottom: 15px;
@@ -551,7 +644,11 @@ section {
 		padding-left:10px;
 		padding-right: 25px;
 		overflow: scroll;
-		max-height: 200px;
+		max-height: 185px;
+
+		> .brewers {
+			height: 200px;
+		}
 
 		> p {
 			color: $dark-text;
@@ -589,6 +686,10 @@ iframe{
 	padding-bottom: 30px;
 }
 
+.top-buffer-thin {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 .left-buffer {
 	padding-left: 20px;
@@ -689,7 +790,8 @@ iframe{
 }
 
 .side-card {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  padding-right:0px }
   .side-card img {
     border: none;
     width: 35%;
@@ -708,9 +810,9 @@ iframe{
     color: #333333;
     padding-bottom: 10px;
     padding-left: 10px;
-    padding-right: 25px;
+    padding-right: 0px;
     overflow: scroll;
-    height: 241px; }
+    max-height: 185px; }
     .side-card > .card-text > p {
       color: #232121; }
       

@@ -1,0 +1,97 @@
+<head>
+  <div class="title">
+      <title>Drop A Hint</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+<% include ./partials/header %>
+
+<div id="refcandy-poprocks" data-id="oa8fiutmw2ua9ww0ana70m8rn"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//portal.referralcandy.com/assets/widgets/refcandy-poprocks.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","refcandy-poprocks-js");</script>
+</head>
+
+<section class="row-fluid patterned">
+    <div class="span7">
+        <h2>Get a gift you really want this year</h2>
+        <div class="body-copy">
+        	<p>Let friends and family know what you've had your eye on. Instantly share a 15% discount with them when you drop a hint</p>
+        </div>
+    </div>
+</section>
+
+<section class="row light-alt-base">		
+		<div class="col-md-6 col-md-offset-3">
+			<h1>Drop a hint</h1>
+			<p>Fill the fields below, and we'll send your friend an email with your "hint" with a link and a discount code for 15% off gifts. (Don't worry - we won't send them any other emails.)</p>
+		</div>
+		<div class="row-fluid">
+			<div class="col-md-6 col-md-offset-3">
+				<form id="apply">
+					<div class="form-group">
+					  <input type="text" class="form-control" id="first_name" placeholder="Your first name">
+					</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="last_name" placeholder="Your last name">
+					</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="email" placeholder="Your email address">
+					</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="friend_email" placeholder="Your friend's email (just one at a time)">
+					</div>
+					<div class="form-group">
+					  <textarea class="form-control" rows="6" id="excited_because" placeholder="Let 'em know the details"></textarea>
+					</div><div class="form-group">
+					  <textarea class="form-control hidden" id="secret"></textarea>
+					</div>
+					<div class="form-group">
+					  <button class="btn btn-nb-ghost dropdown-toggle col-md-5" type="button" data-toggle="dropdown" id="gift_type">What kind of gift?
+					  	<span class="caret" style=""></span></button>
+					  	<ul class="dropdown-menu" id="dropdown">
+						    <li><a id="4" href="#">4 beer subscription</a></li>
+						    <li><a id="8" href="#">8 beer subscription</a></li>
+						    <li><a id="12" href="#">12 beer subscription</a></li>
+						    <li class="divider"></li>
+						    <li><a id="sampler" href="#">One-time sampler</a></li>
+						</ul>
+						<button type="submit" id="drop-a-hint-submit" class="btn btn-nb col-md-5 col-md-offset-1">Send your hint</button>
+					</div>
+				
+			</form>
+		</div>
+</section>
+
+<% include ./partials/footer %>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/sendToHubspot.js"></script>
+<script src="/javascripts/email.js"></script>
+
+<script>
+
+$('#4').click(function(e){
+	e.preventDefault();
+	$('#gift_type').text($('#4').html())
+	$('#secret').html = $('#4').html()
+})
+
+$('#8').click(function(e){
+	e.preventDefault();
+	$('#gift_type').text($('#8').html())
+	$('#secret').html($('#8').html())
+})
+
+$('#12').click(function(e){
+	e.preventDefault();
+	$('#gift_type').text($('#12').html())
+	$('#secret').html($('#12').html())
+})
+
+$('#sampler').click(function(e){
+	e.preventDefault();
+	$('#gift_type').text($('#sampler').html())
+	$('#secret').html($('#sampler').html())
+})
+
+</script>

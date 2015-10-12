@@ -27,15 +27,16 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'About',		key: 'about',		href: '/about' },
 		{ label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
-		{ label: 'Market',		key: 'market',		href: '/market' },
+		// { label: 'Market',		key: 'market',		href: '/market' },
 		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
+		{ label: 'Gifts',key: 'gifts',href: '/gifts' },
 		//Sign Up link in the header is coming from the header.ejs
 	];
 	
     locals.footerLinks = [
 		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-        { label: 'Team',		key: 'team',		href: '/team' },
+		// { label: 'Blog',		key: 'blog',		href: '/blog' },
+        // { label: 'Team',		key: 'team',		href: '/team' },
         { label: 'FAQ',         key: 'faq',         href: '/faq' },
         { label: 'Legal',		key: 'terms',		href: '/terms' },
         { label: 'Press',		key: 'press',		href: '/press' },
@@ -43,6 +44,7 @@ exports.initLocals = function(req, res, next) {
 	];
     
 	locals.user = req.user;
+	locals.env = process.env;
 	
 	next();
 	
