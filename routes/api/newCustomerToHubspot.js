@@ -55,6 +55,11 @@ exports = module.exports = function(req, res) {
 		var city = body.default_address.city;
 		var state = body.default_address.province;
 		var zip = body.default_address.zip;
+	} else {
+		var address = '';
+		var city = '';
+		var state = '';
+		var zip = '';
 	}
 	var data = { "properties": 
 	  [ { "property": 'email', value: email },
@@ -77,6 +82,7 @@ exports = module.exports = function(req, res) {
 		json: true };
 
 	request(options, function (error, response, body) {
+		if (error) throw (error)
 		if (response.statusCode === 200) {
 			console.log("Updated "+email+' in the hubspot database')
 			res.apiResponse(response.statusCode)
