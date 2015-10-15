@@ -48,7 +48,6 @@ $('#signup-newsletter').click(function(e){
 });
 
 $("#submit-registration").click(function(e){
-	e.preventDefault();
 	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
 		firstname : document.getElementById("first_name").value,
@@ -69,7 +68,7 @@ $("#submit-registration").click(function(e){
 				console.log('no email');
 				alert('Please include an email address');
 			} else {
-				window.location= '/collections/beer';
+				// window.location= '/collections/beer';
 			}
 		}
 	);
