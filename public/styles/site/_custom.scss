@@ -195,7 +195,7 @@ blockquote {
 	border: 0px;
 	@include gotham-book();
 	> p {
-		font-size: 45px;
+		font-size: 20px;
 		color: $light-grey;
 		line-height: 1.1em;
 		&:before {
@@ -282,6 +282,12 @@ section {
 	&.off-white {
 		background-color: $off-white;
 	}
+	&.gold-wool {
+    background-image: url("/images/generic/light-wool.png");
+    background-color: #C5A77E;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 /*********** BACKGROUNDS(NO SECTION) *****/
 .light-alt-base {
