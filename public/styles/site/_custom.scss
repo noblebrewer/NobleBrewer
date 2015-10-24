@@ -471,6 +471,11 @@ section {
     margin-bottom: 22px;
 	}
 
+	&.auto-height {
+		height: auto;
+		white-space: normal;
+	}
+
 }
 
 .btn-nb-ghost {

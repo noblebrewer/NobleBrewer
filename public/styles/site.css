@@ -6322,6 +6322,9 @@ section {
       margin-left: 0px;
       margin-right: 0px;
       margin-bottom: 22px; } }
+  .btn-nb.auto-height {
+    height: auto;
+    white-space: normal; }
 
 .btn-nb-ghost {
   color: #C5A77E;
