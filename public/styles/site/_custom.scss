@@ -591,6 +591,28 @@ section {
   height: 20px;
 }
 
+.modal-header {
+	min-height: 45px;
+}
+
+.modal-content {
+	background-color: #222120;
+	color: #C5A77E;
+	border-color: #C5A77E;
+}
+
+.modal-header, .modal-footer {
+	border: none;
+}
+
+.modal-header > button {
+	color: #C5A77E;
+}
+
+.close {
+	opacity: 1;
+}
+
 .card {
 	@include breakpoint(mobileonly){
 		padding-bottom: 15px;
