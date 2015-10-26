@@ -24,7 +24,6 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'About',		key: 'about',		href: '/about' },
 		{ label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
 		// { label: 'Market',		key: 'market',		href: '/market' },
@@ -34,8 +33,10 @@ exports.initLocals = function(req, res, next) {
 	];
 	
     locals.footerLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
+		{ label: 'Home',			key: 'home',		href: '/' },
+		{ label: 'About',	key: 'about',		href: '/about' },
 		{ label: 'Blog',		key: 'blog',		href: '/blog' },
+		{ label: 'Brewery Map - Beta',		key: 'breweries',		href: 'http://breweries.noblebrewer.com' },
         // { label: 'Team',		key: 'team',		href: '/team' },
         { label: 'FAQ',         key: 'faq',         href: '/faq' },
         { label: 'Legal',		key: 'terms',		href: '/terms' },
