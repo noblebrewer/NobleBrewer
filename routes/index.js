@@ -77,6 +77,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/brewers/john-f', routes.views.fuller);
 	app.get('/homebrewers/vote', routes.views.homebrewer_vote);
 	app.get('/DiggBeer', routes.views.landingpage_digg);
+	app.get('/DiggBeer-Noble-Brewer', routes.views.landingpage_diggB);
 	app.all('/contact', routes.views.contact);
 
 
