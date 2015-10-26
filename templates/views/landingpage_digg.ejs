@@ -8,7 +8,9 @@
 
 <% include ./partials/header %>
 
-<button id="modalButton" role="button" href="#">Modal</button>
+<section class="gold-wool centered-block">
+	<h4>Digg users get 10% off with the code DiggBeer</h4>
+</section>
 
 <section class="patterned row centered-block">
 	<div class="col-md-6">
@@ -153,11 +155,11 @@
 	</div>
 </div>
 
-
-
 <script type="text/javascript">
-	$('#modalButton').on('click', function(){
-		$('#diggModal').modal('show');
+	$(function() {
+	    setTimeout(function() {
+	        $('#diggModal').modal('show');
+	    }, 9000);
 	})
 </script>
 

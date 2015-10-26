@@ -108,6 +108,7 @@ $("#drop-a-hint-submit").click(function(e){
 $('#submit-email-digg').click(function(e){
 	console.log("digg");
 	e.preventDefault();
+	heap.identify({ email: document.getElementById('email').value });
 	var form = {
 		email : document.getElementById("email").value,
 		function: 'digg'
