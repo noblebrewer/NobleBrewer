@@ -105,4 +105,27 @@ $("#drop-a-hint-submit").click(function(e){
 	);
 });
 
+$('#submit-email-digg').click(function(e){
+	console.log("digg");
+	e.preventDefault();
+	var form = {
+		email : document.getElementById("email").value,
+		function: 'digg'
+	}
+	$.post("/api/hubspot",form,
+		function(data){
+			console.log(data);
+			if (data.status === 'error'){
+				alert('Shoot, something went wrong. Please try to submit again');
+			} else if (data.status === 'email') {
+				console.log('no email');
+				alert('Please include an email address');
+			} else {
+				$('#diggModal').modal('hide');
+				$('#promoModal').modal('show');
+			}
+		}
+	);
+})
+
 

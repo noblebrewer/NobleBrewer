@@ -2,18 +2,19 @@ var async = require('async'),
 	keystone = require('keystone');
 var request = require("request");
 
-/**
- * List Posts
- */
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-	console.log("am i working");
+	console.log("send to hubspot");
 	var vote = "fan_vote";
 	if (req.body.email) {
 		var yes = 'Yes';
-		if (req.body.function === 'homebrewer') {
+		if (req.body.function === 'digg') {
+			var data = { properties: 
+				[ { property: 'email', value: req.body.email },
+				  { property: 'where_captured', value: 'digg' } ] }
+		} else if (req.body.function === 'homebrewer') {
 			var data = { properties: 
 			  [ { property: 'email', value: req.body.email },
 			    { property: 'firstname', value: req.body.firstname },
@@ -56,6 +57,7 @@ exports = module.exports = function(req, res) {
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
+			console.log("here");
 			console.log(body.status);
 			console.log(response.statusCode);
 			res.apiResponse({

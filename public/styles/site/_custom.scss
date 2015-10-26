@@ -74,6 +74,11 @@ h1 {
 	&.tan-header {
 		color: $medium-tan;
 	}
+
+	&.gold-big {
+		color: $medium-tan;
+		font-size: 6em;
+	}
 }
 
 h2 {
@@ -156,8 +161,12 @@ p {
 	}
 
 	&.dark {
-			color: $dark-grey;
-		}
+		color: $dark-grey;
+	}
+
+	&.light {
+		color: $white;
+	}
 }
 
 a {
@@ -287,10 +296,16 @@ section {
 		background-color: $off-white;
 	}
 	&.gold-wool {
-    background-image: url("/images/generic/light-wool.png");
-    background-color: #C5A77E;
-    padding-top: 5px;
-    padding-bottom: 5px;
+	    background-image: url("/images/generic/light-wool.png");
+	    background-color: #C5A77E;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+  }
+  	&.black-wool {
+	    background-image: url("/images/generic/light-wool.png");
+	    background-color: black;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
   }
 }
 /*********** BACKGROUNDS(NO SECTION) *****/
@@ -611,7 +626,8 @@ section {
 }
 
 .modal-content {
-	background-color: #222120;
+	background-image: url("/images/generic/notebook-dark.png");
+	background-color: black;
 	color: #C5A77E;
 	border-color: #C5A77E;
 }
@@ -730,6 +746,14 @@ iframe{
 
 .left-buffer {
 	padding-left: 20px;
+}
+
+.auto-width {
+	width: auto;
+}
+
+.full-width {
+	width: 100%;
 }
 
 .how-it-works-heading {

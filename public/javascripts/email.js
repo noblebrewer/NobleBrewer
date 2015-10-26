@@ -81,4 +81,3 @@ $("#drop-a-hint-submit").click(function(e){
 	);
 });
 
-

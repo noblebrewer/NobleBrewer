@@ -2,11 +2,13 @@
   <div class="title">
       <title>Noble Brewer</title>
   </div>
-  <% include ./partials/head %>
+<% include ./partials/head %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 
 <% include ./partials/header %>
 
-<button id="modalButton" href="#">Modal</button>
+<button id="modalButton" role="button" href="#">Modal</button>
 
 <section class="patterned row centered-block">
 	<div class="col-md-6">
@@ -108,27 +110,57 @@
 	<a class="btn-nb auto-height" style="width:100%" href="/subscription">Find out more</a>
 </section>
 
-<div class="modal fade diggModal">
+<div class="modal fade" id="diggModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button class="close" type="button" data-dismiss="modal" aria-label="close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<div class="modal-body">
+				<div class="modal-body centered-block">
+					<h4 style="text-transform:none">For a limited time, get an extra</h4>
+					<h1 class="gold-big">10% off</h1>
+					<h4 style="text-transform:none">your first purchase when you subscribe to receive email udpates</h4>
+					<p>(That's a total of 20% off your order!)</p>
+					<div class="row centered-block">
+						<div class="col-md-12">
+							<input class="full-width" type="email" placeholder="Enter your email address here" id="email">	
+						</div>
+						<div class="col-md-12">
+							<button class="btn-nb full-width" id="submit-email-digg" type="button">Submit</button>
+						</div>
+					</div>	
 				</div>
 				<div class="modal-footer">
-					<button class="btn-nb" type="button" data-dismiss="modal">Close</button>
+					<a data-dismiss="modal">No thanks, 10% is enough for me</a>
 				</div>
 			</div>
 		</div>
 	</div>
-</modal>
+</div>
+
+<div class="modal fade" id="promoModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-body centered-block">
+					<h4>Use coupon</h4>
+					<h1 class="tan-header">diggbeer20</h1>
+					<h4>when checking out to receive your discount!</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <script type="text/javascript">
-$('modalButton').on('click', function(){
-	$('#diggModal').modal('show');
-})
+	$('#modalButton').on('click', function(){
+		$('#diggModal').modal('show');
+	})
 </script>
+
+<script src="/javascripts/sendToHubspot.js"></script>
 
 <% include ./partials/footer %>
