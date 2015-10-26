@@ -2,9 +2,10 @@
   <div class="title">
       <title>Noble Brewer</title>
   </div>
-  <!-- Google Analytics Content Experiment code -->
+
+<!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
-k='80367997-10',d=document,l=d.location,c=d.cookie;
+k='80367997-11',d=document,l=d.location,c=d.cookie;
 if(l.search.indexOf('utm_expid='+k)>0)return;
 function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
 indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
@@ -16,8 +17,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
-
+  
 <% include ./partials/head %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<% include ./partials/header %>
 
 <!-- Facebook Conversion Code for home page visits -->
   <script>(function() {
@@ -35,11 +40,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   window._fbq.push(['track', '6034253034193', {'value':'0.00','currency':'USD'}]);
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6034253034193&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-<% include ./partials/header %>
 
 <section class="gold-wool centered-block">
 	<h4>Digg users get 10% off with the code DiggBeer</h4>
@@ -133,21 +133,21 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 </section>
 
 <section class="patterned centered-block row">
-	<div class="col-md-6">
-		<img class="img-responsive" src="https://j.gifs.com/m22LaP.gif">
+	<div class="col-md-8">
+		<h4>Four new beers, delivered every quarter. </h4>
+		<h4>The only craft beer club of its kind.</h4>
+		<h4>Join the new craft beer movement.</h4>
+		<br>
+		<a class="btn-nb auto-height" id="find-out-more" style="width:100%" href="/subscription">Find Out More</a>
 	</div>
-	<h4>Four beers.</h4>
-	--
-	<h4>Award winning brewers.</h4>
-	--
-	<h4>Delivered Each Quarter.</h4>
-	<br><br>
-	<a class="btn-nb auto-height" id="find-out-more" style="width:100%" href="/subscription">Find out more</a>
+	<div class="col-md-4">
+		<img class="img-responsive" src="https://j.gifs.com/m22LaP.gif"><br>
+	</div>
 </section>
 
-<section class="gold-wool centered-block">
+<!-- <section class="light-alt-base centered-block">
 	<h4>Digg users get 10% off with the code DiggBeer</h4>
-</section>
+</section> -->
 
 <div class="modal fade" id="diggModal">
 	<div class="modal-dialog">
@@ -172,7 +172,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				</div>	
 			</div>
 			<div class="modal-footer">
-				<a data-dismiss="modal">No thanks, 10% is enough for me</a>
+				<a id="no-thanks" data-dismiss="modal">No thanks, 10% is enough for me</a>
 			</div>
 		</div>
 	</div>
@@ -196,7 +196,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	</div>
 </div>
 
-<script type="text/javascript">
+ <script type="text/javascript">
 	$(function() {
 	    setTimeout(function() {
 	        $('#diggModal').modal('show');
