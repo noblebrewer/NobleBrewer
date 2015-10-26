@@ -116,8 +116,8 @@ $('#submit-email-digg').click(function(e){
 	$.post("/api/hubspot",form,
 		function(data){
 			console.log(data);
-			if (data.status === 'error'){
-				alert('Shoot, something went wrong. Please try to submit again');
+			if (data.status === 400){
+				alert('Please enter a valid email address');
 			} else if (data.status === 'email') {
 				console.log('no email');
 				alert('Please include an email address');
