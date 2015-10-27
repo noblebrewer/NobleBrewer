@@ -27,8 +27,9 @@ exports = module.exports = function(req, res) {
 		var from_name = "Noble Brewer";
 		var to_email = req.body.email;
 		var to_name = req.body.firstname;
-		var bcc = "support@noblebrewer.com";
+		var bcc = "bcc@noblebrewer.com";
 	} else if (req.body.function === 'contact-homebrewer') {
+		console.log("Sending new email to homebrewer: "+req.body.brewerEmail);
 		var html = (req.body.messageContents)
 		var subject = "New message for "+req.body.brewerEmail;
 		var from_email = "support@noblebrewer.com";
@@ -64,7 +65,7 @@ exports = module.exports = function(req, res) {
 		var from_name = "Noble Brewer";
 		var to_email = req.body.friend;
 		var to_name = null;
-		var bcc = "support@noblebrewer.com";
+		var bcc = "bcc@noblebrewer.com";
 	}
 	var message = {
 	    "html": html,

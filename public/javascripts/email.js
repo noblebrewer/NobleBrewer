@@ -33,7 +33,7 @@ $("#contact-homebrewer").click(function(e){
 	email = email[1];
 	console.log(email);
 	var form = {
-		brewerEmail : "caitlin@tradecrafted.com",
+		brewerEmail : email,
 		messageContents : document.getElementById("message-to-hb").value,
 		function: 'contact-homebrewer'
 	}
