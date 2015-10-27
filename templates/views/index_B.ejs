@@ -28,15 +28,26 @@
   <div class="col-md-6">
     <h3>THE BEST CRAFT BEERS COME FROM HOMEBREWERS.</h3>
     <p>Become a member of Noble Brewer to try our award winning brewers' best beers.</p> 
-      <a class="btn btn-nb auto-height" id="get-beer-top" href="/subscription">View Subscription Options</a>
+      <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs">
+        <div class="col-sm-6">
+          <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
+        </div>
+        <div class="col-sm-6">
+          <a class="btn btn-nb-ghost" id="gift-beer-top" href="/gifts">Gift Beer</a> 
+        </div>
+      </div>
     </div>
     <div class="col-md-6 centered-block">
-    <img class="img-responsive" src="https://j.gifs.com/m816Yx.gif">
+    <img class="img-responsive" src="/images/about/aboutbanner-crop.jpg">
   </div>
 </section>
 
 <section class="row centered-block">
-  <h3>What our members are saying</h3>
+  <div class="row">
+    <img class="img-responsive col-md-1 col-md-offset-1 no-border" src="/images/generic/untappd.png">
+    <h3 class="col-md-8">What our members are saying on Untappd</h3>
+    <img class="img-responsive col-md-1 no-border" src="/images/generic/untappd.png">
+  </div>
   <div class="row">
     <blockquote class="col-md-4">
       <p>Trying my first of my Noble Brewer subscription! Wonderful!</p>
@@ -76,7 +87,7 @@
         <p>Noble Brewer is a new kind of beer club. We're dedicated to celebrating the pioneers of the the craft beer movement - the homebrewer. Savor their unique creations while you learn about the person who created the beer.</p>
         <a href="beers/">View our beers >></a>
     </div>
-    <div class="col-md-4 col-sm-12 top-buffer">
+    <div class="col-md-4 col-sm-12">
       <img src="/images/home/brewing_hops.png" class="img-responsive tan-border">
     </div>
     <div class="col-md-4 col-sm-12">
@@ -112,16 +123,16 @@
 </section>
 
 <section class="patterned centered-block row">
-  <div class="col-md-6 top-buffer">
-    <img class="img-responsive" src="https://j.gifs.com/m22LaP.gif">
+  <div class="col-md-8">
+    <h4>Four new beers, delivered every quarter. </h4>
+    <h4>The only craft beer club of its kind.</h4>
+    <h4>Join the new craft beer movement.</h4>
+    <br>
+    <a class="btn-nb auto-height" id="find-out-more" style="width:100%" href="/subscription">View Subscription Options</a>
   </div>
-  <h4>Four beers.</h4>
-  --
-  <h4>Award winning brewers.</h4>
-  --
-  <h4>Delivered Each Quarter.</h4>
-  <br><br>
-  <a class="btn-nb auto-height" style="width:100%" href="/subscription">Find out more</a>
+  <div class="col-md-4">
+    <img class="img-responsive" src="https://j.gifs.com/m22LaP.gif"><br>
+  </div>
 </section>
 
 <% include ./partials/footer %>
