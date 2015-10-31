@@ -78,12 +78,15 @@ exports = module.exports = function(app) {
 	app.get('/homebrewers/vote', routes.views.homebrewer_vote);
 	app.get('/DiggBeer', routes.views.landingpage_digg);
 	app.get('/DiggBeer-Noble-Brewer', routes.views.landingpage_diggB);
+	app.get('/untappd/:location?', routes.views.landingpage_untappd);
+
 	app.all('/contact', routes.views.contact);
 
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
 	app.all('/api/email', keystone.middleware.api, routes.api.email);
+	app.all('/api/addToMailchimp', keystone.middleware.api, routes.api.addToMailchimp);
 	app.all('/api/hubspot/newcustomer', keystone.middleware.api, routes.api.newCustomerToHubspot);
 	app.all('/api/homebrewervote', keystone.middleware.api, routes.api.homebrewervote);
 	app.all('/api/customer', keystone.middleware.api, routes.api.isShopifyCustomer);

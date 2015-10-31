@@ -54,6 +54,11 @@ html, body {
     overflow-x: hidden;
 }
 
+html.untappd, body.untappd {
+	background-color: white;
+	color: $dark-grey;
+}
+
 /*** Headers ****/
 
 @mixin htags() {
@@ -203,6 +208,10 @@ ul {
 	}
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
+
 
 blockquote {
 	border: 0px;
@@ -339,6 +348,16 @@ section {
 	padding: 0;
 	margin-bottom: 30px;
 	height: 36px;
+}
+
+.footer-pattern-white {
+	background: url($footer-divider);
+	@include divider-elements();
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	height: 36px;
+	opacity: .5;
 }
 
 .footer-shopify {

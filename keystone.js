@@ -38,6 +38,7 @@ keystone.init({
 	'heap_var' : process.env.HEAP,
 	'shopify_secret' : process.env.SHOPIFY_SHARED_SECRET,
 	'redis_url' : process.env.REDIS_URL,
+	'mailchimp_api' : process.env.MAILCHIMP_API_KEY,
 
 	'auto update': true,
 	'session': true,

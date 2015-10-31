@@ -5986,6 +5986,10 @@ html, body {
   max-width: 100%;
   overflow-x: hidden; }
 
+html.untappd, body.untappd {
+  background-color: white;
+  color: #232121; }
+
 /*** Headers ****/
 h1 {
   text-transform: uppercase;
@@ -6092,6 +6096,9 @@ ul.diamond {
   width: 16px;
   height: 16px; }
 
+.uppercase {
+  text-transform: uppercase; }
+
 blockquote {
   border: 0px;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -6193,6 +6200,17 @@ section {
   padding: 0;
   margin-bottom: 30px;
   height: 36px; }
+
+.footer-pattern-white {
+  background: url("/images/generic/footerbg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  height: 36px;
+  opacity: .5; }
 
 .footer-shopify {
   background-repeat: no-repeat;
