@@ -53,7 +53,7 @@ exports = module.exports = function(req, res) {
 				}
 			})
 		} else {
-			res.apiResponse(status);
+			res.apiResponse('success');
 		}
 	});
 }
