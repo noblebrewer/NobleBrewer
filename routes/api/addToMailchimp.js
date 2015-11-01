@@ -8,14 +8,25 @@ var async = require('async'),
 var request = require("request");
 var md5 = require('md5');
 
+var data;
+var body;
+
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-	var email = (req.body.email).toLowerCase();
+	body = req.body;
+
+	var email = (body.email).toLowerCase();
 	var memberID = (md5(email));
-	console.log(req.body.source);
+	console.log(body.source);
+
+	if (email) {
+		createData()
+	} else {
+		res.apiResponse('error')
+	}
 
 	var getOptions = { method: 'GET',
 		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
@@ -34,14 +45,7 @@ exports = module.exports = function(req, res) {
 			{ 'cache-control': 'no-cache',
 			authorization: 'Basic '+keystone.get('mailchimp_api'),
 		 	'content-type': 'application/json' },
-		body: 
-			{ 
-				status: 'subscribed',
-				email_address: email,
-				"merge_fields": {
-			        "EMSOURCE": req.body.source,
-			    }
-			},
+		body: data,
 		json: true 
 	};
 
@@ -55,7 +59,7 @@ exports = module.exports = function(req, res) {
 			request(postOptions, function(error, response, body){
 				if (error) throw new Error(error);
 				console.log(response.statusCode);
-				console.log(body);
+				//console.log(body);
 				if (response.statusCode === 200) {
 					res.apiResponse("success")
 				} else if (response.statusCode === 400) {
@@ -65,8 +69,74 @@ exports = module.exports = function(req, res) {
 		} else if (response.statusCode === 400) {
 			res.apiResponse('error')
 		} else {
+			//TODO: Add some way to update if they already exist
 			res.apiResponse('success');
 		}
 	});
+}
+
+function createData() {
+	if (body.function === 'digg') {
+		data = {
+			status : 'subscribed',
+			email_address: email,
+			"merge_fields": 
+			{
+			    "EMSOURCE": body.function,
+			}
+		}
+	} else if (body.function === 'homebrewer') {
+		data = {
+			status : 'subscribed',
+			email_address: body.email,
+			"merge_fields": 
+			{
+			    "EMSOURCE": body.function,
+			    "FNAME" : body.firstname,
+			    "LNAME" : body.lastname,
+			    "HOMEBREWER" : 'Yes',
+			    "FULLNAME" : body.fullname
+			}
+		}
+	} else if (body.function === 'email') {
+		data = {
+			status : 'subscribed',
+			email_address: email
+		}
+	} else if (body.function === 'homebrewer_vote') {
+		data = {
+			status : 'subscribed',
+			email_address: email,
+			"merge_fields": 
+			{
+			    "EMSOURCE": body.function,
+			}
+		}
+	} else if (body.function === 'registration') {
+		data = {
+			status : 'subscribed',
+			email_address: body.email,
+			"merge_fields": 
+			{
+			    "EMSOURCE": body.function,
+			    "FNAME" : body.firstname,
+			    "LNAME" : body.lastname,
+			    "FULLNAME" : body.fullname
+			}
+		}
+	} else if (body.function === 'dropahint') {
+		data = {
+			status : 'subscribed',
+			email_address: body.email,
+			"merge_fields": 
+			{
+			    "EMSOURCE": body.function,
+			    "FNAME" : body.firstname,
+			    "LNAME" : body.lastname,
+			    "DROPAHINT" : 'Yes',
+			    "FULLNAME" : body.fullname
+			}
+		}
+	}
 }
 
