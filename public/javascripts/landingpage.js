@@ -5,7 +5,7 @@ $("#submit-email").click(function(e){
 		e.preventDefault();
 		var form = {
 			email : document.getElementById("email").value,
-			function: 'untappd'
+			source: 'untappd'
 		}
 
 		heap.identify({ email : email });

@@ -10,6 +10,7 @@ exports = module.exports = function(req, res) {
 
 	var email = (req.body.email).toLowerCase();
 	var memberID = (md5(email));
+	console.log(req.body.source);
 
 	var getOptions = { method: 'GET',
 		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
@@ -32,7 +33,10 @@ exports = module.exports = function(req, res) {
 		body: 
 			{ 
 				status: 'subscribed',
-				email_address: email 
+				email_address: email,
+				"merge_fields": {
+			        "EMSOURCE": req.body.source,
+			    }
 			},
 		json: true 
 	};
