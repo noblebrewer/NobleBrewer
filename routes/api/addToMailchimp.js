@@ -43,10 +43,10 @@ exports = module.exports = function(req, res) {
 
 	request(getOptions, function (error, response, body) {
 		if (error) throw new Error(error);
-		console.log(response.statusCode);
+		console.log("status code: "+response.statusCode);
 		var body = JSON.parse(response.body);
 		var status = body.status;
-		console.log(status);
+		// console.log(status);
 		if (response.statusCode === 404) {
 			request(postOptions, function(error, response, body){
 				if (error) throw new Error(error);
@@ -54,8 +54,12 @@ exports = module.exports = function(req, res) {
 				console.log(body);
 				if (response.statusCode === 200) {
 					res.apiResponse("success")
+				} else if (response.statusCode === 400) {
+					res.apiResponse('error')
 				}
 			})
+		} else if (response.statusCode === 400) {
+			res.apiResponse('error')
 		} else {
 			res.apiResponse('success');
 		}

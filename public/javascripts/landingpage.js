@@ -13,14 +13,12 @@ $("#submit-email").click(function(e){
 		$.post("/api/addToMailchimp",form,
 			function(data){
 				console.log(data);
-				if (data.status === 'error'){
-					alert('Shoot, something went wrong. Please try to submit again');
-				} else if (data.status === 'email') {
-					console.log('no email');
-					alert('Please include an email address');
+				if (data === 'error'){
+					alert('Please enter a valid email');
 				} else if (data === 'success') {
-					console.log("here");
 					window.location= "/";
+				} else {
+					alert('Something went wrong - please try again')
 				}
 			}
 		);
