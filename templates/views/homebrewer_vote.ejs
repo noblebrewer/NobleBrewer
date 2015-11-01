@@ -10,15 +10,26 @@
   <img src="/images/generic/simple_logo.svg" class="no-border col-md-2 col-md-offset-5 col-sm-4 col-xs-8 col-xs-offset-2 col-sm-offset-4"/>
 </section>
 
-<div class="centered-block col-md-12">
+<!-- <section class="centered-block col-md-12">
   <h4>Choose the next featured homebrewer</h4>
   <p>At <span><a href="http://www.noblebrewer.com">Noble Brewer</a></span> we find the best homebrewers, recreate their award winning beers, and then share it with our members. This quarter we're letting our members and the public choose one of our next featured brewers. Click on each brewer to learn more about them and their beer and then place your vote!  </p>
-</div>
+</section> -->
 
-<section class="row hr-gold-thin">
-	<div class="row top-buffer">
+<section class="row hr-gold-thin centered-block">
+  <h4>The homebrewer vote has closed. Thanks to everyone who participated!</h4>
+  <p>Want to know when the next vote is so you can participate? Sign up for our newsletter:</p>
+  <form action="/" class="form-inline top-buffer" id="email-signup">
+      <div class="form-group">
+        <input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+      </div>
+      <button type="submit" id="submit-email" class="btn btn-nb auto-height">SIGN UP</button>
+  </form>
+</section>
+
+<!-- <section class="row hr-gold-thin">
+	<div class="row top-buffer"> -->
 		<!-- BREWER ONE -->
-		<div class="col-md-3 col-sm-6 col-xs-12" id="container-1">
+<!-- 		<div class="col-md-3 col-sm-6 col-xs-12" id="container-1">
 			<div class="row vote-banner centered-block">
 				<h4>Brian and Tim</h4>
 			</div>
@@ -36,9 +47,9 @@
 			<div class="row vote-banner centered-block" role="button" id="vote-banner-1">
 				<h4>Vote now</h4>
 			</div>
-		</div>
+		</div> -->
 		<!-- BREWER TWO -->
-		<div class="col-md-3 col-sm-6 col-xs-12" id="container-2">
+<!-- 		<div class="col-md-3 col-sm-6 col-xs-12" id="container-2">
 			<div class="row vote-banner centered-block">
 				<h4>Brent</h4>
 			</div>
@@ -56,9 +67,9 @@
 			<div class="row vote-banner centered-block" role="button" id="vote-banner-2">
 				<h4>Vote now</h4>
 			</div>
-		</div>
+		</div> -->
 		<!-- BREWER THREE -->
-		<div class="col-md-3 col-sm-6 col-xs-12" id="container-3">
+<!-- 		<div class="col-md-3 col-sm-6 col-xs-12" id="container-3">
 			<div class="row vote-banner centered-block">
 				<h4>Benjamin</h4>
 			</div>
@@ -76,9 +87,9 @@
 			<div class="row vote-banner centered-block" role="button" id="vote-banner-3">
 				<h4>Vote now</h4>
 			</div>
-		</div>
+		</div> -->
 		<!-- BREWER FOUR -->
-		<div class="col-md-3 col-sm-6 col-xs-12" id="container-4">
+<!-- 		<div class="col-md-3 col-sm-6 col-xs-12" id="container-4">
 			<div class="row vote-banner centered-block">
 				<h4>Matthew</h4>
 			</div>
@@ -98,7 +109,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- Homebrewer 1 Info Modal -->
 <div class="modal fade" role="dialog" id="brewer-modal-1">
@@ -339,4 +350,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<script src="/javascripts/homebrewervote.js"></script>
+<!-- <script src="/javascripts/homebrewervote.js"></script> -->
+<script src="/javascripts/sendToMailchimp.js"></script>

@@ -266,19 +266,15 @@ function sendToHubspot(){
 	var email = document.getElementById('email_address').value
 	var form = {
 		email : email,
-		function: 'email-vote'
+		function: 'homebrewer_vote'
 	}
 	console.log(form);
-	$.post("/api/hubspot",form,
+	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
-			if (data.status === 'error'){
+			if (data === 'error'){
 				console.log("Didn't submit to hubspot");
-			} else if (data.status === 'email') {
-				//console.log('no email');
-				//alert('Please include an email address');
 			} else {
-				console.log(data.status);
 				console.log(data);
 				//window.location= '/collections/beer';
 			}

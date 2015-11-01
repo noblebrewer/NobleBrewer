@@ -1,3 +1,8 @@
+// To use this module - send over an email address and a source. Will send back either a 
+// 'success' or 'error'. Checks to see if they're a subscriber, if not then adds them. 
+// If you want to do anything (like update/add extra data) will have to write that in
+// because it doesn't do it right now.
+
 var async = require('async'),
 	keystone = require('keystone');
 var request = require("request");
@@ -26,8 +31,7 @@ exports = module.exports = function(req, res) {
 		method: 'POST',
 		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/',
 		headers: 
-			{ 'postman-token': '50c2fa5e-5e9b-4d7b-06e1-8fff9b763851',
-		 	'cache-control': 'no-cache',
+			{ 'cache-control': 'no-cache',
 			authorization: 'Basic '+keystone.get('mailchimp_api'),
 		 	'content-type': 'application/json' },
 		body: 
