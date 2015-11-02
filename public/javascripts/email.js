@@ -14,7 +14,7 @@ $("#homebrewer-submit").click(function(e){
 	}
 	$.post("/api/email",form,
 		function(data){
-			console.log(message);.log(data);
+			console.log(data);
 			if (data.status === 'error'){
 				alert('Shoot, something went wrong. Please try to submit again');
 			} else if (data.status === 'email') {
