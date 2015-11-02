@@ -17,8 +17,6 @@ $("#submit-email").click(function(e){
 					alert('Please enter a valid email');
 				} else if (data === 'success') {
 					window.location= "/";
-				} else {
-					alert('Something went wrong - please try again')
 				}
 			}
 		);

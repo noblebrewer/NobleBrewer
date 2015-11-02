@@ -27,6 +27,7 @@ exports = module.exports = function(req, res) {
 	if (email) {
 		createData()
 	} else {
+		console.log("No email submitted");
 		res.apiResponse('error')
 	}
 
@@ -53,7 +54,7 @@ exports = module.exports = function(req, res) {
 
 	request(getOptions, function (error, response, body) {
 		if (error) throw new Error(error);
-		console.log("status code: "+response.statusCode);
+		console.log("INFO: Check if email existed - status code: "+response.statusCode);
 		var body = JSON.parse(response.body);
 		var status = body.status;
 		// console.log(status);
@@ -67,7 +68,7 @@ exports = module.exports = function(req, res) {
 					res.apiResponse("success")
 				} else if (response.statusCode === 400) {
 					console.log("INFO: There was an error adding "+email+" to mailchimp");
-					res.apiResponse('error')
+					res.apiResponse('success')
 				}
 			})
 		} else if (response.statusCode === 400) {
