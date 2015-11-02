@@ -1,4 +1,5 @@
 $("#submit-email").click(function(e){
+	console.log("INFO: Submit email via homebrewer vote");
 	e.preventDefault();
 	var form = {
 		email : document.getElementById("email").value,
@@ -20,6 +21,7 @@ $("#submit-email").click(function(e){
 });
 
 $("#homebrewer-submit").click(function(e){
+	console.log("INFO: Submit homebrewer application");
 	e.preventDefault();
 	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
@@ -48,16 +50,17 @@ $("#homebrewer-submit").click(function(e){
 });
 
 $('#signup-newsletter').click(function(e){
+	console.log("INFO: Sign up for newsletter");
 	e.preventDefault();
 	var form = {
 		email : document.getElementById("email").value,
 		function: 'email'
 	}
-	$.post("/api/hubspot",form,
+	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
-			if (data.status === 'error'){
-				alert('Shoot, something went wrong. Please try to submit again');
+			if (data === 'error'){
+				alert('Please enter a valid email');
 			} else {
 				window.location = '/success/emailsignup';
 			}
@@ -66,6 +69,7 @@ $('#signup-newsletter').click(function(e){
 });
 
 $("#submit-registration").click(function(e){
+	console.log("INFO: Register for account");
 	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
 		firstname : document.getElementById("first_name").value,
@@ -77,14 +81,11 @@ $("#submit-registration").click(function(e){
 	}
 	console.log(form);
 	hostname = "http://www.noblebrewer.com";
-	$.post(hostname+"/api/hubspot",form,
+	$.post(hostname+"/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
-			if (data.status === 'error'){
-				alert('Shoot, something went wrong. Please try to submit again');
-			} else if (data.status === 'email') {
-				console.log('no email');
-				alert('Please include an email address');
+			if (data === 'error'){
+				alert('Please enter a valid email');
 			} else {
 				// window.location= '/collections/beer';
 			}
@@ -95,7 +96,7 @@ $("#submit-registration").click(function(e){
 
 
 $("#drop-a-hint-submit").click(function(e){
-	console.log('hubspot');
+	console.log("INFO: Drop a hint");
 	e.preventDefault();
 	var fullname = document.getElementById("first_name").value+" "+document.getElementById("last_name").value
 	var form = {
@@ -111,10 +112,7 @@ $("#drop-a-hint-submit").click(function(e){
 	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
-			if (data.status === 'error'){
-				alert('Shoot, something went wrong. Please try to submit again');
-			} else if (data.status === 'email') {
-				console.log('no email');
+			if (data === 'error'){
 				alert('Please include an email address');
 			} else {
 				window.location = '/success/dropahint';
@@ -124,6 +122,7 @@ $("#drop-a-hint-submit").click(function(e){
 });
 
 $('#submit-email-digg').click(function(e){
+	console.log("INFO: Submit email via digg page");
 	console.log("digg");
 	e.preventDefault();
 	heap.identify({ email: document.getElementById('email').value });
@@ -134,10 +133,7 @@ $('#submit-email-digg').click(function(e){
 	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
-			if (data.status === 400){
-				alert('Please enter a valid email address');
-			} else if (data.status === 'email') {
-				console.log('no email');
+			if (data === 'error'){
 				alert('Please include an email address');
 			} else {
 				$('#diggModal').modal('hide');

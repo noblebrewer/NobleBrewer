@@ -10,6 +10,8 @@ var md5 = require('md5');
 
 var data;
 var body;
+var email;
+var memberID;
 
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -18,9 +20,9 @@ exports = module.exports = function(req, res) {
 
 	body = req.body;
 
-	var email = (body.email).toLowerCase();
-	var memberID = (md5(email));
-	console.log(body.source);
+	email = (body.email).toLowerCase();
+	memberID = (md5(email));
+	console.log("Email: "+email+" submitted via "+(body.source || body.function));
 
 	if (email) {
 		createData()
@@ -61,14 +63,18 @@ exports = module.exports = function(req, res) {
 				console.log(response.statusCode);
 				//console.log(body);
 				if (response.statusCode === 200) {
+					console.log("INFO: Added "+email+" to mailchimp");
 					res.apiResponse("success")
 				} else if (response.statusCode === 400) {
+					console.log("INFO: There was an error adding "+email+" to mailchimp");
 					res.apiResponse('error')
 				}
 			})
 		} else if (response.statusCode === 400) {
+			console.log("INFO: There was an error adding "+email+" to mailchimp");
 			res.apiResponse('error')
 		} else {
+			console.log("INFO: "+email+" already existed in mailchimp");
 			//TODO: Add some way to update if they already exist
 			res.apiResponse('success');
 		}
@@ -88,7 +94,7 @@ function createData() {
 	} else if (body.function === 'homebrewer') {
 		data = {
 			status : 'subscribed',
-			email_address: body.email,
+			email_address: email,
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.function,
@@ -115,7 +121,7 @@ function createData() {
 	} else if (body.function === 'registration') {
 		data = {
 			status : 'subscribed',
-			email_address: body.email,
+			email_address: email,
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.function,
@@ -127,7 +133,7 @@ function createData() {
 	} else if (body.function === 'dropahint') {
 		data = {
 			status : 'subscribed',
-			email_address: body.email,
+			email_address: email,
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.function,
