@@ -1,6 +1,8 @@
 $("#submit-email").click(function(e){
 	if ($('#age-confirm').prop('checked') === false) {
 		alert('Please verify you are over 21')
+	} else if ($('#email').val() === '') {
+		alert('You must include an email')
 	} else {
 		e.preventDefault();
 		var form = {
