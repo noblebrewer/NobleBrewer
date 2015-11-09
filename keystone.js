@@ -84,13 +84,6 @@ keystone.set('email locals', {
 	}
 });
 
-keystone.set(font_middleware.setup({
-    fonts: [ opensans ],
-    allow_origin: "https://exampledomain.com",
-    maxage: 180 * 24 * 60 * 60 * 1000,   // 180 days
-    compress: true
-}));
-
 // Setup replacement rules for emails, to automate the handling of differences
 // between development a production.
 
