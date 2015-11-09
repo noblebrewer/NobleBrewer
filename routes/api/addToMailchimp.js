@@ -83,16 +83,7 @@ exports = module.exports = function(req, res) {
 }
 
 function createData() {
-	if (body.function === 'digg') {
-		data = {
-			status : 'subscribed',
-			email_address: email,
-			"merge_fields": 
-			{
-			    "EMSOURCE": body.function,
-			}
-		}
-	} else if (body.function === 'homebrewer') {
+	if (body.function === 'homebrewer') {
 		data = {
 			status : 'subscribed',
 			email_address: email,
@@ -108,15 +99,10 @@ function createData() {
 	} else if (body.function === 'email') {
 		data = {
 			status : 'subscribed',
-			email_address: email
-		}
-	} else if (body.function === 'homebrewer_vote') {
-		data = {
-			status : 'subscribed',
 			email_address: email,
 			"merge_fields": 
 			{
-			    "EMSOURCE": body.function,
+			    "EMSOURCE": body.source,
 			}
 		}
 	} else if (body.function === 'registration') {

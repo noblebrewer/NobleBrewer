@@ -1,0 +1,36 @@
+<head>
+  <div class="title">
+      <title>Noble Brewer</title>
+  </div>
+<% include ./partials/head %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<% include ./partials/simpleHeader %>
+
+<div class="container-fluid patterned col-md-8 col-md-offset-2 gold-border">
+	<div class="row top-buffer">
+		<a href="http://www.sfcraftbeerfest.com/"><img class="img-responsive no-border col-md-12" src="http://static1.squarespace.com/static/55d22012e4b0412fa2782dd7/t/55d3e474e4b08af97db139c0/1446748365729/?format=1500w"></a>
+	</div>
+
+	<div class="row" id="main">
+		<div class="col-sm-10 col-sm-offset-1 text-center">
+			<h3>LOVE CRAFT BEER FESTIVALS?</h3>
+			<p class="lead">Noble Brewer has partnered with the SF Beer Festival. That means FREE TICKETS and FREE BEER! (We're a little bit excited)</p class="lead">
+			<form action="/success/emailsignup" class="form-inline email-signup" id="email-signup">
+				<div class="form-group">
+					<input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+				</div>
+				<button type="submit" id="submit-email-beerfest" class="btn btn-nb auto-height">Submit</button>
+			</form>
+			<p>Enter your email for a chance to win tickets. Two lucky people will win a ticket for themselves and a friend! Want to know more about the festival? <span><a href="http://www.sfcraftbeerfest.com/">Read about all of the breweries and vendors here.</a></span> If you don't enter a valid email we won't be able to contact you when you win!</p>
+		</div>
+	</div>
+	<div class="row hidden" id="confirmation">
+		<div class="col-sm-10 col-sm-offset-1 text-center">
+			<h4>We've got your email. Good luck! <span><a href="http://twitter.com/NobleBrewerBeer">Follow us on twitter</a></span> for updates and more opportunities to win!</h4> 
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/sendToMailchimp.js"></script>

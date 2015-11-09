@@ -6,6 +6,10 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 
 	var location = req.params.location;
+	var version = req.params.version;
+	var source = req.params.source;
+
+	console.log(location, version, source);
 
 	//TODO: Send event that the page was viewed?
 	//TODO: Send event when email sign up (with location)

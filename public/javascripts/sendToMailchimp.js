@@ -3,7 +3,8 @@ $("#submit-email").click(function(e){
 	e.preventDefault();
 	var form = {
 		email : document.getElementById("email").value,
-		source: 'homebrewer_vote'
+		source: 'homebrewer_vote',
+		function: 'email'
 	}
 
 	heap.identify({ email : email });
@@ -35,6 +36,7 @@ $("#homebrewer-submit").click(function(e){
 		awards: document.getElementById("awards").value,
 		function: 'homebrewer'
 	}
+	heap.identify({ email : email });
 	console.log(form);
 	$.post("/api/addToMailchimp",form,
 		function(data){
@@ -56,6 +58,7 @@ $('#signup-newsletter').click(function(e){
 		email : document.getElementById("email").value,
 		function: 'email'
 	}
+	heap.identify({ email : email });
 	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
@@ -79,6 +82,7 @@ $("#submit-registration").click(function(e){
 		birthdate : document.getElementById("birthdate").value,
 		function: 'registration'
 	}
+	heap.identify({ email : email });
 	console.log(form);
 	hostname = "http://www.noblebrewer.com";
 	$.post(hostname+"/api/addToMailchimp",form,
@@ -109,6 +113,7 @@ $("#drop-a-hint-submit").click(function(e){
 		gift : document.getElementById("secret").value,
 		function: 'dropahint'
 	}
+	heap.identify({ email : email });
 	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
@@ -128,8 +133,12 @@ $('#submit-email-digg').click(function(e){
 	heap.identify({ email: document.getElementById('email').value });
 	var form = {
 		email : document.getElementById("email").value,
-		function: 'digg'
+		function: 'email',
+		source: 'digg'
 	}
+
+	heap.identify({ email : email });
+
 	$.post("/api/addToMailchimp",form,
 		function(data){
 			console.log(data);
@@ -142,5 +151,29 @@ $('#submit-email-digg').click(function(e){
 		}
 	);
 })
+
+$("#submit-email-beerfest").click(function(e){
+	console.log("INFO: Submit email via SF Beer Festival");
+	e.preventDefault();
+	var form = {
+		email : document.getElementById("email").value,
+		source: 'sfbeerfestival',
+		function: 'email'
+	}
+
+	heap.identify({ email : email });
+
+	$.post("/api/addToMailchimp",form,
+		function(data){
+			console.log(data);
+			if (data === 'error'){
+				alert('Please enter a valid email');
+			} else if (data === 'success') {
+				$('#main').toggleClass("hidden");
+				$('#confirmation').toggleClass('hidden');
+			} 
+		}
+	)
+});
 
 

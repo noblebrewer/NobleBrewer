@@ -5990,6 +5990,12 @@ html.untappd, body.untappd {
   background-color: white;
   color: #232121; }
 
+.header-thin {
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  height: 150px; }
+
 /*** Headers ****/
 h1 {
   text-transform: uppercase;
@@ -6181,6 +6187,9 @@ section {
   border-bottom: 1px solid #777777;
   background-color: #222120; }
 
+.patterned {
+  background-image: url("/images/generic/diagmonds.png"); }
+
 /*********** DIVIDERS ***************/
 .diamond-separator {
   background: url("/images/generic/diamond-divide.png");
@@ -6317,6 +6326,9 @@ section {
 
 .hr-diamonds {
   border-image: url("/images/generic/bar-diamond-divide.png"); }
+
+.gold-border {
+  border: 1px #C5A77E solid; }
 
 /* Buttons */
 /* Overriding bootstrap here because all buttons should look like this */
@@ -6830,6 +6842,21 @@ progress::-moz-progress-value {
   margin-top: 20px;
   position: relative;
   float: right; }
+
+.email-signup input {
+  border-radius: 0px;
+  margin-right: 0px; }
+
+.email-signup button {
+  border-radius: 0px;
+  margin-left: -5px;
+  color: #232121;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #C5A77E;
+  border: none;
+  padding: 7px 12px;
+  width: 130px; }
 
 .brewername {
   color: #ffffff;

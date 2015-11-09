@@ -59,6 +59,13 @@ html.untappd, body.untappd {
 	color: $dark-grey;
 }
 
+.header-thin {
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    height: 150px;
+}
+
 /*** Headers ****/
 
 @mixin htags() {
@@ -326,6 +333,10 @@ section {
 	background-color: $body-bg;
 }
 
+.patterned {
+	background-image: url($pattern-background);
+}
+
 /*********** DIVIDERS ***************/
 @mixin divider-elements() {
 	background-repeat: no-repeat;
@@ -467,6 +478,9 @@ section {
 	border-image: url($bar-diamond-divider);
 }
 
+.gold-border {
+	border: 1px $medium-tan solid;
+}
 
 /* Buttons */
 /* Overriding bootstrap here because all buttons should look like this */
@@ -1083,6 +1097,21 @@ progress::-moz-progress-value{
     float: right;
 
 }
+
+.email-signup input {
+  border-radius: 0px;
+  margin-right: 0px; }
+
+.email-signup button {
+  border-radius: 0px;
+  margin-left: -5px;
+  color: #232121;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #C5A77E;
+  border: none;
+  padding: 7px 12px;
+  width: 130px; }
 
 .brewername {
     color: #ffffff;

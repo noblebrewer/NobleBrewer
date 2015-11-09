@@ -76,10 +76,13 @@ exports = module.exports = function(app) {
 	app.get('/blog/brewers/mikeriddle/', routes.views.riddle);
 	app.get('/blog/brewers/john-f', routes.views.fuller);
 	app.get('/homebrewers/vote', routes.views.homebrewer_vote);
+
+	app.get('/SFCraftBeerFestival/:source?', routes.views.landingpage_sfbeerfestival);
 	app.get('/DiggBeer', routes.views.landingpage_digg);
 	app.get('/DiggBeer-Noble-Brewer', routes.views.landingpage_diggB);
 	app.get('/untappd/:location?', routes.views.landingpage_untappd);
 	app.get('/untappd-:location?', routes.views.landingpage_untappd);
+	app.get('/untappd/:location?/:version?/:source?', routes.views.landingpage_untappd);
 
 	app.all('/contact', routes.views.contact);
 
