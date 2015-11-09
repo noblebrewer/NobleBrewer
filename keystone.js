@@ -6,9 +6,6 @@ require('dotenv').load();
 var keystone = require('keystone'),
 	cons = require('consolidate'),
 	ejs = require('ejs');
-	font_middleware = require("connect-fonts");
-	opensans = require("connect-fonts-opensans");
-
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
