@@ -2,9 +2,9 @@
 FONT
 \*********************/
 
-.custom-font {
-    font-family: "Gotham SSm A", "Gotham SSm B";
-}
+/*.custom-font {
+    @include gotham-medium();
+}*/
 
 /*********************\
 BREAKPOINTS
@@ -184,6 +184,7 @@ p {
 a {
 	color: $medium-tan;
 	text-decoration: none;
+	@include gotham-medium();
 
 	&:hover {
 		color: $light-tan;
@@ -497,6 +498,7 @@ section {
 	margin-right: 15px;
 	padding: 14px;
 	min-width: 200px;
+	@include gotham-bold();
 	
 	text-transform: uppercase;
 
@@ -539,6 +541,7 @@ section {
 	margin-right: 15px;
 	padding: 14px;
 	min-width: 200px;
+	@include gotham-bold();
 	
 	text-transform: uppercase;
 

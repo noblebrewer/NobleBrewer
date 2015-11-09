@@ -2,6 +2,7 @@
   <div class="title">
       <title>Noble Brewer</title>
   </div>
+
   <% include ./partials/head %>
   <!-- Facebook Conversion Code for home page visits -->
   <script>(function() {
@@ -19,120 +20,196 @@
   window._fbq.push(['track', '6034253034193', {'value':'0.00','currency':'USD'}]);
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6034253034193&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+
 <% include ./partials/header %>
 
-<section class="patterned row centered-block">
-  <div class="col-md-6">
-    <h3>THE BEST CRAFT BEERS COME FROM HOMEBREWERS.</h3>
-    <p>Become a member of Noble Brewer to try our award winning brewers' best beers.</p> 
-      <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs">
-        <div class="col-sm-6">
-          <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
+<!-- craft beer club for craft beer lovers
+the only craft beer club that features only single release beers
+variety, single release, can't find anywhere else, small brewers
+The only beer club for true craft beer fans
+Every quarter we deliver four new beers created by award winning brewers -->
+
+
+<section class="patterned row">
+      <div class="col-md-7 col-sm-12">
+        <h3 class="hidden-sm hidden-xs centered-block">A beer club for <br>true craft beer fans. </h3>
+        <h4 class="hidden-lg hidden-md centered-block" style="font-weight:300">A beer club for <br>true craft beer fans.</h4>
+        <br>
+        <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs centered-block">
+            <div class="col-sm-6">
+              <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
+            </div>
+            <div class="col-sm-6">
+              <a class="btn btn-nb-ghost" id="gift-beer-top" href="/gifts">Gift Beer</a> 
+            </div>
         </div>
-        <div class="col-sm-6">
-          <a class="btn btn-nb-ghost" id="gift-beer-top" href="/gifts">Gift Beer</a> 
+        <br>
+        <div class="row col-md-12 col-sm-12 hidden-md hidden-lg centered-block">
+            <div class="col-sm-6">
+              <a class="btn btn-nb" id="get-beer-top" href="/subscription">Subscriptions</a>
+            </div>
+            <div class="col-sm-6">
+              <a class="btn btn-nb" id="gift-beer-top" href="/gifts">Gift Beer</a> 
+            </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6 centered-block">
-    <img class="img-responsive" src="/images/about/aboutbanner-crop.jpg">
+      <div class="col-md-5 hidden-sm hidden-xs">
+        <div class="tan-border">
+          <img class="img-responsive" src="/images/about/aboutbanner-crop.jpg">
+          </div>
+        </div>
+      </div>
   </div>
 </section>
+<!-- 
+<section class="light-alt-base">
+  <h3>Featured In</h3>
+  <ul>
+    <li><img src="http://soi38dc.com/wp-content/uploads/2014/04/urbanDaddy-logo.jpg"></li>
+  </ul>
+</section> -->
 
-<section class="row centered-block">
+<section class="alt-base hidden-sm hidden-xs">
   <div class="row">
-    <!-- <img class="img-responsive col-md-1 col-md-offset-1 no-border" src="/images/generic/untappd.png"> -->
-    <h3>What our members are saying on Untappd</h3>
-    <!-- <img class="img-responsive col-md-1 no-border" src="/images/generic/untappd.png"> -->
+    <div class="col-md-6">
+      <img src="/images/home/img1.jpg" class="img-responsive tan-border">
+    </div>
+    <div class="col-md-6  col-sm-12">
+        <h3>WHAT IS NOBLE BREWER?</h3>
+        <div class="body-copy">
+          <p>Noble Brewer is a new kind of beer club. We're dedicated to celebrating the pioneers of the the craft beer movement - the homebrewer. Savor their unique creations while you learn about the person who created the beer.</p>
+        </div>
+        <a href="beers/">View current batch >></a>
+    </div>
+  </div>
+
+    <div class="diamond-separator"></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>OUR PROCESS</h3>
+            <div class="body-copy">
+              <p>We find the best homebrew recipes and pair the creator with a professional brewery to make their beer. Once bottled, we ship the beer and the story behind the featured homebrewer to our members. The end result is unique, one-of-a-kind craft beers unavailable in stores or restaurants.</p>
+            </div>
+            <a href="/about">Find out more about our process >></a>
+        </div>
+        <div class="col-md-6">
+          <img src="/images/home/img2.jpg" class="img-responsive">
+        </div>
+</section>
+
+<section class="alt-base hidden-lg hidden-md">
+  <div class="row">
+    <img src="/images/home/brewing_hops.png" class="img-responsive tan-border">
+    <p class="centered-block top-buffer">We find award winning homebrewers</p>
   </div>
   <div class="row">
-    <blockquote class="col-md-4">
-      <p>Trying my first of my Noble Brewer subscription! Wonderful!</p>
-    </blockquote>
-    <blockquote class="col-md-4">
-      <p>Bright and crisp with a sweet buttery finish. Mosaic is definitely stand alone worthy.This is a superb IPA! Glad I found out about Noble Brewer beer club!</p>
-    </blockquote>
-    <blockquote class="col-md-4">
-      <p>First of the Noble Brewers! #greatpurchase</p>
-    </blockquote>
+    <img src="/images/home/img2.jpg" class="img-responsive">
+    <p class="centered-block top-buffer">Pair them with a professional brewery</p>
   </div>
   <div class="row">
-    <blockquote class="col-md-6">
-      <p>Love tasting the indies and marking my thoughts. Thank you Noble Brewer.</p>
-    </blockquote>
-    <blockquote class="col-md-6">
-      <p>Not even mad I'm still doing work right now, that's how fucking good this is.</p>
-    </blockquote>
+    <img src="/images/home/group_shot.png" class="img-responsive">
+    <p class="centered-block top-buffer">And then ship the creations out to our members</p>
+  </div>  
+</section>
+
+<section class="patterned row centered-block hidden-sm hidden-xs">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>Want Noble Brewer as a gift?</h3>
+    <p>Drop a hint to friends and family. Instantly give them 15% off gifts, so they can give you the gift you've really been wanting.</p>
+    <a href="/dropahint" id="drop-a-hint" class="btn btn-nb">Drop a Hint</a>
   </div>
+</section>
+
+<section class="patterned hidden-sm hidden-xs">
+  <br>
   <div class="row">
-    <blockquote class="col-md-4">
-      <p>Not usually a big fan of chocolate porters...but this is fucking delicious!</p>
-    </blockquote>
-    <blockquote class="col-md-4">
-      <p>Hoppy! I like this</p>
-    </blockquote>
-    <blockquote class="col-md-4">
-      <p>Whoa. Wtf. More chocolate than hot chocolate. Need more. 5 stars</p>
-    </blockquote>
+    <div class="col-sm-6 col-sm-offset-3 text-center">
+      <blockquote>
+        <p>
+          ...what you'll find here is meticulously replicated real live homebrews with the added benefit of not being made in a garage.
+        </p>
+        <cite title="Source Title">URBAN DADDY</cite>
+      </blockquote>
+    </div>
   </div>
 </section>
 
-<section class="light-alt-base row centered-block">
-  <h3>What is Noble Brewer?</h3>
-  <br><br>
-  <div class="col-md-4 col-sm-12">
-        <p>Noble Brewer is a new kind of beer club. We're dedicated to celebrating the pioneers of the the craft beer movement - the homebrewer. Savor their unique creations while you learn about the person who created the beer.</p>
-        <a href="beers/">View our beers >></a>
+<section class="row light-striped hidden-sm hidden-xs">
+    <div class="col-md-12 text-center" id="home-page-bottom">
+      <div class="col-sm-12">
+        <h3>I know what I want</h3>
+        <a class="btn btn-nb" href="/subscription" id="get-beer-bottom">Beer</a>
+      </div>
+      <div class="col-sm-12">
+        <h3 class="tan">Want to know more?</h3>
+        <a class="btn btn-nb-ghost" href="/collections/beer" id="see-beer-bottom">See what's on tap</a>
+      </div>
     </div>
-    <div class="col-md-4 col-sm-12">
-      <img src="/images/home/brewing_hops.png" class="img-responsive tan-border">
-    </div>
-    <div class="col-md-4 col-sm-12">
-        <p>We find the best homebrew recipes and pair the creator with a professional brewery to make their beer. Once bottled, we ship the beer and the story behind the featured homebrewer to our members. The end result is unique, one-of-a-kind craft beers unavailable in stores or restaurants.</p>
-        <a href="/about">Find out more about our process >></a>
-    </div>
-    <br>
+  <br>
+  <br>
 </section>
 
-<section class="row gold-wool centered-block">
-  <h3>Our current batch</h3>
-  <div class="row hr-light-thin"></div>
-  <div class="col-md-3 col-sm-12">
-    <h4>Nevermore Chocolate Porter</h4>
-      <img src="/images/beer/nevermore-edited.png" class="img-responsive tan-border">
-      <p>“This is an insane amount of chocolate for a beer” –Kyle, head brewer at EJ Phair</p>
-    </div>
-    <div class="col-md-3 col-sm-12">
-      <h4>Wry Rye Imperial IPA</h4>
-      <img src="/images/beer/wry-edited.png" class="img-responsive tan-border">
-      <p>Hopped with Amarillo, Chinook, Citra, Falconer’s Flight, Galaxy, Nelson Sauvin and Simcoe, this Imperial IPA is any hop head's must-have.</p>
-    </div>
-    <div class="col-md-3 col-sm-12">
-      <h4>Pipe in a Sack Scotch Ale</h4>
-      <img src="/images/beer/scotch-edited.png" class="img-responsive tan-border">
-      <p>A traditional Wee Heavy, expect intense malt and caramel flavors with hops taking a back seat in flavor in this Scottish classic.</p>
-    </div>
-    <div class="col-md-3 col-sm-12">
-      <h4>Yerba Buena Mosaic IPA</h4>
-      <img src="/images/beer/mosaic-edited.png" class="img-responsive tan-border">
-      <p>Mosaic shines with a fruity hop dominant performance balanced by slight sweetness from honey malts.</p>
-    </div>
-</section>
-
-<section class="patterned centered-block row">
-  <div class="col-md-8">
-    <h4>Four new beers, delivered every quarter. </h4>
-    <h4>The only craft beer club of its kind.</h4>
-    <h4>Join the new craft beer movement.</h4>
-    <br>
-    <a class="btn-nb auto-height" id="find-out-more" style="width:100%" href="/subscription">View Subscription Options</a>
-  </div>
-  <div class="col-md-4">
-    <img class="img-responsive" src="https://j.gifs.com/m22LaP.gif"><br>
+<section class="hidden-lg hidden-md">
+  <p class="hidden-lg hidden-md centered-block">See what our members are saying on Untappd</p>
+  <br>
+  <div class="center-slick">
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling2.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle2.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Dudeling3.png" class="img-responsive"></div>
+    <div style="height:auto"><img src="/images/home/Untappd-Riddle3.png" class="img-responsive"></div>
   </div>
 </section>
 
+<section class="row light-striped hidden-md hidden-lg">
+    <div class="row text-center" id="home-page-bottom">
+      <div class="col-sm-12">
+        <a class="btn btn-nb" href="/subscription" id="get-beer-bottom">Become a member</a>
+      </div>
+      <div class="col-sm-12">
+        <a class="btn btn-nb" href="/collections/beer" id="see-beer-bottom">See what's on tap</a>
+      </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<script>
+$('.center-slick').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  draggable: true,  
+  arrows: true,
+  infinite: true,
+  touchMove: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
+</script>
 <% include ./partials/footer %>

@@ -72,7 +72,7 @@ exports = module.exports = function(req, res) {
 				}
 			})
 		} else if (response.statusCode === 400) {
-			console.log("INFO: There was an error adding "+email+" to mailchimp");
+			console.log("INFO: There was an error adding "+email+" to mailchimp ("+(body.source || body.function)+")");
 			res.apiResponse('error')
 		} else {
 			console.log("INFO: "+email+" already existed in mailchimp");
