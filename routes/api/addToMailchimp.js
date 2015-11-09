@@ -67,7 +67,7 @@ exports = module.exports = function(req, res) {
 					console.log("INFO: Added "+email+" to mailchimp");
 					res.apiResponse("success")
 				} else if (response.statusCode === 400) {
-					console.log("INFO: There was an error adding "+email+" to mailchimp");
+					console.log("INFO: There was an error adding "+email+" to mailchimp ("+(body.source || body.function)+")");
 					res.apiResponse('success')
 				}
 			})
