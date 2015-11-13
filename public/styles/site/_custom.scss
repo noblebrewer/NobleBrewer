@@ -757,6 +757,13 @@ img {
 		width:auto;
 		padding-top: 8px;
 	}
+	&.blog{
+		margin: auto;
+		text-align: center;
+		display: block;
+		max-width: 400px;
+		height: auto;
+	}
 }
 
 iframe{

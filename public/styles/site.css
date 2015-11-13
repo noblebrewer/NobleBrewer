@@ -6814,6 +6814,12 @@ img {
     height: 40px;
     width: auto;
     padding-top: 8px; }
+  img.blog {
+    margin: auto;
+    text-align: center;
+    display: block;
+    max-width: 400px;
+    height: auto; }
 
 @media (max-width: 37.5em) {
   iframe {

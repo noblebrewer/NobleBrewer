@@ -1,0 +1,45 @@
+<head>
+  <div class="title">
+    <title>Blog</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+
+<% include ./partials/header %>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+				<article>
+					<br>
+					<p><a href="/blog">&larr; All posts</a></p>
+					<hr>
+					<% if (data.post === undefined) { %>
+						<h2>Invalid Post.</h2>
+					<% } else { %>
+						<header>
+							<h1><%= data.post.title %></h1>
+							<% if (data.post.publishedDate !== undefined) { %>
+								<h5>Posted on <%= data.post._.publishedDate.format("MMMM Do, YYYY") %> 
+								<% if (data.post.author !== undefined) { %>
+									by <%= data.post.author.name.first %> <%= data.post.author.name.last %>
+								<% } %>
+								</h5>
+							<% } %>
+							<% if (data.post.categories && data.post.categories.length) { %>
+								in <% data.post.categories.forEach(function(cat, index){ %>
+									<a href="/blog/<%= cat.key %>"><%= cat.name %></a>
+									<% if (index < data.post.categories.length) { %>, 
+									<% } %>
+								<% }) %>
+									<% } %>
+						</header>
+						<div class="post">
+							<%- data.post.content.full %>
+						</div>
+					<% } %>
+				</article>
+			</div>
+		</div>
+	</div>
+<% include ./partials/footer %>

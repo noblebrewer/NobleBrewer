@@ -84,6 +84,7 @@ exports = module.exports = function(app) {
 	app.get('/untappd/:location?', routes.views.landingpage_untappd);
 	app.get('/untappd-:location?', routes.views.landingpage_untappd);
 	app.get('/untappd/:location?/:version?/:source?', routes.views.landingpage_untappd);
+	app.get('/untappdNB/:location?/:version?/:source?', routes.views.landingpage_untappdB);
 
 	app.all('/contact', routes.views.contact);
 

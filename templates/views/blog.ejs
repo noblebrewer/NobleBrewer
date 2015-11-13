@@ -1,0 +1,33 @@
+<head>
+  <div class="title">
+    <title>Blog</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+<% include ./partials/header %>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+				<div class="row">
+					<h4>Featured Articles</h4>
+					<% locals.data.featuredPosts.forEach(function(post, index){ %>
+						<div class="col-md-6 centered-block">
+							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive" src="<%= post.image.url %>">
+							<p><%= post.title %></p></a>
+						</div>
+					<% }) %>
+				</div>
+				<div class="row">
+					<h4>Other Articles</h4>
+					<% locals.data.posts.forEach(function(post, index){ %>
+						<div class="col-md-3 centered-block">
+							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive" src="<%= post.image.url %>">
+							<p><%= post.title %></p></a>
+						</div>				
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% include ./partials/footer %>

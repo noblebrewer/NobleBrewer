@@ -1,4 +1,5 @@
 $("#submit-email").click(function(e){
+	e.preventDefault();
 	if ($('#age-confirm').prop('checked') === false) {
 		alert('Please verify you are over 21')
 	} else if ($('#email').val() === '') {
@@ -10,7 +11,24 @@ $("#submit-email").click(function(e){
 			source: 'untappd'
 		}
 
+		var location = document.getElementById('untappd-location').innerHTML
+		var version = document.getElementById('untappd-version').innerHTML
+		var source = document.getElementById('untappd-source').innerHTML
+
+		ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'email',
+		  eventAction: 'submit',
+		  eventLabel: 'untappd'
+		});
+
+		// console.log(location, version, source);
+
 		heap.identify({ email : email });
+		heap.track('untappd', {
+			location : location,
+			source : source,
+			version : version });
 
 		$.post("/api/addToMailchimp",form,
 			function(data){
