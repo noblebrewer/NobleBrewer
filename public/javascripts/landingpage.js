@@ -8,7 +8,8 @@ $("#submit-email").click(function(e){
 		e.preventDefault();
 		var form = {
 			email : document.getElementById("email").value,
-			source: 'untappd'
+			source: 'untappd',
+			function: 'email'
 		}
 
 		var location = document.getElementById('untappd-location').innerHTML
