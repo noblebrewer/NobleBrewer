@@ -2,9 +2,9 @@
 FONT
 \*********************/
 
-/*.custom-font {
-    @include gotham-medium();
-}*/
+.custom-font {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+}
 
 /*********************\
 BREAKPOINTS
@@ -184,7 +184,6 @@ p {
 a {
 	color: $medium-tan;
 	text-decoration: none;
-	@include gotham-medium();
 
 	&:hover {
 		color: $light-tan;
@@ -498,7 +497,6 @@ section {
 	margin-right: 15px;
 	padding: 14px;
 	min-width: 200px;
-	@include gotham-bold();
 	
 	text-transform: uppercase;
 
@@ -541,7 +539,6 @@ section {
 	margin-right: 15px;
 	padding: 14px;
 	min-width: 200px;
-	@include gotham-bold();
 	
 	text-transform: uppercase;
 
@@ -757,13 +754,13 @@ img {
 		width:auto;
 		padding-top: 8px;
 	}
-	&.blog{
+	 &.blog{
 		margin: auto;
 		text-align: center;
 		display: block;
 		max-width: 400px;
 		height: auto;
-	}
+    }
 }
 
 iframe{
@@ -1250,5 +1247,3 @@ div.row.fullName {
   line-height: 1.1;
   margin-bottom: 60px;
  }
-
-
