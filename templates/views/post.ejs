@@ -17,24 +17,31 @@
 					<% if (data.post === undefined) { %>
 						<h2>Invalid Post.</h2>
 					<% } else { %>
-						<header>
-							<h1><%= data.post.title %></h1>
-							<% if (data.post.publishedDate !== undefined) { %>
-								<h5>Posted on <%= data.post._.publishedDate.format("MMMM Do, YYYY") %> 
-								<% if (data.post.author !== undefined) { %>
-									by <%= data.post.author.name.first %> <%= data.post.author.name.last %>
+						<div class="row">
+							<header class="col-md-6">
+								<h2><%= data.post.title %></h2>
+								<% if (data.post.publishedDate !== undefined) { %>
+									<h5>Posted on <%= data.post._.publishedDate.format("MMMM Do, YYYY") %> 
+									<% if (data.post.author !== undefined) { %>
+										by <%= data.post.author.name.first %> <%= data.post.author.name.last %>
+									<% } %>
+									</h5>
 								<% } %>
-								</h5>
-							<% } %>
-							<% if (data.post.categories && data.post.categories.length) { %>
-								in <% data.post.categories.forEach(function(cat, index){ %>
-									<a href="/blog/<%= cat.key %>"><%= cat.name %></a>
-									<% if (index < data.post.categories.length) { %>, 
-									<% } %>
-								<% }) %>
-									<% } %>
-						</header>
+								<% if (data.post.categories && data.post.categories.length) { %>
+									in <% data.post.categories.forEach(function(cat, index){ %>
+										<a href="/blog/<%= cat.key %>"><%= cat.name %></a>
+										<% if (index < data.post.categories.length) { %>, 
+										<% } %>
+									<% }) %>
+										<% } %>
+							</header>
+							<div class="col-md-6">
+								<img class="img-responsive" src="<%= data.post.image.url %>">
+							</div>
+						</div>
+						<hr>
 						<div class="post">
+							<%- data.post.content.brief %>
 							<%- data.post.content.full %>
 						</div>
 					<% } %>
