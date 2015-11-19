@@ -2,20 +2,6 @@
   <div class="title">
       <title>Noble Brewer</title>
   </div>
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='80367997-13',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
 
   <% include ./partials/head %>
   <!-- Facebook Conversion Code for home page visits -->
@@ -42,14 +28,19 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 <% include ./partials/header %>
 
+<!-- craft beer club for craft beer lovers
+the only craft beer club that features only single release beers
+variety, single release, can't find anywhere else, small brewers
+The only beer club for true craft beer fans
+Every quarter we deliver four new beers created by award winning brewers -->
+
+
 <section class="patterned row">
-      <div class="col-md-6 col-sm-12">
-        <h4 class="hidden-lg hidden-md centered-block" style="font-weight:300">Beer created by the nation's best homebrewers.</h4>
+      <div class="col-md-7 col-sm-12">
+        <h3 class="hidden-sm hidden-xs centered-block">A beer club for <br>true craft beer fans. </h3>
+        <h4 class="hidden-lg hidden-md centered-block" style="font-weight:300">A beer club for <br>true craft beer fans.</h4>
         <br>
-        <p class="hidden-lg hidden-md centered-block">Members have access to beer you can't buy in any bar.</p>
-        <h2 class="hidden-sm hidden-xs" style="font-weight:300">The best craft beers come from homebrewers. </h2>
-        <h4 class="hidden-sm hidden-xs" style="text-transform:none; font-weight:300" >Become a member of Noble Brewer to try our award winning brewers' best beers.</h4>
-        <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs">
+        <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs centered-block">
             <div class="col-sm-6">
               <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
             </div>
@@ -58,24 +49,31 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
             </div>
         </div>
         <br>
-        <div class="row col-md-12 col-sm-12 hidden-md hidden-lg">
+        <div class="row col-md-12 col-sm-12 hidden-md hidden-lg centered-block">
             <div class="col-sm-6">
               <a class="btn btn-nb" id="get-beer-top" href="/subscription">Subscriptions</a>
             </div>
             <div class="col-sm-6">
-              <a class="btn btn-nb" id="gift-beer-top" href="/collections/beer">Our beers</a> 
+              <a class="btn btn-nb" id="gift-beer-top" href="/gifts">Gift Beer</a> 
             </div>
         </div>
       </div>
-      <div class="col-md-6 hidden-sm hidden-xs">
+      <div class="col-md-5 hidden-sm hidden-xs">
         <div class="tan-border">
-          <div class="embed-responsive embed-responsive-16by9">
-              <iframe width="420" height="315" src="https://www.youtube.com/embed/hHulSUVbTuU"></iframe>
+          <img class="img-responsive" src="/images/about/aboutbanner-crop.jpg">
           </div>
         </div>
       </div>
   </div>
 </section>
+<!-- 
+<section class="light-alt-base">
+  <h3>Featured In</h3>
+  <ul>
+    <li><img src="http://soi38dc.com/wp-content/uploads/2014/04/urbanDaddy-logo.jpg"></li>
+  </ul>
+</section> -->
+
 <section class="alt-base hidden-sm hidden-xs">
   <div class="row">
     <div class="col-md-6">
