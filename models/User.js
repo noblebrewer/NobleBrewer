@@ -17,7 +17,7 @@ User.add(
 		name: { type: Types.Name, required: true, initial: true },
 		userName: { type: String, initial: true, required: true, default: 'admin'},
 		password: { type: Types.Password, initial: true, required: true },
-		emailAddress: { type: Types.Email, initial: true, required: true, default: 'admin@keystonejs.com'},
+		email: { type: Types.Email, initial: true, required: true, default: 'admin@keystonejs.com'},
 
 		//Classification flags
 		isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
@@ -54,6 +54,6 @@ User.relationship({ ref: 'Credit', path: 'credits', refPath: 'user' });
 User.relationship({ ref: 'Order', path: 'orders', refPath: 'user' });
 
 
-User.defaultColumns = 'userName, isAdmin, emailAddress';
+User.defaultColumns = 'userName, isAdmin, email';
 User.register();
 
