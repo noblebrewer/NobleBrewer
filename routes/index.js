@@ -76,6 +76,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/brewers/mikeriddle/', routes.views.riddle);
 	app.get('/blog/brewers/john-f', routes.views.fuller);
 	app.get('/homebrewers/vote', routes.views.homebrewer_vote);
+	app.get('/coworking', routes.views.index);
 
 	app.get('/SFCraftBeerFestival/:source?', routes.views.landingpage_sfbeerfestival);
 	app.get('/product-hunt', routes.views.index);
