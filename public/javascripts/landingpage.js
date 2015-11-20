@@ -12,9 +12,9 @@ $("#submit-email").click(function(e){
 			function: 'email'
 		}
 
-		var location = document.getElementById('untappd-location').innerHTML
-		var version = document.getElementById('untappd-version').innerHTML
-		var source = document.getElementById('untappd-source').innerHTML
+		// var location = document.getElementById('untappd-location').innerHTML
+		// var version = document.getElementById('untappd-version').innerHTML
+		// var source = document.getElementById('untappd-source').innerHTML
 
 		ga('send', {
 		  hitType: 'event',
@@ -26,10 +26,10 @@ $("#submit-email").click(function(e){
 		// console.log(location, version, source);
 
 		heap.identify({ email : email });
-		heap.track('untappd', {
-			location : location,
-			source : source,
-			version : version });
+		// heap.track('untappd', {
+		// 	location : location,
+		// 	source : source,
+		// 	version : version });
 
 		$.post("/api/addToMailchimp",form,
 			function(data){
