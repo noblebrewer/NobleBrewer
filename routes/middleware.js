@@ -35,7 +35,7 @@ exports.initLocals = function(req, res, next) {
     locals.footerLinks = [
 		{ label: 'Home',		key: 'home',		href: '/' },
 		{ label: 'About',		key: 'about',		href: '/about' },
-		// { label: 'Blog',		key: 'blog',		href: '/blog' },
+		{ label: 'Blog',		key: 'blog',		href: '/blog' },
 		{ label: 'Brewery Map - Beta',		key: 'breweries',		href: 'http://breweries.noblebrewer.com' },
         // { label: 'Team',		key: 'team',		href: '/team' },
         { label: 'FAQ',         key: 'faq',         href: '/faq' },
