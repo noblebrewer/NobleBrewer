@@ -89,6 +89,9 @@ exports = module.exports = function(app) {
 
 	app.all('/contact', routes.views.contact);
 
+	//mobile redirect test
+	app.all('/mobile', routes.views.mobile);
+
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);

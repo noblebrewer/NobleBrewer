@@ -30,4 +30,20 @@
 			</div>
 		</div>
 	</div>
+<!-- views/partials/emailFooter.ejs -->
+<section class="row light-striped">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		<!-- <h2>Stay in the know</h2> -->
+		<h4>We love talking about craft beer.</h4><h4>Be part of the conversation.</h4>
+		<form class="form-inline top-buffer" id="email-signup">
+			<div class="form-group">
+				<input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+			</div>
+			<button type="submit" id="signup-blog" class="btn btn-nb auto-height">SIGN UP</button>
+		</form>
+	</div>
+</section>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/sendToMailchimp.js"></script>
 <% include ./partials/footer %>
