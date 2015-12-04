@@ -108,34 +108,40 @@ exports = module.exports = function(req, res) {
 	request(getOptions, function (error, response, body) {
 		if (error) throw new Error(error);
 		console.log("status code: "+response.statusCode);
-		var body = JSON.parse(response.body);
-		var status = body.status;
-		// console.log(status);
-		if (response.statusCode === 404) {
-			request(postOptions, function(error, response, body){
-				if (error) throw new Error(error);
-				console.log(postOptions);
-				console.log(response.statusCode);
-				//console.log(body);
-				if (response.statusCode === 200) {
-					console.log("INFO: Added "+email+" to mailchimp");
-					res.apiResponse("success")
-				} else if (response.statusCode === 400) {
-					console.log("INFO: There was an error adding "+email+" to mailchimp");
-					console.log("error: "+JSON.stringify(error));
-					console.log("response: "+JSON.stringify(response));
-					console.log("body: "+JSON.stringify(body));
-					res.apiResponse('error')
-				}
-			})
-		} else if (response.statusCode === 400) {
+		if (response.statusCode === 504) {
 			console.log("INFO: There was an error adding "+email+" to mailchimp");
 			console.log("ERROR: "+JSON.stringify(response));
 			res.apiResponse('error')
 		} else {
-			console.log("INFO: "+email+" already existed in mailchimp");
-			//TODO: Add some way to update if they already exist
-			res.apiResponse('success');
+			var body = JSON.parse(response.body);
+			var status = body.status;
+			// console.log(status);
+			if (response.statusCode === 404) {
+				request(postOptions, function(error, response, body){
+					if (error) throw new Error(error);
+					console.log(postOptions);
+					console.log(response.statusCode);
+					//console.log(body);
+					if (response.statusCode === 200) {
+						console.log("INFO: Added "+email+" to mailchimp");
+						res.apiResponse("success")
+					} else if (response.statusCode === 400) {
+						console.log("INFO: There was an error adding "+email+" to mailchimp");
+						console.log("error: "+JSON.stringify(error));
+						console.log("response: "+JSON.stringify(response));
+						console.log("body: "+JSON.stringify(body));
+						res.apiResponse('error')
+					}
+				})
+			} else if (response.statusCode === 400) {
+				console.log("INFO: There was an error adding "+email+" to mailchimp");
+				console.log("ERROR: "+JSON.stringify(response));
+				res.apiResponse('error')
+			} else {
+				console.log("INFO: "+email+" already existed in mailchimp");
+				//TODO: Add some way to update if they already exist
+				res.apiResponse('success');
+			}
 		}
 	});
 }
