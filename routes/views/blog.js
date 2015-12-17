@@ -23,7 +23,7 @@ exports = module.exports = function(req, res) {
 		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').where('isFeatured', 'false');
 		
 		q.exec(function(err, results) {
-			console.log(results);
+			//console.log(results);
 			locals.data.posts = results;
 			next(err);
 		});
@@ -35,7 +35,7 @@ exports = module.exports = function(req, res) {
 		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').where('isFeatured', 'true');
 		
 		q.exec(function(err, results) {
-			console.log(results);
+			//console.log(results);
 			locals.data.featuredPosts = results;
 			next(err);
 		});

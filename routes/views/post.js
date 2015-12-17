@@ -23,7 +23,7 @@ exports = module.exports = function(req, res) {
 		}).populate('author categories');
 		
 		q.exec(function(err, result) {
-			console.log("results"+result);
+			//console.log("results"+result);
 			locals.data.post = result;
 			next(err);
 		});
@@ -36,7 +36,7 @@ exports = module.exports = function(req, res) {
 		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4');
 		
 		q.exec(function(err, results) {
-			console.log(results);
+			//console.log(results);
 			locals.data.posts = results;
 			next(err);
 		});

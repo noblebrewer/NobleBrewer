@@ -8,7 +8,7 @@
 <% include ./partials/header %>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+			<div class="col-sm-12 col-md-8 col-md-offset-2">
 				<div class="row">
 					<h4>Featured Articles</h4>
 					<% locals.data.featuredPosts.forEach(function(post, index){ %>
@@ -16,8 +16,8 @@
 							<div class="row">
 						<% } %>
 						<div class="col-md-6 centered-block">
-							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive" src="<%= post.image.url %>">
-							<p><%= post.title %></p></a>
+							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive centered-block" src="<%= post.image.url %>">
+							<h5 style="text-transform:uppercase"><%= post.title %></h5></a>
 						</div>
 						<% if (index%2 != 0){ %>
 							</div>
@@ -32,7 +32,7 @@
 						<% } %>
 						<div class="col-md-3 centered-block">
 							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive" src="<%= post.image.url %>">
-							<p><%= post.title %></p></a>
+							<h5 style="text-transform:uppercase"><%= post.title %></h5></a>
 						</div>	
 						<% if ((index+1)%4 == 0){ %>
 							</div>
