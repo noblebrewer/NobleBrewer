@@ -21,10 +21,16 @@
 				<div class="row">
 					<h4>Other Articles</h4>
 					<% locals.data.posts.forEach(function(post, index){ %>
+						<% if (index%4 == 0){ %>
+							<div class="row">
+						<% } %>
 						<div class="col-md-3 centered-block">
 							<a href="/blog/post/<%= post.slug %>"><img class="img-responsive" src="<%= post.image.url %>">
 							<p><%= post.title %></p></a>
-						</div>				
+						</div>	
+						<% if ((index+1)%4 == 0){ %>
+							</div>
+						<% } %>			
 					<% }) %>
 				</div>
 			</div>
