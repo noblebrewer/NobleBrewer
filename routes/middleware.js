@@ -24,11 +24,13 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
+		// { label: 'Meet the Brewers',	key: 'brewers',		href: '/brewers' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
 		// { label: 'Market',		key: 'market',		href: '/market' },
 		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
-		{ label: 'Gifts',key: 'gifts',href: '/gifts' },
+		// { label: 'Gifts',key: 'gifts',href: '/gifts' },
+		{ label: 'Marketplace',key: 'market',href: '/market' },
+		{ label: 'Blog',		key: 'blog',		href: '/blog' },
 		//Sign Up link in the header is coming from the header.ejs
 	];
 	
@@ -42,6 +44,7 @@ exports.initLocals = function(req, res, next) {
         { label: 'Legal',		key: 'terms',		href: '/terms' },
         { label: 'Press',		key: 'press',		href: '/press' },
         { label: 'Contact',		key: 'contact',		href: '/contact' },
+        { label: 'Homebrewers',	key: 'brewers',		href: '/brewers' },
 	];
     
 	locals.user = req.user;

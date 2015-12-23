@@ -84,12 +84,12 @@
 }
 
 .small {
-	height: 50%;
+	/*height: 50%;*/
 	margin: 15px 0 15px 0;
 }
 
 .large {
-	height: 100%;
+	height: auto;
 	margin: 15px 0;
 }
 
