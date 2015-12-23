@@ -88,6 +88,7 @@ exports = module.exports = function(app) {
 	app.get('/untappdNB/:location?/:version?/:source?', routes.views.landingpage_untappdB);
 
 	app.all('/contact', routes.views.contact);
+	app.all('/market/:page?', routes.views.marketplace);
 
 
 	// API Routes

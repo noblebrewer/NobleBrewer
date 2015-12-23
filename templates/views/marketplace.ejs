@@ -1,0 +1,59 @@
+<head>
+  <div class="title">
+    <title>Noble Brewer Marketplace</title>
+  </div>
+  <% include ./partials/head %>
+  <link href="/styles/market.css" rel="stylesheet">
+</head>
+
+<% include ./partials/header %>
+
+<section class="row patterned">
+	<div class="col-md-12" id="landing-container">
+		<div class="col-md-6" id="left-container">
+			<a href="/market/homebrewing">
+				<div class="row border" id="left-top">
+					<h4 class="centered-block market-label">Homebrewing</h4>
+				</div>
+			</a>
+			<div class="row" id="left-middle">
+				<a href="/market/fun">
+					<div class="col-md-6 border full-height">
+						<h4 class="centered-block market-label">Fun Stuff</h4>
+					</div>
+				</a>
+				<a href="/market/resources">
+					<div class="col-md-6 border full-height">
+						<h4 class="centered-block market-label">Resources</h4>
+					</div>
+				</a>
+			</div>
+			<a href="/market/giftbeer">
+				<div class="row border" id="left-bottom">
+					<h4 class="centered-block market-label">Gift Beer</h4>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-6" id="right-container">
+			<a href="/market/samplers">
+				<div class="row border" id="right-top">
+					<h4 class="centered-block market-label">Noble Brewer Samplers</h4>
+				</div>
+			</a>
+			<div class="row" id="right-bottom">
+				<a href="/market/craftbeer">
+					<div class="col-md-6 full-height border">
+						<h4 class="centered-block market-label">Craft Beer</h4>
+					</div>
+				</a>
+				<a href="/market/other">
+					<div class="col-md-6 full-height border">
+						<h4 class="centered-block market-label">Other</h4>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<% include ./partials/footer %>
