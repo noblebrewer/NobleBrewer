@@ -104,8 +104,8 @@
 
 .item-square {
 	/*border: #C5A77E solid 1px;*/
-	height: 200px;
-	width: 200px;
+	height: auto;
+	width: auto;
 	margin: 10px 0;
 }
 
