@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
   } else if (req.params.page === 'other') {
   	view.render('market-other');
   } else {
-	view.render('marketplace');
+	view.render('market-fun');
   }
     
 };

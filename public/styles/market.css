@@ -95,11 +95,11 @@
 
 .featured-item {
 	height: 20%;
-	width: 60%;
+	width: 100%;
 	text-align: center;
 	/*border: #C5A77E solid 1px;*/
 	position: relative;
-	left: 20%;
+	/*left: 20%;*/
 }
 
 .item-square {
