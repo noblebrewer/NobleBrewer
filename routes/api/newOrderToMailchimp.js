@@ -34,66 +34,72 @@ exports = module.exports = function(req, res) {
 				last = nameArray[1]
 			} else if (giftDetails[i].name === 'recipientEmail') {
 				email = giftDetails[i].value;
+				email = email.toLowerCase();
+				var memberID = (md5(email));
 			};
 		};
 		// console.log("Name "+first, last, fullname);
 		// console.log("Email "+email);
 		isGiftReceiver = "Yes";
 		hasActiveGift = "Yes";
-		email = email.toLowerCase();
-		var memberID = (md5(email));
+		
+		if (memberID) {
+			var data = {
+				status : 'subscribed',
+				email_address: email,
+				"merge_fields": 
+				{
+				    "FNAME" : first,
+				    "LNAME" : last,
+				    "FULLNAME" : fullname,
+				    "ACTIVEGIFT" : hasActiveGift,
+				    "GIVENGIFT" : isGiftReceiver,
+				    "EMSOURCE" : "gift-recipient"
+				}
+			}
+			// console.log("DATA: "+JSON.stringify(data));
 
-	
+			var putOptions = 
+			{
+				method: 'PUT',
+				url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
+				headers: 
+					{ 'cache-control': 'no-cache',
+					authorization: 'Basic '+keystone.get('mailchimp_api'),
+				 	'content-type': 'application/json' },
+				body: data,
+				json: true 
+			};
+
+			// console.log(putOptions);
+
+			request(putOptions, function (error, response, body){
+				if (error) throw new Error(error);
+				// console.log(body);
+				console.log("status code: "+response.statusCode);
+				if (response.statusCode === 200) {
+					console.log("Updated "+body.email_address+" in Mailchimp")
+					console.log("Gift Recipient");
+					console.log(body.merge_fields);
+					res.apiResponse('success');
+				} else {
+					console.log("error");
+					res.apiResponse('error')
+				}
+			})
+		} else {
+			console.log("Gift Details but no email address");
+			res.apiResponse('success');
+		}	
 		// console.log("Member "+isMember);
 		// console.log("Customer "+isCustomer);
 		// console.log("Receiver "+isGiftReceiver);
 		// console.log("Giver "+isGiftGiver);
 		// console.log("Active Gift "+hasActiveGift);
 
-		var data = {
-			status : 'subscribed',
-			email_address: email,
-			"merge_fields": 
-			{
-			    "FNAME" : first,
-			    "LNAME" : last,
-			    "FULLNAME" : fullname,
-			    "ACTIVEGIFT" : hasActiveGift,
-			    "GIVENGIFT" : isGiftReceiver,
-			    "EMSOURCE" : "gift-recipient"
-			}
-		}
-		// console.log("DATA: "+JSON.stringify(data));
-
-		var putOptions = 
-		{
-			method: 'PUT',
-			url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
-			headers: 
-				{ 'cache-control': 'no-cache',
-				authorization: 'Basic '+keystone.get('mailchimp_api'),
-			 	'content-type': 'application/json' },
-			body: data,
-			json: true 
-		};
-
-		// console.log(putOptions);
-
-		request(putOptions, function (error, response, body){
-			if (error) throw new Error(error);
-			// console.log(body);
-			console.log("status code: "+response.statusCode);
-			if (response.statusCode === 200) {
-				console.log("Updated "+body.email_address+" in Mailchimp")
-				console.log("Gift Recipient");
-				console.log(body.merge_fields);
-				res.apiResponse('success');
-			} else {
-				console.log("error");
-				res.apiResponse('error')
-			}
-		})
+		
 	} else {
+		console.log("No Gift Details");
 		res.apiResponse('success')
 	}
 }
