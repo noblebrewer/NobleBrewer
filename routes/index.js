@@ -96,6 +96,7 @@ exports = module.exports = function(app) {
 	app.all('/api/email', keystone.middleware.api, routes.api.email);
 	app.all('/api/addToMailchimp', keystone.middleware.api, routes.api.addToMailchimp);
 	app.all('/api/hubspot/newcustomer', keystone.middleware.api, routes.api.newCustomerToMailchimp);
+	app.all('/api/hubspot/neworder', keystone.middleware.api, routes.api.newOrderToMailchimp);
 	app.all('/api/homebrewervote', keystone.middleware.api, routes.api.homebrewervote);
 	app.all('/api/customer', keystone.middleware.api, routes.api.isShopifyCustomer);
 
