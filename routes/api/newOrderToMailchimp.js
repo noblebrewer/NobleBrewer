@@ -22,7 +22,7 @@ exports = module.exports = function(req, res) {
 	var isGiftReceiver = "No";
 	var hasActiveGift = "No";
 	var isGiftGiver = "No";
-	console.log(body);
+	// console.log(body);
 
 	var giftDetails = body.note_attributes;
 	if (giftDetails) {
@@ -36,19 +36,19 @@ exports = module.exports = function(req, res) {
 				email = giftDetails[i].value;
 			};
 		};
-		console.log("Name "+first, last, fullname);
-		console.log("Email "+email);
+		// console.log("Name "+first, last, fullname);
+		// console.log("Email "+email);
 		isGiftReceiver = "Yes";
 		hasActiveGift = "Yes";
 		email = email.toLowerCase();
 		var memberID = (md5(email));
 
 	
-		console.log("Member "+isMember);
-		console.log("Customer "+isCustomer);
-		console.log("Receiver "+isGiftReceiver);
-		console.log("Giver "+isGiftGiver);
-		console.log("Active Gift "+hasActiveGift);
+		// console.log("Member "+isMember);
+		// console.log("Customer "+isCustomer);
+		// console.log("Receiver "+isGiftReceiver);
+		// console.log("Giver "+isGiftGiver);
+		// console.log("Active Gift "+hasActiveGift);
 
 		var data = {
 			status : 'subscribed',
@@ -63,7 +63,7 @@ exports = module.exports = function(req, res) {
 			    "EMSOURCE" : "gift-recipient"
 			}
 		}
-		console.log("DATA: "+JSON.stringify(data));
+		// console.log("DATA: "+JSON.stringify(data));
 
 		var putOptions = 
 		{
@@ -77,14 +77,16 @@ exports = module.exports = function(req, res) {
 			json: true 
 		};
 
-		console.log(putOptions);
+		// console.log(putOptions);
 
 		request(putOptions, function (error, response, body){
 			if (error) throw new Error(error);
-			console.log(body);
+			// console.log(body);
 			console.log("status code: "+response.statusCode);
 			if (response.statusCode === 200) {
 				console.log("Updated "+body.email_address+" in Mailchimp")
+				console.log("Gift Recipient");
+				console.log(body.merge_fields);
 				res.apiResponse('success');
 			} else {
 				console.log("error");

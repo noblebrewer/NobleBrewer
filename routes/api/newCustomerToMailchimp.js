@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 	var isGiftReceiver = "No";
 	var hasActiveGift = "No";
 	var isGiftGiver = "No";
-	console.log(body);
+	// console.log(body);
 	if (body.default_address) {
 		if (body.default_address.phone !== '') {
 			phone = body.default_address.phone;
@@ -63,11 +63,11 @@ exports = module.exports = function(req, res) {
 	if (orderID) {
 		isCustomer = "Yes";
 	}
-	console.log("Member "+isMember);
-	console.log("Customer "+isCustomer);
-	console.log("Receiver "+isGiftReceiver);
-	console.log("Giver "+isGiftGiver);
-	console.log("Active Gift "+hasActiveGift);
+	// console.log("Member "+isMember);
+	// console.log("Customer "+isCustomer);
+	// console.log("Receiver "+isGiftReceiver);
+	// console.log("Giver "+isGiftGiver);
+	// console.log("Active Gift "+hasActiveGift);
 	// if (isCustomer === true) {
 	// 	lifecyclestage = 'customer'
 	// } else {
@@ -110,7 +110,7 @@ exports = module.exports = function(req, res) {
 		    // "ADDRESS" : address+"  "+city+"  "+state+"  "+zip+"  "+country
 		}
 	}
-	console.log("DATA: "+JSON.stringify(data));
+	// console.log("DATA: "+JSON.stringify(data));
 
 	var getOptions = { method: 'GET',
 		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
@@ -145,14 +145,16 @@ exports = module.exports = function(req, res) {
 		json: true 
 	};
 
-	console.log(putOptions);
+	// console.log(putOptions);
 
 	request(putOptions, function (error, response, body){
 		if (error) throw new Error(error);
-		console.log(body);
+		// console.log(body);
 		console.log("status code: "+response.statusCode);
 		if (response.statusCode === 200) {
 			console.log("Updated "+body.email_address+" in Mailchimp")
+			console.log("Customer Update");
+			console.log(body.merge_fields);
 			res.apiResponse('success');
 		} else {
 			console.log("error");
