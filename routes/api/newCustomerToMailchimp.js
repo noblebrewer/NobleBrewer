@@ -45,12 +45,14 @@ exports = module.exports = function(req, res) {
 	for (var i = 0; i < tags.length; i++) {
 		if (tags[i] === 'Active Subscriber') {
 			isMember = "Yes";
+			isCustomer = "Yes";
 		};
 		if (tags[i] === 'Inactive Subscriber') {
 			isMember = "No";
 		};
 		if (tags[i] === 'Gave Gift') {
 			isGiftGiver = "Yes";
+			isCustomer = "Yes";
 		}
 		if (tags[i] === 'Active Gift') {
 			isGiftReceiver = "Yes";
