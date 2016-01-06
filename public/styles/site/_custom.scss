@@ -681,31 +681,30 @@ section {
 	@include breakpoint(mobileonly){
 		padding-bottom: 15px;
 		margin: auto;
-		width: 320px;
+		/*width: 320px;*/
 	}
 
 	@include breakpoint(phablet){
 		align: center;
 		margin: auto;
 		padding-bottom: 15px;
-		width: 500px;
+		/*width: 500px;*/
 	}
 
 	@include breakpoint(laptop){
 		margin: 15px;
 		width: 95%;
-		height: 600px;
+		/*height: 600px;*/
 	}
 
 	@include breakpoint(desktop){
 		margin: 15px;
 		width: 95%;
-		height: 650px;
+		/*height: 650px;*/
 	}
 
 	img{
  		width:100%;
- 		border: none;
 
  		&.image-cropper {
 			width: 589px;
@@ -723,8 +722,8 @@ section {
 	}
 
 	> .card-text {
-		background-color: $white;
-		color: $dark-text;
+		background-color: #333;
+		color: #DAD8D6;
 		width: 100%;
 		padding-bottom:10px;
 		padding-left:10px;
@@ -737,7 +736,11 @@ section {
 		}
 
 		> p {
-			color: $dark-text;
+			color: #DAD8D6;
+		}
+
+		> .gold {
+			color: #C5A77E;
 		}
 	}
 }

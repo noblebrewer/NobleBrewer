@@ -6501,30 +6501,29 @@ section {
   .card {
     padding-bottom: 15px;
     margin: auto;
-    width: 320px; } }
+    /*width: 320px;*/ } }
 
 @media (min-width: 37.5em) {
   .card {
     align: center;
     margin: auto;
     padding-bottom: 15px;
-    width: 500px; } }
+    /*width: 500px;*/ } }
 
 @media (min-width: 64em) {
   .card {
     margin: 15px;
     width: 95%;
-    height: 600px; } }
+    /*height: 600px;*/ } }
 
 @media (min-width: 85em) {
   .card {
     margin: 15px;
     width: 95%;
-    height: 650px; } }
+    /*height: 650px;*/ } }
 
 .card img {
-  width: 100%;
-  border: none; }
+  width: 100%; }
   .card img.image-cropper {
     width: 589px;
     height: 393px;
@@ -6537,8 +6536,8 @@ section {
   color: #000; }
 
 .card > .card-text {
-  background-color: #FFFFFF;
-  color: #232121;
+  background-color: #333;
+  color: #DAD8D6;
   width: 100%;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -6548,7 +6547,9 @@ section {
   .card > .card-text > .brewers {
     height: 200px; }
   .card > .card-text > p {
-    color: #232121; }
+    color: #DAD8D6; }
+  .card > .card-text > .gold {
+    color: #C5A77E; }
 
 /* Media */
 img {
