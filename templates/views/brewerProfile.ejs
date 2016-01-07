@@ -12,45 +12,50 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//portal.referralcandy.com/assets/widgets/refcandy-poprocks.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","refcandy-poprocks-js");</script>
 </head>
 
-<section class="row">
-	<h4 class="col-md-9 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
-    <a class="col-md-2 btn btn-nb" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
-</section>
-
-<section>
-    <div class="row-fluid">
-        <img class="img-responsive" src="<%= data.brewer.bannerUrlNormalized %>">
+<section class="row top-buffer-thin patterned">
+    <div class="col-md-12">
+    	<h4 class="col-md-6 col-sm-6 col-xs-12 header"><span><a href="/brewers">Brewers >> </a></span><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h4>
+        <a class="col-md-2 col-xs-5 btn btn-nb" style="float:right" href="mailto:<%= data.brewer.brewerEmail %>" role="button">Email <%= data.brewer.brewerName.first %></a>
     </div>
 </section>
 
-<section class="light-striped">
-	<div class="row-fluid">
-		<h2 class="centered-block"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h2>
-		<p class="brewercity"><%= data.brewer.city %>, <%= data.brewer.state %></p>
+<section class="row centered-block light-alt-base">
+    <div class="col-md-4 col-xs-12 col-sm-12">
+        <img class="img-responsive centered-block" src="<%= data.brewer.profilePicture.url %>">
+    </div>
+    <div class="col-md-8 top-buffer">
+        <br>
+        <h2 class="centered-block"><%= data.brewer.brewerName.first %> <%= data.brewer.brewerName.last %></h2>
+        <p class="brewercity"><%= data.brewer.city %>, <%= data.brewer.state %></p>
+        <div class="thin-padding">
+            <%- data.brewer.profileHeadline %>
+            <%- data.brewer.profileBrief %>
+        </div>
+    </div>
 </section>
 
-<section class="row">
-	<div class="col-md-6">
-		<%- data.brewer.profileHeadline %>
-		<%- data.brewer.profileBrief %>
-	</div>
+<% if (data.brewer.profileVideo) { %>
+    <section class="row">
+    	<div class="col-md-6 col-md-offset-3">
+        	<div class="embed-responsive embed-responsive-16by9" style="padding-bottom:400px">
+                <iframe class="embed-responsive-item" style="width:100%; min-height:400px; height:auto; padding-bottom:0px" src="<%= data.brewer.profileVideo %>"></iframe>
+        	</div>
+        </div>
+    </section>
+<% } %>
 
-	<div class="embed-responsive embed-responsive-16by9" style="padding-bottom:400px">
-        <iframe class="embed-responsive-item" style="width:100%; min-height:400px; height:auto; padding-bottom:0px" src="<%= data.brewer.profileVideo %>"></iframe>
-	</div>
-</section>
-
-<section class="patterned row">
-    <h2 class="row centered-block">THE BEER</h4>
-
+<section class="patterned row centered-block">
+    <h3>THE BEER</h3>
     <div class="side-card clearfix col-md-6 col-md-offset-3">
         <div class="card-text">
-            <h4 class="subheader"><%= data.brewer.featuredBeerName %></h4>
+            <a href="<%= data.brewer.featuredBeerProfileURL %>">
+                <h4 class="gold"><%= data.brewer.featuredBeerName %></h4>
+            </a>
             <hr class="gold">
-            <h5><%= data.brewer.featuredBeerShortDescription %></h5>
+            <p><%= data.brewer.featuredBeerShortDescription %></p>
         </div>
         <div>
-            <img class="side-img image-responsive" src="<%= data.brewer.featuredBeerPictureURL%>">
+            <img class="side-img image-responsive" style="margin-top:15px" src="<%= data.brewer.featuredBeerPictureURL%>">
         </div>
     </div>
     <div class="row">
@@ -58,17 +63,17 @@
     </div>
 </section>
 
-<section class="row">
-    <div class="col-md-6">
+<section class="row light-alt-base">
+    <div class="col-md-6 col-sm-6 centered-block">
         <% data.brewer.imageGallery.forEach(function(image, index){ %>
             <% if (index === 2) { %>
-                <img class="col-md-12 img-responsive top-buffer no-border" src="<%= image.url %>"> 
+                <img class="col-md-11 col-sm-11 col-xs-11 img-responsive top-buffer gallery" src="<%= image.url %>"> 
             <% } else { %>
-                <img class="col-md-6 img-responsive top-buffer no-border" src="<%= image.url %>">
+                <img class="col-md-5 col-sm-11 col-xs-11 img-responsive top-buffer gallery" src="<%= image.url %>">
             <% } %>
         <% }) %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-6 col-xs-12">
         <%- data.brewer.profileBody %>
     </div>
 </section>

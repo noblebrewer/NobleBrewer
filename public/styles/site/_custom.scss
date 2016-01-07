@@ -70,7 +70,7 @@ html.untappd, body.untappd {
 
 @mixin htags() {
 	text-transform: uppercase;
-  	color: $white;
+  	color: #DAD8D6;
 }
 
 h1 {
@@ -335,6 +335,11 @@ section {
 
 .patterned {
 	background-image: url($pattern-background);
+}
+
+.grey-silver {
+	background-color: #333;
+    border: solid 1px #777;
 }
 
 /*********** DIVIDERS ***************/
@@ -764,6 +769,10 @@ img {
 		max-width: 400px;
 		height: auto;
     }
+    &.gallery {
+    	padding: 0px;
+    	margin: 20px;
+    }
 }
 
 iframe{
@@ -775,6 +784,10 @@ iframe{
 /***** SIZING BUFFERS AND AUTO-SIZING ****/
 .auto-height {
 	height:auto;
+}
+
+.thin-padding {
+	padding: 5px;
 }
 
 .top-buffer {
@@ -894,10 +907,9 @@ iframe{
 }
 
 .side-card {
-  background-color: #FFFFFF;
-  padding-right:0px }
+  background-color: #333333; }
   .side-card img {
-    border: none;
+    border: 1px #C5A77E solid;
     width: 35%;
     float: left; }
   .side-card hr {
@@ -911,14 +923,14 @@ iframe{
   .side-card > .card-text {
     float: left;
     width: 65%;
-    color: #333333;
+    color: #DAD8D6;
     padding-bottom: 10px;
     padding-left: 10px;
-    padding-right: 0px;
-    overflow: scroll;
-    max-height: 185px; }
+    padding-right: 25px;
+    overflow: hidden;
+    height: auto; }
     .side-card > .card-text > p {
-      color: #232121; }
+      color: #DAD8D6; }
       
 .inactive-selection {
 	color: #DDD;

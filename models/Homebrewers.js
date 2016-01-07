@@ -18,6 +18,7 @@ Homebrewer.add(
 	city: { type: String },
 	state: { type: String },
 	profilePicture: {type: Types.CloudinaryImage, required: false, initial: false},
+	coverPicture: {type: Types.CloudinaryImage, required: false, initial: false},
 	isFeaturedBrewer: { type: Types.Boolean, required: false},
 	isPotentialBrewer: {type: Types.Boolean},
 	inCurrentVote: {type: Types.Boolean}},

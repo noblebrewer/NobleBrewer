@@ -34,12 +34,12 @@
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="card">
 							<a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
-							<div class="card-text brewers top-buffer-thin" style="height:320px; max-height:none">
+							<div class="card-text brewers top-buffer-thin" style="height:200px; max-height:none">
 								<a class="h4 gold"  href="/profile/<%= featuredBrewer.slug%>"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></a>
 									<h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
 									<hr align="left">
-									<% if (featuredBrewer.profileBrief) { %>
-										<%-featuredBrewer.profileBrief%>
+									<% if (featuredBrewer.profileHeadline) { %>
+										<%-featuredBrewer.profileHeadline%><br><br>
 										<a href="/profile/<%= featuredBrewer.slug%>">Read More...</a>
 									<% } else { %>
 										<a href="<%-featuredBrewer.profileBrief%>">View Profile...</a>
@@ -67,21 +67,21 @@
 		</div>
 		<br>
 		<br>
-			<% data.allBrewers.forEach(function(brewer, index){ %>
-				<% if (index%4 == 0){ %>
-					<div class="row">
-				<% } %>
-					<div class="col-md-3 col-sm-3 col-xs-6" align="center">
-						<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.thumbnailUrlNormalized%>" class="img-thumbnail circle-img gray-img"></a>
-						<br>
-						<p><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
-						<p class="small light"><%=brewer.city%>, <%=brewer.state%></p>
+		<% data.allBrewers.forEach(function(brewer, index){ %>
+			<% if (index%4 == 0){ %>
+				<div class="row">
+			<% } %>
+				<div class="col-md-3 col-sm-3 col-xs-6" align="center">
+					<a href="/profile/<%= brewer.slug%>"><img src="<%= brewer.thumbnailUrlNormalized%>" class="img-thumbnail circle-img gray-img"></a>
+					<br>
+					<p><%= brewer.brewerName.first%> <%= brewer.brewerName.last%></p>
+					<p class="small light"><%=brewer.city%>, <%=brewer.state%></p>
+				</div>
+			<% if ((index+1)%4 == 0){ %>
 					</div>
-				<% if ((index+1)%4 == 0){ %>
-						</div>
-					</div>
-				<% } %>
-			<% }) %>
+				</div>
+			<% } %>
+		<% }) %>
 </section>
 
 

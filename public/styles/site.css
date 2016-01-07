@@ -5999,7 +5999,7 @@ html.untappd, body.untappd {
 /*** Headers ****/
 h1 {
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #DAD8D6;
   font-size: 2.827em;
   line-height: 1.2em;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -6015,7 +6015,7 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #DAD8D6;
   font-size: 2.827em;
   line-height: 1.2em;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -6028,7 +6028,7 @@ h2 {
 
 h3 {
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #DAD8D6;
   font-size: 1.999em;
   line-height: 1.45em;
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -6189,6 +6189,10 @@ section {
 
 .patterned {
   background-image: url("/images/generic/diagmonds.png"); }
+
+.grey-silver {
+  background-color: #333;
+  border: solid 1px #777; }
 
 /*********** DIVIDERS ***************/
 .diamond-separator {
@@ -6566,6 +6570,9 @@ img {
     display: block;
     max-width: 400px;
     height: auto; }
+  img.gallery {
+    padding: 0px;
+    margin: 20px; }
 
 @media (max-width: 37.5em) {
   iframe {
@@ -6574,6 +6581,9 @@ img {
 /***** SIZING BUFFERS AND AUTO-SIZING ****/
 .auto-height {
   height: auto; }
+
+.thin-padding {
+  padding: 5px; }
 
 .top-buffer {
   padding-top: 30px;
@@ -6669,11 +6679,10 @@ img {
     padding: 12px; }
 
 .side-card {
-  background-color: #FFFFFF;
-  padding-right: 0px; }
+  background-color: #333333; }
 
 .side-card img {
-  border: none;
+  border: 1px #C5A77E solid;
   width: 35%;
   float: left; }
 
@@ -6690,15 +6699,15 @@ img {
 .side-card > .card-text {
   float: left;
   width: 65%;
-  color: #333333;
+  color: #DAD8D6;
   padding-bottom: 10px;
   padding-left: 10px;
-  padding-right: 0px;
-  overflow: scroll;
-  max-height: 185px; }
+  padding-right: 25px;
+  overflow: hidden;
+  height: auto; }
 
 .side-card > .card-text > p {
-  color: #232121; }
+  color: #DAD8D6; }
 
 .inactive-selection {
   color: #DDD;
