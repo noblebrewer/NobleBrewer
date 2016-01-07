@@ -46,7 +46,7 @@
 
 <section class="patterned row centered-block">
     <h3>THE BEER</h3>
-    <div class="side-card clearfix col-md-6 col-md-offset-3">
+    <div class="side-card clearfix col-md-6 col-md-offset-3 col-sm-12 hidden-xs">
         <div class="card-text">
             <a href="<%= data.brewer.featuredBeerProfileURL %>">
                 <h4 class="gold"><%= data.brewer.featuredBeerName %></h4>
@@ -58,6 +58,22 @@
             <img class="side-img image-responsive" style="margin-top:15px" src="<%= data.brewer.featuredBeerPictureURL%>">
         </div>
     </div>
+
+    <div class="card clearfix centered-block hidden-md hidden-lg hidden-sm">
+        <a href="<%= data.brewer.featuredBeerProfileURL %>">
+            <h4 class="card-text-products" style="min-height:70px; color:#C5A77E"><%= data.brewer.featuredBeerName %></h4>
+            <div>
+                <img src="<%= data.brewer.featuredBeerPictureURL%>" href="<%= data.brewer.featuredBeerProfileURL %>">
+            </div>
+        </a>
+        <div class="card-text-products top-buffer">
+            <p style="min-height:80px" class="light"><%= data.brewer.featuredBeerShortDescription %></p>
+        </div>
+        <div class="col-md-12 top-buffer">
+            <a href="<%= data.brewer.featuredBeerProfileURL %>" class="btn-nb-ghost col-md-12 centered-block">Try Now</a>
+        </div>
+    </div>
+
     <div class="row">
         <a class="btn btn-nb col-md-2 col-md-offset-5" href="<%= data.brewer.featuredBeerProfileURL %>">Order</a>
     </div>

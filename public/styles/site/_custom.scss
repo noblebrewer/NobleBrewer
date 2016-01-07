@@ -931,6 +931,19 @@ iframe{
     height: auto; }
     .side-card > .card-text > p {
       color: #DAD8D6; }
+
+.card > .card-text-products {
+  background-color: #333333;
+  color: #333333;
+  width: 100%;
+  padding: 5px;
+  border-right: solid 1px #C5A77E;
+  border-bottom: solid 1px #C5A77E;
+  border-left: solid 1px #C5A77E;
+  max-height: 185px; }
+  .card > .card-text-products > p {
+    color: #DAD8D6;
+  	margin: 0}
       
 .inactive-selection {
 	color: #DDD;
