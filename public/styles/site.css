@@ -6055,6 +6055,8 @@ h4 {
     color: #C5A77E; }
   h4.white {
     color: #FFFFFF; }
+  h4.gold {
+    color: #C5A77E; }
 
 .subheader {
   color: #333333;
@@ -6601,6 +6603,12 @@ img {
 
 .full-width {
   width: 100%; }
+
+.no-margin {
+  margin: 0px; }
+
+.no-padding {
+  padding: 0px; }
 
 .how-it-works-heading {
   margin-top: 30px;

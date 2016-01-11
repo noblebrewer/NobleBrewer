@@ -146,6 +146,10 @@ h4 {
 		color: $white;
 	}
 
+	&.gold {
+		color: $medium-tan;
+	}
+
 }
 
 
@@ -810,6 +814,14 @@ iframe{
 
 .full-width {
 	width: 100%;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+.no-padding {
+	padding: 0px;
 }
 
 .how-it-works-heading {
