@@ -1526,8 +1526,8 @@ pre {
     clear: both; }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px; }
+  /*margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);*/ }
   .row:before,
   .row:after {
     content: " ";
@@ -2745,8 +2745,8 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
   min-height: 29px; }
 
 .form-horizontal .form-group {
-  margin-left: -15px;
-  margin-right: -15px; }
+  /*margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);*/ }
   .form-horizontal .form-group:before,
   .form-horizontal .form-group:after {
     content: " ";
@@ -6040,7 +6040,8 @@ h3 {
     color: #232121; }
 
 h4 {
-  color: #FFFFFF;
+  text-transform: uppercase;
+  color: #DAD8D6;
   font-size: 1.414em;
   line-height: 1.45em;
   text-transform: uppercase;
@@ -6351,6 +6352,7 @@ section {
   margin-right: 15px;
   padding: 14px;
   min-width: 200px;
+  text-align: center;
   text-transform: uppercase; }
   .btn-nb:hover {
     background-color: #D0B895;
@@ -6385,6 +6387,7 @@ section {
   margin-right: 15px;
   padding: 14px;
   min-width: 200px;
+  text-align: center;
   text-transform: uppercase; }
   .btn-nb-ghost:hover {
     background-color: #EDE4D7;
@@ -6608,6 +6611,13 @@ img {
   margin: 0px; }
 
 .no-padding {
+  padding: 0px; }
+
+.thin-margin {
+  margin: 5px; }
+
+.product-images {
+  margin: 5px;
   padding: 0px; }
 
 .how-it-works-heading {
