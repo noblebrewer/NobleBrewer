@@ -350,7 +350,7 @@
   </section> -->
 
 <div class="modal fade" id="untappdModal" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog">
+  <div class="modal-dialog no-padding">
     <div class="modal-content">
       <div class="modal-body">
         <h4 class="centered-block">At Noble Brewer You'll find</h4>
@@ -394,7 +394,31 @@ Come see what's inside -->
   $(window).load(function() {
     $('#untappdModal').modal('show');
   })
+
+  function getCookie(cookie) {
+    var name = cookie + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+  }
+  var access = getCookie("access");
+  console.log(access);
+  if (access === "") {
+    $(window).load(function() {
+      $('#emailModal').modal('show');
+    }) 
+  } else {
+    var emailCookie = getCookie("email")
+    console.log(emailCookie);
+    window.email = getCookie("email");
+  }
 </script>
+
+
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
 <script>
