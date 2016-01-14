@@ -6492,9 +6492,9 @@ section {
   min-height: 45px; }
 
 .modal-content {
-  background-image: url("/images/generic/notebook-dark.png");
+  background-image: url("/images/generic/diagmonds.png");
   background-color: black;
-  color: #C5A77E;
+  color: #DAD8D6;
   border-color: #C5A77E; }
 
 .modal-header, .modal-footer {
