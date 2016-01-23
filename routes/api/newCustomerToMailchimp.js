@@ -110,6 +110,12 @@ exports = module.exports = function(req, res) {
 		    "GIVENGIFT" : isGiftReceiver,
 		    "GIFTGIVER" : isGiftGiver
 		    // "ADDRESS" : address+"  "+city+"  "+state+"  "+zip+"  "+country
+		},
+		"interests": 
+		{
+			"2f53c8667b" : true, // Newsletter
+			"2225431578" : true, // Offers
+			"7aea70668e" : false, // Brewery app
 		}
 	}
 	// console.log("DATA: "+JSON.stringify(data));

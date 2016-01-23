@@ -41,10 +41,10 @@ exports = module.exports = function(req, res) {
 			'content-type': 'application/json' } 
 	};
 
-	var postOptions = 
+	var putOptions = 
 	{
-		method: 'POST',
-		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/',
+		method: 'PUT',
+		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
 		headers: 
 			{ 'cache-control': 'no-cache',
 			authorization: 'Basic '+keystone.get('mailchimp_api'),
@@ -53,34 +53,49 @@ exports = module.exports = function(req, res) {
 		json: true 
 	};
 
-	request(getOptions, function (error, response, body) {
+	request(putOptions, function (error, response, body){
 		if (error) throw new Error(error);
-		console.log("INFO: Check if email existed - status code: "+response.statusCode);
-		var body = JSON.parse(response.body);
-		var status = body.status;
-		// console.log(status);
-		if (response.statusCode === 404) {
-			request(postOptions, function(error, response, body){
-				if (error) throw new Error(error);
-				console.log(response.statusCode);
-				//console.log(body);
-				if (response.statusCode === 200) {
-					console.log("INFO: Added "+email+" to mailchimp");
-					res.apiResponse("success")
-				} else if (response.statusCode === 400) {
-					console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
-					res.apiResponse('success')
-				}
-			})
-		} else if (response.statusCode === 400) {
+		console.log(body);
+		console.log("status code: "+response.statusCode);
+		if (response.statusCode === 200) {
+			console.log("Updated "+body.email_address+" in Mailchimp")
+			console.log("Customer Update");
+			console.log(body.merge_fields);
+			res.apiResponse('success');
+		} else {
 			console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
 			res.apiResponse('error')
-		} else {
-			console.log("INFO: "+email+" already existed in mailchimp");
-			//TODO: Add some way to update if they already exist
-			res.apiResponse('success');
 		}
-	});
+	})
+
+	// request(getOptions, function (error, response, body) {
+	// 	if (error) throw new Error(error);
+	// 	console.log("INFO: Check if email existed - status code: "+response.statusCode);
+	// 	var body = JSON.parse(response.body);
+	// 	var status = body.status;
+	// 	// console.log(status);
+	// 	if (response.statusCode === 404) {
+	// 		request(putOptions, function(error, response, body){
+	// 			if (error) throw new Error(error);
+	// 			console.log(response.statusCode);
+	// 			//console.log(body);
+	// 			if (response.statusCode === 200) {
+	// 				console.log("INFO: Added "+email+" to mailchimp");
+	// 				res.apiResponse("success")
+	// 			} else if (response.statusCode === 400) {
+	// 				console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
+	// 				res.apiResponse('success')
+	// 			}
+	// 		})
+	// 	} else if (response.statusCode === 400) {
+	// 		console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
+	// 		res.apiResponse('error')
+	// 	} else {
+	// 		console.log("INFO: "+email+" already existed in mailchimp");
+	// 		//TODO: Add some way to update if they already exist
+	// 		res.apiResponse('success');
+	// 	}
+	// });
 }
 
 function createData() {
@@ -104,6 +119,12 @@ function createData() {
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.source,
+			},
+			"interests": 
+			{
+				"2f53c8667b" : true, // Newsletter
+				"2225431578" : true, // Offers
+				"7aea70668e" : false, // Brewery app
 			}
 		}
 	} else if (body.function === 'registration') {
