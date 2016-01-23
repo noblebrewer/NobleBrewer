@@ -110,6 +110,12 @@ function createData() {
 			    "LNAME" : body.lastname,
 			    "HOMEBREWER" : 'Yes',
 			    "FULLNAME" : body.fullname
+			},
+			"interests": 
+			{
+				"2f53c8667b" : true, // Newsletter
+				"2225431578" : true, // Offers
+				"7aea70668e" : false, // Brewery app
 			}
 		}
 	} else if (body.function === 'email') {
@@ -137,6 +143,12 @@ function createData() {
 			    "FNAME" : body.firstname,
 			    "LNAME" : body.lastname,
 			    "FULLNAME" : body.fullname
+			},
+			"interests": 
+			{
+				"2f53c8667b" : true, // Newsletter
+				"2225431578" : true, // Offers
+				"7aea70668e" : false, // Brewery app
 			}
 		}
 	} else if (body.function === 'dropahint') {
@@ -150,6 +162,12 @@ function createData() {
 			    "LNAME" : body.lastname,
 			    "DROPAHINT" : 'Yes',
 			    "FULLNAME" : body.fullname
+			},
+			"interests": 
+			{
+				"2f53c8667b" : true, // Newsletter
+				"2225431578" : true, // Offers
+				"7aea70668e" : false, // Brewery app
 			}
 		}
 	}
