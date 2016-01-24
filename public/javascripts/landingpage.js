@@ -9,7 +9,8 @@ $("#submit-email").click(function(e){
 		var form = {
 			email : document.getElementById("email").value,
 			source: 'untappd',
-			function: 'email'
+			function: 'email',
+			state: $("#state option:selected").val()
 		}
 
 		// var location = document.getElementById('untappd-location').innerHTML

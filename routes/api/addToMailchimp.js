@@ -125,6 +125,7 @@ function createData() {
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.source,
+			    "STATE" : body.state
 			},
 			"interests": 
 			{
