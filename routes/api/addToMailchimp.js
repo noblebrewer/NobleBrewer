@@ -53,6 +53,8 @@ exports = module.exports = function(req, res) {
 		json: true 
 	};
 
+	console.log(putOptions);
+
 	request(putOptions, function (error, response, body){
 		if (error) throw new Error(error);
 		console.log(body);
@@ -63,6 +65,7 @@ exports = module.exports = function(req, res) {
 			console.log(body.merge_fields);
 			res.apiResponse('success');
 		} else {
+			console.log(body.errors[0].field);
 			console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
 			res.apiResponse('error')
 		}
@@ -125,7 +128,8 @@ function createData() {
 			"merge_fields": 
 			{
 			    "EMSOURCE": body.source,
-			    "STATE" : body.state
+			    "STATE" : body.state,
+			    // "ADDRESS" : nil
 			},
 			"interests": 
 			{
