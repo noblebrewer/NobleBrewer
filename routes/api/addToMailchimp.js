@@ -57,7 +57,7 @@ exports = module.exports = function(req, res) {
 
 	request(putOptions, function (error, response, body){
 		if (error) throw new Error(error);
-		console.log(body);
+		// console.log(body);
 		console.log("status code: "+response.statusCode);
 		if (response.statusCode === 200) {
 			console.log("Updated "+body.email_address+" in Mailchimp")
