@@ -3,20 +3,6 @@
       <title>Noble Brewer</title>
   </div>
 
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='80367997-28',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
 
   <% include ./partials/head %>
   <!-- Facebook Conversion Code for home page visits -->
@@ -354,16 +340,81 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <div class="modal-content">
       <div class="modal-body centered-block">
         <!-- <img class="img-responsive" src="/images/untappd/co-brand_hero_img.jpg"> -->
-        <h4>Verify your age and enter email address</h4>
-        <div class="row centered-block">
+        <h4>Verify age, state, and email</h4>
+        <div class="row hr-gold-thin top-buffer-thin">
           <div class="row">
-            <input type="checkbox" style="font-color:black" id="age-confirm">  I confirm I'm of legal drinking age
+            <p>Are you 21? We can't let you in if you're not.</p>
           </div>
-          <form class="form-inline top-buffer" id="email-signup">
+          <div class="row">
+            <input type="checkbox" style="font-color:black" id="age-confirm">  Yes
+          </div>
+          <div class="row" style="padding-top:15px">
+              <p>Make sure we ship to your state</p>
+          </div>
+          <form>
+            <select id="state" name="state" style="color: #c5a77e; background-color: transparent; border: 1.8px solid #DAD8D6; max-width: 100%;">
+              <option value=""></option>
+              <option value="AL">AL</option>
+              <!-- <option value="AK">AK</option> -->
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <!-- <option value="HI">HI</option> -->
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <!-- <option value="NH">NH</option> -->
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY">NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </form>
+          <div class="row">
+            <p>Verify you're not a bot</p>
+          </div>
+          <form class="form-inline" id="email-signup">
             <div class="form-group">
               <input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
-            </div>
-            <button type="submit" id="submit-email" class="btn btn-nb auto-height" style="width:auto">Show me the beer!</button>
+              <button type="submit" id="submit-email" class="btn btn-nb auto-height" style="width:auto; border-radius:4px; margin-left:15px; padding:14px">Come on in</button>
+            </div> 
           </form>
         </div>  
       </div>
