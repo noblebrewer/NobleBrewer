@@ -341,6 +341,12 @@ section {
 	background-image: url($pattern-background);
 }
 
+.patterned-blog {
+	background-image: url($pattern-background);
+	border-right: $lightest-grey solid 1px;
+	border-left: $lightest-grey solid 1px;
+}
+
 .grey-silver {
 	background-color: #333;
     border: solid 1px #777;
