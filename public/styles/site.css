@@ -6193,6 +6193,11 @@ section {
 .patterned {
   background-image: url("/images/generic/diagmonds.png"); }
 
+.patterned-blog {
+  background-image: url("/images/generic/diagmonds.png");
+  border-right: #999999 solid 1px;
+  border-left: #999999 solid 1px; }
+
 .grey-silver {
   background-color: #333;
   border: solid 1px #777; }
