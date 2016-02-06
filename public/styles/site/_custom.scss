@@ -51,7 +51,7 @@ BREAKPOINTS
 
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
 html.untappd, body.untappd {
@@ -1160,6 +1160,11 @@ progress::-moz-progress-value{
     position: relative;
     float: right;
 
+}
+
+.email {
+	width: 100%;
+	height: 30px;
 }
 
 .email-signup input {

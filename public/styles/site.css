@@ -5984,7 +5984,7 @@ button.close {
 /**** HTML Tags ****/
 html, body {
   max-width: 100%;
-  overflow-x: hidden; }
+  /*overflow-x: hidden;*/ }
 
 html.untappd, body.untappd {
   background-color: white;
@@ -6896,6 +6896,10 @@ progress::-moz-progress-value {
   position: relative;
   float: right; }
 
+.email {
+  width: 100%;
+  height: 30px; }
+
 .email-signup input {
   border-radius: 0px;
   margin-right: 0px; }
@@ -7030,3 +7034,122 @@ div.row.fullName {
   color: #aaa;
   line-height: 1.1;
   margin-bottom: 60px; }
+
+html, body {
+  height: 100%; }
+
+.landingpage-header {
+  background-image: url("/images/beer/IPASampler3.jpg");
+  position: relative;
+  background-position: center center;
+  display: table;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+@media (max-width: 767px) {
+  .landingpage-header {
+    background-position: center center;
+    max-width: 100%; } }
+
+section .landingpage-header {
+  min-height: 200px;
+  background-position: center center;
+  overflow: scroll; }
+
+.landingpage-body {
+  margin-top: 60px; }
+
+.landingpage-topbar {
+  background-image: url("/images/generic/simple_logo.svg");
+  height: 50px;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 15px;
+  top: 15px; }
+
+.landingpage-details {
+  padding: 100px 0; }
+
+.form-top {
+  overflow: hidden;
+  padding: 0 25px 15px 25px;
+  background: #444;
+  background: rgba(0, 0, 0, 0.35);
+  text-align: left;
+  border: 1px solid #C5A77E;
+  border-bottom: none; }
+
+.form-box {
+  padding: 60px 0 200px 0; }
+
+.form-top-left {
+  float: left;
+  width: 100%;
+  padding-top: 25px; }
+
+.form-top-left h3 {
+  margin-top: 0px; }
+
+.form-top-right {
+  float: left;
+  width: 25%;
+  padding-top: 5px;
+  font-size: 66px;
+  color: #fff;
+  line-height: 100px;
+  text-align: right;
+  opacity: 0.3; }
+
+.form-bottom {
+  padding: 25px 25px 30px 25px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #C5A77E;
+  border-top: .4px solid #333; }
+
+.form-bottom #form-email {
+  height: 40px; }
+
+.form-bottom #state {
+  color: #c5a77e;
+  background-color: transparent;
+  border: 1.8px solid #DAD8D6;
+  max-width: 100%;
+  height: 40px;
+  min-width: 100px; }
+
+.form-bottom .btn-nb {
+  height: 43px;
+  padding: 0;
+  float: right;
+  margin-top: 0;
+  margin-right: 0; }
+
+@media (max-width: 767px) {
+  .form-bottom .btn-nb {
+    margin-top: 15px; } }
+
+/*.typcn-pencil {
+    content: '\e0c3';
+}
+.typcn {
+    font-family: 'typicons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}*/

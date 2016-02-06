@@ -90,6 +90,7 @@ exports = module.exports = function(app) {
 	app.all('/contact', routes.views.contact);
 	app.all('/market/:page?', routes.views.marketplace);
 	app.all('/sampler', routes.views.sampler);
+	app.all('/welcome', routes.views.welcomesampler);
 
 
 	// API Routes
