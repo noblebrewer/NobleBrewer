@@ -25,51 +25,56 @@ exports = module.exports = function(req, res) {
 	console.log("Email: "+email+" submitted via "+(body.source || body.function));
 	var emailSource = (body.source || body.function);
 
+	// if (body.function === 'welcome') {
+	// 	addToWorkflow();
+	// }
+
 	if (email) {
 		createData()
+		var getOptions = { method: 'GET',
+			url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
+			qs: { 'content-header': '' },
+			headers: 
+				{ 'cache-control': 'no-cache',
+				authorization: 'Basic '+keystone.get('mailchimp_api'),
+				'content-type': 'application/json' } 
+		};
+
+		var putOptions = 
+		{
+			method: 'PUT',
+			url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
+			headers: 
+				{ 'cache-control': 'no-cache',
+				authorization: 'Basic '+keystone.get('mailchimp_api'),
+			 	'content-type': 'application/json' },
+			body: data,
+			json: true 
+		};
+
+		// console.log(putOptions);
+
+		request(putOptions, function (error, response, body){
+			if (error) throw new Error(error);
+			// console.log(body);
+			console.log("status code: "+response.statusCode);
+			if (response.statusCode === 200) {
+				console.log("Updated "+body.email_address+" in Mailchimp")
+				console.log("Customer Update");
+				console.log(body.merge_fields);
+				res.apiResponse('success');
+			} else {
+				// console.log(body.errors[0].field);
+				console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
+				res.apiResponse('error')
+			}
+		})
 	} else {
 		console.log("No email submitted");
 		res.apiResponse('error')
 	}
 
-	var getOptions = { method: 'GET',
-		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
-		qs: { 'content-header': '' },
-		headers: 
-			{ 'cache-control': 'no-cache',
-			authorization: 'Basic '+keystone.get('mailchimp_api'),
-			'content-type': 'application/json' } 
-	};
-
-	var putOptions = 
-	{
-		method: 'PUT',
-		url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
-		headers: 
-			{ 'cache-control': 'no-cache',
-			authorization: 'Basic '+keystone.get('mailchimp_api'),
-		 	'content-type': 'application/json' },
-		body: data,
-		json: true 
-	};
-
-	// console.log(putOptions);
-
-	request(putOptions, function (error, response, body){
-		if (error) throw new Error(error);
-		// console.log(body);
-		console.log("status code: "+response.statusCode);
-		if (response.statusCode === 200) {
-			console.log("Updated "+body.email_address+" in Mailchimp")
-			console.log("Customer Update");
-			console.log(body.merge_fields);
-			res.apiResponse('success');
-		} else {
-			// console.log(body.errors[0].field);
-			console.log("INFO: There was an error adding "+email+" to mailchimp ("+emailSource+")");
-			res.apiResponse('error')
-		}
-	})
+	
 
 	// request(getOptions, function (error, response, body) {
 	// 	if (error) throw new Error(error);
@@ -175,6 +180,34 @@ function createData() {
 				"7aea70668e" : false, // Brewery app
 			}
 		}
-	}
+	} 
 }
+
+// function addToWorkflow() {
+// 	var postOptions = 
+// 	{
+// 		method: 'POST',
+// 		url: 'https://us12.api.mailchimp.com/3.0/automations/8da7eaeff5/emails/'+memberID+'/queue',
+// 		headers: 
+// 			{ 'cache-control': 'no-cache',
+// 			authorization: 'Basic '+keystone.get('mailchimp_api'),
+// 		 	'content-type': 'application/json' },
+// 		body: data,
+// 		json: true 
+// 	};
+
+// 	// console.log(putOptions);
+
+// 	request(postOptions, function (error, response, body){
+// 		if (error) throw new Error(error);
+// 		console.log(body);
+// 		console.log("status code: "+response.statusCode);
+// 		if (response.statusCode === 200) {
+// 			console.log("Added "+body.email_address+" to Automated Workflow")
+// 		} else {
+// 			console.log(body.errors);
+// 			console.log("INFO: There was an error adding "+email+" to workflow");
+// 		}
+// 	})
+// }
 

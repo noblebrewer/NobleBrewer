@@ -10,16 +10,20 @@
 		<div class="landingpage-header">
 			<div class="row landingpage-topbar">
 			</div>
+			<div class="row top-line">
+				<h3 class="centered-block">Make any date better with craft beer</h3>
+			</div>
 			<div class="row landingpage-body">
 				<div class="col-md-5 col-md-offset-1 col-sm-5 col-xs-12">
-					<h3>Northern California IPA Sampler</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-					<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+					<br>
+					<p>The perfect sampler for you and your date to enjoy. Or just you... sharing beer isn't for everyone.</p>
+					<p class="lead">Northern California IPA Sampler.</p>
+					<p>California is known for pushing the boundaries of IPAs and turning out some killer brews. Take a tour from the comfort of your own couch and see what the Golden State has to offer.</p>
 				</div>
-				<div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12 form-box">
+				<div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12 form-box animated fadeInUp">
 					<div class="form-top">
 						<div class="form-top-left">
-							<h4>Sign up for access to the sampler</h4>
+							<h4>Sign up for access</h4>
 						</div>
 					</div>
 					<div class="form-bottom row">
@@ -34,10 +38,10 @@
 	                        </div> -->
 	                        <div class="form-group">
 	                        	<label class="sr-only" for="form-email">Email</label>
-	                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+	                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email-1">
 	                        </div>
 	                        <form>
-					            <select id="state" name="state">
+					            <select id="state1" name="state">
 					              <option value="">  State...</option>
 					              <option value="AL">AL</option>
 					              <!-- <option value="AK">AK</option> -->
@@ -92,7 +96,7 @@
 					              <option value="WY">WY</option>
 					            </select>
 					          </form>
-					        <button type="submit" class="btn btn-nb">Sign me up!</button>
+					        <button type="submit" id="submit-email-welcome-one" class="btn btn-nb">Sign me up!</button>
 	                    </form>
 					</div>
 				</div>	
@@ -101,54 +105,95 @@
 		<section class="row landingpage-details light-alt-base hr-gold-thin">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-3" id="beerone">
 						<img src="/images/beer/almanac.jpg" class="img-responsive">
 					</div>
+<!-- 					Bear Republic Cafe Racer Double IPA (22oz)- 99 on RateBeer. A seasonal release by Bear Republic, best known for their Racer 5 IPA. At nearly 10% ABV and 100+ IBU's this Citra, Amarillo, Cascade and Chinook hopped double IPA is sure to provide the citrus and piney kick IPA lovers dream about.
+
+Knee Deep Hoptologist Double IPA (22oz)- 98 on RateBeer. From Auburn, CA this brewery has become known for their flavorful hop foward IPAs after this beer won Gold at the Bistro's 14th Annual Double IPA festival. In a region known for extreme IPAs, Knee Deep not only can hold their own, they're pushing the bar further.
+
+Almanac IPA (22oz)- 95 on RateBeer. Apollo, El Dorado, Simcoe and Mosaic give this 7.5% IPA a decidedly forward citrus profile with intense grapefruit and tangerine. In keeping with their agricultural roots, this beer is brewed with California grown two row with small additions of Crystal, Vienna and Biscuit Malts.
+
+Adam and Ryan's Wry Rye Imperial IPA by Noble Brewer (22oz)-  7 hops, 6 malts and 2 yeast strains collide to create these homebrewers' award winning double IPA. Expect to be overwhelmed by the citrus, pine and tropical fruit aromas and flavors which work in concert with some earthy notes and spice from the addition of rye. -->
 					<div class="col-md-3">
-						<h4 class="top-buffer">Almanac IPA</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Almanac IPA</h4>
+						<p>95 on RateBeer</p>
+						<p>Citrus profile, intense grapefruit and tangerine IPA with Apollo, El Dorado, Simcoe, and Mosaic hops.</p>
 					</div>
 					<div class="col-md-3">
 						<img src="/images/beer/bearrepublic.jpg" class="img-responsive">
 					</div>
 					<div class="col-md-3">
-						<h4 class="top-buffer">Bear Republic</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Bear Republic Cafe Racer Double IPA</h4>
+						<p>99 on RateBeer</p>
+						<p>A seasonal release double hopped IPA with Citra, Amarillo, Cascade, and Chinook hops.</p>
 					</div>
 				</div>
 				<div class="row top-buffer">
 					<div class="col-md-3 hidden-xs">
-						<h4 class="top-buffer">Hoptologist</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Knee Deep Hoptologist Double IPA</h4>
+						<p>98 on RateBeer</p>
+						<p>Winner of the Bistro's 14th Annual Double IPA festival from a brewery known for its extreme IPAs.</p>
 					</div>
 					<div class="col-md-3">
 						<img src="/images/beer/hoptologist.jpg" class="img-responsive">
 					</div>
 					<div class="col-md-3 hidden-md hidden-lg hidden-xl">
-						<h4 class="top-buffer">Hoptologist</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Knee Deep Hoptologist Double IPA</h4>
+						<p>98 on RateBeer</p>
+						<p>Winner of the Bistro's 14th Annual Double IPA festival from a brewery known for its extreme IPAs.</p>
 					</div>
 					<div class="col-md-3 hidden-xs">
-						<h4 class="top-buffer">Wry Rye</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Adam and Ryan's Wry Rye Imperial IPA by Noble Brewer</h4>
+						<p>3.8 stars on Untappd</p>
+						<p>7 hops, 6 malts and 2 yeast strains collide to create these homebrewers' award winning double IPA.</p>
 					</div>
 					<div class="col-md-3">
 						<img src="/images/beer/wry2.jpg" class="img-responsive">
 					</div>
 					<div class="col-md-3 hidden-md hidden-lg hidden-xl">
-						<h4 class="top-buffer">Wry Rye</h4>
-						<p>Some things about the IPA</p>
+						<h4 class="top-buffer-thin">Adam and Ryan's Wry Rye Imperial IPA by Noble Brewer</h4>
+						<p>3.8 stars on Untappd</p>
+						<p>7 hops, 6 malts and 2 yeast strains collide to create these homebrewers' award winning double IPA.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section class="landingpage-header row centered-block" id="bottom-section">
 			<div class="row" id="bottom-section-div">
-				<h3>Available only through Noble Brewer</h2>
-				<button class="btn-nb" id="get-access-sampler">Get access</button>
+				<h3>Only available through Noble Brewer</h2>
+				<button class="btn-nb" id="get-access-sampler">Learn More</button>
 			</div>
 			<div class="row hidden" id="second-form">
-				<div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-12 form-box">
+				<div class="col-md-5 col-md-offset-1 profile-box">
+					<div class="profile-header row">
+						<div class="col-md-5 profile-img">
+							<img src="/images/footer/team/claude_caitlin.png" class="img-responsive">
+						</div>
+						<div class="col-md-7">
+							<h4>Noble Brewer</h4>
+							<p>1, Oakland, CA</p>
+							<p class="online"><span>
+								<svg height="20" width="20">
+								  <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#04E604" />
+								</svg>
+							</span>Online now</p>
+							<p class="new-to-match">NEW to Match!!</p>
+						</div>
+					</div>
+					<div class="profile-body">
+						<h4>About Noble Brewer:</h4>
+						<p>Oh man. These profiles are so hard to write.</p>
+						<p>Our best friends would describe us as "craft beer nerds" who love sharing awesome beer with people we know. We're usually working with award winning homebrewers to help them share their best beers with craft beer fans.</p>
+						<p>At least once a week, we also share amazing samplers and special releases from world class breweries like Mikkeller, Jolly Pumpkin, Prairie Artisan Ales, and Boulevard with our friends as well. We brew, we curate, we drink.</p>
+						<h4>What's your ideal type?</h4>
+						<p>Well, we usually we try three or four of them at a time. There's so much variety in the world that we can't see ourselves settling down with just one.</p>
+						<p>Why 4? That's how many beers come in a flight. We're not the type to commit to a full glass from the get go.</p>
+						<h4>Match Compatibility...</h4>
+						<p>Are we a match? Try our IPA sampler. We can take it slow, no commitment required. Maybe we'll find there's chemistry between us!</p>
+					</div>					
+				</div>
+				<div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12 form-box">
 						<div class="form-top">
 							<div class="form-top-left">
 								<h4>Sign up for access to the sampler</h4>
@@ -166,10 +211,10 @@
 		                        </div> -->
 		                        <div class="form-group">
 		                        	<label class="sr-only" for="form-email">Email</label>
-		                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+		                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email-2">
 		                        </div>
 		                        <form>
-						            <select id="state" name="state">
+						            <select id="state2" name="state">
 						              <option value="">  State...</option>
 						              <option value="AL">AL</option>
 						              <!-- <option value="AK">AK</option> -->
@@ -224,10 +269,12 @@
 						              <option value="WY">WY</option>
 						            </select>
 						          </form>
-						        <button type="submit" class="btn btn-nb">Sign me up!</button>
+						        <button type="submit" id="submit-email-welcome-two" class="btn btn-nb">Sign me up!</button>
 		                    </form>
 						</div>
 					</div>	
+					<div class="row">
+					</div>
 				</div>
 			</div>
 		</section>
@@ -236,6 +283,8 @@
 
 <script src="/js/jquery/jquery-1.11.2.min.js"></script>
 <script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
+<script src="/javascripts/appear.js"></script>
+<script src="/javascripts/sendToMailchimp.js"></script>
 
 <script type="text/javascript">
 	$('#get-access-sampler').on('click', function(e){
@@ -245,4 +294,10 @@
 			scrollTop: $("#bottom-section").offset().top
 		}, 1000);
 	});
+
+	$('#beerone').on('appear', function(event, $all_appeared_elements) {
+		$('#beerone').addClasses('animated fadeInRight');
+		console.log("hi");
+    });
+
 </script>

@@ -176,4 +176,56 @@ $("#submit-email-beerfest").click(function(e){
 	)
 });
 
+$("#submit-email-welcome-two").click(function(e){
+	console.log("INFO: Submit email via Welcome Sampler Two");
+	e.preventDefault();
+	var form = {
+		email : document.getElementById("form-email-2").value,
+		source: 'welcome-sampler',
+		function: 'email',
+		state: document.getElementById("state2").value
+	}
+
+	heap.identify({ email : form.email });
+	console.log(form);
+
+	$.post("/api/addToMailchimp",form,
+		function(data){
+			console.log(data);
+			if (data === 'error'){
+				alert('Please enter a valid email');
+			} else if (data === 'success') {
+				window.location = '/sampler'
+			} 
+		}
+	)
+});
+
+$("#submit-email-welcome-one").click(function(e){
+	console.log("INFO: Submit email via Welcome Sampler One");
+	console.log(document.getElementById("form-email-1").value);
+	e.preventDefault();
+	var form = {
+		email : document.getElementById("form-email-1").value,
+		source: 'welcome-sampler',
+		function: 'email',
+		state: document.getElementById("state1").value
+	}
+
+	console.log(form);
+
+	heap.identify({ email : form.email });
+
+	$.post("/api/addToMailchimp",form,
+		function(data){
+			console.log(data);
+			if (data === 'error'){
+				alert('Please enter a valid email');
+			} else if (data === 'success') {
+				window.location = '/sampler'
+			} 
+		}
+	)
+});
+
 
