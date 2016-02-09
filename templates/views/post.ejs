@@ -30,7 +30,7 @@
 								<% if (data.post.categories && data.post.categories.length) { %>
 									in <% data.post.categories.forEach(function(cat, index){ %>
 										<a href="/blog/<%= cat.key %>"><%= cat.name %></a>
-										<% if (index < data.post.categories.length) { %>, 
+										<% if (index+1 < data.post.categories.length) { %>, 
 										<% } %>
 									<% }) %>
 										<% } %>
@@ -41,7 +41,6 @@
 						</div>
 						<hr>
 						<div class="post">
-							<%- data.post.content.brief %>
 							<%- data.post.content.full %>
 						</div>
 					<% } %>
