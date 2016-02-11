@@ -1,16 +1,18 @@
-$("#submit-email").click(function(e){
+$("#mc-embedded-subscribe").click(function(e){
 	console.log("New member referral waiting list signup");
 	e.preventDefault();
 	var form = {
-		email : "caitlin@noblebrewerbeer.com",
-		first_name : "Caitlin",
-		last_name : "Mohnike",
-		referrer_email : "claude@noblebrewer.com",
+		email : document.getElementById('mce-EMAIL').value,
+		first_name : document.getElementById('mce-FNAME').value,
+		last_name : document.getElementById('mce-LNAME').value,
+		referrer_email : document.getElementById('mce-REFERRAL').value,
 		date : Date.now(),
 		email_hash : null,
 		referrer_hash: null,
-		utm_source : "email",
+		utm_source : document.getElementById('utm_source').value,
 	}
+
+	// console.log(form);
 
 	// heap.identify({ email : email });
 

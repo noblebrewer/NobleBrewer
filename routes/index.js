@@ -91,6 +91,9 @@ exports = module.exports = function(app) {
 	app.all('/market/:page?', routes.views.marketplace);
 	app.all('/sampler', routes.views.sampler);
 	app.all('/welcome', routes.views.welcomesampler);
+	
+	app.all('/VIPstatus', routes.views.member_referral);
+	app.all('/api/member_referral', keystone.middleware.api, routes.api.member_referral);
 
 
 	// API Routes

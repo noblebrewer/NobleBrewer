@@ -11,23 +11,30 @@ exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
+	console.log(req.body);
+	var body = req.body;
+
 	mongoose.connect('mongodb://localhost:27017/noble-brewer');
 
 	var db = mongoose.connection;
-	db.on('error', console.error.bind(console, 'connection error:'));
+	db.on('error', function() {
+		console.error.bind(console, 'connection error:')
+		mongoose.disconnect();
+		mongoose.connect('mongodb://localhost:27017/noble-brewer')
+	});
 	db.once('open', function() {
 		  console.log("Database Opened");
 	});
 
 	var form = {
-		email : "caitlin@noblebrewerbeer.com",
-		first_name : "Caitlin",
-		last_name : "Mohnike",
-		referrer_email : "claude@noblebrewer.com",
-		date : Date.now(),
+		email : body.email,
+		first_name : body.first_name,
+		last_name : body.last_name,
+		referrer_email : body.referrer_email,
+		date : body.date,
 		email_hash : null,
 		referrer_hash: null,
-		utm_source : "email",
+		utm_source : body.utm_source,
 	}
 
 	var referredPeopleSchema = new Schema({
@@ -78,14 +85,15 @@ exports = module.exports = function(req, res) {
 	memberData.find().where({ _id : (md5(form.email)) }).exec(function(err, person){
 		if (person.length > 0) {
 			console.log("Already existed");
-			editReferrerData();
+			editReferrerData(function(){
+				mongoose.disconnect();
+				console.log("done");
+				res.apiResponse('success');
+			});
 		} 
 		else {
 			addNewPerson(function(){
-				editReferrerData(function(){
-					mongoose.connection.close()
-					res.apiResponse('success');
-				});
+				editReferrerData();
 			});
 		}
 	});
@@ -107,21 +115,21 @@ exports = module.exports = function(req, res) {
 		newPerson.save(function (err) {
 			if (err) return console.log(err);
 			console.log("Added new person");
-			callback()
+			callback();
 		})
 	}
 
-	function editReferrerData(callback){
-		memberData.find().where({ _id : (md5(form.referrer_email)) }).exec(function(err, person) {
+	function editReferrerData(){
+		memberData.find().where({ _id : (md5(form.referrer_email)) }).exec(function(err, person, callback) {
 			if (person.length > 0) {
-				editReferrer(person[0], callback)
+				editReferrer(person[0])
 			} else {
-				addReferrer(callback);
+				addReferrer();
 			}
 		})
 	}
 
-	function addReferrer(callback){
+	function addReferrer(){
 		var newPerson = new memberData({
 			_id : (md5(form.referrer_email)),
 			profile_details : {
@@ -143,16 +151,16 @@ exports = module.exports = function(req, res) {
 		newPerson.save(function (err) {
 			if (err) return console.log(err);
 			console.log("Added new referrer");
-			callback();
+			mongoose.disconnect();
+			res.apiResponse('success');
 		})
 	}
 
-	function editReferrer(referrer, callback) {
+	function editReferrer(referrer) {
 		//only push if doesn't already have credit for the referral
 		for (var i = 0; i < referrer.people_referred.length; i++) {
 			if (referrer.people_referred[i]._id === (md5(form.email))) {
 				console.log("Already had credit for this email");
-				callback();
 			} else {
 				referrer.people_referred.push( { 
 					_id : (md5(form.email)),
@@ -166,9 +174,10 @@ exports = module.exports = function(req, res) {
 				referrer.save(function (err) {
 					if (err) return console.log(err);
 					console.log("Edited existing referrer");
-					callback()
 				})
 			}
-		};
+		}
+		mongoose.disconnect();
+		res.apiResponse('success');
 	}
 }
