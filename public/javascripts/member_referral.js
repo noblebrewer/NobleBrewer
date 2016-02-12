@@ -1,6 +1,6 @@
 $("#mc-embedded-subscribe").click(function(e){
 	console.log("New member referral waiting list signup");
-	e.preventDefault();
+	// e.preventDefault();
 	var form = {
 		email : document.getElementById('mce-EMAIL').value,
 		first_name : document.getElementById('mce-FNAME').value,
@@ -27,3 +27,18 @@ $("#mc-embedded-subscribe").click(function(e){
 		}
 	)
 });
+
+$(document).ready(function(){
+	console.log("Logging member pagehit");
+
+	var form = {
+		referrer_email : document.getElementById('mce-REFERRAL').value,
+		date : Date.now(),
+		utm_source : document.getElementById('utm_source').value
+	}
+	
+	$.post("/api/member_pagehit",form,
+		function(data) {
+			console.log(data);
+		})
+})

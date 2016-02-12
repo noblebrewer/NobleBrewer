@@ -1,0 +1,14 @@
+<h4>Member Email <%= data.member_email %></h4>
+<h3>Points: <%= data.points %></h3>
+<br>
+<% data.page_hits.forEach(function(hit, index){ %>
+	<p><%= hit.date %></p>
+<% }) %>
+<br>
+<% data.referrals.forEach(function(referral, index){ %>
+	<p><%= referral.first_name %></p>
+	<p><%= referral.last_name %></p>
+	<p><%= referral.email %></p>
+	<p><%= referral.member_status %></p>
+	<p><%= referral.date %></p>
+<% }) %>

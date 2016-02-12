@@ -1,6 +1,6 @@
+var keystone = require('keystone');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = 'mongodb://localhost:27017/noble-brewer';
 var ObjectId = require('mongodb').ObjectID;
 var md5 = require('md5');
 var mongoose = require('mongoose');
@@ -14,17 +14,23 @@ exports = module.exports = function(req, res) {
 	console.log(req.body);
 	var body = req.body;
 
-	mongoose.connect('mongodb://localhost:27017/noble-brewer');
+	mongoose.connect(keystone.get('mongo_url'));
 
 	var db = mongoose.connection;
 	db.on('error', function() {
 		console.error.bind(console, 'connection error:')
 		mongoose.disconnect();
-		mongoose.connect('mongodb://localhost:27017/noble-brewer')
+		mongoose.connect(keystone.get('mongo_url'))
 	});
 	db.once('open', function() {
 		  console.log("Database Opened");
 	});
+
+
+	var referredPeople = require('./member_referral_schemas').referredPeople;
+	var shareEvents = require('./member_referral_schemas').shareEvents;
+	var pageHits = require('./member_referral_schemas').pageHits;
+	var memberData = require('./member_referral_schemas').memberData;
 
 	var form = {
 		email : body.email,
@@ -32,57 +38,14 @@ exports = module.exports = function(req, res) {
 		last_name : body.last_name,
 		referrer_email : body.referrer_email,
 		date : body.date,
-		email_hash : null,
-		referrer_hash: null,
+		email_hash : (md5(body.email)),
+		referrer_hash: (md5(body.referrer_email)),
 		utm_source : body.utm_source,
 	}
 
-	var referredPeopleSchema = new Schema({
-		_id : String,
-		first_name : String,
-		last_name : String,
-		email : String,
-		date : Date,
-		utm_source : String
-	}, { autoIndex : false })
-
-	var shareEventsSchema = new Schema ({
-		type : String,
-		date : Date
-	}, { autoIndex : false })
-
-	var pageHitsSchema = new Schema ({
-		utm_source : String,
-		date : Date
-	}, { autoIndex : false })
-
-	var  memberDataSchema = new Schema({
-		_id : String,
-		profile_details : {
-			first_name : String,
-			last_name : String,
-			email : String,
-		},
-		membership_details : {
-			member_status : String, //waiting_list, member, declined
-			referred_by : String,
-			converted_date : Date,
-			signup_date : Date,
-		},
-		people_referred : [referredPeopleSchema],
-		credits : Number,
-		shares : [shareEventsSchema],
-		page_hits : [pageHitsSchema]
-	}, { autoIndex : false })
-
-	var referredPeople = mongoose.model('referredPeople', referredPeopleSchema)
-	var shareEvents = mongoose.model('shareEvents', shareEventsSchema)
-	var pageHits = mongoose.model('pageHits', pageHitsSchema)
-	var memberData = mongoose.model('memberData', memberDataSchema)
-
 	//check if new person, if so, then add
 
-	memberData.find().where({ _id : (md5(form.email)) }).exec(function(err, person){
+	memberData.find().where({ _id : form.email_hash }).exec(function(err, person){
 		if (person.length > 0) {
 			console.log("Already existed");
 			editReferrerData(function(){
@@ -100,14 +63,14 @@ exports = module.exports = function(req, res) {
 
 	function addNewPerson(callback){
 		var newPerson = new memberData({
-			_id : (md5(form.email)),
+			_id : form.email_hash,
 			profile_details : {
 				first_name : form.first_name,
 				last_name : form.last_name,
 				email : form.email
 			},
 			membership_details : {
-				member_status : "waiting_list",
+				member_status : "unconfirmed",
 				referred_by : form.referrer_email
 			}
 		})
@@ -120,7 +83,7 @@ exports = module.exports = function(req, res) {
 	}
 
 	function editReferrerData(){
-		memberData.find().where({ _id : (md5(form.referrer_email)) }).exec(function(err, person, callback) {
+		memberData.find().where({ _id : form.referrer_hash }).exec(function(err, person, callback) {
 			if (person.length > 0) {
 				editReferrer(person[0])
 			} else {
@@ -131,7 +94,7 @@ exports = module.exports = function(req, res) {
 
 	function addReferrer(){
 		var newPerson = new memberData({
-			_id : (md5(form.referrer_email)),
+			_id : form.referrer_hash,
 			profile_details : {
 				email : form.referrer_email
 			},
@@ -139,13 +102,14 @@ exports = module.exports = function(req, res) {
 				member_status : "active",
 			},
 			people_referred :  [{ 
-				_id : (md5(form.email)),
+				_id : form.email_hash,
 				first_name : form.first_name,
 				last_name : form.last_name,
 				email : form.email,
-				date : Date.now(),
-				utm_source : form.utm_source
-			}],
+				date : form.date(),
+				utm_source : form.utm_source,
+				member_status : "unconfirmed"
+			}]
 		})
 
 		newPerson.save(function (err) {
@@ -158,26 +122,34 @@ exports = module.exports = function(req, res) {
 
 	function editReferrer(referrer) {
 		//only push if doesn't already have credit for the referral
+		var credit = false; // doesn't have credit for this email
 		for (var i = 0; i < referrer.people_referred.length; i++) {
-			if (referrer.people_referred[i]._id === (md5(form.email))) {
+			if (referrer.people_referred[i]._id === form.email_hash) {
 				console.log("Already had credit for this email");
+				credit = true;
 			} else {
-				referrer.people_referred.push( { 
-					_id : (md5(form.email)),
-					first_name : form.first_name,
-					last_name : form.last_name,
-					email : form.email,
-					date : Date.now(),
-					utm_source : form.utm_source
-				})
-
-				referrer.save(function (err) {
-					if (err) return console.log(err);
-					console.log("Edited existing referrer");
-				})
+				console.log("Doesn't have credit for email");
 			}
 		}
-		mongoose.disconnect();
-		res.apiResponse('success');
+		if (credit === false){
+			referrer.people_referred.push( { 
+				_id : form.email_hash,
+				first_name : form.first_name,
+				last_name : form.last_name,
+				email : form.email,
+				date : Date.now(),
+				utm_source : form.utm_source,
+				member_status : "unconfirmed"
+			})
+			referrer.save(function (err) {
+				if (err) return console.log(err);
+				console.log("Edited existing referrer");
+				mongoose.disconnect();
+				res.apiResponse('success');
+			})
+		} else {
+			mongoose.disconnect();
+			res.apiResponse('success');
+		}
 	}
 }

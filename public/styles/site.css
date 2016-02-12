@@ -9569,3 +9569,45 @@ section .landingpage-header {
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
+
+#vip {
+  background-image: url("/images/beer/beer-glasses-cheers.jpg");
+  background-size: cover;
+  background-position: left center; }
+
+#mc_embed_signup form {
+  display: block;
+  position: relative;
+  text-align: left;
+  padding: 10px 0 10px 3%; }
+
+.mc-field-group {
+  margin: 5px 0; }
+
+.mc-field-group input {
+  padding: 8px 0;
+  border-radius: 4px;
+  color: black;
+  text-indent: 2%; }
+
+.mc-field-group label {
+  margin-top: 15px; }
+
+.indicates-required {
+  float: right; }
+
+#mce-FNAME, #mce-LNAME, #mce-REFERRAL, #mce-EMAIL {
+  width: 100%; }
+
+.left-input {
+  padding-left: 0; }
+
+.right-input {
+  padding-right: 0; }
+
+#mce-STATE {
+  color: #c5a77e;
+  background-color: transparent;
+  border: 1.8px solid #DAD8D6;
+  max-width: 100%;
+  min-width: 25%; }
