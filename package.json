@@ -8,6 +8,7 @@
     "consolidate": "^0.10.0",
     "csv-to-array": "^1.0.1",
     "dotenv": "^1.1.0",
+    "drossel-random": "^1.0.2",
     "ejs": "^2.3.3",
     "express": "^4.13.1",
     "google-spreadsheet": "^1.0.1",
