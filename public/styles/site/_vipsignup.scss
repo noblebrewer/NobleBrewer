@@ -42,10 +42,38 @@
 	padding-right: 0;
 }
 
+#mc-embedded-subscribe {
+	float: right;
+	margin-top: 0px;
+	margin-right: 0px;
+}
+
+@media(max-width:767px){
+	.left-input {
+		padding-right: 0;
+	}
+
+	.right-input {
+		padding-left: 0;
+	}
+
+	#mc-embedded-subscribe {
+		margin-top: 10px;
+	}
+}
+
 #mce-STATE {
     color: #c5a77e;
     background-color: transparent;
     border: 1.8px solid #DAD8D6;
     max-width: 100%;
     min-width: 25%;
+    height: 30px;
 }
+
+@media (max-width:767px){
+	#mce-STATE {
+		min-width: 50%;
+	}
+}
+

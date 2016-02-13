@@ -30,17 +30,32 @@ exports = module.exports = function(req, res) {
 		var referredPeople = require('./member_referral_schemas').referredPeople;
 		
 		memberData.find().where({ _id : (md5(updatedEmail)) }).exec(function(err, person){
-			if (person) {
-				person[0].membership_details.member_status = "waiting_list";
-				person[0].save(function (err) {
-					if (err) return console.log(err);
-					console.log("Changed person status");
-					searchReferredMembers(function(){
-						mongoose.disconnect();
+			if (person[0]) {
+				if (person[0].membership_details) {
+					person[0].membership_details.member_status = "waiting_list";
+					person[0].save(function (err) {
+						if (err) return console.log(err);
+						console.log("Changed person status");
+						searchReferredMembers(function(){
+							mongoose.disconnect(function(){
+								console.log("Database closed");
+								res.apiResponse('success');
+							});
+						});
+					})
+				} else {
+					console.log("Person not in database");
+					mongoose.disconnect(function(){
+						console.log("Database closed");
+						res.apiResponse('success');
 					});
-				})
+				}
 			} else {
-				console.log(person);
+				mongoose.disconnect(function(){
+					console.log("Person not in database");
+					console.log("Database closed");
+					res.apiResponse('success');
+				});
 			}
 		})
 
@@ -61,5 +76,7 @@ exports = module.exports = function(req, res) {
 				} 
 			})
 		}
+	} else {
+		res.apiResponse('succcess');
 	}
 }
