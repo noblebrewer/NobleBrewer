@@ -12,11 +12,57 @@
 		<h3>Member Referral Status</h3>
 		<h4><%= data.member_email %></h4>
 	</section>
-	<section class="patterned">
-		<h3>Current Points: <%= data.points %></h3>
-		<h4>Friends that have signed up</h4>
-		<% data.referrals.forEach(function(referral, index){ %>
-		<p><%= referral.first_name %> <%= referral.last_name %> - <%= referral.email %> - <%= referral.date %></p>
-	<% }) %>
+	<section class="patterned row">
+		<div class="col-md-8">
+			<h3>Current Points: <%= data.points %></h3>
+			<% if (data.referrals.length > 0) { %>
+				<h4>Friends that have signed up</h4>
+				<% data.referrals.forEach(function(referral, index){ %>
+					<p><%= referral.first_name %> <%= referral.last_name %> - <%= referral.email %> - <%= referral.date %></p>
+				<% }) %>
+			<% } else { %>
+				<h4>None of your friends have signed up!</h4>
+			<% } %>
+		</div>
+		<div class="col-md-3">
+			<h3>Share</h3>
+			<div class="row">
+				<a class="col-md-4" href="https://twitter.com/home?status=Skip the lines by using my link to join Noble Brewer <%= data.sharing_url.url_twitter %>"><img class="no-border img-responsive" src="/images/generic/twitter.png"></a>
+				<a class="col-md-4" href="#" id="facebook-icon"><img class="no-border img-responsive" src="/images/generic/facebook.png"></a>
+				<a class="col-md-4" href="#" id="email-icon"><img class="no-border img-responsive" src="/images/generic/email.png"></a>
+			</div>
+			<div class="row hidden" id="email-link">
+				<br>
+				<p>Send your friends this link: <%= data.sharing_url.url_email %></p>
+			</div>
+<!-- 			<form class="row hidden" id="share-email">
+				Send to (separate by commas):
+				<input type="text" name="email-addresses"></input>
+				Email Message:
+				<textarea id="email-message" wrap="hard" cols="20" rows="7" name="message">Hey I think you'll like this <%= data.sharing_url.url_email %></textarea>
+				<button class="btn-nb">Send</button>
+			</form> -->
+		</div>
 	</section>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$('#email-icon').on('click', function(){
+	$('#email-link').toggleClass('hidden');
+})
+
+$('#facebook-icon').on('click', function(e){
+        e.preventDefault();
+        var facebook_appID = '501125043399584'
+        url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent("<%= data.sharing_url.url_twitter %>")+ 
+                    "&name=" + encodeURIComponent("Skip the lines") + 
+                    "&caption=" + encodeURIComponent('Shared from Noble Brewer') + 
+                    "&description=" + encodeURIComponent("Use my link to join the Noble Brewer waiting list and get bumped to the front of the line") + 
+                    "&picture=" + encodeURIComponent("http://res.cloudinary.com/noblebrewer/image/upload/v1452033818/vip_k5alyg.png") +
+                    "&redirect_uri=https://www.facebook.com";
+        window.open(url);
+    });
+</script>

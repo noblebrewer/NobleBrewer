@@ -36,7 +36,8 @@ exports = module.exports = function(req,res) {
 					member_email : email,
 					page_hits : person[0].page_hits,
 					referrals : person[0].people_referred,
-					points : points
+					points : points,
+					sharing_url : person[0].sharing_urls
 				}
 				console.log(locals.data);
 				view.render('member_statuspage');

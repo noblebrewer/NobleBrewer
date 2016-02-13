@@ -37,7 +37,12 @@ var  memberDataSchema = new Schema({
 	people_referred : [referredPeopleSchema],
 	credits : Number,
 	shares : [shareEventsSchema],
-	page_hits : [pageHitsSchema]
+	page_hits : [pageHitsSchema],
+	sharing_urls : {
+		url_twitter : String,
+		url_facebook : String,
+		url_email : String
+	}
 }, { autoIndex : false })
 
 var referredPeople; 

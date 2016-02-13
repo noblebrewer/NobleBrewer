@@ -12,6 +12,7 @@ var csv = require('fast-csv');
 	var URLArray = [];
 
 	// Uncomment this to run
+	// Make sure to change which URL is being saved (twitter, facebook, etc)
 
 	// mongoose.connect(keystone.get('mongo_url'));
 
@@ -60,24 +61,53 @@ var csv = require('fast-csv');
 
 		var fullURL;
 		var shortURL;
+		var baseURL = "http://www.noblebrewer.com/nb/"
 
 		createShortURL(function(){
-			var shortenedURLs = require('./noble_url_schemas').shortenedURLs
+			var shortenedURLs = require('./noble_url_schemas').shortenedURLs;
+			var memberData = require('./member_referral_schemas').memberData;
 			var newURL = new shortenedURLs({
 				_id : md5(shortURL),
 				full_url : url,
 				short_url : shortURL,
 			})
 
-			newURL.save(function(err){
-				if (err) return console.log(err);
-				console.log("Added new URL");
-				var newRecord = {
-					email : email,
-					shortURL : shortURL
+			memberData.find().where({ _id : md5(email) }).exec(function(err, person){
+				if (person.length > 1){
+					person[0].sharing_urls.url_twitter = baseURL.concat(shortURL);
+					person[0].save(function(err) {
+						newURL.save(function(err){
+							if (err) return console.log(err);
+							console.log("Added new URL");
+							var newRecord = {
+								email : email,
+								shortURL : shortURL
+							}
+							URLArray.push(newRecord)
+							wizard();
+						})
+					})
+				} else {
+					person = new memberData({
+						_id : md5(email),
+						sharing_urls : {
+							url_twitter : baseURL.concat(shortURL)
+						}
+					})
+
+					person.save(function(err) {
+						newURL.save(function(err){
+							if (err) return console.log(err);
+							console.log("Added new URL");
+							var newRecord = {
+								email : email,
+								shortURL : shortURL
+							}
+							URLArray.push(newRecord)
+							wizard();
+						})
+					})
 				}
-				URLArray.push(newRecord)
-				wizard();
 			})
 		});
 

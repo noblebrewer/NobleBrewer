@@ -9629,3 +9629,24 @@ section .landingpage-header {
 @media (max-width: 767px) {
   #mce-STATE {
     min-width: 50%; } }
+
+#share-email {
+  margin-top: 30px; }
+
+#share-email button {
+  float: right;
+  margin-right: 0;
+  width: 100%; }
+
+#share-email input {
+  width: 100%;
+  margin-top: 10px;
+  color: black; }
+
+#share-email textarea {
+  width: 100%;
+  margin-top: 10px;
+  color: black; }
+
+#email-message {
+  height: 100px; }
