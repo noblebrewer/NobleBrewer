@@ -73,7 +73,7 @@ var csv = require('fast-csv');
 			})
 
 			memberData.find().where({ _id : md5(email) }).exec(function(err, person){
-				if (person.length > 1){
+				if (person.length > 0){
 					person[0].sharing_urls.url_twitter = baseURL.concat(shortURL);
 					person[0].save(function(err) {
 						newURL.save(function(err){
