@@ -1,0 +1,29 @@
+"_id" : emailHash,
+"profile_details" : {
+	"first_name" : "Caitlin",
+	"last_name" : "Mohnike",
+	"email" : "caitlin@noblebrewer.com",
+},
+"membership_details" : {
+	"member_status" : "member", //waiting_list, member, declined
+	"referred_by" : null,
+	"converted_date" : new Date("2-16-01-01T00:00:00Z"),
+	"signup_date" : null,
+},
+"people_referred" : [
+	{
+		"first_name" : null,
+		"last_name" : null,
+		"email" : null,
+		"date" : null,
+		"utm_source" : null
+	}
+],
+"credits" : 0,
+"shares" : [
+	{
+		"type" : null,
+		"date" : null
+	}
+],
+"page_hits" : []

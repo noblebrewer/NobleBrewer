@@ -67,6 +67,7 @@ exports = module.exports = function(app) {
 	app.get('/dropahint', routes.views.dropahint);
 	// app.get('/keystone', routes.views.keystoneSignIn);
 	app.get('/collections/beer', routes.views.beercollection)
+	app.get('/beer', routes.views.beers)
 	// app.get('/market', routes.views.market);
 	app.get('/success/homebrewersubmission', routes.views.success);
 	app.get('/success/emailsignup', routes.views.success_email);
@@ -91,7 +92,14 @@ exports = module.exports = function(app) {
 	app.all('/market/:page?', routes.views.marketplace);
 	app.all('/sampler', routes.views.sampler);
 	app.all('/welcome', routes.views.welcomesampler);
+	
+	app.all('/VIPstatus', routes.views.member_referral);
+	app.all('/member', routes.views.member_statuspage);
+	app.all('/api/member_referral', keystone.middleware.api, routes.api.member_referral);
+	app.all('/api/member_pagehit', keystone.middleware.api, routes.api.member_pagehit);
+	app.all('/api/waitlist_update', keystone.middleware.api, routes.api.waitlist_update);
 
+	app.get('/nb/:shortURL?', routes.views.shortURL)
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);

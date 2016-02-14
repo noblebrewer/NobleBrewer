@@ -1,0 +1,105 @@
+#vip {
+	background-image: url('/images/beer/beer-glasses-cheers.jpg');
+	background-size: cover;
+	background-position: left center;
+}
+
+#mc_embed_signup form {
+    display: block;
+    position: relative;
+    text-align: left;
+    padding: 10px 0 10px 3%;
+}
+
+.mc-field-group {
+	margin: 5px 0;
+}
+
+.mc-field-group input {
+	padding: 8px 0;
+	border-radius: 4px;
+	color: black;
+	text-indent: 2%;
+}
+
+.mc-field-group label {
+	margin-top: 15px;
+}
+
+.indicates-required {
+	float: right;
+}
+
+#mce-FNAME, #mce-LNAME, #mce-REFERRAL, #mce-EMAIL {
+	width: 100%;
+}
+
+.left-input {
+	padding-left: 0;
+}
+
+.right-input {
+	padding-right: 0;
+}
+
+#mc-embedded-subscribe {
+	float: right;
+	margin-top: 0px;
+	margin-right: 0px;
+}
+
+@media(max-width:767px){
+	.left-input {
+		padding-right: 0;
+	}
+
+	.right-input {
+		padding-left: 0;
+	}
+
+	#mc-embedded-subscribe {
+		margin-top: 10px;
+	}
+}
+
+#mce-STATE {
+    color: #c5a77e;
+    background-color: transparent;
+    border: 1.8px solid #DAD8D6;
+    max-width: 100%;
+    min-width: 25%;
+    height: 30px;
+}
+
+@media (max-width:767px){
+	#mce-STATE {
+		min-width: 50%;
+	}
+}
+
+#share-email {
+	margin-top: 30px;
+}
+
+#share-email button {
+	float: right;
+	margin-right: 0;
+	width: 100%;
+}
+
+#share-email input {
+	width: 100%;
+	margin-top:10px;
+	color: black;
+}
+
+#share-email textarea {
+	width: 100%;
+	margin-top:10px;
+	color: black;
+}
+
+#email-message {
+	height: 100px;
+}
+
