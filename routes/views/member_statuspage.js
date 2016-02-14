@@ -41,7 +41,9 @@ exports = module.exports = function(req,res) {
 				}
 				console.log(locals.data);
 				view.render('member_statuspage');
-				mongoose.disconnect();
+				mongoose.disconnect(function(){
+					console.log("Database Closed");
+				});
 			} else {
 				console.log("Person doesn't exist");
 				view.render('member_statuspage');
