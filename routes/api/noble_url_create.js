@@ -4,7 +4,6 @@ var md5 = require('md5');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var fs = require('fs');
-var transform = require('stream-transform');
 var csv = require('fast-csv');
 
 	var columns = ['email','url'];
