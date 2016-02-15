@@ -9,11 +9,13 @@
 <div class="container-fluid">
 <% include ./partials/header %>
 	<section class="row" id="vip">
-		<h3>It's nice to have friends...</h3>
+		<!-- <h3>It's nice to have friends...</h3> -->
 		<% if (data.first_name) { %>
-			<h4><%= data.first_name %> got you VIP status</h4>
+			<h3><%= data.first_name %> got you VIP status</h3>
+			<p>Our waiting list is currently over a thousand people. That is sad for some, but not for you! You get to skip the line.</p>
 		<% } else { %>
-			<h4>You've got VIP status!</h4>
+			<h3>You've got VIP status!</h3>
+			<p>Our waiting list is currently over a thousand people. That is sad for some, but not for you! You get to skip the line.</p>
 		<% } %>
 	</section>
 	<section class="row patterned">
@@ -98,7 +100,7 @@
 		      	</div>
 		      	<div class="mc-field-group hidden">
 					<label for="mce-CONVERT">Convert </label>
-					<input type="text" value="start" name="CONVERT" class="" id="mce-CONVERT">
+					<input type="text" value="member" name="CONVERT" class="" id="mce-CONVERT">
 				</div>
 				<div id="mce-responses" class="clear">
 				  	<div class="response" id="mce-error-response" style="display:none"></div>
