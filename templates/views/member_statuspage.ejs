@@ -29,11 +29,7 @@
 			<div class="row">
 				<a class="col-md-4" href="https://twitter.com/home?status=Skip the lines by using my link to join Noble Brewer <%= data.sharing_url.url_twitter %>"><img class="no-border img-responsive" src="/images/generic/twitter.png"></a>
 				<a class="col-md-4" href="#" id="facebook-icon"><img class="no-border img-responsive" src="/images/generic/facebook.png"></a>
-				<a class="col-md-4" href="#" id="email-icon"><img class="no-border img-responsive" src="/images/generic/email.png"></a>
-			</div>
-			<div class="row hidden" id="email-link">
-				<br>
-				<p>Send your friends this link: <%= data.sharing_url.url_email %></p>
+				<a class="col-md-4" id="email-icon" href="mailto:?subject=Skip%20The%20Line%20With%20My%20Noble%20Brewer%20Link!&body=Sign%20up%20here%20and%20you%20don't%20have%20to%20wait.%20%20<%= data.sharing_url.url_email %>"><img class="no-border img-responsive" src="/images/generic/email.png"></a>
 			</div>
 <!-- 			<form class="row hidden" id="share-email">
 				Send to (separate by commas):
@@ -49,11 +45,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-$('#email-icon').on('click', function(){
-	$('#email-link').toggleClass('hidden');
-})
-
+<script>
 $('#facebook-icon').on('click', function(e){
         e.preventDefault();
         var facebook_appID = '501125043399584'
