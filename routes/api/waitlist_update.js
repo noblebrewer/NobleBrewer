@@ -61,7 +61,7 @@ exports = module.exports = function(req, res) {
 
 		function searchReferredMembers(callback) {
 			memberData.find().where({ 'people_referred._id' : (md5(updatedEmail)) }).exec(function(err, person){
-				if (person) {
+				if (person[0]) {
 					for (var i = 0; i < person[0].people_referred.length; i++) {
 						if (person[0].people_referred[i]._id === (md5(updatedEmail))) {
 							person[0].people_referred[i].member_status = "waiting_list";
@@ -73,7 +73,9 @@ exports = module.exports = function(req, res) {
 						console.log("Changed person status");
 						callback();
 					})
-				} 
+				} else {
+					callback();
+				}
 			})
 		}
 	} else {

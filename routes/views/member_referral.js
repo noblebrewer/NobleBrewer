@@ -20,6 +20,8 @@ exports = module.exports = function(req,res) {
 		utm_source : req.query.utm_source
 	}
 
+	console.log(locals.data);
+
 	// console.log(locals);
 
 	// view.on('init', function(next) {
