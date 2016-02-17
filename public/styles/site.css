@@ -9653,3 +9653,10 @@ section .landingpage-header {
 
 #email-message {
   height: 100px; }
+
+@media (max-width: 767px) {
+  #member-email {
+    font-size: 1.2em;
+    overflow-wrap: normal; }
+  #member-status-page {
+    font-size: .9em; } }
