@@ -1,0 +1,31 @@
+<head>
+  <div class="title">
+    <title>Oops! Can't find that page</title>
+  </div>
+  <% include ./partials/head %>
+</head>
+
+<div class="container-fluid row centered-block">
+	<% include ./partials/header %>
+
+	<h3>Oh no! I can't find that page.</h3>
+	<div class="mc-field-group row">
+		<label for="mce-REFERRAL">Who referred you? </label>
+		<input type="text" Placeholder="Member's email address" name="REFERRAL" class="member-email-notfound">
+		<a class="btn-nb" id="goto-memberpage">Go</a>
+	</div>
+
+	<% include ./partials/footer %>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$('#goto-memberpage').on('click', function(){
+		var email = $('.member-email-notfound').val();
+		var baseURL = "/VIPStatus?utm_source=members&utm_medium=unknown_page&utm_campaign=member_referral&member_email="
+		var url = baseURL.concat(email);
+		document.location.href = url;
+	})
+</script>

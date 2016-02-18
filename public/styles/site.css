@@ -9660,3 +9660,6 @@ section .landingpage-header {
     overflow-wrap: normal; }
   #member-status-page {
     font-size: .9em; } }
+
+#member-email-notfound {
+  width: 100%; }
