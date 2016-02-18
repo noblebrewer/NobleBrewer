@@ -99,7 +99,8 @@ exports = module.exports = function(app) {
 	app.all('/api/member_pagehit', keystone.middleware.api, routes.api.member_pagehit);
 	app.all('/api/waitlist_update', keystone.middleware.api, routes.api.waitlist_update);
 
-	app.get('/nb/:shortURL?', routes.views.shortURL)
+	app.get('/nb/:shortURL?', routes.views.shortURL);
+	app.get('/nbb/:shortURL?', routes.views.shortURLExternal);
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);

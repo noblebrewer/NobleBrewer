@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var fs = require('fs');
 var csv = require('fast-csv');
 
-	var columns = ['email','url'];
+	var columns = ['url'];
 	var dataArray = [];
 	var URLArray = [];
 
@@ -51,7 +51,7 @@ var csv = require('fast-csv');
 	}; 
 
 	function saveNewURL(record) {
-		var email = record.email;
+		// var email = record.email;
 		var url = record.url
 
 		var Random = require('drossel-random');
@@ -60,7 +60,7 @@ var csv = require('fast-csv');
 
 		var fullURL;
 		var shortURL;
-		var baseURL = "http://www.noblebrewer.com/nb/"
+		var baseURL = "http://www.noblebrewer.com/nbb/"
 
 		createShortURL(function(){
 			var shortenedURLs = require('./noble_url_schemas').shortenedURLs;
@@ -71,43 +71,48 @@ var csv = require('fast-csv');
 				short_url : shortURL,
 			})
 
-			memberData.find().where({ _id : md5(email) }).exec(function(err, person){
-				if (person.length > 0){
-					person[0].sharing_urls.url_twitter = baseURL.concat(shortURL);
-					person[0].save(function(err) {
-						newURL.save(function(err){
-							if (err) return console.log(err);
-							console.log("Added new URL");
-							var newRecord = {
-								email : email,
-								shortURL : shortURL
-							}
-							URLArray.push(newRecord)
-							wizard();
-						})
-					})
-				} else {
-					person = new memberData({
-						_id : md5(email),
-						sharing_urls : {
-							url_twitter : baseURL.concat(shortURL)
-						}
-					})
-
-					person.save(function(err) {
-						newURL.save(function(err){
-							if (err) return console.log(err);
-							console.log("Added new URL");
-							var newRecord = {
-								email : email,
-								shortURL : shortURL
-							}
-							URLArray.push(newRecord)
-							wizard();
-						})
-					})
-				}
+			newURL.save(function(err){
+				console.log("URL "+newURL);
+				mongoose.disconnect();
 			})
+
+			// memberData.find().where({ _id : md5(email) }).exec(function(err, person){
+			// 	if (person.length > 0){
+			// 		person[0].sharing_urls.url_twitter = baseURL.concat(shortURL);
+			// 		person[0].save(function(err) {
+			// 			newURL.save(function(err){
+			// 				if (err) return console.log(err);
+			// 				console.log("Added new URL");
+			// 				var newRecord = {
+			// 					email : email,
+			// 					shortURL : shortURL
+			// 				}
+			// 				URLArray.push(newRecord)
+			// 				wizard();
+			// 			})
+			// 		})
+			// 	} else {
+			// 		person = new memberData({
+			// 			_id : md5(email),
+			// 			sharing_urls : {
+			// 				url_twitter : baseURL.concat(shortURL)
+			// 			}
+			// 		})
+
+			// 		person.save(function(err) {
+			// 			newURL.save(function(err){
+			// 				if (err) return console.log(err);
+			// 				console.log("Added new URL");
+			// 				var newRecord = {
+			// 					email : email,
+			// 					shortURL : shortURL
+			// 				}
+			// 				URLArray.push(newRecord)
+			// 				wizard();
+			// 			})
+			// 		})
+			// 	}
+			// })
 		});
 
 		function createShortURL(callback){
