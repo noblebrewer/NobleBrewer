@@ -13,6 +13,14 @@ exports = module.exports = function(req, res) {
 		version : req.params.version,
 		source : req.params.source
 	}
+
+	// heap.track('untappd', 
+	// 	{ 	city: req.params.location, 
+	// 		version: req.params.version,
+	// 		source : req.params.source });
+
+	// console.log(locals.data);
+
 	// var location = req.params.location;
 	// var version = req.params.version;
 	// var source = req.params.source;
@@ -27,7 +35,10 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'Untappd Noble Brewer';
 	
+	var shopify = keystone.get('shopify_hostname');
+	res.redirect(shopify+'/pages/noble-brewer-samplers?untappd_location='+req.params.location+'&untappd_version='+req.params.version+'&untappd_source='+req.params.source);
+
 	// Render the view
-	view.render('landingpage_untappd');
+	// view.render('landingpage_untappd');
 	
 };
