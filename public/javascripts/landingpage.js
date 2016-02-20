@@ -32,7 +32,7 @@ $("#submit-email").click(function(e){
 		// 	source : source,
 		// 	version : version });
 
-		$.post("/api/addToMailchimp",form,
+		$.post("http://www.noblebrewer.com/api/addToMailchimp",form,
 			function(data){
 				console.log(data);
 				if (data === 'error'){

@@ -20,6 +20,8 @@ exports = module.exports = function(req, res) {
 
 	body = req.body;
 
+	console.log(req.body);
+
 	email = (body.email).toLowerCase();
 	memberID = (md5(email));
 	console.log("Email: "+email+" submitted via "+(body.source || body.function));
