@@ -31,20 +31,25 @@ exports = module.exports = function(req,res) {
 
 	function getUserData(){
 		memberData.find().where({ _id : (md5(email)) }).exec(function(err, person){
+			console.log(person);
 			if (person.length > 0){
-				var points = calculatePoints(person[0]);
-				locals.data = {
-					member_email : email,
-					page_hits : person[0].page_hits,
-					referrals : person[0].people_referred,
-					points : points,
-					sharing_url : person[0].sharing_urls
+				if (!person[0].sharing_urls.url_twitter) {
+					createURLs(person[0])
+				} else {
+					var points = calculatePoints(person[0]);
+					locals.data = {
+						member_email : email,
+						page_hits : person[0].page_hits,
+						referrals : person[0].people_referred,
+						points : points,
+						sharing_url : person[0].sharing_urls
+					}
+					console.log(locals.data);
+					view.render('member_statuspage');
+					mongoose.disconnect(function(){
+						console.log("Database Closed");
+					})
 				}
-				console.log(locals.data);
-				view.render('member_statuspage');
-				mongoose.disconnect(function(){
-					console.log("Database Closed");
-				});
 			} else {
 				saveNewPerson()
 			}
@@ -78,12 +83,15 @@ exports = module.exports = function(req,res) {
 	}
 
 	function createURLs(record){
+		console.log("Creating URLs");
 		var email = record.profile_details.email;
+		var first_name = record.profile_details.first_name;
+		var last_name = record.profile_details.last_name;
 
 		var Random = require('drossel-random');
 		var length = 8;
 
-		var fullURLBase = "http://www.noblebrewer.com/VIPStatus";
+		var fullURLBase = "http://www.noblebrewer.com/VIPStatus?member_email="+email+"&fname="+first_name+"&lname="+last_name;
 		var shortURLBase = "http://www.noblebrewer.com/nb/";
 
 		var fullURLTwitter = fullURLBase+"?utm_source=members&utm_medium=twitter&utm_campaign=member_referral";

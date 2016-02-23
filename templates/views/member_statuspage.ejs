@@ -27,9 +27,12 @@
 		<div class="col-md-3 col-sm-6">
 			<h3>Share</h3>
 			<div class="row">
-				<a class="col-md-4 col-sm-3 col-xs-4" target="_blank" href="https://twitter.com/home?status=Skip the lines by using my link to join Noble Brewer <%= data.sharing_url.url_twitter %>"><img class="no-border img-responsive" src="/images/generic/twitter.png"></a>
-				<a class="col-md-4 col-sm-3 col-xs-4" href="#" id="facebook-icon"><img class="no-border img-responsive" src="/images/generic/facebook.png"></a>
-				<a class="col-md-4 col-sm-3 col-xs-4" id="email-icon" href="mailto:?subject=Skip%20The%20Line%20With%20My%20Noble%20Brewer%20Link!&body=Sign%20up%20here%20and%20you%20don't%20have%20to%20wait.%20%20<%= data.sharing_url.url_email %>"><img class="no-border img-responsive" src="/images/generic/email.png"></a>
+				<a class="col-md-3 col-sm-3 col-xs-4" target="_blank" href="https://twitter.com/home?status=Skip the lines by using my link to join Noble Brewer <%= data.sharing_url.url_twitter %>"><img class="no-border img-responsive sharing-buttons" src="/images/generic/twitter.png"></a>
+				<a class="col-md-3 col-sm-3 col-xs-4" href="#" id="facebook-icon"><img class="no-border img-responsive sharing-buttons" src="/images/generic/facebook.png"></a>
+				<a class="col-md-3 col-sm-3 col-xs-4" id="email-icon" href="mailto:?subject=Skip%20The%20Line%20With%20My%20Noble%20Brewer%20Link!&amp;body=Sign%20up%20here%20and%20you%20don't%20have%20to%20wait.%20%20<%= data.sharing_url.url_email %>"><img class="no-border img-responsive sharing-buttons" src="/images/generic/email.png"></a>
+				<a class="col-md-3 col-sm-3 col-xs-4" href="#" id="copy-icon"><img class="no-border img-responsive sharing-buttons" src="/images/generic/copy.png"></a>
+				<input id="link-text" type="text" value="<%= data.sharing_url.url_email %>"></input>
+				<p class="notification-text hidden">Copied link to clipboard: <%= data.sharing_url.url_email %></p>
 			</div>
 <!-- 			<form class="row hidden" id="share-email">
 				Send to (separate by commas):
@@ -47,14 +50,22 @@
 
 <script>
 $('#facebook-icon').on('click', function(e){
-        e.preventDefault();
-        var facebook_appID = '501125043399584'
-        url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent("<%= data.sharing_url.url_twitter %>")+ 
-                    "&name=" + encodeURIComponent("Skip the lines") + 
-                    "&caption=" + encodeURIComponent('Shared from Noble Brewer') + 
-                    "&description=" + encodeURIComponent("Use my link to join the Noble Brewer waiting list and get bumped to the front of the line") + 
-                    "&picture=" + encodeURIComponent("http://res.cloudinary.com/noblebrewer/image/upload/v1452033818/vip_k5alyg.png") +
-                    "&redirect_uri=https://www.facebook.com";
-        window.open(url);
-    });
+    e.preventDefault();
+    var facebook_appID = '501125043399584'
+    url = "https://www.facebook.com/dialog/feed?app_id="+ facebook_appID + "&link=" + encodeURIComponent("<%= data.sharing_url.url_twitter %>")+ 
+                "&name=" + encodeURIComponent("Skip the lines") + 
+                "&caption=" + encodeURIComponent('Shared from Noble Brewer') + 
+                "&description=" + encodeURIComponent("Use my link to join the Noble Brewer waiting list and get bumped to the front of the line") + 
+                "&picture=" + encodeURIComponent("http://res.cloudinary.com/noblebrewer/image/upload/v1452033818/vip_k5alyg.png") +
+                "&redirect_uri=https://www.facebook.com";
+    window.open(url);
+});
+
+$('#copy-icon').on('click', function(e){
+	console.log("inside copy");
+	e.preventDefault();
+	document.getElementById('link-text').select();
+	document.execCommand('copy');
+	$('.notification-text').removeClass('hidden');
+})
 </script>

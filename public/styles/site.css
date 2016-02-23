@@ -9663,3 +9663,13 @@ section .landingpage-header {
 
 #member-email-notfound {
   width: 100%; }
+
+.sharing-buttons {
+  max-width: 50px; }
+
+.notification-text {
+  font-size: .7em;
+  color: teal; }
+
+input#link-text {
+  opacity: 0; }

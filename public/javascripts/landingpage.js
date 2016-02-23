@@ -38,7 +38,7 @@ $("#submit-email").click(function(e){
 				if (data === 'error'){
 					alert('Please enter a valid email');
 				} else if (data === 'success') {
-					window.location= "/";
+					 $('#untappdModal').modal('hide');
 				}
 			}
 		);
