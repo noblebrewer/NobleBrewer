@@ -9575,6 +9575,9 @@ section .landingpage-header {
   background-size: cover;
   background-position: left center; }
 
+#mc-embedded-subscribe-form.homepage {
+  padding: 0; }
+
 #mc_embed_signup form {
   display: block;
   position: relative;
@@ -9613,6 +9616,14 @@ section .landingpage-header {
   margin-top: 0px;
   margin-right: 0px; }
 
+#mc-embedded-subscribe.homepage {
+  position: relative;
+  top: -55px; }
+
+@media (max-width: 767px) {
+  #mc-embedded-subscribe.homepage {
+    top: 0; } }
+
 @media (max-width: 767px) {
   .left-input {
     padding-right: 0; }
@@ -9622,8 +9633,8 @@ section .landingpage-header {
     margin-top: 10px; } }
 
 #mce-STATE {
-  color: #c5a77e;
-  background-color: transparent;
+  color: black;
+  background-color: white;
   border: 1.8px solid #DAD8D6;
   max-width: 100%;
   min-width: 25%;
@@ -9673,3 +9684,8 @@ section .landingpage-header {
 
 input#link-text {
   opacity: 0; }
+
+.homepage-wl-signup {
+  padding-bottom: 0px;
+  padding-top: 10px;
+  padding-right: 10px; }

@@ -4,6 +4,10 @@
 	background-position: left center;
 }
 
+#mc-embedded-subscribe-form.homepage {
+	padding: 0;
+}
+
 #mc_embed_signup form {
     display: block;
     position: relative;
@@ -52,6 +56,17 @@
 	margin-right: 0px;
 }
 
+#mc-embedded-subscribe.homepage {
+	position: relative;
+	top: -55px;
+}
+
+@media(max-width:767px){
+	#mc-embedded-subscribe.homepage {
+		top: 0;
+	}
+}
+
 @media(max-width:767px){
 	.left-input {
 		padding-right: 0;
@@ -67,8 +82,8 @@
 }
 
 #mce-STATE {
-    color: #c5a77e;
-    background-color: transparent;
+    color: black;
+    background-color: white;
     border: 1.8px solid #DAD8D6;
     max-width: 100%;
     min-width: 25%;
@@ -133,4 +148,10 @@
 
 input#link-text {
 	opacity: 0;
+}
+
+.homepage-wl-signup {
+	padding-bottom: 0px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
