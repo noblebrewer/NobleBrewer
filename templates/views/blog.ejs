@@ -11,15 +11,15 @@
 <div class="container-fluid">
 	<% include ./partials/header %>
 		<div class="row">
-			<div class="col-sm-12 col-md-8 col-md-offset-2 patterned-blog">
+			<div class="col-sm-12 col-md-12 patterned-blog">
 				<div class="row">
 					<h3>Featured Articles</h3>
 					<% locals.data.featuredPosts.forEach(function(post, index){ %>
 						<div class="row top-buffer-thin">
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-5 col-sm-6">
 								<a href="/blog/post/<%= post.slug %>"><img class="img-responsive centered-block" src="<%= post.image.url %>">
 							</div>
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-7 col-sm-6">
 								<h4 class="gold"><%= post.title %></h4></a>
 								<%- post.content.brief %>
 							</div>
