@@ -2,11 +2,6 @@
 
 <div id="header">
 	<div role="navigation" class="navbar navbar-default main-navbar">
-<!-- SHOPIFY VERSION
-	<div role="navigation" class="navbar navbar-default main-navbar" style="background-image: url({{'header-stripe.png' | asset_url }});
--->
-
-		<!-- <div class="container-fluid"> -->
 			<div class="navbar-header">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
@@ -16,9 +11,6 @@
 				</button>
 				
 				<a class="navbar-brand" href="/"><img class="no-border" src='/images/generic/simple_logo.svg' width="147px"></a>
-<!-- SHOPIFY VERSION
-				<a class="navbar-brand" href="http://noblebrewerdev.herokuapp.com/"><img class="no-border" src="{{ 'simple_logo.svg' | asset_url }}" width="147px"></a>
--->
 			</div>
 
 			<div class="collapse navbar-collapse">
@@ -29,55 +21,11 @@
 						</li>
 					<% }) %>
 				</ul>
-<!-- SHOPIFY VERSION
-				<ul class="nav navbar-nav navbar-left">
-					{% for link in linklists.main-menu.links %}
-                    {% assign child_list_handle = link.title | handleize %}
-                    {% if linklists[child_list_handle].links != blank %}
-                      <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-                        <a class="nav-link header" href="{{ link.url }}">{{ link.title }}</a>
-                        <ul class="site-nav--dropdown">
-                          {% for childlink in linklists[child_list_handle].links %}
-                          {% endfor %}
-                        </ul>
-                      </li>
-                    {% else %}
-                      <li {% if link.active %}class="site-nav--active"{% endif %}>
-                        <a class="nav-link header" href="{{ link.url }}">{{ link.title }}</a>
-                      </li>
-                    {% endif %}
-                  {% endfor %}
-				</ul>
--->
 				<ul class="nav navbar-nav navbar-right">
 					<li><a class="nav-link header" href="/cart">Cart</a></li>
 					<li><a class="nav-link login header" href="<%= env.SHOPIFY_HOSTNAME %>/account/login">Sign In</a></li>
 				</ul>
-<!-- SHOPIFY VERSION
-				<ul class="nav navbar-nav navbar-right">
-	              	<li>  
-                  		<a class="nav-link header" href="/cart">View Cart</a>
-                  	</li>
-	              	{% if customer %}
-	                	<li class="site-nav--active">
-	                		<a class="nav-link header" href="/account">{{ 'layout.customer.view_account' | t }}</a>
-	                	</li>
-	                {% else %}
-	                {% if shop.customer_accounts_optional %}
-						<li class="site-nav--active">
-	                	{{ 'Login' | customer_login_link }}
-	                	</li>
-					{% endif %}
-	                {% endif %}
-	              </ul>
-<script>
-  $('#hamburger').click(function(){
-    $('#list').toggleClass('in');
-  });
-</script>
--->
 			</div>
-		<!-- </div> -->
 	</div>
 </div>
 
