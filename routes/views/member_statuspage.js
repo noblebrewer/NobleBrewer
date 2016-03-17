@@ -7,7 +7,9 @@ var Schema = mongoose.Schema;
 
 exports = module.exports = function(req,res) {
 
-	var email = req.query.member_email
+	var email = req.query.member_email;
+	var first_name = req.query.first_name;
+	var last_name = req.query.last_name;
 
 	var view = new keystone.View(req,res),
 		locals = res.locals;
@@ -32,10 +34,22 @@ exports = module.exports = function(req,res) {
 	function getUserData(){
 		memberData.find().where({ _id : (md5(email)) }).exec(function(err, person){
 			console.log(person);
+			// console.log(person[0].profile_details)
 			if (person.length > 0){
-				if (!person[0].sharing_urls.url_twitter) {
+				if (!person[0].profile_details.first_name) {
+					person[0].profile_details.email = email;
+					person[0].profile_details.first_name = first_name;
+					person[0].profile_details.last_name = last_name;
+					person[0].save(function(err){
+						console.log("Saved member details");
+					})
+				}
+				if (!person[0].sharing_urls.url_twitter) { // If they don't have URLs made
 					createURLs(person[0])
 				} else {
+					// person[0].sharing_urls = {}
+					// person[0].save()
+					// console.log(person[0].sharing_urls);
 					var points = calculatePoints(person[0]);
 					locals.data = {
 						member_email : email,
@@ -65,21 +79,27 @@ exports = module.exports = function(req,res) {
 		var newPerson = new memberData({
 			_id : md5(email),
 			profile_details : {
-				email : email
+				email : email,
+				first_name : first_name,
+				last_name : last_name
 			},
 			membership_details : {
 				member_status : "active",
 			}
 		})
 
-		createURLs(newPerson, function() {
-			newPerson.save(function (err) {
-				if (err) return console.log(err);
-				console.log("Added new member");
-				view.render('member_statuspage');
-				mongoose.disconnect();
-			})
+		newPerson.save(function(err) {
+			createURLs(newPerson)
 		})
+
+		// createURLs(newPerson, function() {
+		// 	newPerson.save(function (err) {
+		// 		if (err) return console.log(err);
+		// 		console.log("Added new member");
+		// 		view.render('member_statuspage');
+		// 		mongoose.disconnect();
+		// 	})
+		// })
 	}
 
 	function createURLs(record){
@@ -91,12 +111,12 @@ exports = module.exports = function(req,res) {
 		var Random = require('drossel-random');
 		var length = 8;
 
-		var fullURLBase = "http://www.noblebrewer.com/VIPStatus?member_email="+email+"&fname="+first_name+"&lname="+last_name;
+		var fullURLBase = "/VIPStatus?member_email="+email+"&fname="+first_name+"&lname="+last_name;
 		var shortURLBase = "http://www.noblebrewer.com/nb/";
 
-		var fullURLTwitter = fullURLBase+"?utm_source=members&utm_medium=twitter&utm_campaign=member_referral";
-		var fullURLEmail = fullURLBase+"?utm_source=members&utm_medium=email&utm_campaign=member_referral";
-		var fullURLFacebook = fullURLBase+"?utm_source=members&utm_medium=facebook&utm_campaign=member_referral";
+		var fullURLTwitter = fullURLBase+"&utm_source=members&utm_medium=twitter&utm_campaign=member_referral";
+		var fullURLEmail = fullURLBase+"&utm_source=members&utm_medium=email&utm_campaign=member_referral";
+		var fullURLFacebook = fullURLBase+"&utm_source=members&utm_medium=facebook&utm_campaign=member_referral";
 		var shortURLTwitter = Random.generate(length);
 		var shortURLEmail = Random.generate(length);
 		var shortURLFacebook = Random.generate(length);
@@ -138,6 +158,8 @@ exports = module.exports = function(req,res) {
 								console.log("Added Email URL");
 								locals.data = {
 									member_email : email,
+									first_name : first_name,
+									last_name : last_name,
 									page_hits : null,
 									referrals : [],
 									points : 0,

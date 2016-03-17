@@ -30,6 +30,8 @@ exports = module.exports = function(req,res) {
 
 	var shortenedURLs = require('../api/noble_url_schemas').shortenedURLs;
 
+	console.log(md5(shortURL));
+
 	shortenedURLs.find().where({ _id : md5(shortURL) }).exec(function(err, url){
 		console.log(url[0]);
 		if (url[0]) {
