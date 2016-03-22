@@ -11,6 +11,12 @@ exports = module.exports = function(req,res) {
 	var first_name = req.query.first_name;
 	var last_name = req.query.last_name;
 
+	var friends = {
+		unconfirmed : [],
+		confirmed : [],
+		members : []
+	}
+
 	var view = new keystone.View(req,res),
 		locals = res.locals;
 
@@ -54,7 +60,9 @@ exports = module.exports = function(req,res) {
 					locals.data = {
 						member_email : email,
 						page_hits : person[0].page_hits,
-						referrals : person[0].people_referred,
+						unconfirmed_referrals : friends.unconfirmed,
+						confirmed_referrals : friends.confirmed,
+						member_referrals : person[0].members,
 						points : points,
 						sharing_url : person[0].sharing_urls
 					}
@@ -71,8 +79,22 @@ exports = module.exports = function(req,res) {
 	}
 
 	function calculatePoints(person){
-		var points = person.people_referred.length;
-		return points;
+		console.log(person.people_referred);
+		var count = 0;
+		for (var i = 0; i < person.people_referred.length; i++) {
+			var personObject = {
+				name : person.people_referred[i].first_name+" "+person.people_referred[i].last_name,
+				email : person.people_referred[i].email
+			}
+			if (person.people_referred[i].member_status === 'waiting_list'){
+				count =+1;
+				friends.confirmed.push(personObject)
+			} else {
+				friends.unconfirmed.push(personObject)
+			}
+		};
+		console.log(friends);
+		return count;
 	}	
 
 	function saveNewPerson(){
