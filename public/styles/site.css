@@ -9693,3 +9693,7 @@ input#link-text {
 .pints-earned {
   width: 8.5%;
   padding-top: 10px; }
+
+.referral_status_table td {
+  padding: 5px;
+  border: 1px solid #C5A77E; }

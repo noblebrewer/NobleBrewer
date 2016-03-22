@@ -95,6 +95,7 @@ exports = module.exports = function(app) {
 	
 	app.all('/VIPstatus', routes.views.member_referral);
 	app.all('/member', routes.views.member_statuspage);
+	app.all('/member_referrals/status', routes.views.member_referrals_status);
 	app.all('/api/member_referral', keystone.middleware.api, routes.api.member_referral);
 	app.all('/api/member_pagehit', keystone.middleware.api, routes.api.member_pagehit);
 	app.all('/api/waitlist_update', keystone.middleware.api, routes.api.waitlist_update);
