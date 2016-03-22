@@ -13,7 +13,7 @@
 		<h4 id="member-email"><%= data.member_email %></h4>
 	</section>
 	<section class="patterned row">
-		<div class="col-md-5 top-buffer">
+		<div class="col-md-5 col-sm-6">
 			<h3>Pints Earned: <%= data.points %></h3>
 			<div class="row">
 				<% for (var i = 0; i < 50; i++) { %>
@@ -46,13 +46,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-7 col-sm-8">
+		<div class="col-md-7 col-sm-6 col-xs-12">
 			<div class="row">
 				<% if (data.confirmed_referrals.length > 0) { %>
 					<h4>Friends</h4>
 					<ul>
 					<% data.confirmed_referrals.forEach(function(referral, index){ %>
-						<li><%= referral.name %> - <%= referral.email %></li>
+						<% if (index < 5) { %>
+							<li><%= referral.name %> - <%= referral.email %></li>
+						<% } else if (index = 5) { %>
+							<a id="view-more" href="#">View More...</a>
+							<li class="hidden extra-referrals"><%= referral.name %> - <%= referral.email %></li>
+						<% } else { %>
+							<li class="hidden extra-referrals"><%= referral.name %> - <%= referral.email %></li>
+						<% } %>
 					<% }) %>
 					</ul>
 				<% } else { %>
@@ -138,5 +145,11 @@ $('#copy-icon').on('click', function(e){
 	document.getElementById('link-text').select();
 	document.execCommand('copy');
 	$('.notification-text').removeClass('hidden');
+})
+
+$('#view-more').on('click', function(e) {
+	e.preventDefault();
+	$('.extra-referrals').removeClass('hidden');
+	$('#view-more').addClass('hidden');
 })
 </script>
