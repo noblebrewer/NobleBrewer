@@ -41,7 +41,7 @@ exports = module.exports = function(req,res) {
 		memberData.find().where({ _id : (md5(email)) }).exec(function(err, person){
 			console.log(person);
 			// console.log(person[0].profile_details)
-			if (person.length > 0){
+			if (person && person.length > 0){
 				if (!person[0].profile_details.first_name) {
 					person[0].profile_details.email = email;
 					person[0].profile_details.first_name = first_name;

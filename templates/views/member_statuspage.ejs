@@ -69,20 +69,40 @@
 			</div>
 			<h4>Info</h4>
 			<p>There is currently a waiting list to join Noble Brewer. As a member, you can get your friends to the top of the list and earn cool stuff while doing it.</p>
-			<b>How are "Pints" earned?</b>
-			<ul>
-				<li>Earn 1 pint for each person that joins the waiting list</li>
-				<li>Earn 4 pints for each person that signs up as a member</li>
-			</ul>
+			<h4>Earning Pints</h4>
+			<div class="row">
+				<% for (var i = 0; i < 1; i++) { %>
+					<img class="no-border pints-info" src="/images/beer/Pint-Glasses-Tan.png"> = each friend that joins the waiting list
+				<% } %>
+			</div>
+			<div class="row">
+				<% for (var i = 0; i < 4; i++) { %>
+					<img class="no-border pints-info" src="/images/beer/Pint-Glasses-Tan.png">
+				<% } %>
+				= each friend that becomes a member
+			</div>
 <!-- 			<b>How long will they have to wait?</b>
 			<p>After confirming their email, they will instantly get access</p> -->
 			<!-- <b>Gifts</b> -->
-			<p>Get a gift of thanks every time you get to a blue pint</p>
-			<ul>
-				<li>10 pints - $10 Beer Voucher</li>
-				<li>25 pints - $15 Beer Voucher + Noble Brewer T-Shirt</li>
-				<li>50 pints - $25 Beer Voucher + Double Shipment</li>
-			</ul>
+			<h4>Rewards</h4>
+			<div class="row">
+				<% for (var i = 0; i < 1; i++) { %>
+					<img class="no-border pints-info" src="/images/beer/Pint-Glasses-Blue-Star-Full.png">
+				<% } %>
+				$10 Beer Voucher
+			</div>
+			<div class="row">
+				<% for (var i = 0; i < 2; i++) { %>
+					<img class="no-border pints-info" src="/images/beer/Pint-Glasses-Blue-Star-Full.png">
+				<% } %>
+				$15 Beer Voucher + Noble Brewer T-Shirt
+			</div>
+			<div class="row">
+				<% for (var i = 0; i < 3; i++) { %>
+					<img class="no-border pints-info" src="/images/beer/Pint-Glasses-Blue-Star-Full.png">
+				<% } %>
+				$25 Beer Voucher + Double Shipment
+			</div>
 		</div>
 		<div class="col-md-3 col-sm-4">
 <!-- 			<form class="row hidden" id="share-email">
