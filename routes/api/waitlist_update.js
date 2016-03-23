@@ -6,6 +6,8 @@ var md5 = require('md5');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var Email = require('./email_referrals');
+
 exports = module.exports = function(req, res) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -39,7 +41,10 @@ exports = module.exports = function(req, res) {
 						searchReferredMembers(function(){
 							mongoose.disconnect(function(){
 								console.log("Database closed");
-								res.apiResponse('success');
+								Email.newCredit(person[0], req.body.data.merges, function(){
+									console.log("Email Sent");
+									res.apiResponse('success');
+								});
 							});
 						});
 					})

@@ -46,6 +46,7 @@ exports = module.exports = function(req, res) {
 		if (tags[i] === 'Active Subscriber') {
 			isMember = "Yes";
 			isCustomer = "Yes";
+			require('./referrals/memberCredit.js')(email);
 		};
 		if (tags[i] === 'Inactive Subscriber') {
 			isMember = "No";

@@ -62,7 +62,7 @@ exports = module.exports = function(req,res) {
 						page_hits : person[0].page_hits,
 						unconfirmed_referrals : friends.unconfirmed,
 						confirmed_referrals : friends.confirmed,
-						member_referrals : person[0].members,
+						member_referrals : friends.members,
 						points : points,
 						sharing_url : person[0].sharing_urls
 					}
@@ -87,8 +87,14 @@ exports = module.exports = function(req,res) {
 				email : person.people_referred[i].email
 			}
 			if (person.people_referred[i].member_status === 'waiting_list'){
-				count =+1;
+				count = count + 1;
 				friends.confirmed.push(personObject)
+			} else if (person.people_referred[i].member_status === 'member') {
+				console.log("Member");
+				console.log(personObject);
+				count = count + 4;
+				friends.confirmed.push(personObject)
+				friends.members.push(personObject)
 			} else {
 				friends.unconfirmed.push(personObject)
 			}
