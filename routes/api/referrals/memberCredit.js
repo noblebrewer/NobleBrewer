@@ -40,7 +40,7 @@ module.exports = function(email, res) {
 							if (referrer[0].people_referred[i].email === newMember[0].profile_details.email) {
 								referrer[0].people_referred[i].member_status = "member";
 								referrer[0].save(function(err){
-									console.log("Changed status of "+referrer[0].people_referred[i].member_status+" to member");
+									console.log("Changed status to member");
 								})
 							}
 						};

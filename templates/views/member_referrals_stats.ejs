@@ -16,14 +16,18 @@
 			<tr>
 				<td>Name</td>
 				<td>Email</td>
-				<td>#Conf</td>
+				<td>Pts</td>
+				<td>#Mem</td>
+				<td>#Con</td>
 				<td>#Unc</td>
 				<td>ID</td>
 			</tr>
 		<% data.forEach(function(person,err) { %>
 			<tr>
 				<td><%=person.name%></td>
-				<td><%=person.email%></td>
+				<td><a href="/member?member_email=<%=person.email%>"><%=person.email%></a></td>
+				<td><%=person.totalPoints%></td>
+				<td><%=person.numberMembers%></td>
 				<td><%=person.numberConfirmed%></td>
 				<td><%=person.numberUnconfirmed%></td>
 				<td><%=person.id%></td>

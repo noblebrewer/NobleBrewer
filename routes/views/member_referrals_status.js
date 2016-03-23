@@ -32,17 +32,20 @@ var memberData = require('../api/member_referral_schemas').memberData;
 
 locals.data = [];
 
-memberData.find().where({"page_hits.0" : {$exists : true}}).exec(function(err, member) {
+memberData.find().where({"people_referred.0" : {$exists : true}}).exec(function(err, member) {
 	console.log(err);
 	// console.log(member);
 	for (var i = 0; i < member.length; i++) {
 		var confirmedCount = 0;
 		var unconfirmedCount = 0;
+		var memberCount = 0;
 		if (member[i].people_referred){
-			console.log("Loop");
+			// console.log("Loop");
 			for (var j = 0; j < member[i].people_referred.length; j++) {
 				if (member[i].people_referred[j].member_status === 'waiting_list'){
 					confirmedCount++;
+				} else if (member[i].people_referred[j].member_status === 'member') {
+					memberCount++;
 				} else {
 					unconfirmedCount++;
 				}
@@ -56,6 +59,8 @@ memberData.find().where({"page_hits.0" : {$exists : true}}).exec(function(err, m
 			id : member[i]._id,
 			numberConfirmed : confirmedCount,
 			numberUnconfirmed : unconfirmedCount,
+			numberMembers : memberCount,
+			totalPoints : (memberCount * 4) + confirmedCount,
 			referralsTotal : member[i].people_referred.length
 		}
 		console.log(memberObject);
