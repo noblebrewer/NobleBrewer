@@ -24,8 +24,8 @@
 			</tr>
 		<% data.forEach(function(person,err) { %>
 			<tr>
-				<td><%=person.name%></td>
-				<td><a href="/member?member_email=<%=person.email%>"><%=person.email%></a></td>
+				<td><a href="/member?member_email=<%=person.email%>"><%=person.name%></a></td>
+				<td><%=person.email%></td>
 				<td><%=person.totalPoints%></td>
 				<td><%=person.numberMembers%></td>
 				<td><%=person.numberConfirmed%></td>
