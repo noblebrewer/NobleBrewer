@@ -188,9 +188,11 @@ exports = module.exports = function(req,res) {
 									member_email : email,
 									first_name : first_name,
 									last_name : last_name,
-									page_hits : null,
-									referrals : [],
-									points : 0,
+									page_hits : 0,
+									unconfirmed_referrals : friends.unconfirmed,
+									confirmed_referrals : friends.confirmed,
+									member_referrals : friends.members,
+									// points : points,
 									sharing_url : person[0].sharing_urls
 								}
 								view.render('member_statuspage')
@@ -223,10 +225,14 @@ exports = module.exports = function(req,res) {
 								console.log("Added Email URL");
 								locals.data = {
 									member_email : email,
-									page_hits : null,
-									referrals : [],
-									points : 0,
-									sharing_url : person.sharing_urls
+									first_name : first_name,
+									last_name : last_name,
+									page_hits : 0,
+									unconfirmed_referrals : friends.unconfirmed,
+									confirmed_referrals : friends.confirmed,
+									member_referrals : friends.members,
+									// points : points,
+									sharing_url : person[0].sharing_urls
 								}
 								view.render('member_statuspage')
 								mongoose.disconnect(function(){
