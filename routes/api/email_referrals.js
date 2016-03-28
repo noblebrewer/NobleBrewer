@@ -16,7 +16,7 @@ module.exports = {
 		var email = Object;
 		email.html = (
 			// '<p><a href="http://giphy.com/gifs/celebration-new-followers-happy-s-11QXGKKoR7l7Ec">via GIPHY</a></p>'
-			'<p>'+mergeFields.FNAME+'</p>'
+			'<p>Hi there!</p>'
 			+'<p>Great news! You just had another friend sign up on your referral page.</p>'
 			+'<a href="http://www.noblebrewer.com/member?member_email='+mergeFields.REFERRAL+'">Check out who it was.</a>'
 		)
@@ -24,7 +24,7 @@ module.exports = {
 		email.from_email = "referrals@noblebrewer.com";
 		email.from_name = "Noble Brewer";
 		email.to_email = mergeFields.REFERRAL;
-		email.to_name = mergeFields.FNAME;
+		// email.to_name = mergeFields.FNAME;
 		email.bcc = "caitlin@noblebrewer.com";
 		sendEmail(email, function(results){
 			console.log(results);
@@ -41,7 +41,7 @@ function sendEmail(email, callback){
 	    "from_name": email.from_name,
 	    "to": [{
 	            "email": email.to_email,
-	            "name": email.to_name,
+	            // "name": email.to_name,
 	            "type": "to"
 	        }],
 	    "headers": {

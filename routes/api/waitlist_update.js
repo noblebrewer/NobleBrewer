@@ -16,7 +16,7 @@ exports = module.exports = function(req, res) {
 	console.log(req.body);
 
 	if (req.body.type === 'subscribe') {
-		var updatedEmail = req.body.data.email;
+		var updatedEmail = req.body.data.email; // Email of person who joined the WL
 		mongoose.connect(keystone.get('mongo_url'));
 
 		var db = mongoose.connection;
@@ -34,10 +34,10 @@ exports = module.exports = function(req, res) {
 		memberData.find().where({ _id : (md5(updatedEmail)) }).exec(function(err, person){
 			if (person[0]) {
 				if (person[0].membership_details) {
-					person[0].membership_details.member_status = "waiting_list";
+					person[0].membership_details.member_status = "waiting_list"; // Change the new person's membership details
 					person[0].save(function (err) {
 						if (err) return console.log(err);
-						console.log("Changed person status");
+						console.log("Changed person's membership details");
 						searchReferredMembers(function(){
 							mongoose.disconnect(function(){
 								console.log("Database closed");
@@ -66,7 +66,7 @@ exports = module.exports = function(req, res) {
 
 		function searchReferredMembers(callback) {
 			memberData.find().where({ 'people_referred._id' : (md5(updatedEmail)) }).exec(function(err, person){
-				if (person[0]) {
+				if (person[0]) { // Finds the referrer and updates the person's status under their account
 					for (var i = 0; i < person[0].people_referred.length; i++) {
 						if (person[0].people_referred[i]._id === (md5(updatedEmail))) {
 							person[0].people_referred[i].member_status = "waiting_list";
@@ -75,7 +75,7 @@ exports = module.exports = function(req, res) {
 					
 					person[0].save(function (err) {
 						if (err) return console.log(err);
-						console.log("Changed person status");
+						console.log("Changed person status under referrer");
 						callback();
 					})
 				} else {
