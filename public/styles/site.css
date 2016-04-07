@@ -9752,3 +9752,9 @@ input#link-text {
 
 .patterned.divider {
   padding: 10px 0; }
+
+#homebrewer-awards {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  margin: 0 10%; }
