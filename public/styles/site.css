@@ -9711,15 +9711,23 @@ input#link-text {
   display: inline-block;
   margin: 0 1%; }
 
+#our-process-section {
+  padding-top: 30px;
+  padding-bottom: 15px; }
+
 #our-process-section > h2 {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 20px; }
 
 #our-process-section > div > img {
   margin-bottom: 30px; }
 
 #our-process-section > .row {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   text-align: center; }
+
+#our-process-section p {
+  margin-top: 15px; }
 
 .homepage h4 {
   text-transform: none;
@@ -9780,6 +9788,9 @@ input#link-text {
 
 .member-comments {
   margin-top: 20px; }
+
+#members-section {
+  padding-bottom: 70px; }
 
 #guarantee-section {
   background-image: url("/images/about/tshirt-brick.jpg");
