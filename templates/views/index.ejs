@@ -25,421 +25,87 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<div class="container-fluid">
+<div class="container-fluid homepage">
 <% include ./partials/header %>
 
-
-<section class="row patterned">
-    <!-- <h3 class="centered-block top-buffer-thin">Craft Beer for Craft Beer Lovers</h3> -->
-  <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
-    <img src="/images/home/group_shot.png" class="img-responsive">
-  </div>
-  <div class="col-md-4 col-sm-6 col-xs-12">
-    <h3>Member Benefits</h3>
-    <ul>
-      <li>Beer by award winning homebrewers</li>
-      <li>Samplers by world class breweries</li>
-      <li>and more...</li>
-    </ul>
-    <a href="/subscription"><span><button class="btn-nb" id="learn-more-membership">Learn more</button></span></a>
-  </div>
-</section>
-
-<section class="row dark-striped top-buffer-thin">
-  <img class="no-border img-responsive col-md-2 col-sm-2 col-xs-5 no-padding" src="./images/logos/food-and-wine.png">
-  <img class="no-border img-responsive col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-5 col-xs-offset-1 no-padding" src="./images/logos/Fortune.png">
-  <!-- <img class="no-border img-responsive col-md-2" src="./images/logos/liquid-bread.png"> -->
-  <div class="hidden-md hidden-lg hidden-sm"><br><br></div>
-  <img class="no-border img-responsive col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2 col-xs-5 no-padding" src="./images/logos/product-hunt.png">
-  <img class="no-border img-responsive col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-5 col-xs-offset-1 no-padding" src="./images/logos/urban-daddy.png">
-  <!-- <img class="no-border img-responsive col-md-2" src="./images/logos/yahoo-tech.jpg"> -->
-</section>
-
-<section class="patterned row top-buffer-thin" id="our-process-section">
-  <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
-    <img class="no-border thin-margin" src="/images/home/step3.png">
-    <!-- <h4>We Curate</h4> -->
-    <p>We select award winning brewers</p>
-  </div>
-  
-  <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
-    <img class="no-border thin-margin" src="/images/home/step2.png">
-    <!-- <h4>You Taste</h4> -->
-    <p>Pair them with professional breweries</p>
-  </div>
-  
-  <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
-    <img class="no-border thin-margin" src="/images/home/step1.png">
-    <!-- <h4>You Decide</h4> -->
-    <p>And ship the beers to our members</p>
-  </div>
-</section>
-
-<!-- <section class="row patterned top-buffer-thin">
-  <div class="centered-block">
-    <h4>Our membership list is currently full.<span><a href="/subscription"> Join the waiting list now.</a></span><h4> 
-  </div>
-</section> -->
-
-<section class="row">
+<section class="homepage-header">
   <div>
-    <h4 class="centered-block">Featured Item: Beer Jelly Preserves</h4>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 top-buffer">
-        <a href="http://shop.noblebrewer.com/products/what-ales-ya-beer-jellies">
-          <img src="http://cdn.shopify.com/s/files/1/0930/6458/products/IMG_4668_large.JPG?v=1457552834" class="col-md-4 col-sm-6 col-md-offset-2 no-border img-responsive">
-<!--           <img src="https://cdn.shopify.com/s/files/1/0930/6458/products/ipa_grande.jpeg?v=1451931473" class="col-md-4 col-sm-6 no-border img-responsive hidden-xs"> -->
-        </a>
-          <div class="row">
-            <div class="col-md-4 col-sm-12">
-<!--               <p>Homebrewed Soaps is a local company out of Oakland, CA. Alyson and Eric started it after seeing an opportunity to combine their passions - hers for making soap and his for brewing beer.</p> -->
-              <p class="col-md-12 col-sm-6">A Beer 6-pack doesn't have to be something you drink. Try a variety pack of Vermont Crafted Beer Jelly - sourced from Vermont craft breweries</p>
-              <!-- <p class="col-md-12 col-sm-6">Brew Good. Bake Good. Do Good.</p> -->
-              <a href="http://shop.noblebrewer.com/products/what-ales-ya-beer-jellies" class=" col-md-12 col-sm-6">
-                <button class="btn-nb no-padding" id="view-featured-item-homepage">View Beer Jelly</button>
-              </a>
-          </div>
-      </div>
-    </div>
+    <h2>Try beers from the nation's best homebrewers</h2>
+    <a class="btn-nb" href="/subscription">Get Started Now</a>
   </div>
 </section>
 
-<section class="row dark-striped homepage-wl-signup">
-  <div class="col-md-12">
-    <div class="col-md-6">
-      <h4 class="top-buffer-thin">Want access to member-only samplers?</h4>
-      <p>Join the waiting list and see a new sampler each week</p>
-    </div>
-    <div class="col-md-6">
-      <div id="mc_embed_signup" class="col-md-12">
-        <form action="//noblebrewer.us12.list-manage.com/subscribe/post?u=b22a9bf5b06462efd0a134c79&amp;id=919505a29c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate homepage" novalidate>
-              <div id="mc_embed_signup_scroll">
-              <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                </label>
-                  <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL">
-              </div>
-              <div class="mc-field-group">
-                  <label for="mce-STATE">Select State:  <span class="asterisk" style="top:0px">*</span>
-                </label><br>
-                  <select name="STATE" class="required" id="mce-STATE">
-                    <option value=""></option>
-                    <option value="AL">AL</option>
-                    <option value="AK">AK</option>
-                    <option value="AR">AR</option>
-                    <option value="AZ">AZ</option>
-                    <option value="CA">CA</option>
-                    <option value="CO">CO</option>
-                    <option value="CT">CT</option>
-                    <option value="DC">DC</option>
-                    <option value="DE">DE</option>
-                    <option value="FL">FL</option>
-                    <option value="GA">GA</option>
-                    <option value="HI">HI</option>
-                    <option value="IA">IA</option>
-                    <option value="ID">ID</option>
-                    <option value="IL">IL</option>
-                    <option value="IN">IN</option>
-                    <option value="KS">KS</option>
-                    <option value="KY">KY</option>
-                    <option value="LA">LA</option>
-                    <option value="MA">MA</option>
-                    <option value="MD">MD</option>
-                    <option value="ME">ME</option>
-                    <option value="MI">MI</option>
-                    <option value="MN">MN</option>
-                    <option value="MO">MO</option>
-                    <option value="MS">MS</option>
-                    <option value="MT">MT</option>
-                    <option value="NC">NC</option>
-                    <option value="ND">ND</option>
-                    <option value="NE">NE</option>
-                    <option value="NH">NH</option>
-                    <option value="NJ">NJ</option>
-                    <option value="NM">NM</option>
-                    <option value="NV">NV</option>
-                    <option value="NY">NY</option>
-                    <option value="OH">OH</option>
-                    <option value="OK">OK</option>
-                    <option value="OR">OR</option>
-                    <option value="PA">PA</option>
-                    <option value="RI">RI</option>
-                    <option value="SC">SC</option>
-                    <option value="SD">SD</option>
-                    <option value="TN">TN</option>
-                    <option value="TX">TX</option>
-                    <option value="UT">UT</option>
-                    <option value="VA">VA</option>
-                    <option value="VT">VT</option>
-                    <option value="WA">WA</option>
-                    <option value="WI">WI</option>
-                    <option value="WV">WV</option>
-                    <option value="WY">WY</option>
-                </select>
-              </div>
-              <div class="mc-field-group hidden">
-                <label for="mce-CONVERT">Convert </label>
-                <input type="text" value="welcome" name="CONVERT" class="" id="mce-CONVERT">
-              </div>
-          <div class="mc-field-group hidden">
-            <label for="mce-EMSOURCE">Email Source </label>
-            <input type="text" value="homepage" name="EMSOURCE" class="" id="mce-EMSOURCE">
-          </div>
-          <div id="mce-responses" class="clear">
-              <div class="response" id="mce-error-response" style="display:none"></div>
-              <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>     
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b22a9bf5b06462efd0a134c79_919505a29c" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="btn-nb homepage" style="margin-left:0"></div>
-              </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<section class="patterned divider">
 </section>
 
-<!-- <section class="row dark-striped">
-  <div class="col-md-12">
-    <h4 class="centered-block row">Know a craft beer lover?</h4>
-    <a href="/gifts">
-      <button class="btn-nb col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" id="view-gift-items"> View Gift Options</button>
-    </a>
-  </div>
-</section> -->
+<section class="row dark-striped top-buffer-thin featured-in">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/food-and-wine.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/Fortune.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/liquid-bread.png">
+  <div class="hidden-md hidden-lg hidden-sm"><br><br></div>
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/product-hunt.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/urban-daddy.png">
+</section>
 
-<!-- <section class="row">
-  <div class="col-md-6 col-sm-6" style="text-align:right">
-    <h4>Noble Brewer Samplers</h4>
-    <p>Try single-batch beers by award winning homebrewers.</p>
-    <a id="view-sampler-options" href="http://shop.noblebrewer.com/collections/samplers/products/noble-brewer-sampler" class="hidden-xs">
-      <button class="btn-nb">View Samplers</button>
-    </a>
-  </div>
-  <div class="col-md-4 col-sm-6">
-    <img src="/images/beer/6_Sampler_grande.jpg" class="img-responsive">
-  </div>
-  <div class="row top-buffer-thin hidden-md hidden-lg hidden-sm">
-    <a id="view-sampler-options" href="http://shop.noblebrewer.com/collections/samplers/products/noble-brewer-sampler" class="col-xs-12">
-      <button class="btn-nb">View Samplers</button>
-    </a>
-  </div>
-</section> -->
+<section class="patterned divider">
+</section>
 
-<% if (filters.featuredBrewers) { %>
-<section class="patterned">
+<section class="row top-buffer-thin" id="our-process-section">
+  <h2>How it works</h2>
   <div class="row">
-    <h3 align="center">Our Featured Brewers</h3>
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step3.png">
+      <!-- <h4>We Curate</h4> -->
+      <p>We find the best amateur brewers from across the US.</p>
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step2.png">
+      <!-- <h4>You Taste</h4> -->
+      <p>We work with professional brewers to bring their best beers to life.</p>
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step1.png">
+      <!-- <h4>You Decide</h4> -->
+      <p>Our members get four new creations every quarter.</p>
+    </div>
   </div>
-  <br>
-  <% filters.featuredBrewers.forEach(function(featuredBrewer, index){ %>
-      <% if (index%4 == 0){ %>
-          <div class="row">
-      <% } %>
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="card">
-              <a href="/profile/<%= featuredBrewer.slug%>"><img src="<%=featuredBrewer.profileUrlNormalized%>"></a>
-              <div class="card-text brewers top-buffer-thin" style="height:210px; max-height:none; overflow:hidden">
-                <a class="h4 gold"  href="/profile/<%= featuredBrewer.slug%>"><%=featuredBrewer.brewerName.first%> <%=featuredBrewer.brewerName.last%></a>
-                  <h5><%=featuredBrewer.city%>, <%=featuredBrewer.state%></h5>
-                  <hr align="left">
-                  <% if (featuredBrewer.profileHeadline) { %>
-                    <%-featuredBrewer.profileHeadline%><br><br>
-                    <a href="/profile/<%= featuredBrewer.slug%>">Read More...</a>
-                  <% } else { %>
-                    <a href="<%-featuredBrewer.profileBrief%>">View Profile...</a>
-                  <% } %>
-              </div>
-            </div>
-          </div>
-        <% if (index%3 === 0 && index !== 0){ %>
-          </div>
-        <% } %>
-      <% }) %>
-    <!-- </div> -->
-</section>
-<% } %>
-
-<section class="row top-buffer-thin dark-striped">
-  <a href="/brewerSignUp">
-    <button id="become-featured-brewer" class="thin-padding btn btn-nb col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" >Become a Featured Noble Brewer</button>
-  </a>
+  <div class="row">
+    <a class="btn-nb" href="/subscription">I'm In</a>
+  </div>
 </section>
 
-<!-- old -->
+<section id="awards-won-section">
+<h3>We only use award winning homebrewers</h2>
+<h4>The recipes have been vetted by pro judges blahblah</h4>
+<!-- Put some graphics that show the different awards they've won -->
+</section>
 
-  <!-- <section class="patterned row">
-        <div class="col-md-7 col-sm-12">
-          <h3 class="hidden-sm hidden-xs centered-block">A beer club for <br>true craft beer fans. </h3>
-          <h4 class="hidden-lg hidden-md centered-block" style="font-weight:300">A beer club for <br>true craft beer fans.</h4>
-          <br>
-          <div class="row col-md-12 col-sm-12 hidden-sm hidden-xs centered-block">
-              <div class="col-sm-6">
-                <a class="btn btn-nb" id="get-beer-top" href="/subscription">Get Beer</a>
-              </div>
-              <div class="col-sm-6">
-                <a class="btn btn-nb-ghost" id="gift-beer-top" href="/gifts">Gift Beer</a> 
-              </div>
-          </div>
-          <br>
-          <div class="row col-md-12 col-sm-12 hidden-md hidden-lg centered-block">
-              <div class="col-sm-6">
-                <a class="btn btn-nb" id="get-beer-top" href="/subscription">Subscriptions</a>
-              </div>
-              <div class="col-sm-6">
-                <a class="btn btn-nb" id="gift-beer-top" href="/gifts">Gift Beer</a> 
-              </div>
-          </div>
-        </div>
-        <div class="col-md-5 hidden-sm hidden-xs">
-          <div class="tan-border">
-            <img class="img-responsive" src="/images/about/aboutbanner-crop.jpg">
-            </div>
-          </div>
-        </div>
-    </div>
-  </section> -->
-  <!-- 
-  <section class="light-alt-base">
-    <h3>Featured In</h3>
-    <ul>
-      <li><img src="http://soi38dc.com/wp-content/uploads/2014/04/urbanDaddy-logo.jpg"></li>
-    </ul>
-  </section> -->
+<section id="members-section">
+<h3>Our beers are a labor of love</h2>
+<h4>We love craft beer, so we only create beer we'd want to drink. See what our members have to say about it.</h4>
+<div class="row member-tweets">
+  <div class="tweet-container">
+  </div>
+</div>
+<!-- Twitter feed -->
+</section>
 
-  <!-- <section class="patterned row centered-block">
-    <h3>Noble Brewer Featured Item</h3><br>
-    <div class="col-md-12 top-buffer hr-light-thin">
-      <a href="http://shop.noblebrewer.com/products/ipa-lover-homebrewed-soap-collection"><h4 class="gold">IPA Lover Handbrewed Soap</h4></a><br>
-      <div class="col-md-7">f\
-        <div class="row">
-        <a class="featured-item-single" href="http://shop.noblebrewer.com/products/ipa-lover-homebrewed-soap-collection">
-          <img class="col-md-4 col-sm-4 col-xs-6 img-responsive no-padding" src="http://cdn.shopify.com/s/files/1/0930/6458/products/IPA_collection_1024x1024_9ad0d9f2-78ef-47c4-a8c3-47748dfc1c83_large.jpeg?v=1451931473" alt="" />
-          <img class="col-md-4 col-sm-4 col-xs-6  img-responsive no-padding" src="https://cdn.shopify.com/s/files/1/0930/6458/products/ipa_grande.jpeg?v=1451931473">
-          <img class="col-md-4 col-sm-4 hidden-xs img-responsive no-padding" src="https://cdn.shopify.com/s/files/1/0930/6458/products/ipa2_grande.jpeg?v=1451931473">
-        </div>
-        <div class="row">
-          <p>View product details...</p>
-        </div>
-        </a>
-      </div>
-      <div  class="col-md-5 hidden-sm hidden-xs">
-        <div class="row">
-          <p class="col-md-8">Homebrewed Soaps is a local company out of Oakland, CA. Alyson and Eric started it after seeing an opportunity to combine their passions - hers for making soap and his for brewing beer.</p>
-          <img src="http://cdn.shopify.com/s/files/1/0930/9558/files/us_medium.JPG?4819623114508605899" class="img-responsive col-md-4 no-padding">
-        </div>
-        <br>
-        <p>Their soaps are natural, containing oils, brews, and hops. This featured collection is great for all you IPA lovers out there.</p>
-      </div>
-    </div>
-  </section>
+<section id="members-section">
+<h3>We do this for you.</h2>
+<h4>All we care about is bringing together amazing homebrewers with craft beer lovers. We're a small company, so your voice is always heard.</h4>
+<h4>100% Satisfaction Guaranteed.</h4>
+<h4>Cancel Anytime.</h4>
+<!-- Twitter feed -->
+</section>
 
-
-  <section class="row alt-base hidden-sm hidden-xs">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="/images/home/img1.jpg" class="img-responsive tan-border">
-      </div>
-      <div class="col-md-6  col-sm-12">
-          <h3>WHAT IS NOBLE BREWER?</h3>
-          <div class="body-copy">
-            <p>Noble Brewer is a new kind of beer club. We're dedicated to celebrating the pioneers of the the craft beer movement - the homebrewer. Savor their unique creations while you learn about the person who created the beer.</p>
-          </div>
-          <a href="beers/">View current batch >></a>
-      </div>
-    </div>
-
-      <div class="diamond-separator"></div>
-
-      <div class="row">
-          <div class="col-md-6">
-              <h3>OUR PROCESS</h3>
-              <div class="body-copy">
-                <p>We find the best homebrew recipes and pair the creator with a professional brewery to make their beer. Once bottled, we ship the beer and the story behind the featured homebrewer to our members. The end result is unique, one-of-a-kind craft beers unavailable in stores or restaurants.</p>
-              </div>
-              <a href="/about">Find out more about our process >></a>
-          </div>
-          <div class="col-md-6">
-            <img src="/images/home/img2.jpg" class="img-responsive">
-          </div>
-  </section>
-
-  <section class="alt-base hidden-lg hidden-md">
-    <div class="row">
-      <img src="/images/home/brewing_hops.png" class="img-responsive tan-border">
-      <p class="centered-block top-buffer">We find award winning homebrewers</p>
-    </div>
-    <div class="row">
-      <img src="/images/home/img2.jpg" class="img-responsive">
-      <p class="centered-block top-buffer">Pair them with a professional brewery</p>
-    </div>
-    <div class="row">
-      <img src="/images/home/group_shot.png" class="img-responsive">
-      <p class="centered-block top-buffer">And then ship the creations out to our members</p>
-    </div>  
-  </section>
-
-  <section class="patterned row centered-block hidden-sm hidden-xs">
-    <div class="col-md-6 col-md-offset-3">
-      <h3>Want Noble Brewer as a gift?</h3>
-      <p>Drop a hint to friends and family. Instantly give them 15% off gifts, so they can give you the gift you've really been wanting.</p>
-      <a href="/dropahint" id="drop-a-hint" class="btn btn-nb">Drop a Hint</a>
-    </div>
-  </section>
-
-  <section class="hidden-sm hidden-xs">
-    <br>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 text-center">
-        <blockquote>
-          <p>
-            ...what you'll find here is meticulously replicated real live homebrews with the added benefit of not being made in a garage.
-          </p>
-          <cite title="Source Title">URBAN DADDY</cite>
-        </blockquote>
-      </div>
-    </div>
-  </section> -->
-
-
-  <!-- <section class="row light-striped hidden-sm hidden-xs">
-      <div class="col-md-12 text-center" id="home-page-bottom">
-        <div class="col-sm-12">
-          <h3>I know what I want</h3>
-          <a class="btn btn-nb" href="/subscription" id="get-beer-bottom">Beer</a>
-        </div>
-        <div class="col-sm-12">
-          <h3 class="tan">Want to know more?</h3>
-          <a class="btn btn-nb-ghost" href="/collections/beer" id="see-beer-bottom">See what's on tap</a>
-        </div>
-      </div>
-    <br>
-    <br>
-  </section> -->
-
-<!--   <section class="hidden-lg hidden-md">
-    <p class="hidden-lg hidden-md centered-block">See what our members are saying on Untappd</p>
-    <br>
-    <div class="center-slick">
-      <div style="height:auto"><img src="/images/home/Untappd-Dudeling.png" class="img-responsive"></div>
-      <div style="height:auto"><img src="/images/home/Untappd-Riddle.png" class="img-responsive"></div>
-      <div style="height:auto"><img src="/images/home/Untappd-Dudeling2.png" class="img-responsive"></div>
-      <div style="height:auto"><img src="/images/home/Untappd-Riddle2.png" class="img-responsive"></div>
-      <div style="height:auto"><img src="/images/home/Untappd-Dudeling3.png" class="img-responsive"></div>
-      <div style="height:auto"><img src="/images/home/Untappd-Riddle3.png" class="img-responsive"></div>
-    </div>
-  </section>
-
-  <section class="row light-striped hidden-md hidden-lg">
-      <div class="row text-center" id="home-page-bottom">
-        <div class="col-sm-12">
-          <a class="btn btn-nb" href="/subscription" id="get-beer-bottom">Become a member</a>
-        </div>
-        <div class="col-sm-12">
-          <a class="btn btn-nb" href="/collections/beer" id="see-beer-bottom">See what's on tap</a>
-        </div>
-      </div>
-  </section> -->
+<section id="samplers-section">
+<h3>Once a quarter isn't enough for our members</h2>
+<h4>Our members love beer. We have access to great beer that our members can't get at home. So as a bonus, we do weekly samplers.</h4>
+<p>Once a week. No "filler" beers. Only the best</p>
+<!-- Twitter feed -->
+</section>
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
 <script>

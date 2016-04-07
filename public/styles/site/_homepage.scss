@@ -1,0 +1,60 @@
+.featured-in {
+	padding: 20px 0;
+    text-align: center;
+}
+
+.featured-in > img {
+	width: 17%;
+    display: inline-block;
+    margin: 0 1%;
+}
+
+#our-process-section > h2 {
+	text-align: center;
+}
+
+#our-process-section > div > img {
+	margin-bottom: 30px;
+}
+
+#our-process-section > .row {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.homepage & h4 {
+	text-transform: none;
+    font-weight: 400;
+}
+
+.homepage-header {
+	background-image: url("/images/beer/springbeers.jpg");
+	position: relative;
+	background-position: bottom left;
+	display: table;
+	width: 100%;
+	height: auto;
+	background-repeat: no-repeat;
+	background-color: black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 70px;
+}
+
+.homepage-header > div {
+	width: 33%;
+    position: relative;
+    float: right;
+    text-align: center;
+}
+
+.homepage-header & h2 {
+	color: black;
+	margin-bottom: 50px;
+}
+
+.patterned.divider {
+	padding: 10px 0;
+}
