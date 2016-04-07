@@ -65,3 +65,30 @@
     width: 80%;
     margin: 0 10%;
 }
+
+.photo-comment-container {
+	width: 22%;
+	margin: 0 1%;
+    padding: 10px;
+    background-color: #222222;
+    box-shadow: 5px 5px 10px rgba(197, 167, 126, 0.81);
+    display: inline-table;
+}
+
+.comment-container {
+	min-height: 120px;
+	font-size: .9em;
+	margin-top: 10px;
+}
+
+.photo-comment-container & .col-md-3 {
+	padding: 0;
+}
+
+.photo-comment-container & p.lead {
+	font-size: 1.1em;
+}
+
+.member-comments {
+	margin-top: 20px;
+}
