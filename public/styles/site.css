@@ -9780,3 +9780,21 @@ input#link-text {
 
 .member-comments {
   margin-top: 20px; }
+
+#guarantee-section {
+  background-image: url("/images/about/tshirt-brick.jpg");
+  position: relative;
+  background-position: center center;
+  display: table;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 70px; }
+
+.row.unsure {
+  margin-bottom: 40px; }
