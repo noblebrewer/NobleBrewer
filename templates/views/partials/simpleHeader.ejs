@@ -1,5 +1,30 @@
-<div class="header-thin">
-	<div>
-		<a class="navbar-brand col-md-4 col-md-offset-4" href="/"><img class="no-border" src='/images/generic/simple_logo.svg' width="147px"></a>
+<!-- views/partials/header.ejs -->
+
+<div id="header">
+	<div role="navigation" class="navbar navbar-default main-navbar">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<a class="navbar-brand" href="/"><img class="no-border" src='/images/generic/simple_logo.svg' width="147px"></a>
+			</div>
+
+			<!-- <div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<% navLinks.forEach(function(link, index){ %>
+						<li class="<%= link.key === 'section' ? 'active' : ''%>">
+							<a class="nav-link header" href="<%= link.href %>"><%= link.label %></a>
+						</li>
+					<% }) %>
+				</ul> -->
+<!-- 				<ul class="nav navbar-nav navbar-right">
+					<li><a class="nav-link header" href="/cart">Cart</a></li>
+					<li><a class="nav-link login header" href="<%= env.SHOPIFY_HOSTNAME %>/account/login">Sign In</a></li>
+				</ul> -->
+			<!-- </div> -->
 	</div>
 </div>
