@@ -31,7 +31,7 @@
 <section class="homepage-header">
   <div>
     <h2>Try beers from the nation's best homebrewers</h2>
-    <a class="btn-nb" href="/subscription">Get Started Now</a>
+    <a class="btn-nb" href="/subscription?source=facebook">Get Started Now</a>
   </div>
 </section>
 
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="row">
-    <a class="btn-nb" href="/subscription">Sign Me Up</a>
+    <a class="btn-nb" href="/subscription?source=facebook">Sign Me Up</a>
   </div>
 </section>
 
@@ -165,7 +165,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <a class="btn-nb" href="/subscription">Give Me Beer</a>
+        <a class="btn-nb" href="/subscription?source=facebook">Give Me Beer</a>
       </div>
       <div class="col-md-6 col-sm-6">
         <a id="learn-more" class="btn-nb-ghost" href="#">Learn More</a>
@@ -183,6 +183,124 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="ageModal" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog no-padding">
+    <div class="modal-content">
+      <div class="modal-body centered-block">
+        <!-- <img class="img-responsive" src="/images/untappd/co-brand_hero_img.jpg"> -->
+        <h3>Verify age, state, and email</h3>
+        <div class="row hr-gold-thin top-buffer-thin">
+          <div class="row">
+            <p>Are you 21?</p>
+          </div>
+          <div class="row">
+            <input type="checkbox" style="font-color:black" id="age-confirm">  Yes
+          </div>
+          <div class="row" style="padding-top:15px">
+              <p>Make sure we ship to your state</p>
+          </div>
+          <form>
+            <select id="state" name="state" style="color: #c5a77e; background-color: transparent; border: 1.8px solid #DAD8D6; max-width: 100%;">
+              <option value=""></option>
+              <option value="AL">AL</option>
+              <!-- <option value="AK">AK</option> -->
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <!-- <option value="HI">HI</option> -->
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <!-- <option value="NH">NH</option> -->
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY">NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </form>
+          <div class="row">
+            <p>Verify you're not a bot</p>
+          </div>
+          <form class="form-inline" id="email-signup">
+            <div class="form-group">
+              <input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+              <button type="submit" id="submit-email-homepage" class="btn btn-nb auto-height" style="width:auto; border-radius:4px; margin-left:15px; padding:14px">Come on in</button>
+            </div> 
+          </form>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/landingpage.js"></script>
+
+<script type="text/javascript">
+  function getCookie(cookie) {
+      var name = cookie + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+      }
+      return "";
+  }
+  var access = getCookie("email");
+  console.log(access);
+  if (access === "") {
+      $(window).load(function() {
+        setTimeout(function(){
+          $('#ageModal').modal('show');
+        }, 1500)
+      })
+  } else {
+      var emailCookie = getCookie("email")
+      console.log(emailCookie);
+      $('.untappd-promo-banner').removeClass('hidden');
+      window.email = getCookie("email");
+    
+  }
+
+</script>
 
  <script type="text/javascript">
   $('#learn-more').click(function(e) {
