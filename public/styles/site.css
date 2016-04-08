@@ -5936,6 +5936,14 @@ button.close {
       padding: 5px;
       text-align: center; }
 
+@media (max-width: 767px) {
+  #footer ul {
+    padding: 0;
+    display: inline; }
+  #footer ul li {
+    display: inline-block;
+    width: 100%; } }
+
 .main-navbar {
   background-color: #232121;
   border: none;
@@ -5964,6 +5972,10 @@ button.close {
   justify-content: space-around; }
   .small-social-media img {
     width: 45%; }
+
+@media (max-width: 767px) {
+  .small-social-media {
+    margin-top: 20px; } }
 
 .gallery-image img {
   display: block;
@@ -9701,3 +9713,173 @@ input#link-text {
 .pints-info {
   width: 4%;
   margin: 5px 0; }
+
+.featured-in {
+  padding: 20px 0;
+  text-align: center; }
+
+.featured-in > img {
+  width: 17%;
+  display: inline-block;
+  margin: 0 1%; }
+
+#our-process-section {
+  padding-top: 30px;
+  padding-bottom: 15px; }
+
+#our-process-section > h2 {
+  text-align: center;
+  padding-bottom: 20px; }
+
+#our-process-section > div > img {
+  margin-bottom: 30px; }
+
+#our-process-section > .row {
+  margin-bottom: 60px;
+  text-align: center; }
+
+#our-process-section p {
+  margin-top: 15px; }
+
+.homepage h4 {
+  text-transform: none;
+  font-weight: 400; }
+
+@media (min-width: 768px) {
+  #infographicModal > .modal-dialog {
+    width: auto;
+    margin: 30px auto;
+    max-width: 60%; } }
+
+@media (max-width: 767px) {
+  #infographicModal > .modal-dialog {
+    width: auto;
+    margin: 30px auto;
+    max-width: 75%; } }
+
+.homepage-header {
+  background-image: url("/images/beer/springbeers.jpg");
+  position: relative;
+  background-position: bottom left;
+  display: table;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 70px; }
+
+@media (min-width: 768px) {
+  /*tablet*/
+  .homepage-header {
+    background-position: bottom center; }
+  .homepage-header > div {
+    width: 40%; }
+  .homepage-header h2 {
+    /*font-size: 2em;*/ }
+  #guarantee-section a.btn-nb {
+    display: inline-block;
+    height: auto;
+    min-width: 0; }
+  #guarantee-section a.btn-nb-ghost {
+    display: inline-block;
+    height: auto;
+    min-width: 0; }
+  .homepage h2 {
+    font-size: 2em; }
+  .homepage h4 {
+    font-size: 1em; } }
+
+.homepage-header > div {
+  width: 33%;
+  position: relative;
+  float: right;
+  text-align: center; }
+
+.homepage-header h2 {
+  color: black;
+  margin-bottom: 50px; }
+
+.photo-comment-container {
+  width: 22%;
+  margin: 0 1%;
+  padding: 10px;
+  background-color: #222222;
+  box-shadow: 5px 5px 10px rgba(197, 167, 126, 0.81);
+  display: inline-table; }
+
+#homebrewer-awards {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  margin: 0 10%; }
+
+@media (max-width: 767px) {
+  /*small*/
+  .homepage-header {
+    background-image: url("/images/beer/springbeers-mobile.jpg");
+    background-position: center center; }
+  .homepage-header h2 {
+    margin-bottom: 350px; }
+  .homepage-header > div {
+    width: 100%; }
+  .homepage h2 {
+    font-size: 1.7em; }
+  .homepage h4 {
+    font-size: .9em; }
+  .featured-in > img {
+    width: 29%;
+    margin: 3% 1%; }
+  .photo-comment-container {
+    width: auto;
+    margin: 10px 0; }
+  #guarantee-section a.btn-nb {
+    display: inline-block;
+    height: auto; }
+  #guarantee-section a.btn-nb-ghost {
+    display: inline-block;
+    height: auto; }
+  #homebrewer-awards {
+    margin: 0;
+    width: 100%; } }
+
+.patterned.divider {
+  padding: 10px 0; }
+
+.comment-container {
+  min-height: 120px;
+  font-size: .9em;
+  margin-top: 10px; }
+
+.photo-comment-container .col-md-3 {
+  padding: 0; }
+
+.photo-comment-container p.lead {
+  font-size: 1.1em; }
+
+.member-comments {
+  margin-top: 20px; }
+
+#members-section {
+  padding-bottom: 70px; }
+
+#guarantee-section {
+  background-image: url("/images/about/tshirt-brick.jpg");
+  position: relative;
+  background-position: center center;
+  display: table;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 70px; }
+
+.row.unsure {
+  margin-bottom: 40px; }

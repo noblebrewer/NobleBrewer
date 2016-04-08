@@ -122,6 +122,18 @@ and (max-width: 882px) {
 	}
 }
 
+@media(max-width:767px){
+	#footer ul {
+		padding: 0;
+		display: inline;
+	}
+
+	#footer ul li {
+		display: inline-block;
+		width: 100%;
+	}
+}
+
 .main-navbar {
 	background-color: #232121;
 	border: none;
@@ -157,6 +169,12 @@ and (max-width: 882px) {
   img {
   	width: 45%;
   }
+}
+
+@media(max-width:767px){
+	.small-social-media {
+		margin-top: 20px;
+	}
 }
 
 .gallery-image img{
