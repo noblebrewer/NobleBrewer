@@ -288,9 +288,7 @@
   console.log(access);
   if (access === "") {
       $(window).load(function() {
-        setTimeout(function(){
           $('#ageModal').modal('show');
-        }, 1500)
       })
   } else {
       var emailCookie = getCookie("email")
