@@ -37,6 +37,15 @@
     font-weight: 400;
 }
 
+
+@media (min-width: 768px) {
+	#infographicModal > .modal-dialog {
+	    width: auto; 
+	    margin: 30px auto;
+	    max-width: 80%;
+	}
+}
+
 .homepage-header {
 	background-image: url("/images/beer/springbeers.jpg");
 	position: relative;
