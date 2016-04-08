@@ -209,7 +209,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="ageModal" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="untappdModal" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog no-padding">
     <div class="modal-content">
       <div class="modal-body centered-block">
@@ -313,14 +313,13 @@
   console.log(access);
   if (access === "") {
       $(window).load(function() {
-          $('#ageModal').modal('show');
+          $('#untappdModal').modal('show');
       })
   } else {
       var emailCookie = getCookie("email")
       console.log(emailCookie);
       $('.untappd-promo-banner').removeClass('hidden');
       window.email = getCookie("email");
-    
   }
 
 </script>
