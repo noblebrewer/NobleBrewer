@@ -63,13 +63,13 @@
 					<% }) %>
 					</ul>
 				<% } else { %>
-					<h4 class="top-buffer">None of your friends have signed up :(</h4>
+					<h4 class="top-buffer">Start sharing to earn Pints!</h4>
 				<% } %>
 				<% if (data.unconfirmed_referrals.length > 0) { %>
-					<p>The friends below signed up but didn't confirm their email. After they do, they'll get access and you'll get a Pint!</p>
+					<p>These friends never confirmed their email. Click their email to send them a reminder.</p>
 					<ul>
 					<% data.unconfirmed_referrals.forEach(function(referral, index){ %>
-						<li><%= referral.name %> - <%= referral.email %></li>
+						<li><%= referral.name %> - <a href="<%= data.member_email %>"><%= referral.email %></a></li>
 					<% }) %>
 					</ul>
 				<% } %>

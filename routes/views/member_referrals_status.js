@@ -60,7 +60,7 @@ memberData.find().where({"people_referred.0" : {$exists : true}}).exec(function(
 			numberConfirmed : confirmedCount,
 			numberUnconfirmed : unconfirmedCount,
 			numberMembers : memberCount,
-			totalPoints : (memberCount * 4) + confirmedCount,
+			totalPoints : (memberCount * 5) + confirmedCount,
 			referralsTotal : member[i].people_referred.length
 		}
 		console.log(memberObject);

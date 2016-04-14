@@ -92,7 +92,7 @@ exports = module.exports = function(req,res) {
 			} else if (person.people_referred[i].member_status === 'member') {
 				console.log("Member");
 				console.log(personObject);
-				count = count + 4;
+				count = count + 5;
 				friends.confirmed.push(personObject)
 				friends.members.push(personObject)
 			} else {
