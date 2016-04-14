@@ -170,3 +170,37 @@ input#link-text {
 	width: 4%;
 	margin: 5px 0;
 }
+
+section.bottle {
+    background-image: url("/images/beer/papadoc.jpg");
+	background-position: bottom left;
+	display: table;
+	width: 100%;
+	height: auto;
+	background-repeat: no-repeat;
+	background-color: black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 70px;}
+
+@media(max-width:767px){
+  	section.bottle {
+    background-image: none;
+    background-color: black;
+    }
+  }
+
+@media(max-width:992px){
+  	section.bottle {
+    background-image: none;
+    background-color: black;
+    }
+}
+
+.waitlist-form {
+  background-color: rgba(0, 0, 0, 0.58);
+  border-radius: 6px;
+  margin-right: 10px;
+}

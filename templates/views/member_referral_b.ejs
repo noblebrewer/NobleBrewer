@@ -1,19 +1,4 @@
 <head>
-	<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='80367997-35',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-
   <div class="title">
       <title>Noble Brewer Membership VIP Signup</title>
   </div>
@@ -23,18 +8,21 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 <div class="container-fluid">
 <% include ./partials/header %>
-	<section class="row" id="vip">
+	<section class="row patterned header-thin centered-block">
 		<!-- <h3>It's nice to have friends...</h3> -->
 		<% if (data.first_name) { %>
 			<h3><%= data.first_name %> got you VIP status</h3>
-			<p>Our waiting list is currently over a thousand people. That is sad for some, but not for you! You get to go to the front of the line.</p>
+			<p>Skip the waiting list today.</p>
 		<% } else { %>
 			<h3>You've got VIP status!</h3>
-			<p>Our waiting list is currently over a thousand people. That is sad for some, but not for you! You get to go to the front of the line.</p>
+			<p>Skip the waiting list today.</p>
 		<% } %>
 	</section>
-	<section class="row patterned">
-		<div id="mc_embed_signup" class="col-md-6 col-md-offset-3">
+	<section class="row bottle">
+		<div id="mc_embed_signup" class="col-md-5 col-md-offset-6 waitlist-form">
+			<h4>Each shipment crafted exclusively for our members.</h4>
+		      <p>Join 1000's of other craft beer fans in experiencing the best homebrewers' beers.</p>
+		      <p>Subscriptions starting at $44/quarter</p>
 			<form action="//noblebrewer.us12.list-manage.com/subscribe/post?u=b22a9bf5b06462efd0a134c79&amp;id=919505a29c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
 		        <div id="mc_embed_signup_scroll">
 		      	<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>

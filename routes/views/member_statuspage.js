@@ -170,7 +170,7 @@ exports = module.exports = function(req,res) {
 		})
 
 		memberData.find().where({ _id : md5(email) }).exec(function(err, person){
-			if (person.length > 0){
+			if (person.length > 0) {
 				person[0].sharing_urls.url_twitter = shortURLBase.concat(shortURLTwitter);
 				person[0].sharing_urls.url_facebook = shortURLBase.concat(shortURLFacebook);
 				person[0].sharing_urls.url_email = shortURLBase.concat(shortURLEmail);
