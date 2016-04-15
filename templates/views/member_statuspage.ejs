@@ -69,7 +69,7 @@
 					<p>These friends never confirmed their email. Click their email to send them a reminder.</p>
 					<ul>
 					<% data.unconfirmed_referrals.forEach(function(referral, index){ %>
-						<li><%= referral.name %> - <a href="mailto:<%= data.member_email %>"><%= referral.email %></a></li>
+						<li><%= referral.name %> - <a href="mailto:<%= referral.email %>"><%= referral.email %></a></li>
 					<% }) %>
 					</ul>
 				<% } %>
