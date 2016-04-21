@@ -26,7 +26,7 @@ $("#submit-email").click(function(e){
 
 		// console.log(location, version, source);
 
-		heap.identify({ email : email });
+		heap.identify({ email : document.getElementById("email").value });
 		// heap.track('untappd', {
 		// 	location : location,
 		// 	source : source,
@@ -46,6 +46,7 @@ $("#submit-email").click(function(e){
 });
 
 $("#submit-email-homepage").click(function(e){
+	console.log(document.getElementById("email").value);
 	e.preventDefault();
 	if ($('#age-confirm').prop('checked') === false) {
 		alert('Please verify you are over 21')
@@ -73,7 +74,7 @@ $("#submit-email-homepage").click(function(e){
 
 		// console.log(location, version, source);
 
-		heap.identify({ email : email });
+		heap.identify({ email : document.getElementById("email").value });
 		// heap.track('untappd', {
 		// 	location : location,
 		// 	source : source,
@@ -87,7 +88,7 @@ $("#submit-email-homepage").click(function(e){
 				} else if (data === 'success') {
 					$('#ageModal').modal('hide');
 					document.cookie="access=Yes; expires=Fri, 18 Apr 2017 12:00:00 UTC; path=/";
-					document.cookie="email="+window.email+"; expires=Fri, 18 Apr 2017 12:00:00 UTC; path=/";
+					document.cookie="email="+document.getElementById("email").value+"; expires=Fri, 18 Apr 2017 12:00:00 UTC; path=/";
 					console.log(document.cookie);
 				}
 			}

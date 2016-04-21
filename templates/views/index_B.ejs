@@ -31,7 +31,7 @@
 <section class="homepage-header">
   <div>
     <h2>Try beers from the nation's best homebrewers</h2>
-    <a class="btn-nb" href="/subscription?source=facebook">Get Started Now</a>
+    <a class="btn-nb subscription-link" href="/subscription?source=<%= data.source %>">Get Started Now</a>
   </div>
 </section>
 
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="row">
-    <a class="btn-nb" href="/subscription?source=facebook">Sign Me Up</a>
+    <a class="btn-nb" href="/subscription?source=<%= data.source %>">Sign Me Up</a>
   </div>
 </section>
 
@@ -165,7 +165,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <a class="btn-nb" href="/subscription?source=facebook">Give Me Beer</a>
+        <a class="btn-nb" href="/subscription?source=<%= data.source %>">Give Me Beer</a>
       </div>
       <div class="col-md-6 col-sm-6">
         <a id="learn-more" class="btn-nb-ghost" href="#">Learn More</a>
@@ -276,6 +276,7 @@
 <script type="text/javascript">
   function getCookie(cookie) {
       var name = cookie + "=";
+      console.log(document.cookie);
       var ca = document.cookie.split(';');
       for(var i=0; i<ca.length; i++) {
           var c = ca[i];
@@ -294,8 +295,8 @@
       var emailCookie = getCookie("email")
       console.log(emailCookie);
       $('.untappd-promo-banner').removeClass('hidden');
-      window.email = getCookie("email");
-    
+      window.email = emailCookie;
+      $('.subscription-link').attr('href', '/subscription?source=<%= data.source %>&email='+emailCookie)
   }
 
 </script>
