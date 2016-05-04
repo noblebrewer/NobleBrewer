@@ -27,10 +27,11 @@ exports.initLocals = function(req, res, next) {
 		// { label: 'Meet the Brewers',	key: 'brewers',		href: '/brewers' },
 		// { label: 'Market',		key: 'market',		href: '/market' },
 		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
-		{ label: 'Gifts',key: 'gifts',href: '/gifts' },
-		{ label: 'Marketplace',key: 'market',href: '/market' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
+		// { label: 'Gifts',key: 'gifts',href: '/gifts' },
+		// { label: 'Marketplace',key: 'market',href: '/market' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
+		{ label: 'Samplers',	key: 'samplers',	href: 'http://shop.noblebrewer.com/pages/noble-brewer-samplers' },
+		{ label: 'Blog',		key: 'blog',		href: '/blog' },
 		//Sign Up link in the header is coming from the header.ejs
 	];
 	

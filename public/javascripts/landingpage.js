@@ -8,21 +8,25 @@ $("#submit-email").click(function(e){
 		e.preventDefault();
 		var form = {
 			email : document.getElementById("email").value,
-			source: 'untappd',
+			source: document.getElementById("source-id").innerHTML,
 			function: 'email',
 			state: $("#state option:selected").val()
 		}
+
+		// console.log(form);
 
 		// var location = document.getElementById('untappd-location').innerHTML
 		// var version = document.getElementById('untappd-version').innerHTML
 		// var source = document.getElementById('untappd-source').innerHTML
 
-		ga('send', {
-		  hitType: 'event',
-		  eventCategory: 'email',
-		  eventAction: 'submit',
-		  eventLabel: 'untappd'
-		});
+		if (form.source == 'untappd'){
+			ga('send', {
+			  hitType: 'event',
+			  eventCategory: 'email',
+			  eventAction: 'submit',
+			  eventLabel: 'untappd'
+			});
+		}
 
 		// console.log(location, version, source);
 
@@ -32,13 +36,13 @@ $("#submit-email").click(function(e){
 		// 	source : source,
 		// 	version : version });
 
-		$.post("http://www.noblebrewer.com/api/addToMailchimp",form,
+		$.post("/api/addToMailchimp",form,
 			function(data){
 				console.log(data);
 				if (data === 'error'){
 					alert('Please enter a valid email');
 				} else if (data === 'success') {
-					 $('#untappdModal').modal('hide');
+					 $('#ageModal').modal('hide');
 				}
 			}
 		);

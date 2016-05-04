@@ -11,9 +11,13 @@ exports = module.exports = function(req, res) {
 	};
 
 	locals.data = {
-		source: req.query.utm_medium
+		source: req.query.utm_medium || "Craft Beer"
 	}
 
+	if (req.query.utm_medium == "my_subscription_addiction") {
+		locals.data.source = "My Subscription Addiction"
+	}
+	
 	view.on('init', function(next) {
 		var q = keystone.list('Homebrewers').model.find().where('isFeaturedBrewer', true)
 

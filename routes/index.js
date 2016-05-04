@@ -105,6 +105,8 @@ exports = module.exports = function(app) {
 	app.get('/nbb/:shortURL?', routes.views.shortURLExternal);
 
 	app.get('/twitch', routes.views.twitch);
+	app.get('/yolo', routes.views.index_B);
+
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);

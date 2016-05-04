@@ -11,6 +11,10 @@ exports = module.exports = function(req, res) {
 		featuredBrewers: []
 	};
 
+	locals.data = {
+		source: req.query.utm_medium
+	}
+
 
 	view.on('init', function(next) {
 		var q = keystone.list('Homebrewers').model.find().where('isFeaturedBrewer', true)

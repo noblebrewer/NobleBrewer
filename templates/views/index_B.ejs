@@ -18,20 +18,25 @@
 // </script> -->
 <!-- End of Google Analytics Content Experiment code --> 
 
+<% include ./partials/head %>
 
-  <% include ./partials/head %>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <div class="container-fluid homepage">
-<% include ./partials/simpleHeader %>
+
+<section class="patterned centered-block">
+  <img class="no-border" src='/images/generic/simple_logo.svg' width="147px">
+  <h3>Hi <%= data.source %> Fans! We've got <span style="color:#C5A77E; font-size: 1.4em">FREE BEER</span> for you!</h3>
+  <p id="source-id" class="hidden"><%= data.source %></p>
+</section>
 
 <section class="homepage-header">
   <div>
     <h2>Try beers from the nation's best homebrewers</h2>
-    <a class="btn-nb subscription-link" href="/subscription?source=<%= data.source %>">Get Started Now</a>
+   <!--  <a class="btn-nb subscription-link" href="/subscription?source=<%= data.source %>">Get Started Now</a> -->
   </div>
 </section>
 
@@ -68,9 +73,20 @@
       <p>And ship the beers to our members</p>
     </div>
   </div>
-  <div class="row">
-    <a class="btn-nb" href="/subscription?source=<%= data.source %>">Sign Me Up</a>
-  </div>
+  <!-- <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <a class="btn-nb" style="display:inline-block; height:auto" href="/subscription?source=<%= data.source %>">View Subscription Options</a>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <a style="display:inline-block; height:auto" class="btn-nb-ghost learn-more" href="#">Learn More About Our Process</a>
+      </div>
+  </div> -->
+</section>
+
+<section id="special-offer" class="row centered-block">
+  <h2 class="centered-block">Special Offer</h2>
+  <h4>Join today and get 12 beers for the price of 4</h4>
+    <a class="btn-nb" style="display:inline-block; height:auto" href="http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>">I Love Free Beer</a>
 </section>
 
 <section id="awards-won-section" class="patterned row">
@@ -165,10 +181,10 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <a class="btn-nb" href="/subscription?source=<%= data.source %>">Give Me Beer</a>
+        <a class="btn-nb" href="http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>">I'm ready for beer</a>
       </div>
       <div class="col-md-6 col-sm-6">
-        <a id="learn-more" class="btn-nb-ghost" href="#">Learn More</a>
+        <a class="btn-nb-ghost learn-more" href="#">Learn More</a>
       </div>
     </div>
   </div>
@@ -262,7 +278,7 @@
           <form class="form-inline" id="email-signup">
             <div class="form-group">
               <input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
-              <button type="submit" id="submit-email-homepage" class="btn btn-nb auto-height" style="width:auto; border-radius:4px; margin-left:15px; padding:14px">Come on in</button>
+              <button type="submit" id="submit-email" class="btn btn-nb auto-height" style="width:auto; border-radius:4px; margin-left:15px; padding:14px">Come on in</button>
             </div> 
           </form>
         </div>  
@@ -296,18 +312,18 @@
       console.log(emailCookie);
       $('.untappd-promo-banner').removeClass('hidden');
       window.email = emailCookie;
-      $('.subscription-link').attr('href', '/subscription?source=<%= data.source %>&email='+emailCookie)
+      $('.subscription-link').attr('href', 'http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>&email='+emailCookie)
   }
 
 </script>
 
  <script type="text/javascript">
-  $('#learn-more').click(function(e) {
+  $('.learn-more').click(function(e) {
     e.preventDefault();
     $('#infographicModal').modal('show');
   })
 </script>
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
-<% include ./partials/footer %>
+<% include ./partials/simpleFooter %>
 </div>
