@@ -7198,6 +7198,10 @@ section .landingpage-header {
   .form-bottom .btn-nb {
     margin-top: 15px; } }
 
+@media (max-width: 767px) {
+  #welcome-fans > h3 {
+    font-size: 1.5em; } }
+
 /*.typcn-pencil {
     content: '\e0c3';
 }
@@ -9818,7 +9822,7 @@ section.bottle {
     height: auto;
     min-width: 0; }
   .homepage h2 {
-    font-size: 2em; }
+    /*font-size: 2em;*/ }
   .homepage h4 {
     font-size: 1em; } }
 
@@ -9856,7 +9860,7 @@ section.bottle {
   .homepage-header > div {
     width: 100%; }
   .homepage h2 {
-    font-size: 1.7em; }
+    font-size: 1.9em; }
   .homepage h4 {
     font-size: .9em; }
   .featured-in > img {

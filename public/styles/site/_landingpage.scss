@@ -182,6 +182,11 @@ section .landingpage-header {
 	}
 }
 
+@media (max-width: 767px){
+	#welcome-fans > h3 {
+		font-size: 1.5em;
+	}
+}
 
 /*.typcn-pencil {
     content: '\e0c3';
