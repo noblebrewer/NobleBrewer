@@ -13,7 +13,7 @@ $("#submit-email").click(function(e){
 			state: $("#state option:selected").val()
 		}
 
-		// console.log(form);
+		console.log(form);
 
 		// var location = document.getElementById('untappd-location').innerHTML
 		// var version = document.getElementById('untappd-version').innerHTML

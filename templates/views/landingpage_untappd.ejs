@@ -58,6 +58,7 @@
     <h2>Try beers from the nation's best homebrewers</h2>
     <a class="btn-nb" href="/subscription?source=untappd">Get Started Now</a>
   </div>
+  <p id="source-id" class="hidden">untappd</p>
 </section>
 
 <section class="patterned divider">
@@ -209,7 +210,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="untappdModal" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="ageModal" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog no-padding">
     <div class="modal-content">
       <div class="modal-body centered-block">
@@ -313,7 +314,7 @@
   console.log(access);
   if (access === "") {
       $(window).load(function() {
-          $('#untappdModal').modal('show');
+          $('#ageModal').modal('show');
       })
   } else {
       var emailCookie = getCookie("email")
