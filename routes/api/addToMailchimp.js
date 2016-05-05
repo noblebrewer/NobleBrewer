@@ -22,16 +22,12 @@ exports = module.exports = function(req, res) {
 
 	console.log(req.body);
 
-	email = (body.email).toLowerCase();
-	memberID = (md5(email));
-	console.log("Email: "+email+" submitted via "+(body.source || body.function));
-	var emailSource = (body.source || body.function);
+	if (body.email) {
+		email = (body.email).toLowerCase();
+		memberID = (md5(email));
+		console.log("Email: "+email+" submitted via "+(body.source || body.function));
+		var emailSource = (body.source || body.function);
 
-	// if (body.function === 'welcome') {
-	// 	addToWorkflow();
-	// }
-
-	if (email) {
 		createData()
 		var getOptions = { method: 'GET',
 			url: 'https://us12.api.mailchimp.com/3.0/lists/6256d8517b/members/'+memberID,
