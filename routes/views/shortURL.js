@@ -33,7 +33,7 @@ exports = module.exports = function(req,res) {
 	console.log(md5(shortURL));
 
 	shortenedURLs.find().where({ _id : md5(shortURL) }).exec(function(err, url){
-		console.log(url[0]);
+		// console.log(url[0]);
 		if (url[0]) {
 			res.redirect(url[0].full_url);
 			mongoose.disconnect();
