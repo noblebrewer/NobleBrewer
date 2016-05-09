@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
 	};
 
 	locals.data = {
-		source: req.query.utm_medium
+		source: req.query.utm_medium || 'homepage'
 	}
 
 

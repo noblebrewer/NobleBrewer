@@ -60,7 +60,7 @@ $("#submit-email-homepage").click(function(e){
 		e.preventDefault();
 		var form = {
 			email : document.getElementById("email").value,
-			source: 'facebook',
+			source: 'homepage',
 			function: 'email',
 			state: $("#state option:selected").val()
 		}
@@ -69,12 +69,12 @@ $("#submit-email-homepage").click(function(e){
 		// var version = document.getElementById('untappd-version').innerHTML
 		// var source = document.getElementById('untappd-source').innerHTML
 
-		ga('send', {
-		  hitType: 'event',
-		  eventCategory: 'email',
-		  eventAction: 'submit',
-		  eventLabel: 'facebook'
-		});
+		// ga('send', {
+		//   hitType: 'event',
+		//   eventCategory: 'email',
+		//   eventAction: 'submit',
+		//   eventLabel: 'facebook'
+		// });
 
 		// console.log(location, version, source);
 
