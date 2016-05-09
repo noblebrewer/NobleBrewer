@@ -232,7 +232,7 @@ exports = module.exports = function(req,res) {
 									confirmed_referrals : friends.confirmed,
 									member_referrals : friends.members,
 									// points : points,
-									sharing_url : person[0].sharing_urls
+									sharing_url : person.sharing_urls
 								}
 								view.render('member_statuspage')
 								mongoose.disconnect(function(){
