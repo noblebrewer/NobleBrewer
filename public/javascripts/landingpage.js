@@ -42,7 +42,10 @@ $("#submit-email").click(function(e){
 				if (data === 'error'){
 					alert('Please enter a valid email');
 				} else if (data === 'success') {
-					 $('#ageModal').modal('hide');
+					$('#ageModal').modal('hide');
+					document.cookie="access=Yes; expires=Fri, 18 Apr 2017 12:00:00 UTC; path=/";
+					document.cookie="email="+document.getElementById("email").value+"; expires=Fri, 18 Apr 2017 12:00:00 UTC; path=/";
+					console.log(document.cookie);
 				}
 			}
 		);

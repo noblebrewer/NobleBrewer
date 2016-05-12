@@ -29,8 +29,8 @@
 
 <section class="patterned centered-block" id="welcome-fans">
   <img class="no-border" src='/images/generic/simple_logo.svg' width="147px">
-<!--   <h3>Hi <%= data.source %> Fans! We've got <span style="color:#C5A77E; font-size: 1.4em">A Special Deal</span> for you!</h3>
-  <p id="source-id" class="hidden"><%= data.source %></p> -->
+ <!--  <h3>Hi <%= data.source %> Fans! We've got <span style="color:#C5A77E; font-size: 1.4em">A Special Deal</span> for you!</h3> -->
+  <p id="source-id" class="hidden"><%= data.source %></p>
 </section>
 
 <section class="homepage-header">
@@ -310,7 +310,6 @@
   } else {
       var emailCookie = getCookie("email")
       console.log(emailCookie);
-      $('.untappd-promo-banner').removeClass('hidden');
       window.email = emailCookie;
       $('.subscription-link').attr('href', 'http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>&email='+emailCookie)
   }
