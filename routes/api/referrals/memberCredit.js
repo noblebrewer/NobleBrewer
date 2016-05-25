@@ -28,35 +28,37 @@ module.exports = function(email, res) {
 		var memberData = require('../member_referral_schemas').memberData;
 
 		memberData.find().where({ _id : md5(email) }).exec(function(err, newMember){
-			if (newMember.length > 0) {
-				// console.log(newMember);
-				var referrerEmail = newMember[0].membership_details.referred_by;
-				if (referrerEmail) {
-					console.log("Found Referrer Email");
-					memberData.find().where({ _id : md5(referrerEmail) }).exec(function(err, referrer){
-						// console.log(referrer[0]);
-						if (referrer[0]) {
-							for (var i = 0; i < referrer[0].people_referred.length; i++) {
-								console.log(referrer[0].people_referred[i].email)
-								if (referrer[0].people_referred[i].email === newMember[0].profile_details.email) {
-									referrer[0].people_referred[i].member_status = "member";
-									referrer[0].save(function(err){
-										console.log("Changed status to member");
-									})
-								}
-							};
-							// console.log(referrer);
-						} else {
-							// console.log(referrer);
-						}
-					})
-				}
-				// editReferrerData(function(){
-				// 	mongoose.disconnect();
-				// 	console.log("done");
-				// 	res.apiResponse('success');
-				// });
-			} 
+			if (newMember) {
+				if (newMember.length > 0) {
+					// console.log(newMember);
+					var referrerEmail = newMember[0].membership_details.referred_by;
+					if (referrerEmail) {
+						console.log("Found Referrer Email");
+						memberData.find().where({ _id : md5(referrerEmail) }).exec(function(err, referrer){
+							// console.log(referrer[0]);
+							if (referrer[0]) {
+								for (var i = 0; i < referrer[0].people_referred.length; i++) {
+									console.log(referrer[0].people_referred[i].email)
+									if (referrer[0].people_referred[i].email === newMember[0].profile_details.email) {
+										referrer[0].people_referred[i].member_status = "member";
+										referrer[0].save(function(err){
+											console.log("Changed status to member");
+										})
+									}
+								};
+								// console.log(referrer);
+							} else {
+								// console.log(referrer);
+							}
+						})
+					}
+					// editReferrerData(function(){
+					// 	mongoose.disconnect();
+					// 	console.log("done");
+					// 	res.apiResponse('success');
+					// });
+				} 
+			}
 		})
 	}
 }
