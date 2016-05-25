@@ -1,0 +1,330 @@
+<head>
+  <div class="title">
+      <title>Noble Brewer</title>
+  </div>
+
+<!-- Google Analytics Content Experiment code -->
+ <!-- <script>function utmx_section(){}function utmx(){}(function(){var
+// k='80367997-27',d=document,l=d.location,c=d.cookie;
+// if(l.search.indexOf('utm_expid='+k)>0)return;
+// function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+// indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+// length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+// '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+// '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+// '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+// valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+// '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+// </script> -->
+<!-- End of Google Analytics Content Experiment code --> 
+
+<% include ./partials/head %>
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<div class="container-fluid homepage">
+
+<section class="patterned centered-block" id="welcome-fans">
+  <img class="no-border" src='/images/generic/simple_logo.svg' width="147px">
+ <!--  <h3>Hi <%= data.source %> Fans! We've got <span style="color:#C5A77E; font-size: 1.4em">A Special Deal</span> for you!</h3> -->
+  <p id="source-id" class="hidden"><%= data.source %></p>
+</section>
+
+<section class="homepage-header">
+  <div>
+    <h2>Try beers from the nation's best homebrewers</h2>
+   <!--  <a class="btn-nb subscription-link" href="/subscription?source=<%= data.source %>">Get Started Now</a> -->
+  </div>
+</section>
+
+<section class="patterned divider">
+</section>
+
+<section class="row dark-striped top-buffer-thin featured-in">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/food-and-wine.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/Fortune.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/liquid-bread.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/product-hunt.png">
+  <img class="no-border img-responsive featured-in-icon" src="./images/logos/urban-daddy.png">
+</section>
+
+<section class="patterned divider">
+</section>
+
+<section class="row" id="our-process-section">
+  <h2>How it works</h2>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step3.png">
+      <!-- <h4>We Curate</h4> -->
+      <p>We select award winning brewers</p>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step2.png">
+      <!-- <h4>You Taste</h4> -->
+      <p>Pair them with professional breweries</p>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 centered-block">
+      <img class="no-border thin-margin" src="/images/home/step1.png">
+      <!-- <h4>You Decide</h4> -->
+      <p>And ship the beers to our members</p>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <a class="btn-nb" style="display:inline-block; height:auto" href="/subscription?source=<%= data.source %>">View Subscription Options</a>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <a style="display:inline-block; height:auto" class="btn-nb-ghost learn-more" href="#">Learn More About Our Process</a>
+      </div>
+  </div> -->
+</section>
+
+<section id="special-offer" class="row centered-block patterned">
+    <h2 class="centered-block">Special <%= data.source %> Offer</h2>
+  <img class='img-responsive col-md-12 no-border hidden-sm hidden-xs' src='/images/beer/specialOffer-eight.png'> 
+  <img class='img-responsive col-sm-12 no-border hidden-md hidden-lg' src='/images/beer/specialOffer-eight-mobile.png'>
+  <p>Turn 4 unique beers into 8 unique beers</p>
+    <a class="btn-nb" style="display:inline-block; height:auto" href="http://shop.noblebrewer.com/pages/subscription-with-8-bonus-beers?source=<%= data.source %>">View Details</a>
+</section>
+
+<section id="awards-won-section" class="patterned row">
+  <h2 class="centered-block">Award Winning Brewers</h2>
+  <img class="img-responsive no-border" id="homebrewer-awards" src="/images/beer/homebrewer-awards-gold.png">
+</section>
+
+<section id="members-section" class="row">
+  <div class="row centered-block">
+    <h2>See what our members think</h2>
+  </div>
+  <div class="row member-comments">
+    <div class="photo-comment-container">
+      <div class="row">
+        <img src="/images/tweets/garcia-photo.jpg" class="img-responsive no-border">
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3 col-xs-3">
+          <img src="/images/tweets/garcia-profile.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+          <p class="lead">@dangarciasatx</p>
+        </div>
+      </div>
+      <div class="comment-container row">
+        <p>Ready for some beer tasting. Thanks, @NobleBrewerBeer So excited! #craftbeer</p>
+      </div>
+    </div>
+    <div class="photo-comment-container">
+      <div class="row">
+        <img src="/images/tweets/wayne-photo.jpg" class="img-responsive no-border">
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3 col-xs-3">
+          <img src="/images/tweets/wayne-profile.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+          <p class="lead">@SoxFanPMan</p>
+        </div>
+      </div>
+      <div class="comment-container row">
+        <p>Taste bud bliss arrived in a box today. @NobleBrewerBeer</p>
+      </div>
+    </div>
+    <div class="photo-comment-container">
+      <div class="row">
+        <img src="/images/tweets/beck-photo.jpg" class="img-responsive no-border">
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3 col-xs-3">
+          <img src="/images/tweets/beck-profile.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+          <p class="lead">@CM_Beck920</p>
+        </div>
+      </div>
+      <div class="comment-container row">
+        <p>@MinnieMorgan007 @NobleBrewerBeer since hearing about this on the stream, my refrigerator.</p>
+      </div>
+    </div>
+    <div class="photo-comment-container">
+      <div class="row">
+        <img src="/images/tweets/highbrau-photo.jpg" class="img-responsive no-border">
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3 col-xs-3">
+          <img src="/images/tweets/highbrau-profile.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+          <p class="lead">@High_Brau</p>
+        </div>
+      </div>
+      <div class="comment-container row">
+        <p>Special beerlivery! @NobleBrewerBeer Very excited to try more amazing up-scaled #homebrew #beer Cheers!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guarantee-section" class="patterned row">
+  <div class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6">
+    <div class="row unsure">
+      <h2>Still unsure?</h2>
+      <h4>100% Satisfaction Guarantee</h4>
+      <h4>Cancel anytime</h4>
+      <h4>More questions? Just ask!</h4>
+      <h4>Chat with us online or drop us an e-mail. We love talking about beer.</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <a class="btn-nb" href="http://shop.noblebrewer.com/pages/subscription-with-8-bonus-beers?source=<%= data.source %>">Claim Offer</a>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <a class="btn-nb-ghost learn-more" href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="infographicModal">
+  <div class="modal-dialog no-padding">
+    <div class="modal-content">
+      <div class="modal-body centered-block">
+        <img class="img-responsive no-border" src="/images/about/NB-Infographic.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ageModal" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog no-padding">
+    <div class="modal-content">
+      <div class="modal-body centered-block">
+        <!-- <img class="img-responsive" src="/images/untappd/co-brand_hero_img.jpg"> -->
+        <h3>Verify age, state, and email</h3>
+        <div class="row hr-gold-thin top-buffer-thin">
+          <div class="row">
+            <p>Are you 21?</p>
+          </div>
+          <div class="row">
+            <input type="checkbox" style="font-color:black" id="age-confirm">  Yes
+          </div>
+          <div class="row" style="padding-top:15px">
+              <p>Make sure we ship to your state</p>
+          </div>
+          <form>
+            <select id="state" name="state" style="color: #c5a77e; background-color: transparent; border: 1.8px solid #DAD8D6; max-width: 100%;">
+              <option value=""></option>
+              <option value="AL">AL</option>
+              <!-- <option value="AK">AK</option> -->
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <!-- <option value="HI">HI</option> -->
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <!-- <option value="NH">NH</option> -->
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY">NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </form>
+          <div class="row">
+            <p>Verify you're not a bot</p>
+          </div>
+          <form class="form-inline" id="email-signup">
+            <div class="form-group">
+              <input type="email" size="35" class="form-control" id="email" placeholder="EMAIL ADDRESS">
+              <button type="submit" id="submit-email" class="btn btn-nb auto-height" style="width:auto; border-radius:4px; margin-left:15px; padding:14px">Come on in</button>
+            </div> 
+          </form>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/landingpage.js"></script>
+
+<script type="text/javascript">
+  function getCookie(cookie) {
+      var name = cookie + "=";
+      console.log(document.cookie);
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+      }
+      return "";
+  }
+  var access = getCookie("email");
+  console.log(access);
+  if (access === "") {
+      $(window).load(function() {
+          $('#ageModal').modal('show');
+      })
+  } else {
+      var emailCookie = getCookie("email")
+      console.log(emailCookie);
+      window.email = emailCookie;
+      $('.subscription-link').attr('href', 'http://shop.noblebrewer.com/pages/subscription-with-8-bonus-beers?source=<%= data.source %>&email='+emailCookie)
+  }
+
+</script>
+
+ <script type="text/javascript">
+  $('.learn-more').click(function(e) {
+    e.preventDefault();
+    $('#infographicModal').modal('show');
+  })
+</script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<% include ./partials/simpleFooter %>
+</div>

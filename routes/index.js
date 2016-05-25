@@ -106,6 +106,7 @@ exports = module.exports = function(app) {
 
 	app.get('/twitch', routes.views.twitch);
 	app.get('/yolo', routes.views.index_B);
+	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
 
 	// API Routes
