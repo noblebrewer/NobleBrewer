@@ -34,14 +34,18 @@ exports = module.exports = function(req,res) {
 
 	shortenedURLs.find().where({ _id : md5(shortURL) }).exec(function(err, url){
 		// console.log(url[0]);
-		if (url[0]) {
-			res.redirect(url[0].full_url);
-			mongoose.disconnect();
+		if (url) {
+			if (url[0]) {
+				res.redirect(url[0].full_url);
+				mongoose.disconnect();
+			} else {
+				view.render('shortURLError');
+				mongoose.disconnect();
+			}
 		} else {
 			view.render('shortURLError');
 			mongoose.disconnect();
 		}
-		
 	})
 
 	// console.log(locals);
