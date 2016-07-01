@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
 	};
 
 	locals.data = {
-		source: req.query.utm_medium || "Craft Beer"
+		source: req.query.utm_source || "Craft Beer"
 	}
 
 	if (req.query.utm_medium == "my_subscription_addiction") {
