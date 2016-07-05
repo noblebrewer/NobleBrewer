@@ -105,7 +105,8 @@ exports = module.exports = function(app) {
 	app.get('/nbb/:shortURL?', routes.views.shortURLExternal);
 
 	app.get('/twitch', routes.views.twitch);
-	app.get('/yolo', routes.views.index_B);
+	app.get('/yolo', routes.views.yolo);
+	app.get('/yolos', routes.views.yolo_B);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
 

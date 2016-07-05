@@ -5872,7 +5872,7 @@ button.close {
   padding-left: 35px;
   padding-right: 35px; }
   .navbar-brand img {
-    width: 100%;
+    /*width: 100%;*/
     position: relative;
     bottom: -5px; }
   .navbar-brand:hover {
