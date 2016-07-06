@@ -12,7 +12,11 @@ exports = module.exports = function(req, res) {
 	};
 
 	locals.data = {
-		source: req.query.utm_medium || 'homepage'
+		source: req.query.utm_source,
+		medium: req.query.utm_medium || 'homepage',
+		campaign: req.query.utm_campaign,
+		content: req.query.utm_content,
+		term: req.query.utm_term
 	}
 
 

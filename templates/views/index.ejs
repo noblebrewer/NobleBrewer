@@ -31,7 +31,7 @@
 <section class="homepage-header">
   <div>
     <h2>Try beers from the nation's best homebrewers</h2>
-    <a class="btn-nb subscription-link" href="/subscription?source=<%= data.source %>">Get Started Now</a>
+    <a class="btn-nb subscription-link" href="/subscription?utm_source=<%= data.source %>&utm_medium=<%= data.medium %>&utm_term=<%= data.term %>&utm_content=<%= data.content %>&utm_campaign=<%= data.campaign %>">Get Started Now</a>
   </div>
 </section>
 
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="row">
-    <a class="btn-nb" href="/subscription?source=<%= data.source %>">I Love It</a>
+    <a class="btn-nb" href="/subscription?utm_source=<%= data.source %>&utm_medium=<%= data.medium %>&utm_term=<%= data.term %>&utm_content=<%= data.content %>&utm_campaign=<%= data.campaign %>">I Love It</a>
   </div>
 </section>
 
@@ -165,7 +165,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-sm-6">
-        <a class="btn-nb" href="/subscription?source=<%= data.source %>">Give Me Beer</a>
+        <a class="btn-nb" href="/subscription?utm_source=<%= data.source %>&utm_medium=<%= data.medium %>&utm_term=<%= data.term %>&utm_content=<%= data.content %>&utm_campaign=<%= data.campaign %>">Give Me Beer</a>
       </div>
       <div class="col-md-6 col-sm-6">
         <a id="learn-more" class="btn-nb-ghost" href="#">Learn More</a>
@@ -296,7 +296,7 @@
       console.log(emailCookie);
       $('.untappd-promo-banner').removeClass('hidden');
       window.email = emailCookie;
-      $('.subscription-link').attr('href', '/subscription?source=<%= data.source %>&email='+emailCookie)
+      $('.subscription-link').attr('href', '/subscription?utm_source=<%= data.source %>&utm_medium=<%= data.medium %>&utm_term=<%= data.term %>&utm_content=<%= data.content %>&utm_campaign=<%= data.campaign %>&email='+emailCookie)
   }
 
 </script>
