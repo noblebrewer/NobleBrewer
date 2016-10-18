@@ -54,10 +54,12 @@ exports = module.exports = function(app) {
 	app.get('/return', routes.views.return);
 	app.get('/team', routes.views.team);
 	app.get('/faq', routes.views.faq);
+	app.get('/frequently-asked-questions', routes.views.faq);
 	app.get('/press', routes.views.press);
 	app.get('/releases', routes.views.releases);
 	app.get('/user', routes.views.user);
 	app.get('/subscription', routes.views.customize);
+	app.get('/subscriptions', routes.views.customize);
 	app.get('/gifts', routes.views.gifts);
 	app.get('/product-category/memberships', routes.views.customize);
 	app.get('/checkout', routes.views.checkout);
@@ -109,6 +111,20 @@ exports = module.exports = function(app) {
 	app.get('/yolos', routes.views.yolo_B);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
+	// Redirects
+	// Add the url here and then in the redirect.js file
+	app.get('/christmas_beer_and_feast_pairing', routes.views.redirect);
+	app.get('/bloge', routes.views.redirect);
+	app.get('/company', routes.views.redirect);
+	app.get('/blog/batches/batch-1', routes.views.redirect);
+	app.get('/blog/brewers/camino', routes.views.redirect);
+	app.get('/blog/brewers/yerba-buena', routes.views.redirect);
+	app.get('/brewers/john-f', routes.views.redirect);
+	app.get('/company/contact', routes.views.redirect);
+	app.get('/blog/giveaways/:contestName?', routes.views.redirect);
+
+
+
 
 	// API Routes
 	app.all('/api/hubspot', keystone.middleware.api, routes.api.hubspot);
@@ -118,7 +134,6 @@ exports = module.exports = function(app) {
 	app.all('/api/hubspot/neworder', keystone.middleware.api, routes.api.newOrderToMailchimp);
 	app.all('/api/homebrewervote', keystone.middleware.api, routes.api.homebrewervote);
 	app.all('/api/customer', keystone.middleware.api, routes.api.isShopifyCustomer);
-
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
