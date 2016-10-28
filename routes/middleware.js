@@ -27,7 +27,7 @@ exports.initLocals = function(req, res, next) {
 		// { label: 'Meet the Brewers',	key: 'brewers',		href: '/brewers' },
 		// { label: 'Market',		key: 'market',		href: '/market' },
 		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
-		// { label: 'Gifts',key: 'gifts',href: '/gifts' },
+		{ label: 'Gifts',key: 'gifts',href: '/gifts' },
 		// { label: 'Marketplace',key: 'market',href: '/market' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
 		{ label: 'Samplers',	key: 'samplers',	href: 'http://shop.noblebrewer.com/pages/noble-brewer-samplers' },
@@ -36,11 +36,11 @@ exports.initLocals = function(req, res, next) {
 	];
 	
     locals.footerLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
+		// { label: 'Home',		key: 'home',		href: '/' },
 		{ label: 'About',		key: 'about',		href: '/about' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
+		// { label: 'Blog',		key: 'blog',		href: '/blog' },
 		{ label: 'Brewery Map - Beta',		key: 'breweries',		href: 'http://breweries.noblebrewer.com' },
-        // { label: 'Team',		key: 'team',		href: '/team' },
+        { label: 'Corporate (SF only)',		key: 'officelibations',		href: 'http://www.officelibations.com' },
         { label: 'FAQ',         key: 'faq',         href: '/faq' },
         { label: 'Legal',		key: 'terms',		href: '/terms' },
         { label: 'Press',		key: 'press',		href: '/press' },

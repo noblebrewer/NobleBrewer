@@ -52,7 +52,7 @@ exports = module.exports = function(app) {
 	app.get('/privacy', routes.views.privacy);
 	app.get('/shipping', routes.views.shipping);
 	app.get('/return', routes.views.return);
-	app.get('/team', routes.views.team);
+	app.get('/team', routes.views.index);
 	app.get('/faq', routes.views.faq);
 	app.get('/frequently-asked-questions', routes.views.faq);
 	app.get('/press', routes.views.press);
