@@ -61,6 +61,7 @@ exports = module.exports = function(app) {
 	app.get('/subscription', routes.views.customize);
 	app.get('/subscriptions', routes.views.customize);
 	app.get('/gifts', routes.views.gifts);
+	app.get('/gift', routes.views.gifts);
 	app.get('/product-category/memberships', routes.views.customize);
 	app.get('/checkout', routes.views.checkout);
 	app.get('/cart', routes.views.cart);
@@ -109,6 +110,7 @@ exports = module.exports = function(app) {
 	app.get('/twitch', routes.views.twitch);
 	app.get('/yolo', routes.views.yolo);
 	app.get('/yolos', routes.views.yolo_B);
+	app.get('/blackfriday', routes.views.yolo);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
 	// Redirects
