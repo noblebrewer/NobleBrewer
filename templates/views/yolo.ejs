@@ -295,29 +295,29 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 <script src="/javascripts/landingpage.js"></script>
 
 <script type="text/javascript">
-  function getCookie(cookie) {
-      var name = cookie + "=";
-      console.log(document.cookie);
-      var ca = document.cookie.split(';');
-      for(var i=0; i<ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1);
-          if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-      }
-      return "";
-  }
-  var access = getCookie("email");
-  console.log(access);
-  if (access === "") {
-      $(window).load(function() {
-          $('#ageModal').modal('show');
-      })
-  } else {
-      var emailCookie = getCookie("email")
-      console.log(emailCookie);
-      window.email = emailCookie;
-      $('.subscription-link').attr('href', 'http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>&email='+emailCookie)
-  }
+  // function getCookie(cookie) {
+  //     var name = cookie + "=";
+  //     console.log(document.cookie);
+  //     var ca = document.cookie.split(';');
+  //     for(var i=0; i<ca.length; i++) {
+  //         var c = ca[i];
+  //         while (c.charAt(0)==' ') c = c.substring(1);
+  //         if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+  //     }
+  //     return "";
+  // }
+  // var access = getCookie("email");
+  // console.log(access);
+  // if (access === "") {
+  //     $(window).load(function() {
+  //         $('#ageModal').modal('show');
+  //     })
+  // } else {
+  //     var emailCookie = getCookie("email")
+  //     console.log(emailCookie);
+  //     window.email = emailCookie;
+  //     $('.subscription-link').attr('href', 'http://shop.noblebrewer.com/pages/subscription-with-bonus-offer?source=<%= data.source %>&email='+emailCookie)
+  // }
 
 </script>
 
