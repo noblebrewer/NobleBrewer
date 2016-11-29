@@ -134,7 +134,7 @@
 	</div>
 	<div class="row hidden" id="number-shipments-section">
 		<h4 class="centered-block">How many shipments do you want to send?</h4><br>
-		<div class="col-md-1 col-md-offset-2 col-xs-4 gold-back-shadow-thin zoom-on-hover number-shipments" style="margin-left:31%" id="two-shipments">
+		<div class="col-md-1 col-md-offset-2 col-xs-4 gold-back-shadow-thin zoom-on-hover number-shipments" style="margin-left:37%" id="two-shipments">
 			<img class="img-responsive no-border" src="/images/beer/number_two.png">
 		</div>
 		<div class="col-md-1 col-xs-4 gold-back-shadow-thin zoom-on-hover number-shipments" id="three-shipments">
@@ -149,10 +149,13 @@
 	</div>
 	<div class="hidden" id="suggested-section">
 		<h3 class="centered-block top-buffer">We Suggest: </h3>
+		<h4 class="centered-block" id="suggested-title">4 Beer Gift Subscription - 2 Shipments</h4>
 		<div class="col-md-12">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="col-md-10 col-md-offset-1">
-					<img class="no-border thin-margin img-responsive" src="/images/beer/4_beer_subscription.jpg" id="suggested-photo">
+					<a id="suggested-product-url" href="http://shop.noblebrewer.com/collections/gifts-beer/products/4-beer-gift-subscription-6-months-of-beer" target="_blank">
+						<img class="no-border thin-margin img-responsive" src="/images/beer/4_beer_subscription.jpg" id="suggested-photo">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -303,36 +306,54 @@
 			if (shipments == 2) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=27819534409");
 				$('#suggested-price').html('$178');
+				$('#suggested-title').html('8 Beer Gift Subscription - 2 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/8-beer-gift-subscription-6-months-of-beer');
 			} else if (shipments == 3) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=27819794953");
 				$('#suggested-price').html('$267');
+				$('#suggested-title').html('8 Beer Gift Subscription - 3 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/8-beer-gift-subscription-9-months-of-beer');
 			} else if (shipments == 4) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=9690491077");
 				$('#suggested-price').html('$356');
+				$('#suggested-title').html('8 Beer Gift Subscription - 4 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/8-beer-gift-subscription-1-year-of-beer');
 			}
 		} else if (bottles == 12) {
 			$('#suggested-photo').attr('src','/images/beer/12_beer_subscription.jpg');
 			if (shipments == 2) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=8422821769");
 				$('#suggested-price').html('$216');
+				$('#suggested-title').html('12 Beer Gift Subscription - 2 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/12-beer-gift-subscription-6-months-of-beer');
 			} else if (shipments == 3) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=27819813769");
 				$('#suggested-price').html('$324');
+				$('#suggested-title').html('12 Beer Gift Subscription - 3 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/12-beer-gift-subscription-9-months-of-beer');
 			} else if (shipments == 4) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=27819726089");
 				$('#suggested-price').html('$432');
+				$('#suggested-title').html('12 Beer Gift Subscription - 4 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/12-beer-gift-subscription-1-year-of-beer');
 			}
 		} else if (bottles == 4) {
 			$('#suggested-photo').attr('src','/images/beer/4_beer_subscription.jpg');
 			if (shipments == 2) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=7328218309");
 				$('#suggested-price').html('$106');
+				$('#suggested-title').html('4 Beer Gift Subscription - 2 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/4-beer-gift-subscription-6-months-of-beer');
 			} else if (shipments == 3) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=27819790729");
 				$('#suggested-price').html('$159');
+				$('#suggested-title').html('4 Beer Gift Subscription - 3 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/4-beer-gift-subscription-9-months-of-beer');
 			} else if (shipments == 4) {
 				$('#suggested-url').attr('href',"http://shop.noblebrewer.com/cart/add?id=7328176325");
 				$('#suggested-price').html('$212');
+				$('#suggested-title').html('4 Beer Gift Subscription - 4 Shipments');
+				$('#suggested-product-url').attr('href', 'http://shop.noblebrewer.com/collections/gifts-beer/products/4-beer-gift-subscription-1-year-of-beer');
 			}
 		}
 	}
