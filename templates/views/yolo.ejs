@@ -29,9 +29,10 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <div class="container-fluid homepage">
+  <% include ./partials/header %>
 
 <section class="patterned centered-block" id="welcome-fans">
-  <img class="no-border" src='/images/generic/simple_logo.svg' width="147px">
+  <!-- <img class="no-border" src='/images/generic/simple_logo.svg' width="147px"> -->
  <!--  <h3>Hi <%= data.source %> Fans! We've got <span style="color:#C5A77E; font-size: 1.4em">A Special Deal</span> for you!</h3> -->
   <p id="source-id" class="hidden"><%= data.source %></p>
 </section>
