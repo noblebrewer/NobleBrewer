@@ -2,6 +2,8 @@ var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
 
+	// console.log(req.url);
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
 
@@ -12,10 +14,17 @@ exports = module.exports = function(req, res) {
 		content: req.query.utm_content,
 		term: req.query.utm_term
 	}
+
+	if (req.url == "/gifts") {
+		view.render('yolo')
+	} else {
+			
+		// Set locals
+		locals.section = 'gifts';	
+		
+		// Render the view
+		view.render('gifts');
+	}
+
 	
-	// Set locals
-	locals.section = 'gifts';	
-	
-	// Render the view
-	view.render('gifts');
 };
