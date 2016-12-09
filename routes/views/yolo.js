@@ -11,16 +11,16 @@ exports = module.exports = function(req, res) {
 	};
 
 	locals.data = {
-		source: req.query.utm_source || "Craft Beer",
+		source: req.query.utm_source,
 		medium: req.query.utm_medium,
 		campaign: req.query.utm_campaign,
 		content: req.query.utm_content,
 		term: req.query.utm_term
 	}
 
-	if (req.query.utm_medium == "my_subscription_addiction") {
-		locals.data.source = "My Subscription Addiction"
-	}
+	// if (req.query.utm_medium == "my_subscription_addiction") {
+	// 	locals.data.source = "My Subscription Addiction"
+	// }
 	
 	view.on('init', function(next) {
 		var q = keystone.list('Homebrewers').model.find().where('isFeaturedBrewer', true)
