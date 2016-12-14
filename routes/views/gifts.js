@@ -2,7 +2,7 @@ var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
 
-	// console.log(req.url);
+	console.log(req._parsedUrl.pathname);
 
 	var view = new keystone.View(req, res),
 		locals = res.locals;
@@ -15,7 +15,7 @@ exports = module.exports = function(req, res) {
 		term: req.query.utm_term
 	}
 
-	if (req.url == "/gifts") {
+	if (req._parsedUrl.pathname == "/gifts") {
 		view.render('yolo')
 	} else {
 			
