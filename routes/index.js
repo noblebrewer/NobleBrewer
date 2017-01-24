@@ -110,6 +110,7 @@ exports = module.exports = function(app) {
 	app.get('/twitch', routes.views.twitch);
 	app.get('/yolo', routes.views.yolo);
 	app.get('/yolos', routes.views.yolo_B);
+	app.get('/exhilarist', routes.views.exhilarist);
 	app.get('/blackfriday', routes.views.yolo);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
