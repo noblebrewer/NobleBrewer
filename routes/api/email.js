@@ -31,7 +31,7 @@ exports = module.exports = function(req, res) {
 	} else if (req.body.function === 'contact-homebrewer') {
 		console.log("Sending new email to homebrewer: "+req.body.brewerEmail);
 		var html = (req.body.messageContents)
-		var subject = "New message for "+req.body.brewerEmail;
+		var subject = "New message for "+req.body.brewerName;
 		var from_email = "support@noblebrewer.com";
 		var from_name = "Noble Brewer";
 		var to_email = req.body.brewerEmail;
@@ -103,6 +103,7 @@ exports = module.exports = function(req, res) {
 	    var email = result[0].email;
 	    var status = result[0].status;
 	    var rejectreason = result[0].reject_reason;
+	    console.log(result);
 	    res.apiResponse({
 			email:email,
 			status:status,

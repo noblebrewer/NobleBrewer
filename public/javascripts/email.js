@@ -35,6 +35,7 @@ $("#contact-homebrewer").click(function(e){
 	var form = {
 		brewerEmail : email,
 		messageContents : document.getElementById("message-to-hb").value,
+		brewerName : $('#brewer-name').html(),
 		function: 'contact-homebrewer'
 	}
 	$.post("/api/email",form,
