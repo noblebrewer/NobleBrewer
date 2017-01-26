@@ -6676,10 +6676,10 @@ img {
 
 .faq-block {
   background-color: #333333;
-  padding: 2em 3em 2em 3em;
-  margin-bottom: 3em; }
+  padding: 1.5em 2em 1.5em 2em;
+  margin-bottom: 2em; }
   .faq-block dt {
-    font-size: 2em;
+    font-size: 1.7em;
     line-height: 1.2em;
     color: #FFFFFF; }
   .faq-block dd {
