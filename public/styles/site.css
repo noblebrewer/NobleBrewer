@@ -7243,6 +7243,15 @@ section .landingpage-header {
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }*/
+form#special-offer-form input[type="text"] {
+  border-radius: 4px;
+  padding: 8px;
+  color: black; }
+
+form#special-offer-form input[type="submit"] {
+  height: auto;
+  padding: 8px; }
+
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.0
