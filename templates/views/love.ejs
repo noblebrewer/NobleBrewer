@@ -322,6 +322,7 @@
   	if ($('form#special-offer-form input[type="text"]').val().toLowerCase() == "vdaybeer17") {
   		$('#offer-link').removeClass('hidden');
   		$('#special-offer-form').addClass('hidden');
+  		ga('send', 'event', 'offer_unlock', 'click', 'yearofboxes_vday');
   	}
   })
 </script>
