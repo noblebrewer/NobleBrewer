@@ -17,7 +17,7 @@
     "mandrill-api": "^1.0.45",
     "md5": "^2.0.0",
     "mongodb": "^2.1.7",
-    "mongoose": "^4.4.3",
+    "mongoose": "^4.4.4",
     "node-sass": "3.3.3",
     "node-sass-middleware": "0.9.6",
     "nodemon": "^1.4.0",
