@@ -112,6 +112,7 @@ exports = module.exports = function(app) {
 	app.get('/yolos', routes.views.yolo_B);
 	app.get('/exhilarist', routes.views.exhilarist);
 	app.get('/love', routes.views.love);
+	app.get('/orgorg', routes.views.orgorg);
 	app.get('/blackfriday', routes.views.yolo);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
