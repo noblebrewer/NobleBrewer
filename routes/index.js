@@ -114,6 +114,7 @@ exports = module.exports = function(app) {
 	app.get('/love', routes.views.love);
 	app.get('/orgorg', routes.views.orgorg);
 	app.get('/blackfriday', routes.views.yolo);
+	app.get('/beeradvocate', routes.views.beerAdvocate);
 	app.get('/tastingcollective', routes.views.landingpage_tastingcollective);
 
 	// Redirects
