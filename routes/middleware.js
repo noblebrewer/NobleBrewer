@@ -26,8 +26,8 @@ exports.initLocals = function(req, res, next) {
 	locals.navLinks = [
 		// { label: 'Meet the Brewers',	key: 'brewers',		href: '/brewers' },
 		// { label: 'Market',		key: 'market',		href: '/market' },
-		{ label: 'Subscription',key: 'subscription',href: '/subscription' },
-		{ label: 'Gifts',key: 'gifts',href: '/gift' },
+		// { label: 'Subscription',key: 'subscription',href: '/subscription' },
+		// { label: 'Gifts',key: 'gifts',href: '/gift' },
 		// { label: 'Marketplace',key: 'market',href: '/market' },
 		{ label: 'Beer',		key: 'beers',		href: '/beers' },
 		{ label: 'Samplers',	key: 'samplers',	href: 'http://shop.noblebrewer.com/pages/noble-brewer-samplers' },
